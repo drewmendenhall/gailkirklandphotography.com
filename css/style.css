@@ -1,8 +1,8 @@
 html, body {
 	width:100%;
-	height:100%;	
+	height:100%;
 }
-body {	
+body {
 	font-family: 'Arial';
 	margin:0;
 	padding:0;
@@ -159,7 +159,7 @@ nav#menu{
 .mainmenu li:hover {
 }
 
-.mainmenu li a { 
+.mainmenu li a {
 	display:inline-block;
 	padding:36px 0 26px 0;
 	line-height:22px;
@@ -175,7 +175,7 @@ nav#menu{
 .mainmenu li.act a,
 .mainmenu li:hover a{
 }
-.mainmenu li.last a {background:none;		
+.mainmenu li.last a {background:none;
 }
 /*Submenu*/
 .level1 {
@@ -203,7 +203,7 @@ nav#menu{
 	font-size:14px;
 	color:#7a7a7a;
 	font-family: 'Cabin', sans-serif;
-	font-weight:400;	
+	font-weight:400;
 	text-transform:none;
 	text-align:left;
 }
@@ -227,22 +227,22 @@ nav#menu{
 	transition: 0.7s ease-in-out;
 }
 .nav li:nth-child(1):hover ~ .effect {
-	left: 0; /* середина первого <a> */
+	left: 0; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ <a> */
 }
 .nav li:nth-child(2):hover ~ .effect {
-	left: 100px;  /* середина второго <a> */
+	left: 100px;  /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ <a> */
 }
 .nav li:nth-child(3):hover ~ .effect {
-	left: 200px; /* середина третьего <a> */
+	left: 200px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ <a> */
 }
 .nav li:nth-child(4):hover ~ .effect {
-	left: 300px; /* середина четвертого <a> */
+	left: 300px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ <a> */
 }
 .nav li:nth-child(5):hover ~ .effect {
-	left: 400px; /* середина четвертого <a> */
+	left: 400px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ <a> */
 }
 .nav li:nth-child(6):hover ~ .effect {
-	left: 500px; /* середина четвертого <a> */
+	left: 500px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ <a> */
 }
 
 .ph-line-nav .effect {
@@ -456,7 +456,7 @@ ul.sedutper_sp {
 #testimonials_carousel .carousel-control.right {
 	background:url(../images/carousel_arrows.png) no-repeat;
 	background-position:-34px 0;
-	right:0; 
+	right:0;
 }
 #testimonials_carousel .carousel-control.left {
 	background:url(../images/carousel_arrows.png) no-repeat;
@@ -481,7 +481,7 @@ ul.sedutper_sp {
 #testimonials_carousel2 .carousel-control.right {
 	background:url(../images/carousel_arrows2.png) no-repeat;
 	background-position:-10px 0;
-	right:0; 
+	right:0;
 }
 #testimonials_carousel2 .carousel-control.left {
 	background:url(../images/carousel_arrows2.png) no-repeat;
@@ -507,7 +507,7 @@ ul.sedutper_sp {
 .testimon_block p {
 	padding:15px 27px 16px 15px;
 	background:#fff;
-	
+
 }
 .author {
 	background:url(../images/author_bg.png) no-repeat left top;
@@ -930,7 +930,7 @@ h4{
 		text-transform:uppercase;
 		margin-right:12px;
 		padding-top:2px;
-		
+
 		border-radius:50%;
 		-moz-border-radius:50%;
 		-webkit-border-radius:50%;
@@ -1016,7 +1016,7 @@ form#contact input[type="text"],
 input[type="password"],
 input[type="email"],
 form#contact textarea,
-select {	
+select {
 	border:#4e4e4e 1px solid;
 	position:relative;
 	background:#414141;
@@ -1161,7 +1161,7 @@ form#contact textarea {
 	overflow:hidden;
 }
 
-	
+
 .zoom{
 	display:block;
 	position:absolute;
@@ -1201,7 +1201,7 @@ form#contact textarea {
 	z-index:5;
 }
 
-.zoom.video-play{background-image:url(../images/video-play.png);	
+.zoom.video-play{background-image:url(../images/video-play.png);
 }
 .gallery-hover{
 	background:url(../images/slider-caption-bg.png) 0 0 repeat;
@@ -1213,6 +1213,3 @@ form#contact textarea {
 	top:0;
 	overflow:hidden;
 }
-
-
-	
