@@ -1,0 +1,152 @@
+/*
+ * jQuery FlexSlider v1.8
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+/* Browser Resets */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
+
+/* FlexSlider Necessary Styles
+*********************************/
+.flexslider {margin: 0; padding: 0;}
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img, .flexslider .slides iframe {width: 100%; display: block; height:auto}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+
+/* FlexSlider Default Theme
+*********************************/
+.flexslider {position: relative; zoom: 1;border:0;margin:56px 0 60px 0;}
+.flexslider .slides {zoom: 1;display: block; overflow:hidden;border:0;}
+.flexslider .slides > li {position: relative;}
+/* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
+.flex-container {zoom: 1; position: relative;}
+
+/* Caption style */
+/* IE rgba() hack */
+.flex-caption {zoom: 1;}
+.flcconttc {
+	display:table-cell;
+	vertical-align:middle;
+}
+.flccont {
+    display: block;
+    height: auto;
+    left: 50px;
+    position: absolute;
+    top: 20%;
+}
+.flex-caption {
+    color: #7a7a7a;
+    font-size: 12px;
+    height: auto;
+    line-height: 18px;
+    width: 240px;
+	font-family:Arial;
+}
+.subcaption {
+	display: block;    
+	padding-bottom:25px;
+}
+.fctitle {
+	margin-bottom:32px;
+	display: block;
+	font-size:30px;
+	line-height:37px;
+	color:#1b1c1c;
+	text-transform:uppercase;
+	font-family: 'Oswald', sans-serif;
+	font-weight:400;
+}
+.contact_us {
+	width:169px !important;
+	height:48px !important;
+}
+
+
+.flex-direction-nav li{
+}
+/* Direction Nav */
+.flex-direction-nav { height: 0; }
+.flex-direction-nav li .flex-prev {
+	display:none !important;
+	width: 40px; 
+	height: 148px; 
+	display: block; 
+	background-image: url(../images/prev.png);
+	background-repeat:no-repeat;
+	background-position:0 0; 
+	position: absolute; 
+    top:50%;
+	margin-top:-74px;
+    left: 0;
+	cursor: pointer; 
+	text-indent: -999em;
+	z-index:999;
+	overflow:hidden;
+}
+
+.flex-direction-nav li .flex-next {
+    display:none !important;
+	background-image: url(../images/next.png); 
+	background-repeat:no-repeat;
+	background-position:0 0; 
+    top:50%;
+	margin-top:-74px;
+    cursor: pointer;
+    display: block;
+    height: 148px;
+    position: absolute;
+    left: auto;
+	right:0;
+    text-indent: -999em;
+    width: 40px;
+	z-index:999;
+	overflow:hidden;
+}
+
+.flex-direction-nav li .flex-prev:hover, .flex-direction-nav li .flex-next:hover {background-position: 0 -148px;
+}
+.flex-direction-nav li .disabled {opacity: .3; filter:alpha(opacity=30); cursor: default;}
+
+/* Control Nav */
+.flex-control-nav {width: 100%; position: absolute; bottom: -25px; text-align: center;}
+.flex-control-nav li {margin: 0 2px; display: inline-block; width:10px;height:10px;}
+.flex-control-nav li a {
+	width: 10px; 
+	height: 10px; 
+	display: block; 
+	background-image: url(../images/pag.png);
+	background-position:0 0;
+	background-repeat:no-repeat;
+	position: absolute; 
+	top: 50%; 
+	cursor: pointer; 
+	text-indent: -999em;
+	z-index:999;
+}
+.flex-control-nav li a:hover {background-position: -14px 0;}
+.flex-control-nav li a.flex-active {background-position: -14px 0; cursor: default;}
+.flexslider a {
+	text-decoration: none;
+}
