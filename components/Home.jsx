@@ -13,7 +13,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <Carousel
-        autoplay={false}
+        autoplay
         slideInterval={3000}
       >
         {pictureNames.map((name, index) => (
