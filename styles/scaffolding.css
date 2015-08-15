@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #414141 url(/images/main_bg.png);
+  color: #c5c5c5;
+}
+html, body, main {
+  height: 100%;
+}
+main {
+  display: flex;
+  flex-flow: column;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+  position: relative;
+  font-size: 20px;
+  padding: 20px;
+}
+.stretch {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+img {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+}
+footer {
+  background: #414141;
+  color: #696969;
+  padding: 20px;
+}

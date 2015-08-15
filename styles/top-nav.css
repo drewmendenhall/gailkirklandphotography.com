@@ -1,0 +1,52 @@
+.top-nav {
+  float: right;
+}
+.top-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.top-nav ul ul {
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  min-width: 100%;
+  z-index: 1;
+  background: #414141;
+}
+.top-nav ul ul li {
+  display: block;
+}
+.top-nav ul ul li .top-nav-link {
+  padding: 10px;
+  text-align: left;
+}
+.top-nav li {
+  display: inline-block;
+  position: relative;
+}
+.top-nav li:hover ul {
+  visibility: visible;
+}
+.top-nav > ul > li > .top-nav-link {
+  padding-top: 36px;
+  padding-bottom: 30px;
+  width: 120px;
+}
+.top-nav-link {
+  display: block;
+  color: #7a7a7a;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.top-nav-link:hover {
+  color: white;
+}
+.top-nav-link.active {
+  background: #ffcc00;
+}
+.top-nav-link.active:hover {
+  color: #7a7a7a;
+  cursor: default;
+}

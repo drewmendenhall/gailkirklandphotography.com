@@ -1,0 +1,26 @@
+input,
+textarea {
+	border: 1px solid #4e4e4e;
+	background: #414141;
+	padding: 15px 5px 16px 22px;
+	font-family: 'Cabin', sans-serif;
+	font-weight: 400;
+	color: #8e8e8e;
+	font-size: 20px;
+  display: block;
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+textarea {
+  min-height: 5em;
+}
+button {
+  padding: 10px;
+  background: #707070;
+  color: white;
+  border: 0;
+}
+.button-primary {
+  float: right;
+}

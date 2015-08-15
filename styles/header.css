@@ -1,0 +1,24 @@
+header {
+  background: #414141;
+  border-top: 5px solid #ffcc00;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+.logo-link {
+  float: left;
+}
+.logo-link img {
+  display: block;
+}
+
+.sub-header {
+  clear: both;
+}
+.tagline {
+  line-height: 38px;
+  padding-left: 100px;
+  color: #B22B73;
+}
+.book-session-button {
+  float: right;
+  text-decoration: none;
+}

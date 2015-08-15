@@ -1,0 +1,44 @@
+.carousel-slides,
+.carousel-slide {
+  height: 100%;
+}
+.carousel-slide {
+  justify-content: center;
+  display: none;
+}
+.carousel-slide-current {
+  display: flex;
+}
+.carousel-nav {
+  position: absolute;
+  height: 100%;
+  color: white;
+  font-family: Arial;
+  font-size: 6em;
+  text-decoration: none;
+  text-shadow: 0 2px 2px #222;
+  opacity: 0.5;
+}
+.carousel-nav:hover {
+  opacity: 1;
+}
+.carousel-nav::before {
+  /*vertical-align: middle;*/
+  position: absolute;
+  top: 33%;
+}
+.carousel-nav-next {
+  width: 67%;
+  right: 0;
+  text-align: right;
+}
+.carousel-nav-next::before {
+  content: '›';
+  right: 0;
+}
+.carousel-nav-prev {
+  width: 33%;
+}
+.carousel-nav-prev::before {
+  content: '‹';
+}
