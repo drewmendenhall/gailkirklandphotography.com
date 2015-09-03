@@ -23,11 +23,13 @@ config.server = Object.assign({
 	protocol: 'http',
 }, config.server || {})
 
-server.use(webpackDevServer({
-	server: config.server,
-	makeHot: 'app',
-}))
-server.use(livereload())
+if (process.env.NODE_ENV !== 'production') {
+	server.use(webpackDevServer({
+		server: config.server,
+		makeHot: 'app',
+	}))
+	server.use(livereload())
+}
 server.use(serveStatic(config.server.base))
 server.use(trailingSlashes(false))
 server.use(function(req, res) {
