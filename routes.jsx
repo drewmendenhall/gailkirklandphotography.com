@@ -30,7 +30,6 @@ export default (
     <Route name="about" handler={About} />
     <Route name="contact" handler={Contact} />
     <Route name="galleries">
-      <Route name="cats" handler={Home} />
       <Route name="dogs" handler={Dogs} />
       <Route name="horses" handler={Horses} />
       <Route name="people" handler={People} />
