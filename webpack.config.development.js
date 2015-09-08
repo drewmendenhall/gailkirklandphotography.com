@@ -1,3 +1,5 @@
+// TODO: This is an attempt at replacing webpack-dev-server.js
+
 var merge = require('lodash.merge')
 var webpack = require('webpack')
 
