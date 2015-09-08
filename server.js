@@ -44,5 +44,5 @@ server.use(function(req, res) {
 })
 
 server.listen(config.server.port, config.server.hostname, function () {
-	console.log('Connect started at ' + url.format(config.server))
+	console.log('Express started at ' + url.format(config.server))
 })
