@@ -3,6 +3,7 @@ import Contact from './components/Contact'
 import Home from './components/Home'
 import Main from './components/Main'
 
+import GalleryIndex from './components/galleries/Index'
 import Dogs from './components/galleries/Dogs'
 import Horses from './components/galleries/Horses'
 import People from './components/galleries/People'
@@ -29,7 +30,8 @@ export default (
     <DefaultRoute name="home" handler={Home} />
     <Route name="about" handler={About} />
     <Route name="contact" handler={Contact} />
-    <Route name="galleries">
+    <Route name="galleries" handler={GalleryIndex} />
+    <Route path="galleries">
       <Route name="dogs" handler={Dogs} />
       <Route name="horses" handler={Horses} />
       <Route name="people" handler={People} />
