@@ -7,17 +7,19 @@
     "url": "https://code.mendenhall.io/drew/gailkirklandphotography-www"
   },
   "scripts": {
-    "build": "npm run build:styles & npm run build:scripts",
+    "build:dev": "npm run build:styles:dev",
+    "build:prod": "npm run build:styles:prod & npm run build:scripts:prod",
     "build:scripts": "webpack --progress",
+    "build:scripts:prod": "npm run build:scripts -- --config webpack.config.production",
     "build:styles": "mkdirp public/styles && lessc styles/index.less public/styles/app.css --npm-import",
     "build:styles:dev": "npm run build:styles -- --source-map",
     "build:styles:prod": "npm run build:styles -- --autoprefix --clean-css",
     "clean:all": "npm run clean:scripts & npm run clean:styles",
     "clean:scripts": "rimraf public/bundle.js",
     "clean:styles": "rimraf public/styles",
-    "dev": "npm run build:styles:dev && (npm run watch & npm run serve)",
+    "dev": "npm run build:dev && (npm run watch & npm run serve)",
     "serve": "nodemon server.js",
-    "start": "npm run dev",
+    "start": "npm run build:prod && npm run serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "npm run watch:styles",
     "watch:styles": "grunt watch:css & onchange 'styles/**/*' -- npm run build:styles:app:dev"
