@@ -7,7 +7,6 @@ export default class Html extends React.Component {
         <head>
           <meta charSet="utf-8" />
           <title>Gail Kirkland Photography</title>
-          <link rel="stylesheet" href="/styles/normalize.css" />
           <link rel="stylesheet" href="/styles/app.css" />
         </head>
         <body>

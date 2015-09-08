@@ -1,9 +1,6 @@
 import React from 'react'
 
-import {
-  Link,
-  RouteHandler,
-} from 'react-router'
+import {Link} from 'react-router'
 
 // import '../styles/top-nav'
 

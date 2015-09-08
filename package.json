@@ -9,8 +9,8 @@
   "scripts": {
     "build": "npm run build:styles & npm run build:scripts",
     "build:scripts": "webpack --progress",
-    "build:styles": "mkdirp public/styles && cp node_modules/normalize.css/normalize.css public/styles/ & npm run build:styles:app:dev",
-    "build:styles:app": "lessc styles/index.less public/styles/app.css",
+    "build:styles": "mkdirp public/styles && npm run build:styles:app:dev",
+    "build:styles:app": "lessc styles/index.less public/styles/app.css --npm-import",
     "build:styles:app:dev": "npm run build:styles:app -- --source-map",
     "clean:all": "npm run clean:scripts & npm run clean:styles",
     "clean:scripts": "rimraf public/bundle.js",
@@ -47,6 +47,7 @@
     "grunt-cli": "0.1",
     "grunt-contrib-watch": "0.6",
     "less": "2",
+    "less-plugin-npm-import": "2",
     "load-grunt-config": "0.17",
     "mkdirp": "0.5",
     "nodemon": "1",
