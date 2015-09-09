@@ -4,8 +4,6 @@ var WebpackDevServer = require('webpack-dev-server')
 
 var webpackConfig = require('./webpack.config')
 
-Object.assign = require('object-assign')
-
 function mergeOptions(options) {
 	options = options || {}
 	options.server = options.server || {}
