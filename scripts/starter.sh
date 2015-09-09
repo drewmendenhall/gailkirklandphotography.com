@@ -5,6 +5,5 @@ then
   export PATH=/usr/local/bin:$PATH
   # forever start --sourceDir /etc/nginx/sites-availaable/gailkirklandphotography.com server.js >> /path/to/log.txt 2>&1
   cd /etc/nginx/sites-available/gailkirklandphotography.com
-  nvm use stable
-  npm start
+  npm start >> /var/log/node/gailkirklandphotography.com/log 2>&1
 fi
