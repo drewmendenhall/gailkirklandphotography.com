@@ -2,8 +2,8 @@
 
 if [ $(ps -e -o uid,cmd | grep $UID | grep node | grep -v grep | wc -l | tr -s "\n") -eq 0 ]
 then
-  export PATH=/usr/local/bin:$PATH
-  # forever start --sourceDir /etc/nginx/sites-availaable/gailkirklandphotography.com server.js >> /path/to/log.txt 2>&1
+  export NVM_DIR="~/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
   cd /etc/nginx/sites-available/gailkirklandphotography.com
-  npm start >> /var/log/node/gailkirklandphotography.com/log 2>&1
+  NODE_ENV=production npm start >> /var/log/node/gailkirklandphotography.com/log 2>&1
 fi
