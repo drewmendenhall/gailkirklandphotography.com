@@ -17,7 +17,7 @@ var webpackDevServer = require('./webpack-dev-server')
 var server = connect()
 
 config.server = Object.assign({
-	base: path.join(__dirname, 'public'),
+	base: path.resolve('public'),
 	hostname: 'localhost',
 	port: 8000,
 	protocol: 'http',
