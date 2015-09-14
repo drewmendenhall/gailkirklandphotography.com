@@ -30,6 +30,7 @@ if (process.env.NODE_ENV !== 'production') {
 		makeHot: 'app',
 	}))
 	server.use(livereload())
+	server.use('/styles', serveStatic('styles'))
 }
 server.use(serveStatic(config.server.base))
 server.use(trailingSlashes(false))
