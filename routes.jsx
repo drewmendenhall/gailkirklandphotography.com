@@ -9,6 +9,12 @@ import HorsesGallery from './components/galleries/HorsesGallery'
 import PeopleGallery from './components/galleries/PeopleGallery'
 import TwilightGallery from './components/galleries/TwilightGallery'
 
+import SessionInfo from './components/SessionInfo'
+import CatSessionsInfo from './components/sessions/CatSessionsInfo'
+import DogSessionsInfo from './components/sessions/DogSessionsInfo'
+import HorseSessionsInfo from './components/sessions/HorseSessionsInfo'
+import TwilightSessionsInfo from './components/sessions/TwilightSessionsInfo'
+
 // TODO: migrate to react-router 1.0
 // export default {
 //   component: Main,
@@ -43,6 +49,14 @@ export default (
       <Route path="people" handler={PeopleGallery} />
       <Route path="twilight" handler={TwilightGallery} />
       <Redirect to="/galleries/dogs" />
+    </Route>
+    <Route name="sessions" handler={SessionInfo} />
+    <Route path="sessions">
+      <Route path="cats" handler={CatSessionsInfo} />
+      <Route path="dogs" handler={DogSessionsInfo} />
+      <Route path="horses" handler={HorseSessionsInfo} />
+      <Route path="twilight" handler={TwilightSessionsInfo} />
+      <Redirect to="/sessions/cats" />
     </Route>
   </Route>
 )
