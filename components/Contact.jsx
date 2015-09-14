@@ -5,10 +5,11 @@ import React from 'react'
 export default class Contact extends React.Component {
   render() {
     return (
-      <div>
+      <div className="contact-page">
         <p>You can reach us via phone or email at:</p>
         <p>214-538-9427</p>
         <p><a href="gmkirkland@juno.com">gmkirkland@juno.com</a></p>
+        <img src="/images/merlo.jpg" />
         {/*
           <form method="post">
             <input name="name" autoFocus placeholder="Name" />
