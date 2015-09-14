@@ -4,10 +4,10 @@ import Home from './components/Home'
 import Main from './components/Main'
 
 import GalleryIndex from './components/galleries/Index'
-import Dogs from './components/galleries/Dogs'
-import Horses from './components/galleries/Horses'
-import People from './components/galleries/People'
-import Twilight from './components/galleries/Twilight'
+import DogsGallery from './components/galleries/DogsGallery'
+import HorsesGallery from './components/galleries/HorsesGallery'
+import PeopleGallery from './components/galleries/PeopleGallery'
+import TwilightGallery from './components/galleries/TwilightGallery'
 
 // TODO: migrate to react-router 1.0
 // export default {
@@ -40,10 +40,10 @@ export default (
     {/*<Route name="galleries" handler={GalleryIndex} />*/}
     {inBrowser && <Redirect from="galleries" to="dogs" />}
     <Route name="galleries">
-      <Route name="dogs" handler={Dogs} />
-      <Route name="horses" handler={Horses} />
-      <Route name="people" handler={People} />
-      <Route name="twilight" handler={Twilight} />
+      <Route path="dogs" handler={DogsGallery} />
+      <Route path="horses" handler={HorsesGallery} />
+      <Route path="people" handler={PeopleGallery} />
+      <Route path="twilight" handler={TwilightGallery} />
       {inBrowser && <Redirect to="dogs" />}
     </Route>
   </Route>
