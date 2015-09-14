@@ -23,19 +23,28 @@ import Twilight from './components/galleries/Twilight'
 // }
 
 import React from 'react'
-import {DefaultRoute, Route} from 'react-router'
+import {
+  DefaultRoute,
+  Redirect,
+  Route,
+} from 'react-router'
+
+const inBrowser = ('document' in global)
 
 export default (
   <Route handler={Main}>
     <DefaultRoute name="home" handler={Home} />
     <Route name="about" handler={About} />
     <Route name="contact" handler={Contact} />
-    <Route name="galleries" handler={GalleryIndex} />
-    <Route path="galleries">
+    {/* TODO: gallery index */}
+    {/*<Route name="galleries" handler={GalleryIndex} />*/}
+    {inBrowser && <Redirect from="galleries" to="dogs" />}
+    <Route name="galleries">
       <Route name="dogs" handler={Dogs} />
       <Route name="horses" handler={Horses} />
       <Route name="people" handler={People} />
       <Route name="twilight" handler={Twilight} />
+      {inBrowser && <Redirect to="dogs" />}
     </Route>
   </Route>
 )
