@@ -23,7 +23,7 @@
     "start": "npm run build:prod && npm run serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "npm run watch:styles",
-    "watch:styles": "grunt watch:css & onchange 'styles/**/*' -- npm run build:styles:app:dev"
+    "watch:styles": "grunt watch:css & onchange 'styles/**/*' -- npm run build:styles:dev"
   },
   "author": "Drew Mendenhall",
   "dependencies": {
