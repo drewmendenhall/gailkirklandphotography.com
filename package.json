@@ -36,6 +36,7 @@
     "lodash.merge": "3",
     "normalize.css": "3",
     "object-assign": "4",
+    "path-to-regexp": "1",
     "react": "0.13",
     "react-router": "0.13",
     "serve-static": "1"

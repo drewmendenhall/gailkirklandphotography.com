@@ -12,6 +12,7 @@ require('babel/register')
 var Html = require('./components/Html')
 var config = require('./config')
 var routes = require('./routes')
+var routerRedirects = require('./react-router-redirects')
 var webpackDevServer = require('./webpack-dev-server')
 
 var server = connect()
@@ -32,6 +33,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 server.use(serveStatic(config.server.base))
 server.use(trailingSlashes(false))
+server.use(routerRedirects())
 server.use(function(req, res) {
   Router.run(routes, req.url, function(Handler) {
     res.write(

@@ -29,8 +29,6 @@ import {
   Route,
 } from 'react-router'
 
-const inBrowser = ('document' in global)
-
 export default (
   <Route handler={Main}>
     <DefaultRoute name="home" handler={Home} />
@@ -38,13 +36,13 @@ export default (
     <Route name="contact" handler={Contact} />
     {/* TODO: gallery index */}
     {/*<Route name="galleries" handler={GalleryIndex} />*/}
-    {inBrowser && <Redirect from="galleries" to="dogs" />}
+    <Redirect from="galleries" to="/galleries/dogs" />
     <Route name="galleries">
       <Route path="dogs" handler={DogsGallery} />
       <Route path="horses" handler={HorsesGallery} />
       <Route path="people" handler={PeopleGallery} />
       <Route path="twilight" handler={TwilightGallery} />
-      {inBrowser && <Redirect to="dogs" />}
+      <Redirect to="/galleries/dogs" />
     </Route>
   </Route>
 )
