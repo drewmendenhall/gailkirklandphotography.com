@@ -1,5 +1,7 @@
 .top-nav {
-  float: right;
+  @media (min-width: 1000px) {
+    float: right;
+  }
 }
 .top-nav ul {
   list-style: none;
@@ -24,6 +26,7 @@
 .top-nav li {
   display: inline-block;
   position: relative;
+
 }
 .top-nav li:hover ul {
   visibility: visible;
@@ -49,4 +52,19 @@
 .top-nav-link.active:hover {
   color: #7a7a7a;
   cursor: default;
+}
+@media (min-width: 600px) and (max-width: 1000px) {
+  .top-nav {
+    > ul {
+      display: flex;
+
+      > li {
+        flex: 1;
+
+        .top-nav-link {
+          width: auto;
+        }
+      }
+    }
+  }
 }
