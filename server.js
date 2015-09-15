@@ -1,3 +1,4 @@
+var Analytics = require('analytics-node')
 var React = require('react')
 var Router = require('react-router')
 var connect = require('connect')
@@ -13,8 +14,15 @@ var Html = require('./components/Html')
 var config = require('./config')
 var routes = require('./routes')
 var routerRedirects = require('./react-router-redirects')
+var tracker = require('./tracker')
 var webpackDevServer = require('./webpack-dev-server')
 
+var PROD = (process.env.NODE_ENV === 'production')
+var segmentWriteKey = process.env.SEGMENT_WRITE_KEY
+
+var analytics = segmentWriteKey && new Analytics(segmentWriteKey, {
+	flushAt: (!PROD ? 1 : null),
+})
 var server = connect()
 
 config.server = Object.assign({
@@ -24,7 +32,10 @@ config.server = Object.assign({
 	protocol: 'http',
 }, config.server || {})
 
-if (process.env.NODE_ENV !== 'production') {
+if (PROD) {
+	server.use(tracker.eventMiddleware(analytics))
+}
+else {
 	server.use(webpackDevServer({
 		server: config.server,
 		makeHot: 'app',
@@ -37,6 +48,10 @@ server.use(trailingSlashes(false))
 server.use(routerRedirects())
 server.use(function(req, res) {
   Router.run(routes, req.url, function(Handler) {
+		if (PROD) {
+			tracker.page(analytics, req)
+		}
+
     res.write(
 			React.renderToStaticMarkup(React.createElement(Html, {
 				markup: React.renderToString(React.createElement(Handler)),
