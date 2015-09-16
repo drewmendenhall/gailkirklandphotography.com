@@ -1,8 +1,5 @@
-.top-nav {
-  @media (min-width: 1000px) {
-    float: right;
-  }
-}
+@import "header";
+
 .top-nav ul {
   list-style: none;
   margin: 0;
@@ -12,9 +9,10 @@
   visibility: hidden;
   position: absolute;
   top: 100%;
+  right: 0;
   min-width: 100%;
   z-index: 1;
-  background: #414141;
+  background: @gray;
 }
 .top-nav ul ul li {
   display: block;
@@ -24,9 +22,9 @@
   text-align: left;
 }
 .top-nav li {
-  display: inline-block;
+  // display: inline-block;
+  background: @header-background;
   position: relative;
-
 }
 .top-nav li:hover ul {
   visibility: visible;
@@ -34,34 +32,110 @@
 .top-nav > ul > li > .top-nav-link {
   padding-top: 36px;
   padding-bottom: 30px;
-  width: 120px;
 }
 .top-nav-link {
   display: block;
-  color: #7a7a7a;
+  color: @light-gray;
+  letter-spacing: 1px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 .top-nav-link:hover {
   color: white;
 }
 .top-nav-link.active {
-  background: #ffcc00;
+  background: @yellow;
 }
 .top-nav-link.active:hover {
-  color: #7a7a7a;
+  color: @light-gray;
   cursor: default;
 }
-@media (min-width: 600px) and (max-width: 1000px) {
-  .top-nav {
+.top-nav-menu-button {
+  @media (min-width: 600px) {
+    display: none;
+  }
+}
+.top-nav {
+  &-control {
+    display: none;
+    &:checked {
+      ~ .top-nav {
+        // display: initial;
+        transform: translate(-100%);
+      }
+      ~ .top-nav-control-overlay {
+        display: initial;
+      }
+    }
+
+    &-icon {
+      align-self: center;
+      font-size: 2em;
+      padding: 0 1em;
+
+      &::before {
+        content: '☰';
+      }
+
+      @media (min-width: 600px) {
+        display: none;
+      }
+    }
+    &-label {
+      display: flex;
+      cursor: pointer;
+      position: relative;
+      user-select: none;
+      @media (min-width: 600px) {
+        flex: 1;
+      }
+    }
+    &-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      cursor: initial;
+    }
+  }
+
+  @media (min-width: 600px) {
+    width: 100%;
+
     > ul {
       display: flex;
 
       > li {
         flex: 1;
-
+      }
+    }
+  }
+  @media (max-width: 1000px) {
+    > ul {
+      > li {
         .top-nav-link {
+          padding: 20px 0;
+        }
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    flex: 1;
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    z-index: 1;
+    transition: all 0.2s;
+
+    > ul {
+      > li {
+        .top-nav-link {
+          padding: 20px;
           width: auto;
         }
       }

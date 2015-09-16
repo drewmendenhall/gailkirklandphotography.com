@@ -1,33 +1,47 @@
 @import "colors";
 
+@header-background: @gray;
 @tagline-color: @pink;
 
 header {
-  background: @gray;
+  background: @header-background;
   border-top: 5px solid @yellow;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  display: flex;
+  @media (max-width: 600px) {
+    justify-content: space-between;
+  }
+  @media (min-width: 600px) and (max-width: 1000px) {
+    flex-flow: column;
+  }
 }
 .logo-link {
   img {
     padding: 0 20px;
   }
-  @media (max-width: 1000px) {
+  @media (min-width: 600px) and (max-width: 1000px) {
     display: block;
     width: 100%;
     text-align: center;
   }
-  @media (min-width: 1000px) {
-    float: left;
+  @media (max-width: 600px) or (min-width: 1000px) {
+    // float: left;
   }
 }
 
 .sub-header {
   clear: both;
+  @media (max-width: 500px) {
+    display: none;
+  }
 }
 .tagline {
   line-height: 38px;
-  padding-left: 100px;
   color: @tagline-color;
+  padding-left: 40px;
+  @media (min-width: 600px) {
+    padding-left: 100px;
+  }
 }
 .book-session-button {
   float: right;
