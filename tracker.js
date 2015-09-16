@@ -3,7 +3,7 @@ import url from 'url'
 export function page(analytics, req, userIdSegment) {
   var {body, headers} = req
   var parsed = url.parse(req.url, true)
-  var path = (req.path ? (req.path !== '/' && req.path) : '')
+  var path = (parsed.path ? (parsed.path !== '/' ? parsed.path : '') : '')
   // TODO: better https detection
   var protocol = `http${req.socket.remotePort === 443 ? 's' : ''}:`
   var {referer} = headers
