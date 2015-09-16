@@ -13,7 +13,12 @@ export default class Main extends React.Component {
       <main>
         <header>
           <Link to="home" className="logo-link">
-            <img src="/images/logo.png" alt="Gail Kirkland Photography" />
+            <img
+              alt="Gail Kirkland Photography"
+              src="/images/logo.png"
+              sizes="(max-width: 600px) 200px"
+              srcSet="/images/logo-200.png 200w, /images/logo.png"
+            />
           </Link>
           <TopNav />
         </header>
