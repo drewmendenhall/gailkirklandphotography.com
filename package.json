@@ -17,13 +17,14 @@
     "clean:all": "npm run clean:scripts & npm run clean:styles",
     "clean:scripts": "rimraf public/bundle.js",
     "clean:styles": "rimraf public/styles",
-    "dev": "npm run build:dev && (npm run watch & npm run serve)",
     "serve": "nodemon server.js",
     "serve:debug": "npm run serve --debug & node-inspector",
-    "start": "npm run build:prod && npm run serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "npm run watch:styles",
-    "watch:styles": "grunt watch:css & onchange 'styles/**/*' -- npm run build:styles:dev"
+    "watch:styles": "grunt watch:css & onchange 'styles/**/*' -- npm run build:styles:dev",
+    "dev": "npm run build:dev && (npm run watch & npm run serve)",
+    "prod": "npm run build:prod && npm run serve",
+    "start": "npm run prod"
   },
   "author": "Drew Mendenhall",
   "dependencies": {
