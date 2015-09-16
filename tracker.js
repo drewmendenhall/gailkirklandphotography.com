@@ -3,6 +3,8 @@ import url from 'url'
 export function page(analytics, req, userIdSegment) {
   var {body, headers} = req
   var parsed = url.parse(req.url, true)
+
+  var address = headers['x-forwarded-for'] || req.connection.remoteAddress
   var path = (parsed.path ? (parsed.path !== '/' ? parsed.path : '') : '')
   // TODO: better https detection
   var protocol = `http${req.socket.remotePort === 443 ? 's' : ''}:`
@@ -12,6 +14,7 @@ export function page(analytics, req, userIdSegment) {
     userId: `anonymous${userIdSegment || ''}`,
 		name: req.url,
     properties: Object.assign({
+      address,
       body,
       headers,
       referer,
@@ -27,11 +30,13 @@ export function eventMiddleware(analytics, userIdSegment) {
   return (req, res, next) => {
     var {body, headers} = req
     var parsed = url.parse(req.url, true)
-    var {query} = parsed
+
+    var address = headers['x-forwarded-for'] || req.connection.remoteAddress
+    var {pathname, query} = parsed
 
     analytics.track({
-      event: parsed.pathname,
-      properties: {body, headers, query},
+      event: pathname,
+      properties: {address, body, headers, query},
       userId: `anonymous${userIdSegment || ''}`,
     })
 
