@@ -8,7 +8,7 @@ export default class Html extends React.Component {
           <meta charSet="utf-8" />
           <meta name="viewport" content="initial-scale=1" />
           <title>Gail Kirkland Photography</title>
-          <link rel="stylesheet" href="/styles/app.css" />
+          <link rel="stylesheet" href="/app.css" />
         </head>
         <body>
           <main dangerouslySetInnerHTML={{__html: this.props.markup}}>
