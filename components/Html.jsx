@@ -6,6 +6,7 @@ export default class Html extends React.Component {
       <html lang="en">
         <head>
           <meta charSet="utf-8" />
+          <meta name="viewport" content="initial-scale=1" />
           <title>Gail Kirkland Photography</title>
           <link rel="stylesheet" href="/styles/app.css" />
         </head>
