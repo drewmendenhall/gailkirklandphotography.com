@@ -10,6 +10,11 @@
   display: flex;
 }
 .carousel-nav {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+
+
   position: absolute;
   height: 100%;
   color: white;
@@ -24,9 +29,9 @@
   opacity: 1;
 }
 .carousel-nav::before {
-  /*vertical-align: middle;*/
-  position: absolute;
-  top: 33%;
+  position: relative;
+  // TODO: ems
+  top: -10px;
 }
 .carousel-nav-next {
   width: 67%;
