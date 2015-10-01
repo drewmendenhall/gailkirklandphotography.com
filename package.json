@@ -36,12 +36,14 @@
     "classnames": "2",
     "connect": "3",
     "connect-slashes": "1",
+    "express": "^4.13.3",
+    "history": "^1.9.1",
     "lodash.merge": "3",
     "normalize.css": "3",
     "object-assign": "4",
     "path-to-regexp": "1",
     "react": "0.13",
-    "react-router": "0.13",
+    "react-router": "1.0.0-rc1",
     "serve-static": "1"
   },
   "devDependencies": {

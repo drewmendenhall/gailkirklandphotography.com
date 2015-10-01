@@ -16,10 +16,10 @@ export default class TopNav extends React.Component {
         <div className="top-nav-control-overlay"></div>
         <nav className="top-nav">
           <ul>
-            <li><Link to="home" className="top-nav-link">home</Link></li>
-            <li><Link to="about" className="top-nav-link">about</Link></li>
+            <li><Link to="/" className="top-nav-link">home</Link></li>
+            <li><Link to="/about" className="top-nav-link">about</Link></li>
             <li>
-              <Link to="galleries" className="top-nav-link">galleries</Link>
+              <Link to="/galleries" className="top-nav-link">galleries</Link>
               <ul>
                 <li><Link to="/galleries/dogs" className="top-nav-link">dogs</Link></li>
                 <li><Link to="/galleries/cats" className="top-nav-link">cats</Link></li>
@@ -29,7 +29,7 @@ export default class TopNav extends React.Component {
               </ul>
             </li>
             <li>
-              <Link to="sessions" className="top-nav-link">sessions</Link>
+              <Link to="/sessions" className="top-nav-link">sessions</Link>
               <ul>
                 <li><Link to="/sessions/dogs" className="top-nav-link">dogs</Link></li>
                 <li><Link to="/sessions/cats" className="top-nav-link">cats</Link></li>
@@ -37,7 +37,7 @@ export default class TopNav extends React.Component {
                 <li><Link to="/sessions/twilight" className="top-nav-link">twilight</Link></li>
               </ul>
             </li>
-            <li><Link to="contact" className="top-nav-link">contact us</Link></li>
+            <li><Link to="/contact" className="top-nav-link">contact us</Link></li>
           </ul>
         </nav>
       </label>

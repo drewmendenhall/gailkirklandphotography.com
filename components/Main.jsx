@@ -12,7 +12,7 @@ export default class Main extends React.Component {
     return (
       <main>
         <header>
-          <Link to="home" className="logo-link">
+          <Link to="/" className="logo-link">
             <img
               alt="Gail Kirkland Photography"
               src="/images/logo.png"
@@ -20,18 +20,18 @@ export default class Main extends React.Component {
               srcSet="/images/logo-200.png 200w, /images/logo.png"
             />
           </Link>
-          <TopNav />
+          <TopNav {...this.state} />
         </header>
         <div className="sub-header">
           <span className="tagline">
             A picture says more than a thousand words...
           </span>
-          <Link to="contact" className="book-session-button button-primary">
+          <Link to="/contact" className="book-session-button button-primary">
             Book a Session
           </Link>
         </div>
         <section className="content">
-          <RouteHandler />
+          {this.props.children}
         </section>
         <footer>
           <div>
