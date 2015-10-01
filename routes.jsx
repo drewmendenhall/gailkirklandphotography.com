@@ -4,6 +4,7 @@ import Home from './components/Home'
 import Main from './components/Main'
 
 import GalleryIndex from './components/galleries/Index'
+import CatsGallery from './components/galleries/CatsGallery'
 import DogsGallery from './components/galleries/DogsGallery'
 import HorsesGallery from './components/galleries/HorsesGallery'
 import PeopleGallery from './components/galleries/PeopleGallery'
@@ -44,6 +45,7 @@ export default (
     {/*<Route name="galleries" handler={GalleryIndex} />*/}
     <Redirect from="galleries" to="/galleries/dogs" />
     <Route name="galleries">
+      <Route path="cats" handler={CatsGallery} />
       <Route path="dogs" handler={DogsGallery} />
       <Route path="horses" handler={HorsesGallery} />
       <Route path="people" handler={PeopleGallery} />

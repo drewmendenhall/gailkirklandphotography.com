@@ -22,6 +22,7 @@ export default class TopNav extends React.Component {
               <Link to="galleries" className="top-nav-link">galleries</Link>
               <ul>
                 <li><Link to="/galleries/dogs" className="top-nav-link">dogs</Link></li>
+                <li><Link to="/galleries/cats" className="top-nav-link">cats</Link></li>
                 <li><Link to="/galleries/horses" className="top-nav-link">horses</Link></li>
                 <li><Link to="/galleries/twilight" className="top-nav-link">twilight</Link></li>
                 <li><Link to="/galleries/people" className="top-nav-link">people</Link></li>
