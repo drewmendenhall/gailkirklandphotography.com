@@ -29,7 +29,7 @@
   },
   "author": "Drew Mendenhall",
   "dependencies": {
-    "analytics-node": "^1.2.2",
+    "analytics-node": "2",
     "babel": "5",
     "babel-runtime": "5",
     "bootstrap": "3",
