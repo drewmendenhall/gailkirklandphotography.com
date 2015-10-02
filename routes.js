@@ -4,18 +4,17 @@ import Home from './components/Home'
 import Links from './components/Links'
 import Main from './components/Main'
 
-import GalleryIndex from './components/galleries/Index'
-import CatsGallery from './components/galleries/CatsGallery'
-import DogsGallery from './components/galleries/DogsGallery'
-import HorsesGallery from './components/galleries/HorsesGallery'
-import PeopleGallery from './components/galleries/PeopleGallery'
-import TwilightGallery from './components/galleries/TwilightGallery'
+import Gallery from './components/Gallery'
 
 import SessionInfo from './components/SessionInfo'
 import CatSessionsInfo from './components/sessions/CatSessionsInfo'
 import DogSessionsInfo from './components/sessions/DogSessionsInfo'
 import HorseSessionsInfo from './components/sessions/HorseSessionsInfo'
 import TwilightSessionsInfo from './components/sessions/TwilightSessionsInfo'
+
+import galleries from './public/galleries.json'
+
+const defaultGalleryId = Object.keys(galleries)[0]
 
 export default ({
   path: '/',
@@ -25,21 +24,13 @@ export default ({
     {path: 'about', component: About},
     {path: 'contact', component: Contact},
     {path: 'galleries', childRoutes: [
-      {path: 'cats', component: CatsGallery},
-      {path: 'dogs', component: DogsGallery},
-      {path: 'horses', component: HorsesGallery},
-      {path: 'people', component: PeopleGallery},
-      {path: 'twilight', component: TwilightGallery},
-      {
-        path: '*',
-        onEnter(nextState, replaceState) {
-          replaceState(null, '/galleries/dogs')
-        },
-      },
+      {path: ':galleryId', component: Gallery},
     ],
       onEnter(nextState, replaceState) {
-        if (nextState.location.pathname === '/galleries') {
-          replaceState(null, '/galleries/dogs')
+        const gallery = galleries[nextState.params.galleryId]
+
+        if (!gallery) {
+          replaceState(null, `/galleries/${defaultGalleryId}`)
         }
       },
     },

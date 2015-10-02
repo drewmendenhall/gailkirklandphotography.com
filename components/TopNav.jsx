@@ -3,6 +3,9 @@ import React from 'react'
 import {Link} from 'react-router'
 
 // import '../styles/top-nav'
+import galleriesObject from '../public/galleries.json'
+
+var galleries = Object.keys(galleriesObject).map((key) => galleriesObject[key])
 
 export default class TopNav extends React.Component {
   render() {
@@ -21,11 +24,16 @@ export default class TopNav extends React.Component {
             <li>
               <Link to="/galleries" className="top-nav-link">galleries</Link>
               <ul>
-                <li><Link to="/galleries/dogs" className="top-nav-link">dogs</Link></li>
-                <li><Link to="/galleries/cats" className="top-nav-link">cats</Link></li>
-                <li><Link to="/galleries/horses" className="top-nav-link">horses</Link></li>
-                <li><Link to="/galleries/twilight" className="top-nav-link">twilight</Link></li>
-                <li><Link to="/galleries/people" className="top-nav-link">people</Link></li>
+                {galleries.map((gallery, index) => (
+                  <li key={index}>
+                    <Link
+                      to={`/galleries/${gallery.id}`}
+                      className="top-nav-link"
+                    >
+                      {gallery.title}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </li>
             <li>

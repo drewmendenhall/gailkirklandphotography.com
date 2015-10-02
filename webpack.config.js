@@ -35,6 +35,7 @@ module.exports = {
 
         devLoader: 'react-hot',
       },
+      {test: /\.json$/, loader: 'json'},
     ],
   },
   resolve: {
