@@ -3,22 +3,33 @@ import classnames from 'classnames'
 
 import {Link} from 'react-router'
 
-// import '../styles/carousel'
-
 export default class Carousel extends React.Component {
   static defaultProps = {
     slideInterval: 2000,
   }
   static propTypes = {
-    children: React.PropTypes.arrayOf(React.PropTypes.element).isRequired,
+    index: React.PropTypes.number,
+    items: React.PropTypes.arrayOf(
+      React.PropTypes.shape({
+        url: React.PropTypes.string,
+      })
+    ),
     slideInterval: React.PropTypes.number,
   }
 
   constructor(props) {
     super(props)
 
+    let {index, items} = props
+    if (items && index != null) {
+      var nextIndex = index < items.length - 1 ? index + 1 : 0
+      var prevIndex = index > 0 ? index - 1 : items.length - 1
+    }
+
     this.state = {
-      currentIndex: 0,
+      index: index || 0,
+      nextIndex,
+      prevIndex,
     }
 
     this.handleKeyDown = this.handleKeyDown.bind(this)
@@ -53,24 +64,40 @@ export default class Carousel extends React.Component {
   }
 
   goToNextSlide() {
-    var {children} = this.props
-    var {currentIndex} = this.state
+    if (this.props.index == null) {
+      let {children} = this.props
+      let {index} = this.state
 
-    this.setState({
-      currentIndex: (currentIndex >= children.length - 1 ?
-        0 : currentIndex + 1
-      ),
-    })
+      this.setState({
+        index: (index >= children.length - 1 ?
+          0 : index + 1
+        ),
+      })
+    }
+    else {
+      let {items} = this.props
+      let {nextIndex} = this.state
+
+      history.pushState({}, items[nextIndex].route)
+    }
   }
   goToPreviousSlide() {
-    var {children} = this.props
-    var {currentIndex} = this.state
+    if (this.props.index == null) {
+      let {children} = this.props
+      let {index} = this.state
 
-    this.setState({
-      currentIndex: (currentIndex <= 0 ?
-        children.length - 1 : currentIndex - 1
-      ),
-    })
+      this.setState({
+        index: (index <= 0 ?
+          children.length - 1 : index - 1
+        ),
+      })
+    }
+    else {
+      let {items} = this.props
+      let {prevIndex} = this.state
+
+      history.pushState({}, items[prevIndex].route)
+    }
   }
   resetAutoplay() {
     window.clearInterval(this.autoplayInterval)
@@ -80,6 +107,20 @@ export default class Carousel extends React.Component {
   componentDidMount() {
     if (this.props.autoplay) {
       this.autoplayInterval = window.setInterval(this.goToNextSlide, this.props.slideInterval)
+    }
+  }
+  componentWillReceiveProps(nextProps) {
+    var {index, items} = nextProps
+
+    if (items && index != null) {
+      var nextIndex = index < items.length - 1 ? index + 1 : 0
+      var prevIndex = index > 0 ? index - 1 : items.length - 1
+
+      this.setState({
+        index,
+        nextIndex,
+        prevIndex,
+      })
     }
   }
   componentDidUpdate(prevProps) {
@@ -93,31 +134,37 @@ export default class Carousel extends React.Component {
     window.clearInterval(this.autoplayInterval)
   }
   render() {
-    var {currentIndex} = this.state
+    var {items} = this.props
+    var {index, nextIndex, prevIndex} = this.state
+
+    if (items && this.props.index != null) {
+      var nextUrl = items[nextIndex].route
+      var prevUrl = items[prevIndex].route
+    }
 
     return (
       <div className="stretch carousel" onKeyDown={this.handleKeyDown}>
-        <a
+        <Link
+          to={prevUrl || ''}
           className="carousel-nav carousel-nav-prev"
-          href=""
-          onClick={this.handlePrev}
+          onClick={!prevUrl && this.handlePrev || null}
+          rel="prev"
         >
-        </a>
-        <a
+        </Link>
+        <Link
+          to={nextUrl || ''}
           className="carousel-nav carousel-nav-next"
-          href=""
-          onClick={this.handleNext}
+          onClick={!nextUrl && this.handleNext || null}
+          rel="next"
         >
-        </a>
-        <div className="carousel-slides">
-          {this.props.children.map((child, index) => (
-            <div className={classnames('carousel-slide', {
-              'carousel-slide-current': currentIndex === index,
-            })} key={index}>
-              {child}
-            </div>
-          ))}
-        </div>
+        </Link>
+        {React.Children.map(this.props.children, (child, index) => (
+          <div className={classnames('carousel-slide', {
+            'carousel-slide-current': this.props.index || this.state.index === index,
+          })} key={index}>
+            {child}
+          </div>
+        ))}
       </div>
     )
   }

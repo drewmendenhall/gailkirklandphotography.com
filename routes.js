@@ -24,7 +24,7 @@ export default ({
     {path: 'about', component: About},
     {path: 'contact', component: Contact},
     {path: 'galleries', childRoutes: [
-      {path: ':galleryId', component: Gallery},
+      {path: ':galleryId(/:pictureId)', component: Gallery},
     ],
       onEnter(nextState, replaceState) {
         const gallery = galleries[nextState.params.galleryId]

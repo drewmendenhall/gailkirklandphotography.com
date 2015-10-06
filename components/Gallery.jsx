@@ -6,16 +6,36 @@ import galleries from '../public/galleries.json'
 
 export default class Gallery extends React.Component {
   render() {
-    var gallery = galleries[this.props.params.galleryId]
+    var {params} = this.props
+    var {
+      galleryId,
+      pictureId,
+    } = params
+    var gallery = galleries[galleryId]
+    var pictures = gallery.pictures.map((picture) => {
+      picture.route = `/galleries/${gallery.id}/${picture.id}`
+      return picture
+    })
+    var index = pictureId && pictures.findIndex((picture) => picture.id === pictureId)
+
+    if (index === -1) index = 0
+
+    var picture = pictures[index]
 
     return (
       <Carousel
         autoplay
         slideInterval={3000}
+        items={pictures}
+        index={index}
       >
-        {gallery.pictures.map((picture, index) => (
-          <img src={picture.url} key={index} />
-        ))}
+        {pictureId ?
+          <img src={picture.url} />
+        :
+          pictures.map((picture, index) => (
+            <img src={picture.url} key={index} />
+          ))
+        }
       </Carousel>
     )
   }
