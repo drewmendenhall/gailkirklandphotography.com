@@ -16,16 +16,17 @@ header {
   }
 }
 .logo-link {
-  img {
-    padding: 0 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+
+  @media (max-width: 600px) {
+    padding: 20px;
   }
   @media (min-width: 600px) and (max-width: 1000px) {
     display: block;
     width: 100%;
     text-align: center;
-  }
-  @media (max-width: 600px) or (min-width: 1000px) {
-    // float: left;
   }
 }
 
