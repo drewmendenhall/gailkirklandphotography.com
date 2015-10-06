@@ -15,9 +15,9 @@ export default class Main extends React.Component {
           <Link to="/" className="logo-link">
             <img
               alt="Gail Kirkland Photography"
-              src="/images/logo.png"
-              sizes="(max-width: 600px) 200px"
-              srcSet="/images/logo-200.png 200w, /images/logo.png"
+              src="/images/logo-200.png"
+              sizes="(min-width: 600px) 318px, 200px"
+              srcSet="/images/logo-200.png 200w, /images/logo.png 318w"
             />
           </Link>
           <TopNav {...this.state} />
