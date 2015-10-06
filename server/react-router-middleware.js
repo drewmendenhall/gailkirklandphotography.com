@@ -1,7 +1,7 @@
 import React from 'react'
+import ReactDOMServer from 'react-dom/server'
 import {RoutingContext, match} from 'react-router'
-import createLocation from 'history/lib/createLocation'
-// import { renderToString } from 'react-dom/server'
+import {createMemoryHistory} from 'history'
 
 import Html from '../components/Html'
 import galleries from '../public/galleries.json'
@@ -9,11 +9,12 @@ import routes from '../routes'
 
 export default () => (
   (req, res) => {
-    let location = createLocation(req.url)
+    let history = createMemoryHistory()
+    let location = history.createLocation(req.url)
 
     match({routes, location}, (error, redirectLocation, renderProps) => {
       if (redirectLocation) {
-        res.redirect(301, redirectLocation.pathname + redirectLocation.search)
+        res.redirect(302, redirectLocation.pathname + redirectLocation.search)
       }
       else if (error) {
         res.status(500).send(error.message)
@@ -23,8 +24,8 @@ export default () => (
       }
       else {
         res.send(
-        	React.renderToStaticMarkup(React.createElement(Html, {
-            markup: React.renderToString(
+        	ReactDOMServer.renderToStaticMarkup(React.createElement(Html, {
+            markup: ReactDOMServer.renderToString(
               React.createElement(RoutingContext, {galleries, ...renderProps})
             ),
           }))

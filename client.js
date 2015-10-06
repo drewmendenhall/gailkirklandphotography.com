@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import Router from 'react-router'
 import assign from 'object-assign'
 import createHistory from 'history/lib/createBrowserHistory'
@@ -9,7 +10,7 @@ Object.assign = assign
 
 var history = createHistory()
 
-React.render(
+ReactDOM.render(
   React.createElement(Router, {history, routes}),
   document.querySelector('main')
 )
