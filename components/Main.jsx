@@ -8,6 +8,19 @@ import {
 import TopNav from './TopNav'
 
 export default class Main extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {}
+  }
+  componentDidMount() {
+    this.unlisten = this.props.history.listen(() => {
+      this.setState({showTopNavMenu: false})
+    })
+  }
+  componentWillUnmount() {
+    this.unlisten()
+  }
   render() {
     return (
       <main>

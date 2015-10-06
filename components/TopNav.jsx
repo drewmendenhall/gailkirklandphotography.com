@@ -8,6 +8,22 @@ import galleriesObject from '../public/galleries.json'
 var galleries = Object.keys(galleriesObject).map((key) => galleriesObject[key])
 
 export default class TopNav extends React.Component {
+  constructor(props) {
+    super(props)
+
+    let {showTopNavMenu} = this.props
+
+    this.state = {showTopNavMenu}
+  }
+
+  handleChange(event) {
+    this.setState({showTopNavMenu: event.target.checked})
+  }
+
+  componentWillReceiveProps(nextProps) {
+    let {showTopNavMenu} = nextProps
+    this.setState({showTopNavMenu})
+  }
   render() {
     return (
       <label className="top-nav-control-label">
@@ -15,6 +31,8 @@ export default class TopNav extends React.Component {
         <input
           className="top-nav-control"
           type="checkbox"
+          checked={this.state.showTopNavMenu}
+          onChange={::this.handleChange}
         />
         <div className="top-nav-control-overlay"></div>
         <nav className="top-nav">
