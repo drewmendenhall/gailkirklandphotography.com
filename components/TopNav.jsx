@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Link} from 'react-router'
+import {IndexLink, Link} from 'react-router'
 
 // import '../styles/top-nav'
 import galleriesObject from '../public/galleries.json'
