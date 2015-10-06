@@ -5,7 +5,10 @@ import {Link} from 'react-router'
 // import '../styles/top-nav'
 import galleriesObject from '../public/galleries.json'
 
-var galleries = Object.keys(galleriesObject).map((key) => galleriesObject[key])
+var galleries = (Object.keys(galleriesObject)
+  .filter((key) => key !== 'home')
+  .map((key) => galleriesObject[key])
+)
 
 export default class TopNav extends React.Component {
   constructor(props) {
