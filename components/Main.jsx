@@ -13,14 +13,6 @@ export default class Main extends React.Component {
 
     this.state = {}
   }
-  componentDidMount() {
-    this.unlisten = this.props.history.listen(() => {
-      this.setState({showTopNavMenu: false})
-    })
-  }
-  componentWillUnmount() {
-    this.unlisten()
-  }
   render() {
     return (
       <main>
@@ -33,7 +25,7 @@ export default class Main extends React.Component {
               srcSet="/images/logo-200.png 200w, /images/logo.png 318w"
             />
           </Link>
-          <TopNav {...this.state} />
+          <TopNav />
         </header>
         <div className="sub-header">
           <span className="tagline">

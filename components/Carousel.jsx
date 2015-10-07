@@ -3,6 +3,9 @@ import classnames from 'classnames'
 
 import {Link} from 'react-router'
 
+import connectHistory from './connectHistory'
+
+@connectHistory
 export default class Carousel extends React.Component {
   static defaultProps = {
     slideInterval: 2000,
@@ -53,14 +56,14 @@ export default class Carousel extends React.Component {
     }
   }
   handleNext(event) {
-    event.preventDefault()
-    this.goToNextSlide()
     if (this.props.autoplay) this.resetAutoplay()
+    this.goToNextSlide()
+    event.preventDefault()
   }
   handlePrev(event) {
-    event.preventDefault()
-    this.goToPreviousSlide()
     if (this.props.autoplay) this.resetAutoplay()
+    this.goToPreviousSlide()
+    event.preventDefault()
   }
 
   goToNextSlide() {
@@ -78,7 +81,7 @@ export default class Carousel extends React.Component {
       let {items} = this.props
       let {nextIndex} = this.state
 
-      history.pushState({}, items[nextIndex].route)
+      this.props.history.pushState({autoplay: true}, items[nextIndex].route)
     }
   }
   goToPreviousSlide() {
@@ -96,7 +99,7 @@ export default class Carousel extends React.Component {
       let {items} = this.props
       let {prevIndex} = this.state
 
-      history.pushState({}, items[prevIndex].route)
+      this.props.history.pushState({autoplay: true}, items[prevIndex].route)
     }
   }
   resetAutoplay() {
@@ -147,14 +150,14 @@ export default class Carousel extends React.Component {
         <Link
           to={prevUrl || ''}
           className="carousel-nav carousel-nav-prev"
-          onClick={!prevUrl && this.handlePrev || null}
+          onClick={this.handlePrev}
           rel="prev"
         >
         </Link>
         <Link
           to={nextUrl || ''}
           className="carousel-nav carousel-nav-next"
-          onClick={!nextUrl && this.handleNext || null}
+          onClick={this.handleNext}
           rel="next"
         >
         </Link>

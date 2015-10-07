@@ -2,7 +2,7 @@ import React from 'react'
 
 import {IndexLink, Link} from 'react-router'
 
-// import '../styles/top-nav'
+import connectHistory from './connectHistory'
 import galleriesObject from '../public/galleries.json'
 
 var galleries = (Object.keys(galleriesObject)
@@ -10,22 +10,30 @@ var galleries = (Object.keys(galleriesObject)
   .map((key) => galleriesObject[key])
 )
 
+@connectHistory
 export default class TopNav extends React.Component {
   constructor(props) {
     super(props)
 
-    let {showTopNavMenu} = this.props
-
-    this.state = {showTopNavMenu}
+    this.state = {}
   }
 
   handleChange(event) {
     this.setState({showTopNavMenu: event.target.checked})
   }
 
-  componentWillReceiveProps(nextProps) {
-    let {showTopNavMenu} = nextProps
-    this.setState({showTopNavMenu})
+  componentDidMount() {
+    this.unlisten = this.props.history.listen((_, locationState) => {
+      const {location} = locationState
+      const {state} = location
+
+      if (!state || !state.autoplay) {
+        this.setState({showTopNavMenu: false})
+      }
+    })
+  }
+  componentWillUnmount() {
+    this.unlisten()
   }
   render() {
     return (
