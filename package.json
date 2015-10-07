@@ -42,8 +42,8 @@
     "normalize.css": "3",
     "object-assign": "4",
     "path-to-regexp": "1",
-    "react": "^0.14.0-rc1",
-    "react-dom": "^0.14.0-rc1",
+    "react": "0.14",
+    "react-dom": "0.14",
     "react-router": "1.0.0-rc1",
     "serve-static": "1"
   },
