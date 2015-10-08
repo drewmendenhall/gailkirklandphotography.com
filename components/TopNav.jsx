@@ -78,6 +78,7 @@ export default class TopNav extends React.Component {
                 <li><Link to="/sessions/twilight" className="top-nav-link">twilight</Link></li>
               </ul>
             </li>
+            <li><Link to="/links" className="top-nav-link">links</Link></li>
             <li><Link to="/contact" className="top-nav-link">contact us</Link></li>
           </ul>
         </nav>
