@@ -7,8 +7,8 @@ export default class Contact extends React.Component {
     return (
       <div className="contact-page">
         <p>You can reach us via phone or email at:</p>
-        <p>214-538-9427</p>
-        <p><a href="gmkirkland@juno.com">gmkirkland@juno.com</a></p>
+        <p><a href="tel:214-538-9427">214-538-9427</a></p>
+        <p><a href="mailto:gmkirkland@juno.com">gmkirkland@juno.com</a></p>
         <img src="/images/merlo.jpg" />
         {/*
           <form method="post">
