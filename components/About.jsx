@@ -5,7 +5,7 @@ import React from 'react'
 export default class About extends React.Component {
   render() {
     return (
-      <div>
+      <div className="about-container">
         <img className="about-picture pull-left" src="/images/about_img1.jpg" />
         <p>
           I understand that unique bond between you and your fur kids. For me photography is all about capturing "that moment" catching your best friend being themselves. I like to capture your four-legged member of the family where they are most comfortable and happy: in your home.

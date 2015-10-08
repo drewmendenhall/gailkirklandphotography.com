@@ -1,7 +1,22 @@
-.about-picture {
-  margin-right: 20px;
-  margin-bottom: 20px;
-  width: 50%;
+.about {
+  &-container {
+    max-width: 800px;
+    margin: auto;
+  }
+  &-picture {
+    margin: 20px;
+    width: 50%;
+
+    &.pull {
+      &-left {
+        margin-top: 0;
+        margin-left: 0;
+      }
+      &-right {
+        margin-right: 0;
+      }
+    }
+  }
 }
 .pull-left {
   float: left;
