@@ -1,6 +1,10 @@
 import React from 'react'
 
-import {IndexLink, Link} from 'react-router'
+import {
+  // IndexLink,
+  Link,
+} from 'react-router'
+import IndexLink from 'react-router/lib/IndexLink'
 
 import connectHistory from './connectHistory'
 import galleriesObject from '../public/galleries.json'
@@ -48,7 +52,7 @@ export default class TopNav extends React.Component {
         <div className="top-nav-control-overlay"></div>
         <nav className="top-nav">
           <ul>
-            <li><Link to="/" className="top-nav-link">home</Link></li>
+            <li><IndexLink to="/" className="top-nav-link">home</IndexLink></li>
             <li><Link to="/about" className="top-nav-link">about</Link></li>
             <li>
               <Link to="/galleries" className="top-nav-link">galleries</Link>

@@ -1,9 +1,11 @@
 import React from 'react'
 
 import {
+  // IndexLink,
   Link,
   RouteHandler,
 } from 'react-router'
+import IndexLink from 'react-router/lib/IndexLink'
 
 import TopNav from './TopNav'
 
@@ -17,14 +19,14 @@ export default class Main extends React.Component {
     return (
       <main>
         <header>
-          <Link to="/" className="logo-link">
+          <IndexLink to="/" className="logo-link">
             <img
               alt="Gail Kirkland Photography"
               src="/images/logo-200.png"
               sizes="(min-width: 600px) 318px, 200px"
               srcSet="/images/logo-200.png 200w, /images/logo.png 318w"
             />
-          </Link>
+          </IndexLink>
           <TopNav />
         </header>
         <div className="sub-header">
