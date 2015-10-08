@@ -29,6 +29,7 @@ export default class Main extends React.Component {
           </IndexLink>
           <TopNav />
         </header>
+        {/*
         <div className="sub-header">
           <span className="tagline">
             A picture says more than a thousand words...
@@ -37,6 +38,7 @@ export default class Main extends React.Component {
             Book a Session
           </Link>
         </div>
+        */}
         <section className="content">
           {this.props.children}
         </section>
