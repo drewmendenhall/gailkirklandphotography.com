@@ -45,6 +45,7 @@ else {
 	server.use('/styles', serveStatic('styles'))
 }
 server.use(serveStatic(config.server.base))
+server.use(serveStatic(config.server.base + '/images/favicons'))
 server.use(trailingSlashes(false))
 server.use(reactRouter())
 

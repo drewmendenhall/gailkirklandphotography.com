@@ -19,31 +19,44 @@
 }
 .top-nav ul ul li .top-nav-link {
   padding: 10px;
-  text-align: left;
+  text-align: center;
+  @media (min-width: 600px) {
+    text-align: left;
+  }
 }
 .top-nav li {
-  // display: inline-block;
-  background: @header-background;
   position: relative;
 }
 .top-nav li:hover ul {
   visibility: visible;
 }
-.top-nav > ul > li > .top-nav-link {
-  padding-top: 36px;
-  padding-bottom: 30px;
+.top-nav > ul > li {
+  &,
+  & > label {
+    & > .top-nav-link {
+      padding-top: 36px;
+      padding-bottom: 30px;
+    }
+  }
+}
+
+.top-nav-link {
+  color: white;
+  opacity: 0.3;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 .top-nav-link {
   display: block;
-  color: @light-gray;
+  flex: 1;
+  width: 100%;
   letter-spacing: 1px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
-}
-.top-nav-link:hover {
-  color: white;
 }
 .top-nav-link.active {
   background: @yellow;
@@ -70,8 +83,8 @@
     }
 
     &-icon {
-      font-size: 2em;
-      padding: 0 1em;
+      font-size: 2rem;
+      padding: 0 2rem;
 
       &::before {
         content: '☰';
@@ -83,6 +96,8 @@
     }
     &-label {
       display: flex;
+      flex-flow: column;
+      justify-content: center;
       align-items: center;
       cursor: pointer;
       position: relative;
@@ -117,8 +132,11 @@
   @media (max-width: 1000px) {
     > ul {
       > li {
-        .top-nav-link {
-          padding: 20px 0;
+        &,
+        & > label {
+          & > .top-nav-link {
+            padding: 1em 0;
+          }
         }
       }
     }
@@ -130,12 +148,16 @@
     left: 100%;
     z-index: 1;
     transition: all 0.2s;
+    background: @header-background;
 
     > ul {
       > li {
-        .top-nav-link {
-          padding: 20px;
-          width: auto;
+        &,
+        & > label {
+          & > .top-nav-link {
+            padding: 1em;
+            width: 100%;
+          }
         }
       }
     }
