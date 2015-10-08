@@ -1,4 +1,4 @@
 css:
-  files: public/styles/app.css
+  files: public/app.css
   options:
     livereload: true
