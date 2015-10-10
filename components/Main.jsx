@@ -1,11 +1,10 @@
 import React from 'react'
 
 import {
-  // IndexLink,
+  IndexLink,
   Link,
   RouteHandler,
 } from 'react-router'
-import IndexLink from 'react-router/lib/IndexLink'
 
 import TopNav from './TopNav'
 

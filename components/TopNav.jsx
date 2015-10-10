@@ -1,10 +1,9 @@
 import React from 'react'
 
 import {
-  // IndexLink,
+  IndexLink,
   Link,
 } from 'react-router'
-import IndexLink from 'react-router/lib/IndexLink'
 
 import connectHistory from './connectHistory'
 import galleriesObject from '../public/galleries.json'
