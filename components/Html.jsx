@@ -8,8 +8,8 @@ export default class Html extends React.Component {
       <html lang="en">
         <head>
           <meta charSet="utf-8" />
-          <meta name="viewport" content="initial-scale=1" />
           <title>Gail Kirkland Photography</title>
+          <meta name="viewport" content="width=device-width,initial-scale=1" />
           <link rel="stylesheet" href="/app.css" />
         </head>
         <body>
