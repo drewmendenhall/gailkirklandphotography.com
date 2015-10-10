@@ -1,30 +1,28 @@
-var Analytics = require('analytics-node')
-var React = require('react')
-var Router = require('react-router')
-var express = require('express')
-var fs = require('fs')
-var livereload = require('connect-livereload')
-var path = require('path')
-var serveStatic = require('serve-static')
-var trailingSlashes = require('connect-slashes')
-var url = require('url')
+import Analytics from 'analytics-node'
+import React from 'react'
+import Router from 'react-router'
+import express from 'express'
+import fs from 'fs'
+import livereload from 'connect-livereload'
+import path from 'path'
+import serveStatic from 'serve-static'
+import trailingSlashes from 'connect-slashes'
+import url from 'url'
 
-require('babel/register')
+import Html from './components/Html'
+import config from './config'
+import reactRouter from './server/react-router-middleware'
+import routes from './routes'
+import tracker from './tracker'
+import webpackDevServer from './webpack-dev-server'
 
-var Html = require('./components/Html')
-var config = require('./config')
-var reactRouter = require('./server/react-router-middleware')
-var routes = require('./routes')
-var tracker = require('./tracker')
-var webpackDevServer = require('./webpack-dev-server')
+const PROD = (process.env.NODE_ENV === 'production')
+const segmentWriteKey = process.env.SEGMENT_WRITE_KEY
 
-var PROD = (process.env.NODE_ENV === 'production')
-var segmentWriteKey = process.env.SEGMENT_WRITE_KEY
-
-var analytics = segmentWriteKey && new Analytics(segmentWriteKey, {
+let analytics = segmentWriteKey && new Analytics(segmentWriteKey, {
 	flushAt: (!PROD ? 1 : null),
 })
-var server = express()
+let server = express()
 
 config.server = Object.assign({
 	base: path.resolve('public'),
@@ -45,10 +43,10 @@ else {
 	server.use('/styles', serveStatic('styles'))
 }
 server.use(serveStatic(config.server.base))
-server.use(serveStatic(config.server.base + '/images/favicons'))
+server.use(serveStatic(`${config.server.base}/images/favicons`))
 server.use(trailingSlashes(false))
 server.use(reactRouter())
 
-server.listen(config.server.port, config.server.hostname, function () {
-	console.log('Express started at ' + url.format(config.server))
+server.listen(config.server.port, config.server.hostname, () => {
+	console.log(`Express started at ${url.format(config.server)}`)
 })
