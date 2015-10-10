@@ -1,3 +1,4 @@
+import Helmet from 'react-helmet'
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import {RoutingContext, match} from 'react-router'
@@ -23,11 +24,15 @@ export default () => (
         res.status(404).send('Not found')
       }
       else {
+        let markup = ReactDOMServer.renderToString(
+          React.createElement(RoutingContext, {galleries, ...renderProps})
+        )
+        let head = Helmet.rewind()
+
         res.send(
         	ReactDOMServer.renderToStaticMarkup(React.createElement(Html, {
-            markup: ReactDOMServer.renderToString(
-              React.createElement(RoutingContext, {galleries, ...renderProps})
-            ),
+            markup,
+            ...head,
           }))
         )
       }

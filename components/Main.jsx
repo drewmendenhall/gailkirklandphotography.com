@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 
 import {
   IndexLink,
@@ -17,6 +18,14 @@ export default class Main extends React.Component {
   render() {
     return (
       <main>
+        <Helmet
+          meta={[
+            {name: 'msapplication-TileColor', content: '#414141'},
+            {name: 'msapplication-TileImage', content: '/touch-icon-144x144.png'},
+            {name: 'viewport', content: 'width=device-width,initial-scale=1'},
+          ]}
+          titleTemplate="%s | Gail Kirkland Photography"
+        />
         <header>
           <IndexLink to="/" className="logo-link">
             <img src="/images/logo-pink.svg" />
