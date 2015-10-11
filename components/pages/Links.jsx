@@ -1,7 +1,7 @@
 import Helmet from 'react-helmet'
 import React from 'react'
 
-var linkSections = [
+const linkSections = [
   {
     title: 'Publications',
     links: [
@@ -58,27 +58,23 @@ var linkSections = [
   },
 ]
 
-export default class Links extends React.Component {
-  render() {
-    return (
-      <div>
-        <Helmet title="Links" />
-        <p>
-          <a href="http://www.equinephotographers.org">
-            Member of Equine Photographers Network
-          </a>
-        </p>
-        {linkSections.map((section, index) => (
-          <section key={index}>
-            <h2>{section.title}</h2>
-            {section.links.map((link, index) => (
-              <p key={index}>
-                <a href={link.url}>{link.title}</a>
-              </p>
-            ))}
-          </section>
+export default (props) => (
+  <div>
+    <Helmet title="Links" />
+    <p>
+      <a href="http://www.equinephotographers.org">
+        Member of Equine Photographers Network
+      </a>
+    </p>
+    {linkSections.map((section, index) => (
+      <section key={index}>
+        <h2>{section.title}</h2>
+        {section.links.map((link, index) => (
+          <p key={index}>
+            <a href={link.url}>{link.title}</a>
+          </p>
         ))}
-      </div>
-    )
-  }
-}
+      </section>
+    ))}
+  </div>
+)

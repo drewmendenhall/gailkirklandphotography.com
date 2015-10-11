@@ -2,6 +2,9 @@ import React from 'react'
 import {Link} from 'react-router'
 
 export default class CommonSessionInfo extends React.Component {
+  static defaultProps = {
+    includes: [],
+  }
   static propTypes = {
     includes: React.PropTypes.array,
   }
@@ -11,7 +14,7 @@ export default class CommonSessionInfo extends React.Component {
       <div>
         <p>Sessions are tailored to your needs. A session includes:</p>
         <ul>
-          {this.props.includes && this.props.includes.map((included, index) =>
+          {this.props.includes.map((included, index) =>
             <li key={index}>{included}</li>
           )}
           <li>Travel to your location (up to 25 miles from 75093, Plano TX)</li>
