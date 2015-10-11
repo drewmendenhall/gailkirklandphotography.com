@@ -59,9 +59,13 @@ header {
   }
 }
 .tagline {
-  line-height: 38px;
+  font-size: 0.8rem;
+  line-height: 2.5em;
   color: @tagline-color;
-  padding-left: 20px;
+  padding-left: 1rem;
+  @media (min-width: 600px) {
+    font-size: initial;
+  }
 }
 .book-session-button {
   float: right;
