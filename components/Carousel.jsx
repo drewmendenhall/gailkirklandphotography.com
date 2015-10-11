@@ -156,6 +156,7 @@ export default class Carousel extends React.Component {
       <div className="stretch carousel" onKeyDown={this.handleKeyDown}>
         <Helmet
           link={[
+            {rel: 'canonical', href: url},
             {rel: 'next', href: nextUrl},
             {rel: 'prev', href: prevUrl},
           ]}
