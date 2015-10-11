@@ -31,6 +31,7 @@ config.server = Object.assign({
 	protocol: 'http',
 }, config.server || {})
 
+server.disable('x-powered-by')
 if (PROD) {
 	server.use(tracker(analytics))
 }
