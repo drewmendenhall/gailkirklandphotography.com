@@ -9,7 +9,7 @@ export default ({
   const capitalizedType = type[0].toUpperCase() + type.slice(1)
 
   return (
-    <div>
+    <div className="container">
       <Helmet title={`${capitalizedType} Sessions`} />
       <h1>{capitalizedType} Sessions</h1>
       <p>Session fee: $200</p>

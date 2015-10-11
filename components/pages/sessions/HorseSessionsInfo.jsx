@@ -4,7 +4,7 @@ import React from 'react'
 import CommonSessionInfo from './CommonSessionInfo'
 
 export default () => (
-  <div>
+  <div className="container">
     <Helmet title="Horse Sessions" />
     <h1>Horse Sessions</h1>
     <p>Session fee: $200 per horse (includes setup)</p>
