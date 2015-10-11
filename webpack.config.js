@@ -1,6 +1,8 @@
 var path = require('path')
 var url = require('url')
 
+var PROD = (process.env.NODE_ENV === 'production')
+
 module.exports = {
   entry: './client',
   // entry: {
@@ -26,7 +28,10 @@ module.exports = {
           'babel' + url.format({
             query: {
               cacheDirectory: true,
-              optional: ['runtime'],
+              optional: (['runtime']
+                .concat(PROD ? 'optimisation.react.constantElements' : [])
+                .concat(PROD ? 'optimisation.react.inlineElements' : [])
+              ),
               stage: 0,
             },
           }),
