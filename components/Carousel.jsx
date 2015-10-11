@@ -6,9 +6,17 @@ import {Link} from 'react-router'
 
 import connectHistory from './connectHistory'
 
+function rotateForward(max, index) {
+  return (index < max - 1 ? index + 1 : 0)
+}
+function rotateBackward(max, index) {
+  return (index > 0 ? index - 1 : max - 1)
+}
+
 @connectHistory
 export default class Carousel extends React.Component {
   static defaultProps = {
+    items: [],
     slideInterval: 2000,
   }
   static propTypes = {
@@ -24,16 +32,12 @@ export default class Carousel extends React.Component {
   constructor(props) {
     super(props)
 
-    let {index, items} = props
-    if (items && index != null) {
-      var nextIndex = index < items.length - 1 ? index + 1 : 0
-      var prevIndex = index > 0 ? index - 1 : items.length - 1
-    }
+    const {index = 0, items} = props
 
     this.state = {
-      index: index || 0,
-      nextIndex,
-      prevIndex,
+      index,
+      nextIndex: rotateForward(items.length, index),
+      prevIndex: rotateBackward(items.length, index),
     }
 
     this.handleKeyDown = this.handleKeyDown.bind(this)
@@ -68,38 +72,44 @@ export default class Carousel extends React.Component {
   }
 
   goToNextSlide() {
+    const {children, items} = this.props
+    const {nextIndex} = this.state
+
     if (this.props.index == null) {
-      let {children} = this.props
       let {index} = this.state
 
+      index = (index >= children.length - 1 ?
+        0 : index + 1
+      )
+
       this.setState({
-        index: (index >= children.length - 1 ?
-          0 : index + 1
-        ),
+        index,
+        nextIndex: rotateForward(items.length, index),
+        prevIndex: rotateBackward(items.length, index),
       })
     }
     else {
-      let {items} = this.props
-      let {nextIndex} = this.state
-
       this.props.history.pushState({autoplay: true}, items[nextIndex].route)
     }
   }
   goToPreviousSlide() {
+    const {children, items} = this.props
+    const {prevIndex} = this.state
+
     if (this.props.index == null) {
-      let {children} = this.props
       let {index} = this.state
 
+      index = (index <= 0 ?
+        children.length - 1 : index - 1
+      )
+
       this.setState({
-        index: (index <= 0 ?
-          children.length - 1 : index - 1
-        ),
+        index,
+        nextIndex: rotateForward(items.length, index),
+        prevIndex: rotateBackward(items.length, index),
       })
     }
     else {
-      let {items} = this.props
-      let {prevIndex} = this.state
-
       this.props.history.pushState({autoplay: true}, items[prevIndex].route)
     }
   }
@@ -117,13 +127,10 @@ export default class Carousel extends React.Component {
     var {index, items} = nextProps
 
     if (items && index != null) {
-      var nextIndex = index < items.length - 1 ? index + 1 : 0
-      var prevIndex = index > 0 ? index - 1 : items.length - 1
-
       this.setState({
         index,
-        nextIndex,
-        prevIndex,
+        nextIndex: rotateForward(items.length, index),
+        prevIndex: rotateBackward(items.length, index),
       })
     }
   }
@@ -141,10 +148,9 @@ export default class Carousel extends React.Component {
     var {items} = this.props
     var {index, nextIndex, prevIndex} = this.state
 
-    if (items && this.props.index != null) {
-      var nextUrl = items[nextIndex].route
-      var prevUrl = items[prevIndex].route
-    }
+    const url = items[index].route
+    const nextUrl = items[nextIndex].route
+    const prevUrl = items[prevIndex].route
 
     return (
       <div className="stretch carousel" onKeyDown={this.handleKeyDown}>
