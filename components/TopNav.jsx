@@ -31,6 +31,7 @@ export default class TopNav extends React.Component {
       const {state} = location
 
       if (!state || !state.autoplay) {
+        /* eslint-disable react/no-did-mount-set-state */
         this.setState({showTopNavMenu: false})
       }
     })

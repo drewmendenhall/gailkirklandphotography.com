@@ -174,9 +174,12 @@ export default class Carousel extends React.Component {
         >
         </Link>
         {React.Children.map(this.props.children, (child, index) => (
-          <div className={classnames('carousel-slide', {
-            'carousel-slide-current': this.props.index || this.state.index === index,
-          })} key={index}>
+          <div
+            className={classnames('carousel-slide', {
+              'carousel-slide-current': this.props.index || this.state.index === index,
+            })}
+            key={index}
+          >
             {child}
           </div>
         ))}

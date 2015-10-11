@@ -1,6 +1,5 @@
 var path = require('path')
 var url = require('url')
-var webpack = require('webpack')
 
 module.exports = {
   entry: './client',

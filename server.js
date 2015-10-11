@@ -1,18 +1,13 @@
 import Analytics from 'analytics-node'
-import React from 'react'
-import Router from 'react-router'
 import express from 'express'
-import fs from 'fs'
 import livereload from 'connect-livereload'
 import path from 'path'
 import serveStatic from 'serve-static'
 import trailingSlashes from 'connect-slashes'
 import url from 'url'
 
-import Html from './components/Html'
 import config from './config'
 import reactRouter from './server/react-router-middleware'
-import routes from './routes'
 import tracker from './tracker'
 import webpackDevServer from './webpack-dev-server'
 

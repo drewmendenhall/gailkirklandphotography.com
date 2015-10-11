@@ -4,7 +4,6 @@ import Helmet from 'react-helmet'
 import {
   IndexLink,
   Link,
-  RouteHandler,
 } from 'react-router'
 
 import TopNav from './TopNav'
