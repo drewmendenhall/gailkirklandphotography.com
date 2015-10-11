@@ -32,7 +32,7 @@ config.server = Object.assign({
 }, config.server || {})
 
 if (PROD) {
-	server.use(tracker.eventMiddleware(analytics))
+	server.use(tracker(analytics))
 }
 else {
 	server.use(webpackDevServer({

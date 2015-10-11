@@ -26,7 +26,17 @@ export function page(analytics, req, userIdSegment) {
   })
 }
 
-export function eventMiddleware(analytics, userIdSegment) {
+function compact(obj) {
+	var result = {}
+
+	Object.keys(obj).filter(function(key) {return obj[key]}).forEach(function(key) {
+		result[key] = obj[key]
+	})
+
+	return result
+}
+
+export default function eventMiddleware(analytics, userIdSegment) {
   return (req, res, next) => {
     var {body, headers} = req
     var parsed = url.parse(req.url, true)
@@ -42,14 +52,4 @@ export function eventMiddleware(analytics, userIdSegment) {
 
     next()
   }
-}
-
-function compact(obj) {
-	var result = {}
-
-	Object.keys(obj).filter(function(key) {return obj[key]}).forEach(function(key) {
-		result[key] = obj[key]
-	})
-
-	return result
 }
