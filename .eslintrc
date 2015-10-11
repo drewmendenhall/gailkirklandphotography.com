@@ -13,6 +13,8 @@ rules:
   curly:
     - 2
     - multi-line
+  jsx-quotes: 1
+  no-undef: 2
   quotes:
     - 2
     - single
