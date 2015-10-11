@@ -1,3 +1,4 @@
+import Helmet from 'react-helmet'
 import React from 'react'
 
 import CommonSessionInfo from './CommonSessionInfo'
@@ -13,6 +14,7 @@ export default class PetSessionsInfo extends React.Component {
 
     return (
       <div>
+        <Helmet title={`${capitalizedType} Sessions`} />
         <h1>{capitalizedType} Sessions</h1>
         <p>Session fee: $200</p>
         <CommonSessionInfo includes={[

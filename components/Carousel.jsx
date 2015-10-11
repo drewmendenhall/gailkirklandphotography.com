@@ -1,3 +1,4 @@
+import Helmet from 'react-helmet'
 import React from 'react'
 import classnames from 'classnames'
 
@@ -147,6 +148,12 @@ export default class Carousel extends React.Component {
 
     return (
       <div className="stretch carousel" onKeyDown={this.handleKeyDown}>
+        <Helmet
+          link={[
+            {rel: 'next', href: nextUrl},
+            {rel: 'prev', href: prevUrl},
+          ]}
+        />
         <Link
           to={prevUrl || ''}
           className="carousel-nav carousel-nav-prev"

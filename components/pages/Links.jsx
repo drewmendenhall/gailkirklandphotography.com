@@ -1,3 +1,4 @@
+import Helmet from 'react-helmet'
 import React from 'react'
 
 var linkSections = [
@@ -61,6 +62,7 @@ export default class Links extends React.Component {
   render() {
     return (
       <div>
+        <Helmet title="Links" />
         <p>
           <a href="http://www.equinephotographers.org">
             Member of Equine Photographers Network

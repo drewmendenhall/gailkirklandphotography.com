@@ -1,3 +1,4 @@
+import Helmet from 'react-helmet'
 import React from 'react'
 
 import Carousel from './Carousel'
@@ -23,20 +24,27 @@ export default class Gallery extends React.Component {
     var picture = pictures[index]
 
     return (
-      <Carousel
-        autoplay
-        slideInterval={3000}
-        items={pictures}
-        index={index}
-      >
-        {pictureId ?
-          <img src={picture.url} />
-        :
-          pictures.map((picture, index) => (
-            <img src={picture.url} key={index} />
-          ))
-        }
-      </Carousel>
+      <div>
+        <Helmet
+          title={`${(this.props.index ?
+            picture.title + ' | ' : ''
+          )}${gallery.title}`}
+        />
+        <Carousel
+          autoplay
+          slideInterval={3000}
+          items={pictures}
+          index={index}
+        >
+          {pictureId ?
+            <img src={picture.url} />
+          :
+            pictures.map((picture, index) => (
+              <img src={picture.url} key={index} />
+            ))
+          }
+        </Carousel>
+      </div>
     )
   }
 }

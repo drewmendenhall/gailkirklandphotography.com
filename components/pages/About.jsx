@@ -1,3 +1,4 @@
+import Helmet from 'react-helmet'
 import React from 'react'
 
 // import '../styles/about'
@@ -6,6 +7,7 @@ export default class About extends React.Component {
   render() {
     return (
       <div className="about-container">
+        <Helmet title="About" />
         <img className="about-picture pull-left" src="/images/about_img1.jpg" />
         <p>
           I understand that unique bond between you and your fur kids. For me photography is all about capturing "that moment" catching your best friend being themselves. I like to capture your four-legged member of the family where they are most comfortable and happy: in your home.
