@@ -51,14 +51,17 @@ header {
 
 .sub-header {
   background: #3a3a3a;
+  @media (min-width: 600px) {
+    text-align: center;
+  }
+  @media (min-width: 1000px) {
+    text-align: initial;
+  }
 }
 .tagline {
   line-height: 38px;
   color: @tagline-color;
   padding-left: 20px;
-  @media (min-width: 600px) {
-    padding-left: 100px;
-  }
 }
 .book-session-button {
   float: right;
