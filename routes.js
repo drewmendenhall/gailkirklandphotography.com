@@ -1,16 +1,16 @@
-import About from './components/About'
-import Contact from './components/Contact'
-import Home from './components/Home'
-import Links from './components/Links'
+import About from './components/pages/About'
+import Contact from './components/pages/Contact'
+import Home from './components/pages/Home'
+import Links from './components/pages/Links'
 import Main from './components/Main'
 
 import Gallery from './components/Gallery'
 
-import SessionInfo from './components/SessionInfo'
-import CatSessionsInfo from './components/sessions/CatSessionsInfo'
-import DogSessionsInfo from './components/sessions/DogSessionsInfo'
-import HorseSessionsInfo from './components/sessions/HorseSessionsInfo'
-import TwilightSessionsInfo from './components/sessions/TwilightSessionsInfo'
+import SessionInfo from './components/pages/SessionInfo'
+import CatSessionsInfo from './components/pages/sessions/CatSessionsInfo'
+import DogSessionsInfo from './components/pages/sessions/DogSessionsInfo'
+import HorseSessionsInfo from './components/pages/sessions/HorseSessionsInfo'
+import TwilightSessionsInfo from './components/pages/sessions/TwilightSessionsInfo'
 
 import galleries from './public/galleries.json'
 

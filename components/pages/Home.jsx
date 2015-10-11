@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Gallery from './Gallery'
+import Gallery from '../Gallery'
 
 export default class Home extends React.Component {
   render() {
