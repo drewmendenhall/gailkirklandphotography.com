@@ -21,11 +21,9 @@ export default class Carousel extends React.Component {
   }
   static propTypes = {
     index: React.PropTypes.number,
-    items: React.PropTypes.arrayOf(
-      React.PropTypes.shape({
-        url: React.PropTypes.string,
-      })
-    ),
+    items: React.PropTypes.arrayOf(React.PropTypes.shape({
+      url: React.PropTypes.string,
+    })),
     slideInterval: React.PropTypes.number,
   }
 
@@ -49,7 +47,7 @@ export default class Carousel extends React.Component {
   }
 
   handleKeyDown(event) {
-    var {key} = event
+    const {key} = event
 
     switch (key) {
       case 'ArrowLeft':
@@ -124,7 +122,7 @@ export default class Carousel extends React.Component {
     }
   }
   componentWillReceiveProps(nextProps) {
-    var {index, items} = nextProps
+    const {index, items} = nextProps
 
     if (items && index != null) {
       this.setState({
@@ -145,8 +143,8 @@ export default class Carousel extends React.Component {
     window.clearInterval(this.autoplayInterval)
   }
   render() {
-    var {items} = this.props
-    var {index, nextIndex, prevIndex} = this.state
+    const {items} = this.props
+    const {index, nextIndex, prevIndex} = this.state
 
     const url = items[index].route
     const nextUrl = items[nextIndex].route
