@@ -8,26 +8,28 @@ import Html from '../components/Html'
 import galleries from '../public/galleries.json'
 import routes from '../routes'
 
-export default () => (
-  (req, res) => {
-    let history = createMemoryHistory()
-    let location = history.createLocation(req.url)
+const PROD = (process.env.NODE_ENV === 'production')
 
-    match({routes, location}, (error, redirectLocation, renderProps) => {
-      if (redirectLocation) {
-        res.redirect(302, redirectLocation.pathname + redirectLocation.search)
-      }
-      else if (error) {
-        res.status(500).send(error.message)
-      }
-      else if (!renderProps) {
-        res.status(404).send('Not found')
-      }
-      else {
-        let markup = ReactDOMServer.renderToString(
+export default () => ((req, res) => {
+  let history = createMemoryHistory()
+  let location = history.createLocation(req.url)
+
+  match({routes, location}, (error, redirectLocation, renderProps) => {
+    if (redirectLocation) {
+      res.redirect(302, redirectLocation.pathname + redirectLocation.search)
+    }
+    else if (error) {
+      res.status(500).send(!PROD ? error.message : null)
+    }
+    else if (!renderProps) {
+      res.status(404).send()
+    }
+    else {
+      try {
+        const markup = ReactDOMServer.renderToString(
           React.createElement(RoutingContext, {galleries, ...renderProps})
         )
-        let head = Helmet.rewind()
+        const head = Helmet.rewind()
 
         res.send(
         	ReactDOMServer.renderToStaticMarkup(React.createElement(Html, {
@@ -36,6 +38,10 @@ export default () => (
           }))
         )
       }
-    })
-  }
-)
+      catch (error) {
+        res.status(500).send()
+        throw error
+      }
+    }
+  })
+})
