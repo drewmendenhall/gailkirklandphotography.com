@@ -8,15 +8,15 @@ env:
   node: true
 rules:
   comma-dangle:
-    - 2
+    - 1
     - always-multiline
   curly:
-    - 2
+    - 1
     - multi-line
   jsx-quotes: 1
   no-undef: 2
   quotes:
-    - 2
+    - 1
     - single
     - avoid-escape
   semi:
