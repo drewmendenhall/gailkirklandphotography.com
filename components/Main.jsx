@@ -19,6 +19,9 @@ export default class Main extends React.Component {
     return (
       <main>
         <Helmet
+          link={[
+            {rel: 'license', href: '/copyright'},
+          ]}
           meta={[
             {name: 'msapplication-TileColor', content: '#414141'},
             {name: 'msapplication-TileImage', content: '/touch-icon-144x144.png'},
@@ -51,10 +54,11 @@ export default class Main extends React.Component {
         </section>
         <footer>
           <div>
-            <div className="copyright">
-              Gail Kirkland Photography ©
+            <Link to="/copyright" className="copyright" rel="license">
+              © Gail Kirkland Photography
+              {' '}
               {new Date().getFullYear()}
-            </div>
+            </Link>
           </div>
         </footer>
       </main>

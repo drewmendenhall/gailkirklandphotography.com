@@ -44,5 +44,12 @@ i {
 footer {
   background: @footer-background;
   color: @footer-text-color;
-  padding: 20px;
+  a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
