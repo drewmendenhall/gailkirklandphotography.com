@@ -1,6 +1,7 @@
 @import "colors";
 
 @body-background: @gray url(/images/main_bg.png);
+@content-font-size: 1.25rem;
 @text-color: @lighter-gray;
 @footer-background: @gray;
 @footer-text-color: #696969;
@@ -31,22 +32,16 @@ i {
   flex: 1;
   overflow: auto;
   position: relative;
-  font-size: 20px;
-  padding: 20px;
-}
-.stretch {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  font-size: @content-font-size;
+  padding: 1em;
 }
 footer {
+  font-size: 0.8rem;
   background: @footer-background;
   color: @footer-text-color;
   a {
     display: block;
-    padding: 20px;
+    padding: 1em;
     text-decoration: none;
     &:hover {
       text-decoration: underline;
