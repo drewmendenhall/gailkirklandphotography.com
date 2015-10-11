@@ -18,7 +18,7 @@ export default ({
     </head>
     <body>
       <main dangerouslySetInnerHTML={{__html: markup}}></main>
-      <script src="/bundle.js"></script>
+      <script src="/app.js"></script>
       {PROD &&
         <script
           dangerouslySetInnerHTML={{__html: `

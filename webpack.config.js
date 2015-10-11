@@ -16,7 +16,7 @@ module.exports = {
   output: {
     path: path.resolve('public'),
     publicPath: '/',
-    filename: 'bundle.js',
+    filename: 'app.js',
   },
   module: {
     loaders: [
