@@ -3,7 +3,7 @@ import React from 'react'
 import {Link} from 'react-router'
 
 export default () => (
-  <div>
+  <div className="container">
     <Helmet title="Sessions" />
     <h1>Sessions</h1>
     <p>Photographs capture the character and personality of your best friend and the bond you share with them. That lovable face can be preserved in an image that hangs on your wall and can serve as a daily reminder of the love they bring into your life.</p>
