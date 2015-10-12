@@ -30,6 +30,10 @@ export default () => ((req, res) => {
       try {
         const userAgent = req.headers['user-agent']
         const openGraphTags = !!userAgent.match(/^facebook/)
+        const microsoftTags = !!userAgent.match(
+          /^Mozilla\/\d+\.0 \(compatible; MSIE \d+\.0; Windows /
+        )
+
         const markup = ReactDOMServer.renderToString(
           React.createElement(RoutingContext, {...renderProps})
         )
@@ -39,6 +43,7 @@ export default () => ((req, res) => {
         	ReactDOMServer.renderToStaticMarkup(React.createElement(Html, {
             location,
             markup,
+            microsoftTags,
             openGraphTags,
             ...head,
           }))

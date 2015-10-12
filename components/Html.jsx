@@ -7,6 +7,7 @@ export default ({
   location,
   markup,
   meta,
+  microsoftTags,
   openGraphTags,
   title,
 }) => {
@@ -20,6 +21,12 @@ export default ({
         <meta charSet="utf-8" />
         {title}
         {meta}
+        {microsoftTags &&
+          <meta name="msapplication-TileColor" content="#414141" />
+        }
+        {microsoftTags &&
+          <meta name="msapplication-TileImage" content="/touch-icon-144x144.png" />
+        }
         {openGraphTags &&
           <meta property="og:description" content="A picture says more than a thousand words..." />
         }
