@@ -17,6 +17,10 @@ export default ({children, location}) => (
         {rel: 'license', href: '/copyright'},
       ]}
       meta={[
+        {
+          name: 'description',
+          content: 'A picture says more than a thousand words...',
+        },
         {name: 'msapplication-TileColor', content: '#414141'},
         {name: 'msapplication-TileImage', content: '/touch-icon-144x144.png'},
         {name: 'viewport', content: 'width=device-width,initial-scale=1'},
