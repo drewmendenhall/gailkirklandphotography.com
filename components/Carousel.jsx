@@ -2,9 +2,9 @@ import Helmet from 'react-helmet'
 import React from 'react'
 import classnames from 'classnames'
 
-import {Link} from 'react-router'
+import {Link, PropTypes} from 'react-router'
 
-import connectHistory from './connectHistory'
+const {history, location} = PropTypes
 
 function rotateForward(max, index) {
   return (index < max - 1 ? index + 1 : 0)
@@ -13,8 +13,11 @@ function rotateBackward(max, index) {
   return (index > 0 ? index - 1 : max - 1)
 }
 
-@connectHistory
 export default class Carousel extends React.Component {
+  static contextTypes = {
+    history,
+    location,
+  }
   static defaultProps = {
     items: [],
     slideInterval: 2000,
@@ -70,6 +73,7 @@ export default class Carousel extends React.Component {
   }
 
   goToNextSlide() {
+    const {history} = this.context
     const {children, items} = this.props
     const {nextIndex} = this.state
 
@@ -87,10 +91,11 @@ export default class Carousel extends React.Component {
       })
     }
     else {
-      this.props.history.pushState({autoplay: true}, items[nextIndex].route)
+      history.pushState({autoplay: true}, items[nextIndex].route)
     }
   }
   goToPreviousSlide() {
+    const {history} = this.context
     const {children, items} = this.props
     const {prevIndex} = this.state
 
@@ -108,7 +113,7 @@ export default class Carousel extends React.Component {
       })
     }
     else {
-      this.props.history.pushState({autoplay: true}, items[prevIndex].route)
+      history.pushState({autoplay: true}, items[prevIndex].route)
     }
   }
   resetAutoplay() {

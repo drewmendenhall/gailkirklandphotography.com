@@ -3,9 +3,11 @@ import React from 'react'
 import {
   IndexLink,
   Link,
+  PropTypes,
 } from 'react-router'
 
-import connectHistory from './connectHistory'
+const {history} = PropTypes
+
 import galleriesObject from '../public/galleries.json'
 
 var galleries = (Object.keys(galleriesObject)
@@ -13,8 +15,11 @@ var galleries = (Object.keys(galleriesObject)
   .map((key) => galleriesObject[key])
 )
 
-@connectHistory
 export default class TopNav extends React.Component {
+  static contextTypes = {
+    history,
+  }
+
   constructor(props) {
     super(props)
 
@@ -26,7 +31,9 @@ export default class TopNav extends React.Component {
   }
 
   componentDidMount() {
-    this.unlisten = this.props.history.listen((_, locationState) => {
+    const {history} = this.context
+
+    this.unlisten = history.listen((_, locationState) => {
       const {location} = locationState
       const {state} = location
 
