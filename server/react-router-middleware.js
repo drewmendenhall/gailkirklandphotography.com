@@ -33,6 +33,8 @@ export default () => ((req, res) => {
         )
         const head = Helmet.rewind()
 
+        location.href = `http://${req.headers.host}${location.pathname}`
+
         res.send(
         	ReactDOMServer.renderToStaticMarkup(React.createElement(Html, {
             location,

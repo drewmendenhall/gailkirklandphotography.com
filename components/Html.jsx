@@ -19,7 +19,7 @@ export default ({
         <meta name="og:image" content="/public/images/logo-pink.svg" />
       }
       {openGraphTags &&
-        <meta name="og:url" content={location.pathname} />
+        <meta name="og:url" content={location.href} />
       }
       {link}
       <link rel="stylesheet" href="/app.css" />
