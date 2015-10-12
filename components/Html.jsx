@@ -16,13 +16,13 @@ export default ({
       {title}
       {meta}
       {openGraphTags &&
-        <meta name="og:description" content="A picture says more than a thousand words..." />
+        <meta property="og:description" content="A picture says more than a thousand words..." />
       }
       {openGraphTags &&
-        <meta name="og:title" content={title} />
+        <meta property="og:title" content={title} />
       }
       {openGraphTags &&
-        <meta name="og:url" content={location.href} />
+        <meta property="og:url" content={location.href} />
       }
       {link}
       <link rel="stylesheet" href="/app.css" />
