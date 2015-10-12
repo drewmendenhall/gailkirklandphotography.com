@@ -148,6 +148,7 @@ export default class Carousel extends React.Component {
     window.clearInterval(this.autoplayInterval)
   }
   render() {
+    const {location} = this.context
     const {items} = this.props
     const {index, nextIndex, prevIndex} = this.state
 
@@ -159,7 +160,7 @@ export default class Carousel extends React.Component {
       <div className="stretch carousel" onKeyDown={this.handleKeyDown}>
         <Helmet
           link={[
-            {rel: 'canonical', href: url},
+            {rel: 'canonical', href: (location.pathname === '/' ? '/' : url)},
             {rel: 'next', href: nextUrl},
             {rel: 'prev', href: prevUrl},
           ]}
