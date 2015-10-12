@@ -14,6 +14,8 @@ export default () => ((req, res) => {
   let history = createMemoryHistory()
   let location = history.createLocation(req.url)
 
+  location.href = `http://${req.headers.host}${location.pathname}`
+
   match({routes, location}, (error, redirectLocation, renderProps) => {
     if (redirectLocation) {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search)
@@ -32,8 +34,6 @@ export default () => ((req, res) => {
           React.createElement(RoutingContext, {...renderProps})
         )
         const head = Helmet.rewind()
-
-        location.href = `http://${req.headers.host}${location.pathname}`
 
         res.send(
         	ReactDOMServer.renderToStaticMarkup(React.createElement(Html, {
