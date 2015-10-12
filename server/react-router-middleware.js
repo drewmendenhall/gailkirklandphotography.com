@@ -26,14 +26,18 @@ export default () => ((req, res) => {
     }
     else {
       try {
+        const userAgent = req.headers['user-agent']
+        const openGraphTags = !!userAgent.match(/^facebook/)
         const markup = ReactDOMServer.renderToString(
-          React.createElement(RoutingContext, {galleries, ...renderProps})
+          React.createElement(RoutingContext, {...renderProps})
         )
         const head = Helmet.rewind()
 
         res.send(
         	ReactDOMServer.renderToStaticMarkup(React.createElement(Html, {
+            location,
             markup,
+            openGraphTags,
             ...head,
           }))
         )

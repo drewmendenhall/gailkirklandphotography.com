@@ -4,8 +4,10 @@ const PROD = (process.env.NODE_ENV === 'production')
 
 export default ({
   link,
+  location,
   markup,
   meta,
+  openGraphTags,
   title,
 }) => (
   <html lang="en">
@@ -13,6 +15,12 @@ export default ({
       <meta charSet="utf-8" />
       {title}
       {meta}
+      {openGraphTags &&
+        <meta name="og:image" content="/public/images/logo-pink.svg" />
+      }
+      {openGraphTags &&
+        <meta name="og:url" content={location.pathname} />
+      }
       {link}
       <link rel="stylesheet" href="/app.css" />
     </head>
