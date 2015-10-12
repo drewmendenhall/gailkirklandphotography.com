@@ -7,7 +7,7 @@ import galleries from '../public/galleries.json'
 
 export default class Gallery extends React.Component {
   render() {
-    var {params} = this.props
+    var {location, params} = this.props
     var {
       galleryId,
       pictureId,
@@ -25,11 +25,13 @@ export default class Gallery extends React.Component {
 
     return (
       <div>
-        <Helmet
-          title={`${(this.props.index ?
-            picture.title + ' | ' : ''
-          )}${gallery.title}`}
-        />
+        {location.pathname !== '/' &&
+          <Helmet
+            title={`${(this.props.index ?
+              picture.title + ' | ' : ''
+            )}${gallery.title}`}
+          />
+        }
         <Carousel
           autoplay
           slideInterval={3000}

@@ -8,7 +8,9 @@ import {
 
 import TopNav from './TopNav'
 
-export default ({children}) => (
+const title = 'Gail Kirkland Photography'
+
+export default ({children, location}) => (
   <main>
     <Helmet
       link={[
@@ -19,7 +21,8 @@ export default ({children}) => (
         {name: 'msapplication-TileImage', content: '/touch-icon-144x144.png'},
         {name: 'viewport', content: 'width=device-width,initial-scale=1'},
       ]}
-      titleTemplate="%s | Gail Kirkland Photography"
+      title={title}
+      titleTemplate={location.pathname === '/' ? null : `%s | ${title}`}
     />
     <header>
       <IndexLink to="/" className="logo-link">
