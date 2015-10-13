@@ -28,6 +28,7 @@ config.server = Object.assign({
 
 server.disable('x-powered-by')
 if (PROD) {
+	require('newrelic')
 	server.use(tracker(analytics))
 }
 else {
