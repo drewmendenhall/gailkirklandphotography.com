@@ -1,3 +1,6 @@
+const PROD = (process.env.NODE_ENV === 'production')
+if (PROD) require('newrelic')
+
 import Analytics from 'analytics-node'
 import express from 'express'
 import livereload from 'connect-livereload'
@@ -28,7 +31,6 @@ config.server = Object.assign({
 
 server.disable('x-powered-by')
 if (PROD) {
-	require('newrelic')
 	server.use(tracker(analytics))
 }
 else {
