@@ -1,4 +1,19 @@
 {
-  "stage": 0,
-  "optional": ["runtime"]
+  "blacklist": ["minification.deadCodeElimination"],
+  "env": {
+    "development": {
+      "optional": ["validation"]
+    },
+    "production": {
+      "optional": [
+        "minification",
+        "optimisation"
+      ]
+    }
+  },
+  "optional": [
+    "runtime",
+    "utility.inlineEnvironmentVariables"
+  ],
+  "stage": 0
 }

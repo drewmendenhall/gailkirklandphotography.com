@@ -1,7 +1,4 @@
 var path = require('path')
-var url = require('url')
-
-var PROD = (process.env.NODE_ENV === 'production')
 
 module.exports = {
   entry: './client',
@@ -25,16 +22,7 @@ module.exports = {
         exclude: /node_modules/,
         loaders: [
           // 'react-hot',
-          'babel' + url.format({
-            query: {
-              cacheDirectory: true,
-              optional: (['runtime']
-                .concat(PROD ? 'optimisation.react.constantElements' : [])
-                .concat(PROD ? 'optimisation.react.inlineElements' : [])
-              ),
-              stage: 0,
-            },
-          }),
+          'babel?cacheDirectory',
         ],
 
         devLoader: 'react-hot',
