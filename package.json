@@ -16,7 +16,7 @@
     "build:styles:prod": "npm run build:styles -- --autoprefix --clean-css",
     "clean:all": "npm run clean:scripts & npm run clean:styles",
     "clean:npm": "rimraf node_modules",
-    "clean:scripts": "rimraf public/bundle.js",
+    "clean:scripts": "rimraf public/app.js",
     "clean:styles": "rimraf public/app.css*",
     "serve:debug": "npm run serve:dev --debug & node-inspector",
     "serve:dev": "nodemon --exec babel-node server.js",
