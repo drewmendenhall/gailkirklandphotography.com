@@ -1,6 +1,3 @@
-const PROD = (process.env.NODE_ENV === 'production')
-if (PROD) require('newrelic')
-
 import Analytics from 'analytics-node'
 import express from 'express'
 import livereload from 'connect-livereload'
