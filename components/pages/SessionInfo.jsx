@@ -15,6 +15,6 @@ export default () => (
     <br />
     <p>Ready to book a session?</p>
     <p>Questions or concerns? No problem! I'll be happy to provide you with any information you need.</p>
-    <p><Link to="contact">Contact us</Link></p>
+    <p><Link to="/contact">Contact us</Link></p>
   </div>
 )
