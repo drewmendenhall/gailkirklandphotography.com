@@ -5,7 +5,6 @@ import {RoutingContext, match} from 'react-router'
 import {createMemoryHistory} from 'history'
 
 import Html from '../components/Html'
-import galleries from '../public/galleries.json'
 import routes from '../routes'
 
 const PROD = (process.env.NODE_ENV === 'production')
