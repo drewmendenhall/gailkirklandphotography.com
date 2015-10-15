@@ -40,7 +40,7 @@ module.exports = function (options) {
     }
   }
   var webpackDevServerConfig = Object.assign(webpackConfig, {
-		devtool: '#eval-source-map',
+		devtool: 'cheap-module-eval-source-map',
     module: Object.assign({}, webpackConfig.module, {
       loaders: webpackConfig.module.loaders.map(function (loader) {
         var devLoader = loader.devLoader
