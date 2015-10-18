@@ -19,8 +19,8 @@ export default ({
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        {title}
-        {meta}
+        {title && title.toComponent()}
+        {meta && meta.toComponent()}
         {microsoftTags &&
           <meta name="msapplication-TileColor" content="#414141" />
         }
@@ -42,7 +42,7 @@ export default ({
         {openGraphTags &&
           <meta property="og:url" content={location.href} />
         }
-        {link}
+        {link && link.toComponent()}
         <link rel="stylesheet" href="/app.css" />
       </head>
       <body>
