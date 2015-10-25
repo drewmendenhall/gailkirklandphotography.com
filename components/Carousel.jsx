@@ -157,6 +157,18 @@ export default class Carousel extends React.Component {
             {rel: 'prev', href: prevUrl},
           ]}
         />
+        {React.Children.map(this.props.children, (child, index) => (
+          <div
+            className={classnames('carousel-slide', {
+              'carousel-slide-current': this.props.index || this.state.index === index,
+              'carousel-slide-next': (this.props.index || index === nextIndex),
+              'carousel-slide-prev': (this.props.index || index === prevIndex),
+            })}
+            key={index}
+          >
+            {child}
+          </div>
+        ))}
         <Link
           to={prevUrl || ''}
           className="carousel-nav carousel-nav-prev"
@@ -171,16 +183,6 @@ export default class Carousel extends React.Component {
           rel="next"
         >
         </Link>
-        {React.Children.map(this.props.children, (child, index) => (
-          <div
-            className={classnames('carousel-slide', {
-              'carousel-slide-current': this.props.index || this.state.index === index,
-            })}
-            key={index}
-          >
-            {child}
-          </div>
-        ))}
       </div>
     )
   }

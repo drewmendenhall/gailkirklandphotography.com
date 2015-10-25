@@ -1,6 +1,8 @@
 @carousel-nav-padding: 10px;
 
 .carousel {
+  overflow: hidden;
+
   &-nav {
     display: flex;
     flex-flow: column;
@@ -49,13 +51,30 @@
     height: 100%;
   }
   &-slide {
+    position: absolute;
+    width: 100%;
     align-items: center;
     justify-content: center;
     display: none;
     padding: 3em;
+    transition: transform 0.3s;
 
-    &-current {
+    &-current,
+    &-next,
+    &-prev {
       display: flex;
+    }
+    &-next {
+      transform: translate(100%);
+    }
+    &-prev {
+      transform: translate(-100%);
+    }
+
+    // Need this after `prev` and `next` rules because
+    // server-rendered slide applies all classes (it shouldn't though)
+    &-current {
+      transform: translate(0);
     }
   }
 
