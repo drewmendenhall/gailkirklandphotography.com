@@ -41,6 +41,7 @@ export default () => ((req, res) => {
         res.send(
           '<!doctype html>' +
         	ReactDOMServer.renderToStaticMarkup(React.createElement(Html, {
+            includeTracking: PROD,
             location,
             markup,
             microsoftTags,
