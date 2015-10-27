@@ -1,8 +1,8 @@
 import Helmet from 'react-helmet'
 import React from 'react'
-import ReactDOMServer from 'react-dom/server'
 import {RoutingContext, match} from 'react-router'
 import {createMemoryHistory} from 'history'
+import {renderToStaticMarkup, renderToString} from 'react-dom/server'
 
 import Html from '../components/Html'
 import routes from '../routes'
@@ -33,14 +33,14 @@ export default () => ((req, res) => {
           /^Mozilla\/\d+\.0 \(compatible; MSIE \d+\.0; Windows /.test(userAgent)
         )
 
-        const markup = ReactDOMServer.renderToString(
+        const markup = renderToString(
           React.createElement(RoutingContext, {...renderProps})
         )
         const head = Helmet.rewind()
 
         res.send(
           '<!doctype html>' +
-        	ReactDOMServer.renderToStaticMarkup(React.createElement(Html, {
+        	renderToStaticMarkup(React.createElement(Html, {
             includeMicrosoftTags,
             includeOpenGraphTags,
             includeTracking: PROD,
