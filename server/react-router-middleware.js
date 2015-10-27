@@ -28,9 +28,9 @@ export default () => ((req, res) => {
     else {
       try {
         const userAgent = req.headers['user-agent']
-        const includeOpenGraphTags = !!userAgent.match(/^facebook/)
-        const includeMicrosoftTags = !!userAgent.match(
-          /^Mozilla\/\d+\.0 \(compatible; MSIE \d+\.0; Windows /
+        const includeOpenGraphTags = /^facebook/.test(userAgent)
+        const includeMicrosoftTags = (
+          /^Mozilla\/\d+\.0 \(compatible; MSIE \d+\.0; Windows /.test(userAgent)
         )
 
         const markup = ReactDOMServer.renderToString(
