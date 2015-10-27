@@ -56,6 +56,7 @@
     "babel-core": "5",
     "babel-eslint": "4",
     "babel-loader": "5",
+    "babel-plugin-react-transform": "1",
     "connect-livereload": "0.5",
     "eslint": "1",
     "eslint-plugin-react": "3",
@@ -72,8 +73,10 @@
     "nodemon": "1",
     "onchange": "2",
     "react-hot-loader": "1",
+    "react-transform-hmr": "1",
     "rimraf": "2",
     "webpack": "1",
-    "webpack-dev-server": "1"
+    "webpack-dev-middleware": "1",
+    "webpack-hot-middleware": "2"
   }
 }

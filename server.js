@@ -5,11 +5,14 @@ import path from 'path'
 import serveStatic from 'serve-static'
 import trailingSlashes from 'connect-slashes'
 import url from 'url'
+import webpack from 'webpack'
+import webpackDevMiddleware from 'webpack-dev-middleware'
+import webpackHotMiddleware from 'webpack-hot-middleware'
 
 import config from './config'
 import reactRouter from './server/react-router-middleware'
 import tracker from './tracker'
-import webpackDevServer from './webpack-dev-server'
+import webpackConfig from './webpack.config.development'
 
 const PROD = (process.env.NODE_ENV === 'production')
 const segmentWriteKey = process.env.SEGMENT_WRITE_KEY
@@ -18,6 +21,7 @@ let analytics = segmentWriteKey && new Analytics(segmentWriteKey, {
 	flushAt: (!PROD ? 1 : null),
 })
 let server = express()
+let compiler = webpack(webpackConfig)
 
 config.server = Object.assign({
 	base: path.resolve('public'),
@@ -31,10 +35,11 @@ if (PROD) {
 	server.use(tracker(analytics))
 }
 else {
-	server.use(webpackDevServer({
-		server: config.server,
-		makeHot: 'app',
+	server.use(webpackDevMiddleware(compiler, {
+	  noInfo: true,
+	  publicPath: webpackConfig.output.publicPath,
 	}))
+	server.use(webpackHotMiddleware(compiler))
 	server.use(livereload())
 	server.use('/styles', serveStatic('styles'))
 }

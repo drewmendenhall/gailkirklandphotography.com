@@ -1,32 +1,36 @@
-// TODO: This is an attempt at replacing webpack-dev-server.js
-
-var merge = require('lodash.merge')
 var webpack = require('webpack')
 
 var config = require('./webpack.config')
 
-// var loader = config.module.loaders.filter(function(loader) {
-//   return loader.test === /\.jsx?$/
-// })[0]
-
-module.exports = merge({
-  devtool: '#eval-source-map',
+module.exports = Object.assign({}, config, {
+  devtool: 'cheap-module-eval-source-map',
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
-  ].concat(config.entry),
-  module: {
+    'webpack-hot-middleware/client',
+  ].concat(Array.isArray(config.entry) ? config.entry[0] : config.entry),
+  module: Object.assign({}, config.module, {
     loaders: config.module.loaders.map(function(loader) {
-      if (loader.devLoader) {
-        loader.loaders = []
-          .concat(loader.loader || loader.loaders)
-          .concat(loader.devLoader)
-        delete loader.loader
+      if (loader.loader === 'babel') {
+        if (!loader.query) loader.query = {}
+        if (!loader.query.extra) loader.query.extra = {}
+        if (!loader.query.extra['react-transform']) {
+          loader.query.extra['react-transform'] = {}
+        }
+        if (!Array.isArray(loader.query.extra['react-transform'].transforms)) {
+          loader.query.extra['react-transform'].transforms = []
+        }
+
+        loader.query.extra['react-transform'].transforms.push({
+          transform: 'react-transform-hmr',
+          imports: ['react'],
+          locals: ['module'],
+        })
       }
+
+      return loader
     }),
-  },
-  plugins: [
+  }),
+  plugins: (config.plugins || []).concat([
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-  ],
-}, config)
+  ]),
+})
