@@ -6,6 +6,7 @@
 @footer-background: @gray;
 @footer-text-color: #696969;
 
+// layout elements
 * {
   box-sizing: border-box;
 }
@@ -21,20 +22,6 @@ main {
   display: flex;
   flex-flow: column;
 }
-a {
-  color: @text-color;
-}
-i {
-  font-style: normal;
-}
-
-.content {
-  flex: 1;
-  overflow: auto;
-  position: relative;
-  font-size: @content-font-size;
-  padding: 1em;
-}
 footer {
   font-size: 0.8rem;
   background: @footer-background;
@@ -47,4 +34,40 @@ footer {
       text-decoration: underline;
     }
   }
+}
+
+
+// typographical elements
+a {
+  color: @text-color;
+}
+i {
+  font-style: normal;
+}
+
+
+// form elements
+input,
+textarea {
+	border: 1px solid #4e4e4e;
+	background: #414141;
+	padding: 15px 5px 16px 22px;
+	font-family: 'Cabin', sans-serif;
+	font-weight: 400;
+	color: #8e8e8e;
+	font-size: 20px;
+  display: block;
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+button {
+  padding: 10px;
+  background: #707070;
+  color: white;
+  border: 0;
+}
+textarea {
+  min-height: 5em;
 }
