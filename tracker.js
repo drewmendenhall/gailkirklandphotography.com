@@ -1,14 +1,14 @@
 import url from 'url'
 
 export function page(analytics, req, userIdSegment) {
-  var {body, headers} = req
-  var parsed = url.parse(req.url, true)
+  const {body, headers} = req
+  const parsed = url.parse(req.url, true)
 
-  var address = headers['x-forwarded-for'] || req.connection.remoteAddress
-  var path = (parsed.path ? (parsed.path !== '/' ? parsed.path : '') : '')
+  const address = headers['x-forwarded-for'] || req.connection.remoteAddress
+  const path = (parsed.path ? (parsed.path !== '/' ? parsed.path : '') : '')
   // TODO: better https detection
-  var protocol = `http${req.socket.remotePort === 443 ? 's' : ''}:`
-  var {referer} = headers
+  const protocol = `http${req.socket.remotePort === 443 ? 's' : ''}:`
+  const {referer} = headers
 
   analytics.page({
     userId: `anonymous${userIdSegment || ''}`,
@@ -27,7 +27,7 @@ export function page(analytics, req, userIdSegment) {
 }
 
 function compact(obj) {
-	var result = {}
+	const result = {}
 
 	Object.keys(obj).filter(function(key) {return obj[key]}).forEach(function(key) {
 		result[key] = obj[key]
@@ -38,11 +38,11 @@ function compact(obj) {
 
 export default function eventMiddleware(analytics, userIdSegment) {
   return (req, res, next) => {
-    var {body, headers} = req
-    var parsed = url.parse(req.url, true)
+    const {body, headers} = req
+    const parsed = url.parse(req.url, true)
 
-    var address = headers['x-forwarded-for'] || req.connection.remoteAddress
-    var {pathname, query} = parsed
+    const address = headers['x-forwarded-for'] || req.connection.remoteAddress
+    const {pathname, query} = parsed
 
     analytics.track({
       event: pathname,

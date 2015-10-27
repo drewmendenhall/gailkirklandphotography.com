@@ -10,7 +10,7 @@ import routes from './routes'
 
 Object.assign = assign
 
-var history = createHistory()
+const history = createHistory()
 
 ReactDOM.render(
   React.createElement(Router, {history, routes}),

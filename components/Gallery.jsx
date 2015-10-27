@@ -7,21 +7,21 @@ import galleries from '../public/galleries.json'
 
 export default class Gallery extends React.Component {
   render() {
-    var {location, params} = this.props
-    var {
+    const {location, params} = this.props
+    const {
       galleryId,
       pictureId,
     } = params
-    var gallery = galleries[galleryId]
-    var pictures = gallery.pictures.map((picture) => {
+    const gallery = galleries[galleryId]
+    const pictures = gallery.pictures.map((picture) => {
       picture.route = `/galleries/${gallery.id}/${picture.id}`
       return picture
     })
-    var index = pictureId && pictures.findIndex((picture) => picture.id === pictureId)
+    let index = pictureId && pictures.findIndex((picture) => picture.id === pictureId)
 
     if (index === -1) index = 0
 
-    var picture = pictures[index]
+    const picture = pictures[index]
 
     return (
       <div>

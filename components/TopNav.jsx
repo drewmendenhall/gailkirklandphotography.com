@@ -10,7 +10,7 @@ const {history} = PropTypes
 
 import galleriesObject from '../public/galleries.json'
 
-var galleries = (Object.keys(galleriesObject)
+const galleries = (Object.keys(galleriesObject)
   .filter((key) => key !== 'home')
   .map((key) => galleriesObject[key])
 )
