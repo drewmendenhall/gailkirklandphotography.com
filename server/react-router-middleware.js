@@ -20,7 +20,7 @@ export default () => ((req, res) => {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search)
     }
     else if (error) {
-      res.status(500).send(!PROD ? error.message : null)
+      res.status(500).send(!PROD ? error.stack : null)
     }
     else if (!renderProps) {
       res.status(404).send()
@@ -51,7 +51,7 @@ export default () => ((req, res) => {
         )
       }
       catch (error) {
-        res.status(500).send()
+        res.status(500).send(!PROD ? error.stack : null)
         throw error
       }
     }
