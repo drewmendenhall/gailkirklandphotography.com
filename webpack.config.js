@@ -1,6 +1,7 @@
-var path = require('path')
+import path from 'path'
+import webpack from 'webpack'
 
-module.exports = {
+export default {
   entry: './client',
   // entry: {
   //   app: './client',
