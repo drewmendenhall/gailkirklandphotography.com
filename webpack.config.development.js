@@ -31,6 +31,7 @@ export default (
       }),
     }),
     plugins: (config.plugins || []).concat([
+      new webpack.optimize.OccurenceOrderPlugin(),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoErrorsPlugin(),
     ]),
