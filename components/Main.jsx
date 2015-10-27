@@ -52,7 +52,7 @@ export default ({children, location}) => (
     <footer>
       <div>
         <Link to="/copyright" className="copyright" rel="license">
-          © Gail Kirkland Photography {new Date().getFullYear()}
+          © Gail Kirkland Photography {new Date().getFullYear()}. All rights reserved.
         </Link>
       </div>
     </footer>

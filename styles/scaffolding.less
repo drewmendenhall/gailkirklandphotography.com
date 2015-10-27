@@ -1,4 +1,5 @@
 @import "colors";
+@import "mixins/text-overflow";
 
 @body-background: @gray url(/images/main_bg.png);
 @content-font-size: 1.25rem;
@@ -27,9 +28,11 @@ footer {
   background: @footer-background;
   color: @footer-text-color;
   a {
+    .text-overflow();
     display: block;
     padding: 1em;
     text-decoration: none;
+
     &:hover {
       text-decoration: underline;
     }
