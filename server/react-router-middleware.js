@@ -39,6 +39,7 @@ export default () => ((req, res) => {
         const head = Helmet.rewind()
 
         res.send(
+          '<!doctype html>' +
         	ReactDOMServer.renderToStaticMarkup(React.createElement(Html, {
             location,
             markup,
