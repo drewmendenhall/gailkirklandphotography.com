@@ -46,7 +46,12 @@ else {
 server.use(serveStatic(config.server.base))
 server.use(serveStatic(`${config.server.base}/images/favicons`))
 server.use(trailingSlashes(false))
-server.use(reactRouter())
+// TODO: cli switches for these options
+server.use(reactRouter({
+	includeTracking: PROD,
+	renderApp: PROD,
+	sendErrorStacks: !PROD,
+}))
 
 server.listen(config.server.port, config.server.hostname, () => {
 	console.log(`Express started at ${url.format(config.server)}`)

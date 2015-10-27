@@ -7,9 +7,11 @@ import {renderToStaticMarkup, renderToString} from 'react-dom/server'
 import Html from '../components/Html'
 import routes from '../routes'
 
-const PROD = (process.env.NODE_ENV === 'production')
-
-export default () => ((req, res) => {
+export default ({
+  includeTracking,
+  renderApp,
+  sendErrorStacks,
+}) => ((req, res) => {
   let history = createMemoryHistory()
   let location = history.createLocation(req.url)
 
@@ -20,7 +22,7 @@ export default () => ((req, res) => {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search)
     }
     else if (error) {
-      res.status(500).send(!PROD ? error.stack : null)
+      res.status(500).send(sendErrorStacks ? error.stack : null)
     }
     else if (!renderProps) {
       res.status(404).send()
@@ -33,9 +35,9 @@ export default () => ((req, res) => {
           /^Mozilla\/\d+\.0 \(compatible; MSIE \d+\.0; Windows /.test(userAgent)
         )
 
-        const markup = renderToString(
+        const markup = (renderApp ? renderToString(
           React.createElement(RoutingContext, {...renderProps})
-        )
+        ) : '')
         const head = Helmet.rewind()
 
         res.send(
@@ -43,7 +45,7 @@ export default () => ((req, res) => {
         	renderToStaticMarkup(React.createElement(Html, {
             includeMicrosoftTags,
             includeOpenGraphTags,
-            includeTracking: PROD,
+            includeTracking,
             location,
             markup,
             ...head,
@@ -51,7 +53,7 @@ export default () => ((req, res) => {
         )
       }
       catch (error) {
-        res.status(500).send(!PROD ? error.stack : null)
+        res.status(500).send(sendErrorStacks ? error.stack : null)
         throw error
       }
     }
