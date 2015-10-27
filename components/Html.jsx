@@ -1,16 +1,16 @@
 import React from 'react'
 
 export default ({
+  includeMicrosoftTags,
+  includeOpenGraphTags,
   includeTracking,
   link,
   location,
   markup,
   meta,
-  microsoftTags,
-  openGraphTags,
   title,
 }) => {
-  const titleSegments = (openGraphTags &&
+  const titleSegments = (includeOpenGraphTags &&
     title[0].props.children.split(' | ')
   )
 
@@ -20,25 +20,25 @@ export default ({
         <meta charSet="utf-8" />
         {title && title.toComponent()}
         {meta && meta.toComponent()}
-        {microsoftTags &&
+        {includeMicrosoftTags &&
           <meta name="msapplication-TileColor" content="#414141" />
         }
-        {microsoftTags &&
+        {includeMicrosoftTags &&
           <meta name="msapplication-TileImage" content="/touch-icon-144x144.png" />
         }
-        {openGraphTags &&
+        {includeOpenGraphTags &&
           <meta property="og:description" content="A picture says more than a thousand words..." />
         }
-        {openGraphTags &&
+        {includeOpenGraphTags &&
           <meta
             property="og:site_name"
             content={titleSegments[titleSegments.length - 1]}
           />
         }
-        {openGraphTags &&
+        {includeOpenGraphTags &&
           <meta property="og:title" content={titleSegments[0]} />
         }
-        {openGraphTags &&
+        {includeOpenGraphTags &&
           <meta property="og:url" content={location.href} />
         }
         {link && link.toComponent()}

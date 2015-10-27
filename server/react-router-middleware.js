@@ -28,8 +28,8 @@ export default () => ((req, res) => {
     else {
       try {
         const userAgent = req.headers['user-agent']
-        const openGraphTags = !!userAgent.match(/^facebook/)
-        const microsoftTags = !!userAgent.match(
+        const includeOpenGraphTags = !!userAgent.match(/^facebook/)
+        const includeMicrosoftTags = !!userAgent.match(
           /^Mozilla\/\d+\.0 \(compatible; MSIE \d+\.0; Windows /
         )
 
@@ -41,11 +41,11 @@ export default () => ((req, res) => {
         res.send(
           '<!doctype html>' +
         	ReactDOMServer.renderToStaticMarkup(React.createElement(Html, {
+            includeMicrosoftTags,
+            includeOpenGraphTags,
             includeTracking: PROD,
             location,
             markup,
-            microsoftTags,
-            openGraphTags,
             ...head,
           }))
         )
