@@ -13,7 +13,14 @@ rules:
   curly:
     - 1
     - multi-line
+  indent:
+    - 1
+    - 2
+    -
+      SwitchCase: 1
   jsx-quotes: 1
+  no-irregular-whitespace: 2
+  no-mixed-spaces-and-tabs: 1
   no-undef: 2
   no-unused-vars: 1
   quotes:
