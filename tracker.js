@@ -12,7 +12,7 @@ export function page(analytics, req, userIdSegment) {
 
   analytics.page({
     userId: `anonymous${userIdSegment || ''}`,
-		name: req.url,
+    name: req.url,
     properties: Object.assign({
       address,
       body,
@@ -22,18 +22,18 @@ export function page(analytics, req, userIdSegment) {
       title: 'Gail Kirkland Photography',
       // TODO: get protocol and hostname from currently running server
       url: `${protocol}//${headers.host}${path}`,
-		}, compact(parsed)),
+    }, compact(parsed)),
   })
 }
 
 function compact(obj) {
-	const result = {}
+  const result = {}
 
-	Object.keys(obj).filter(function(key) {return obj[key]}).forEach(function(key) {
-		result[key] = obj[key]
-	})
+  Object.keys(obj).filter(function(key) {return obj[key]}).forEach(function(key) {
+    result[key] = obj[key]
+  })
 
-	return result
+  return result
 }
 
 export default function eventMiddleware(analytics, userIdSegment) {

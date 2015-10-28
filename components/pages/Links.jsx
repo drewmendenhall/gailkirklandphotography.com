@@ -58,7 +58,7 @@ const linkSections = [
   },
 ]
 
-export default (props) => (
+export default () => (
   <div>
     <Helmet title="Links" />
     <p>

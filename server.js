@@ -18,41 +18,41 @@ const PROD = (process.env.NODE_ENV === 'production')
 const segmentWriteKey = process.env.SEGMENT_WRITE_KEY
 
 let analytics = segmentWriteKey && new Analytics(segmentWriteKey, {
-	flushAt: (!PROD ? 1 : null),
+  flushAt: (!PROD ? 1 : null),
 })
 let server = express()
 let compiler = webpack(webpackConfig)
 
 config.server = Object.assign({
-	base: path.resolve('public'),
-	hostname: 'localhost',
-	port: 8000,
-	protocol: 'http',
+  base: path.resolve('public'),
+  hostname: 'localhost',
+  port: 8000,
+  protocol: 'http',
 }, config.server || {})
 
 server.disable('x-powered-by')
 if (PROD) {
-	server.use(tracker(analytics))
+  server.use(tracker(analytics))
 }
 else {
-	server.use(webpackDevMiddleware(compiler, {
-	  noInfo: true,
-	  publicPath: webpackConfig.output.publicPath,
-	}))
-	server.use(webpackHotMiddleware(compiler))
-	server.use(livereload())
-	server.use('/styles', serveStatic('styles'))
+  server.use(webpackDevMiddleware(compiler, {
+    noInfo: true,
+    publicPath: webpackConfig.output.publicPath,
+  }))
+  server.use(webpackHotMiddleware(compiler))
+  server.use(livereload())
+  server.use('/styles', serveStatic('styles'))
 }
 server.use(serveStatic(config.server.base))
 server.use(serveStatic(`${config.server.base}/images/favicons`))
 server.use(trailingSlashes(false))
 // TODO: cli switches for these options
 server.use(reactRouter({
-	includeTracking: PROD,
-	renderApp: PROD,
-	sendErrorStacks: !PROD,
+  includeTracking: PROD,
+  renderApp: PROD,
+  sendErrorStacks: !PROD,
 }))
 
 server.listen(config.server.port, config.server.hostname, () => {
-	console.log(`Express started at ${url.format(config.server)}`)
+  console.log(`Express started at ${url.format(config.server)}`)
 })

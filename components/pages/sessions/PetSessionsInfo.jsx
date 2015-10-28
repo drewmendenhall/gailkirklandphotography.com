@@ -13,9 +13,11 @@ export default ({
       <Helmet title={`${capitalizedType} Sessions`} />
       <h1>{capitalizedType} Sessions</h1>
       <p>Session fee: $200</p>
-      <CommonSessionInfo includes={[
-        'Photography of up to two animals from the same household at a location of your choice',
-      ]} />
+      <CommonSessionInfo
+        includes={[
+          'Photography of up to two animals from the same household at a location of your choice',
+        ]}
+      />
     </div>
   )
 }

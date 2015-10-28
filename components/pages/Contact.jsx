@@ -1,7 +1,7 @@
 import Helmet from 'react-helmet'
 import React from 'react'
 
-export default (props) => (
+export default () => (
   <div className="contact-page">
     <Helmet title="Contact" />
     <p>You can reach us via phone or email at:</p>

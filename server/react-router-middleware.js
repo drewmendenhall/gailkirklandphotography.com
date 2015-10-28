@@ -42,7 +42,7 @@ export default ({
 
         res.send(
           '<!doctype html>' +
-        	renderToStaticMarkup(React.createElement(Html, {
+          renderToStaticMarkup(React.createElement(Html, {
             includeMicrosoftTags,
             includeOpenGraphTags,
             includeTracking,

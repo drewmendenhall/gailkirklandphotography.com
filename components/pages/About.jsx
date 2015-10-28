@@ -1,7 +1,7 @@
 import Helmet from 'react-helmet'
 import React from 'react'
 
-export default (props) => (
+export default () => (
   <div className="container">
     <Helmet title="About" />
     <img className="about-picture pull-left" src="/images/about_img1.jpg" />
