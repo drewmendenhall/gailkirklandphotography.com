@@ -59,6 +59,7 @@
     "babel-plugin-react-transform": "1",
     "connect-livereload": "0.5",
     "eslint": "1",
+    "eslint-loader": "^1.1.0",
     "eslint-plugin-react": "3",
     "grunt": "0.4",
     "grunt-cli": "0.1",
