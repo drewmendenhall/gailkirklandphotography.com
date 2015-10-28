@@ -1,8 +1,10 @@
-import webpack from 'webpack'
+require('babel/register')
 
-import config from './webpack.config'
+const webpack = require('webpack')
 
-export default (
+const config = require('./webpack.config')
+
+module.exports = (
   Object.assign({}, config, {
     plugins: (config.plugins || []).concat([
       new webpack.DefinePlugin({
