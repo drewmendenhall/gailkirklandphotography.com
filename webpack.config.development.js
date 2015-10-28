@@ -5,6 +5,9 @@ import config from './webpack.config'
 export default (
   Object.assign({}, config, {
     devtool: 'cheap-module-eval-source-map',
+    devServer: {
+      publicPath: config.output.publicPath,
+    },
     entry: [
       'webpack-hot-middleware/client',
     ].concat(Array.isArray(config.entry) ? config.entry[0] : config.entry),

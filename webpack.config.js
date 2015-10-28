@@ -18,10 +18,7 @@ export default {
   },
   module: {
     preLoaders : [
-      {
-        test    : /\.jsx?$/,
-        loader  : 'eslint',
-      },
+      {test: /\.jsx?$/, loader: 'eslint'},
     ],
     loaders: [
       {

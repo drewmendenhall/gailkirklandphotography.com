@@ -35,10 +35,7 @@ if (PROD) {
   server.use(tracker(analytics))
 }
 else {
-  server.use(webpackDevMiddleware(compiler, {
-    noInfo: true,
-    publicPath: webpackConfig.output.publicPath,
-  }))
+  server.use(webpackDevMiddleware(compiler, {noInfo: true}))
   server.use(webpackHotMiddleware(compiler))
   server.use(livereload())
   server.use('/styles', serveStatic('styles'))
