@@ -72,7 +72,6 @@
     "mkdirp": "0.5",
     "nodemon": "1",
     "onchange": "2",
-    "react-hot-loader": "1",
     "react-transform-catch-errors": "1",
     "react-transform-hmr": "1",
     "redbox-react": "1",
