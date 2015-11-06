@@ -1,9 +1,17 @@
 deploy:
   script:
+    # build
     - npm install
     - npm run build:prod
-    - scp -r public/app.js gailkirklandphotography.com:/var/www/gailkirklandphotography.com/public
-    - scp -r public/app.css gailkirklandphotography.com:/var/www/gailkirklandphotography.com/public
+    # TODO: test
+    # - npm test
+    # cleanup
+    - rm -rf node_modules
+    - npm install --production
+    # deploy
+    - rsync --archive --compress --delete --itemize-changes --no-group --no-owner -e ssh . gailkirklandphotography.com:/var/www/gailkirklandphotography.com
+    # - scp -r public/app.js gailkirklandphotography.com:/var/www/gailkirklandphotography.com/public
+    # - scp -r public/app.css gailkirklandphotography.com:/var/www/gailkirklandphotography.com/public
 
 # TODO: docker
 # image: node:latest
