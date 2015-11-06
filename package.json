@@ -48,7 +48,7 @@
     "react": "0.14",
     "react-dom": "0.14",
     "react-helmet": "2",
-    "react-router": "1.0.0-rc3",
+    "react-router": "1",
     "serve-static": "1"
   },
   "devDependencies": {
