@@ -1,19 +1,14 @@
 import Analytics from 'analytics-node'
 import express from 'express'
-import livereload from 'connect-livereload'
 import path from 'path'
 import serveStatic from 'serve-static'
 import trailingSlashes from 'connect-slashes'
 import url from 'url'
-import webpack from 'webpack'
-import webpackDevMiddleware from 'webpack-dev-middleware'
-import webpackHotMiddleware from 'webpack-hot-middleware'
 
 import config from './config'
 import reactRouter from './server/react-router-middleware'
-import tracker from './tracker'
-import webpackConfig from './webpack.config.development'
 
+import tracker from './tracker'
 const PROD = (process.env.NODE_ENV === 'production')
 const segmentWriteKey = process.env.SEGMENT_WRITE_KEY
 
@@ -21,7 +16,6 @@ let analytics = segmentWriteKey && new Analytics(segmentWriteKey, {
   flushAt: (!PROD ? 1 : null),
 })
 let server = express()
-let compiler = webpack(webpackConfig)
 
 config.server = Object.assign({
   base: path.resolve('public'),
@@ -35,6 +29,15 @@ if (PROD) {
   server.use(tracker(analytics))
 }
 else {
+  let livereload = require('connect-livereload')
+  let webpack = require('webpack')
+  let webpackDevMiddleware = require('webpack-dev-middleware')
+  let webpackHotMiddleware = require('webpack-hot-middleware')
+
+  let webpackConfig = require('./webpack.config.development')
+
+  let compiler = webpack(webpackConfig)
+
   server.use(webpackDevMiddleware(compiler, {noInfo: true}))
   server.use(webpackHotMiddleware(compiler))
   server.use(livereload())
