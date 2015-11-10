@@ -9,9 +9,9 @@ deploy:
     - rm -rf node_modules
     - npm install --production
     # deploy
-    - rsync --archive --compress --delete --itemize-changes --no-group --no-owner -e ssh . gailkirklandphotography.com:/var/www/gailkirklandphotography.com
-    # - scp -r public/app.js gailkirklandphotography.com:/var/www/gailkirklandphotography.com/public
-    # - scp -r public/app.css gailkirklandphotography.com:/var/www/gailkirklandphotography.com/public
+    # - rsync --archive --compress --delete --itemize-changes --no-group --no-owner -e ssh . gailkirklandphotography.com:/var/www/gailkirklandphotography.com
+    - scp public/app.js www@gailkirklandphotography.com:/var/www/gailkirklandphotography-www/public
+    - scp public/app.css www@gailkirklandphotography.com:/var/www/gailkirklandphotography-www/public
 
 # TODO: docker
 # image: node:latest
