@@ -40,16 +40,9 @@ export default class Carousel extends React.Component {
       nextIndex: rotateForward(items.length, index),
       prevIndex: rotateBackward(items.length, index),
     }
-
-    this.handleKeyDown = this.handleKeyDown.bind(this)
-    this.handleNext = this.handleNext.bind(this)
-    this.handlePrev = this.handlePrev.bind(this)
-    this.goToNextSlide = this.goToNextSlide.bind(this)
-    this.goToPreviousSlide = this.goToPreviousSlide.bind(this)
-    this.resetAutoplay = this.resetAutoplay.bind(this)
   }
 
-  handleKeyDown(event) {
+  handleKeyDown = (event) => {
     const {key} = event
 
     switch (key) {
@@ -61,18 +54,17 @@ export default class Carousel extends React.Component {
         break
     }
   }
-  handleNext(event) {
+  handleNext = (event) => {
     if (this.props.autoplay) this.resetAutoplay()
     this.goToNextSlide()
     event.preventDefault()
   }
-  handlePrev(event) {
+  handlePrev = (event) => {
     if (this.props.autoplay) this.resetAutoplay()
     this.goToPreviousSlide()
     event.preventDefault()
   }
-
-  goToNextSlide() {
+  goToNextSlide = () => {
     const {history} = this.context
     const {children, items} = this.props
     const {nextIndex} = this.state
@@ -94,7 +86,7 @@ export default class Carousel extends React.Component {
       history.pushState({autoplay: true}, items[nextIndex].route)
     }
   }
-  goToPreviousSlide() {
+  goToPreviousSlide = () => {
     const {history} = this.context
     const {children, items} = this.props
     const {prevIndex} = this.state
@@ -116,7 +108,7 @@ export default class Carousel extends React.Component {
       history.pushState({autoplay: true}, items[prevIndex].route)
     }
   }
-  resetAutoplay() {
+  resetAutoplay = () => {
     window.clearInterval(this.autoplayInterval)
     this.autoplayInterval = window.setInterval(this.goToNextSlide, this.props.slideInterval)
   }
