@@ -9,7 +9,7 @@ const hotEntry = ['webpack-hot-middleware/client'].concat(
 
 export default (
   Object.assign({}, config, {
-    devtool: 'cheap-module-eval-source-map',
+    devtool: '#cheap-module-eval-source-map',
     devServer: {
       publicPath: config.output.publicPath,
     },
