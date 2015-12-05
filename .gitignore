@@ -3,6 +3,6 @@
 node_modules
 npm-debug.log
 
-public/app.js
-public/app.css*
-public/vendor.js
+public/*
+!public/images/
+!public/galleries.json
