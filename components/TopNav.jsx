@@ -1,7 +1,6 @@
 import React from 'react'
 
 import {
-  IndexLink,
   Link,
   PropTypes,
 } from 'react-router'
@@ -60,7 +59,7 @@ export default class TopNav extends React.Component {
         <div className="top-nav-control-overlay"></div>
         <nav className="top-nav">
           <ul>
-            <li><IndexLink to="/" className="top-nav-link">home</IndexLink></li>
+            <li><Link to="/" className="top-nav-link">home</Link></li>
             <li><Link to="/about" className="top-nav-link">about</Link></li>
             <li>
               <label className="top-nav-control-label top-nav-control-label-sub" onClick={this.handleSubNavClick}>

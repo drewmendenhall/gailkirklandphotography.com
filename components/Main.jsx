@@ -1,10 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-
-import {
-  IndexLink,
-  Link,
-} from 'react-router'
+import {Link} from 'react-router'
 
 import TopNav from './TopNav'
 
@@ -27,13 +23,13 @@ export default ({children, location}) => (
       titleTemplate={location.pathname === '/' ? null : `%s | ${title}`}
     />
     <header>
-      <IndexLink to="/" className="logo-link">
+      <Link to="/" className="logo-link">
         <img src="/images/logo-pink.svg" />
         <span className="logo-company-name">
-      </IndexLink>
           <div>Gail Kirkland</div>
           <div><small>Photography</small></div>
         </span>
+      </Link>
       <TopNav />
     </header>
     <div className="sub-header">
