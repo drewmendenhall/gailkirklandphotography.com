@@ -2,15 +2,22 @@ import webpack from 'webpack'
 
 import config from './webpack.config'
 
+const hotEntry = ['webpack-hot-middleware/client'].concat(
+  typeof config.entry === 'string' ?
+    config.entry : config.entry.app
+)
+
 export default (
   Object.assign({}, config, {
     devtool: 'cheap-module-eval-source-map',
     devServer: {
       publicPath: config.output.publicPath,
     },
-    entry: [
-      'webpack-hot-middleware/client',
-    ].concat(Array.isArray(config.entry) ? config.entry[0] : config.entry),
+    entry: (typeof config.entry === 'string' ?
+      hotEntry
+    :
+      Object.assign({}, config.entry, {app: hotEntry})
+    ),
     module: Object.assign({}, config.module, {
       loaders: config.module.loaders.map((loader) => {
         if (loader.loader === 'babel') {

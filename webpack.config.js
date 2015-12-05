@@ -2,19 +2,22 @@ import path from 'path'
 import webpack from 'webpack'
 
 export default {
-  entry: './client',
-  // entry: {
-  //   app: './client',
-  //   vendor: [
-  //     'babel-runtime',
-  //     'classnames',
-  //     'react',
-  //   ],
-  // },
+  entry: {
+    app: './client',
+    vendor: [
+      'classnames',
+      'core-js',
+      'history',
+      'react',
+      'react-dom',
+      'react-helmet',
+      'react-router',
+    ],
+  },
   output: {
     path: path.resolve('public'),
     publicPath: '/',
-    filename: 'app.js',
+    filename: '[name].js',
   },
   module: {
     preLoaders : [
@@ -32,6 +35,9 @@ export default {
       {test: /\.json$/, loader: 'json'},
     ],
   },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({name: 'vendor'}),
+  ],
   resolve: {
     extensions: ['', '.js', '.jsx'],
   },
