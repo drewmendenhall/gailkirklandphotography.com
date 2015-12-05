@@ -19,7 +19,6 @@ let server = express()
 
 config.server = Object.assign({
   base: path.resolve('public'),
-  hostname: 'localhost',
   port: 8000,
   protocol: 'http',
 }, config.server || {})
@@ -54,5 +53,7 @@ server.use(reactRouter({
 }))
 
 server.listen(config.server.port, config.server.hostname, () => {
-  console.log(`Express started at ${url.format(config.server)}`)
+  console.log(`Express started at ${url.format(
+    Object.assign({hostname: 'localhost'}, config.server)
+  )}`)
 })
