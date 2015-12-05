@@ -12,6 +12,7 @@ deploy:
     # - rsync --archive --compress --delete --itemize-changes --no-group --no-owner -e ssh . gailkirklandphotography.com:/var/www/gailkirklandphotography.com
     - scp public/app.js www@gailkirklandphotography.com:/var/www/gailkirklandphotography-www/public
     - scp public/app.css www@gailkirklandphotography.com:/var/www/gailkirklandphotography-www/public
+    - scp public/vendor.js www@gailkirklandphotography.com:/var/www/gailkirklandphotography-www/public
 
 # TODO: docker
 # image: node:latest
