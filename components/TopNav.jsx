@@ -20,14 +20,13 @@ export default class TopNav extends React.Component {
     history,
   }
 
-  constructor(props) {
-    super(props)
+  state = {}
 
-    this.state = {}
-  }
-
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({showTopNavMenu: event.target.checked})
+  }
+  handleSubNavClick = (event) => {
+    event.stopPropagation()
   }
 
   componentDidMount() {
@@ -47,14 +46,16 @@ export default class TopNav extends React.Component {
     this.unlisten()
   }
   render() {
+    const {showTopNavMenu} = this.state
+
     return (
       <label className="top-nav-control-label">
         <i className="top-nav-control-icon"></i>
         <input
           className="top-nav-control"
           type="checkbox"
-          checked={this.state.showTopNavMenu}
-          onChange={::this.handleChange}
+          checked={showTopNavMenu}
+          onChange={this.handleChange}
         />
         <div className="top-nav-control-overlay"></div>
         <nav className="top-nav">
@@ -62,28 +63,36 @@ export default class TopNav extends React.Component {
             <li><IndexLink to="/" className="top-nav-link">home</IndexLink></li>
             <li><Link to="/about" className="top-nav-link">about</Link></li>
             <li>
-              <Link to="/galleries" className="top-nav-link">galleries</Link>
-              <ul>
-                {galleries.map((gallery, index) => (
-                  <li key={index}>
-                    <Link
-                      to={`/galleries/${gallery.id}`}
-                      className="top-nav-link"
-                    >
-                      {gallery.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <label className="top-nav-control-label" onClick={this.handleSubNavClick}>
+                <input className="top-nav-control" type="checkbox" />
+                <span to="/galleries" className="top-nav-link">galleries</span>
+                <div className="top-nav-control-overlay top-nav-control-overlay-sub"></div>
+                <ul className="top-nav-sub">
+                  {galleries.map((gallery, index) => (
+                    <li key={index}>
+                      <Link
+                        to={`/galleries/${gallery.id}`}
+                        className="top-nav-link"
+                      >
+                        {gallery.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </label>
             </li>
             <li>
-              <Link to="/sessions" className="top-nav-link">sessions</Link>
-              <ul>
-                <li><Link to="/sessions/dogs" className="top-nav-link">dogs</Link></li>
-                <li><Link to="/sessions/cats" className="top-nav-link">cats</Link></li>
-                <li><Link to="/sessions/horses" className="top-nav-link">horses</Link></li>
-                <li><Link to="/sessions/twilight" className="top-nav-link">twilight</Link></li>
-              </ul>
+              <label className="top-nav-control-label" onClick={this.handleSubNavClick}>
+                <input className="top-nav-control" type="checkbox" />
+                <span to="/sessions" className="top-nav-link">sessions</span>
+                <div className="top-nav-control-overlay top-nav-control-overlay-sub"></div>
+                <ul className="top-nav-sub">
+                  <li><Link to="/sessions/dogs" className="top-nav-link">dogs</Link></li>
+                  <li><Link to="/sessions/cats" className="top-nav-link">cats</Link></li>
+                  <li><Link to="/sessions/horses" className="top-nav-link">horses</Link></li>
+                  <li><Link to="/sessions/twilight" className="top-nav-link">twilight</Link></li>
+                </ul>
+              </label>
             </li>
             <li><Link to="/links" className="top-nav-link">links</Link></li>
             <li><Link to="/contact" className="top-nav-link">contact us</Link></li>

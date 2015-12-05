@@ -5,10 +5,28 @@
     display: none;
     &:checked {
       ~ .top-nav {
-        transform: translate(-100%);
-      }
-      ~ .top-nav-control-overlay {
-        display: initial;
+        & {
+          @media (max-width: 600px) {
+            transform: translate(-100%);
+          }
+        }
+        &-control-overlay,
+        &-sub {
+          display: initial;
+        }
+        &-link,
+        &-sub {
+          background: rgba(0, 0, 0, 0.2);
+        }
+
+        &-control-overlay-sub {
+          @media (max-width: 600px) {
+            display: none;
+          }
+        }
+        &-link {
+
+        }
       }
     }
 
@@ -76,13 +94,12 @@
       display: none;
     }
   }
+  &-sub {
+    width: 100%;
+  }
 
   li {
     position: relative;
-
-    &:hover ul {
-      visibility: visible;
-    }
   }
   ul {
     list-style: none;
@@ -90,13 +107,15 @@
     padding: 0;
 
     ul {
-      visibility: hidden;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      min-width: 100%;
-      z-index: 1;
-      background: @gray;
+      display: none;
+      @media (min-width: 600px) {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        min-width: 100%;
+        z-index: 1;
+        background: @gray;
+      }
 
       li {
         display: block;
