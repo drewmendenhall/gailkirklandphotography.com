@@ -11,5 +11,5 @@ const history = createHistory()
 
 ReactDOM.render(
   React.createElement(Router, {history, routes}),
-  document.querySelector('main')
+  document.querySelector('main'),
 )
