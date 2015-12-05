@@ -63,7 +63,7 @@ export default class TopNav extends React.Component {
             <li><IndexLink to="/" className="top-nav-link">home</IndexLink></li>
             <li><Link to="/about" className="top-nav-link">about</Link></li>
             <li>
-              <label className="top-nav-control-label" onClick={this.handleSubNavClick}>
+              <label className="top-nav-control-label top-nav-control-label-sub" onClick={this.handleSubNavClick}>
                 <input className="top-nav-control" type="checkbox" />
                 <span to="/galleries" className="top-nav-link">galleries</span>
                 <div className="top-nav-control-overlay top-nav-control-overlay-sub"></div>
@@ -82,7 +82,7 @@ export default class TopNav extends React.Component {
               </label>
             </li>
             <li>
-              <label className="top-nav-control-label" onClick={this.handleSubNavClick}>
+              <label className="top-nav-control-label top-nav-control-label-sub" onClick={this.handleSubNavClick}>
                 <input className="top-nav-control" type="checkbox" />
                 <span to="/sessions" className="top-nav-link">sessions</span>
                 <div className="top-nav-control-overlay top-nav-control-overlay-sub"></div>

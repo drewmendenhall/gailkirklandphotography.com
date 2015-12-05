@@ -12,11 +12,15 @@
         }
         &-control-overlay,
         &-sub {
+          display: block;
           display: initial;
         }
         &-link,
         &-sub {
-          background: rgba(0, 0, 0, 0.2);
+          background: rgba(0, 0, 0, 0.8);
+          @media (min-width: 600px) {
+            background: @header-background;
+          }
         }
 
         &-control-overlay-sub {
@@ -52,6 +56,19 @@
       user-select: none;
       @media (min-width: 600px) {
         flex: 1;
+
+        // IE fix
+        display: inline;
+
+        // IE fix
+        &-sub {
+          display: flex;
+        }
+      }
+
+      @media (min-width: 1000px) {
+        // IE fix
+        display: flex;
       }
     }
     &-overlay {
@@ -62,6 +79,7 @@
       left: 0;
       right: 0;
       z-index: 1;
+      cursor: default;
       cursor: initial;
     }
   }
@@ -76,6 +94,7 @@
     text-transform: uppercase;
     white-space: nowrap;
     opacity: 0.3;
+    -ms-flex-preferred-size: auto;
 
     &:hover {
       opacity: 1;
