@@ -30,10 +30,10 @@ export default ({children, location}) => (
       <IndexLink to="/" className="logo-link">
         <img src="/images/logo-pink.svg" />
         <span className="logo-company-name">
-          <span>Gail Kirkland</span>
-          <small>Photography</small>
-        </span>
       </IndexLink>
+          <div>Gail Kirkland</div>
+          <div><small>Photography</small></div>
+        </span>
       <TopNav />
     </header>
     <div className="sub-header">
