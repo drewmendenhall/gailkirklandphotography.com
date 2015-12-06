@@ -20,7 +20,7 @@
     "clean:styles": "rimraf public/app.css*",
     "serve:debug": "npm run serve:dev --debug & node-inspector",
     "serve:dev": "nodemon --exec babel-node server.js",
-    "serve:prod": "forever start -f --uid 'gailkirklandphotography-www' babel-server.js",
+    "serve:prod": "forever start --append --uid 'gailkirklandphotography-www' babel-server.js",
     "serve:prod:restart": "forever restart gailkirklandphotography-www",
     "serve:prod:stop": "forever stop gailkirklandphotography-www",
     "test": "echo \"Error: no test specified\" && exit 1",
