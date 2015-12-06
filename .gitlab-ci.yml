@@ -5,9 +5,11 @@ deploy:
     - npm run build:prod
     # TODO: test
     # - npm test
+
     # cleanup
-    - rm -rf node_modules
-    - npm install --production
+    # - rm -rf node_modules
+    # - npm install --production
+
     # deploy
     # - rsync --archive --compress --delete --itemize-changes --no-group --no-owner -e ssh . gailkirklandphotography.com:/var/www/gailkirklandphotography.com
     - scp public/app.js www@gailkirklandphotography.com:/var/www/gailkirklandphotography-www/public
