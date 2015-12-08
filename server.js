@@ -6,8 +6,8 @@ import trailingSlashes from 'connect-slashes'
 import url from 'url'
 
 import config from './config'
-import gitPull from './server/git-pull'
 import reactRouter from './server/react-router-middleware'
+import triggerUpdate from './server/trigger-update'
 
 import tracker from './tracker'
 const PROD = (process.env.NODE_ENV === 'production')
@@ -27,7 +27,7 @@ config.server = Object.assign({
 server.disable('x-powered-by')
 if (PROD) {
   server.use(tracker(analytics))
-  server.use('/trigger-pull', gitPull())
+  server.use('/trigger-update', triggerUpdate())
 }
 else {
   let livereload = require('connect-livereload')

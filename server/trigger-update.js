@@ -1,7 +1,11 @@
 import {exec} from 'child_process'
 
 export default () => (request, response) => {
-  exec('git pull --rebase', (error) => {
+  exec(`
+    git fetch &&
+    git checkout master -f &&
+    git reset --hard origin
+  `, (error) => {
     if (error) throw error
 
     exec('npm install', (error) => {
