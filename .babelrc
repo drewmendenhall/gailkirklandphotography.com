@@ -1,28 +1,30 @@
 {
-  "blacklist": ["minification.deadCodeElimination"],
   "env": {
     "development": {
-      "plugins": ["react-transform"],
-      "extra": {
-        "react-transform": {
+      "plugins": [
+        ["react-transform", {
           "transforms": [{
             "transform": "react-transform-catch-errors",
             "imports": ["react", "redbox-react"]
           }]
-        }
-      },
-      "optional": ["validation"]
+        }]
+      ]
     },
     "production": {
-      "optional": [
-        "minification",
-        "optimisation"
+      "plugins": [
+        "transform-inline-environment-variables",
+        "transform-node-env-inline",
+        "transform-react-constant-elements",
+        "transform-react-inline-elements"
       ]
     }
   },
-  "optional": [
-    "runtime",
-    "utility.inlineEnvironmentVariables"
+  "presets": [
+    "es2015",
+    "react",
+    "stage-1"
   ],
-  "stage": 0
+  "plugins": [
+    "transform-runtime"
+  ]
 }

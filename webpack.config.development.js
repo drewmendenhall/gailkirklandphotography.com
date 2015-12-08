@@ -22,15 +22,20 @@ module.exports = (
       loaders: config.module.loaders.map((loader) => {
         if (loader.loader === 'babel') {
           if (!loader.query) loader.query = {}
-          if (!loader.query.extra) loader.query.extra = {}
-          if (!loader.query.extra['react-transform']) {
-            loader.query.extra['react-transform'] = {}
+          if (!Array.isArray(loader.query.plugins)) loader.query.plugins = []
+          let plugin = loader.query.plugins.find((plugin) => (
+            plugin[0] === 'react-transform'
+          ))
+          if (!plugin) {
+            plugin = ['react-transform', {}]
+            loader.query.plugins.push(plugin)
           }
-          if (!Array.isArray(loader.query.extra['react-transform'].transforms)) {
-            loader.query.extra['react-transform'].transforms = []
+          let pluginOptions = plugin[1]
+          if (!Array.isArray(pluginOptions.transforms)) {
+            pluginOptions.transforms = []
           }
 
-          loader.query.extra['react-transform'].transforms.push({
+          pluginOptions.transforms.push({
             transform: 'react-transform-hmr',
             imports: ['react'],
             locals: ['module'],

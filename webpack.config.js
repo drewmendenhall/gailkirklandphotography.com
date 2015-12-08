@@ -5,8 +5,8 @@ module.exports = {
   entry: {
     app: './client',
     vendor: [
+      'babel-polyfill',
       'classnames',
-      'core-js',
       'history',
       'react',
       'react-dom',
