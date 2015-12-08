@@ -7,11 +7,8 @@ export default () => (request, response) => {
     exec('npm install', (error) => {
       if (error) throw error
 
-      exec('npm run serve:prod:restart', (error) => {
-        if (error) throw error
-
-        response.send()
-      })
+      response.send()
+      exec('npm run serve:prod:restart')
     })
   })
 }
