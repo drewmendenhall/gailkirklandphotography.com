@@ -34,7 +34,7 @@
   "dependencies": {
     "analytics-node": "2",
     "babel": "5",
-    "babel-runtime": "5",
+    "babel-runtime": "5.8.29",
     "classnames": "2",
     "connect-slashes": "1",
     "express": "4",
