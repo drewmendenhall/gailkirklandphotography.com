@@ -39,7 +39,7 @@
     "connect-slashes": "1",
     "express": "4",
     "forever": "0.15",
-    "history": "1",
+    "history": "1.13",
     "newrelic": "^1.22.1",
     "normalize.css": "3",
     "react": "0.14",
