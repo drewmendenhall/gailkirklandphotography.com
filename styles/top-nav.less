@@ -1,5 +1,11 @@
 @import "header";
 
+@top-nav-sub-link-padding-vertical: 10px;
+@top-nav-sub-link-line-height: 16px;
+@top-nav-sub-link-height: (2 * @top-nav-sub-link-padding-vertical +
+  @top-nav-sub-link-line-height
+);
+
 .top-nav {
   &-control {
     display: none;
@@ -10,13 +16,11 @@
             transform: translate(-100%);
           }
         }
-        &-control-overlay,
-        &-sub {
+        &-control-overlay {
           display: block;
           display: initial;
         }
-        &-link,
-        &-sub {
+        &-link {
           background: rgba(0, 0, 0, 0.8);
           @media (min-width: 600px) {
             background: @header-background;
@@ -30,6 +34,14 @@
         }
         &-link {
 
+        }
+        &-sub {
+          &-galleries {
+            height: (5 * @top-nav-sub-link-height);
+          }
+          &-sessions {
+            height: (4 * @top-nav-sub-link-height);
+          }
         }
       }
     }
@@ -114,8 +126,10 @@
     }
   }
   &-sub {
-    display: none;
+    height: 0;
+    overflow: hidden;
     width: 100%;
+    transition: height 0.1s linear;
     @media (min-width: 600px) {
       position: absolute;
       top: 100%;

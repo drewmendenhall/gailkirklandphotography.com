@@ -66,7 +66,7 @@ export default class TopNav extends React.Component {
                 <input className="top-nav-control" type="checkbox" />
                 <span to="/galleries" className="top-nav-link">galleries</span>
                 <div className="top-nav-control-overlay top-nav-control-overlay-sub"></div>
-                <ul className="top-nav-sub">
+                <ul className="top-nav-sub top-nav-sub-galleries">
                   {galleries.map((gallery, index) => (
                     <li key={index}>
                       <Link
@@ -85,7 +85,7 @@ export default class TopNav extends React.Component {
                 <input className="top-nav-control" type="checkbox" />
                 <span to="/sessions" className="top-nav-link">sessions</span>
                 <div className="top-nav-control-overlay top-nav-control-overlay-sub"></div>
-                <ul className="top-nav-sub">
+                <ul className="top-nav-sub top-nav-sub-sessions">
                   <li><Link to="/sessions/dogs" className="top-nav-link">dogs</Link></li>
                   <li><Link to="/sessions/cats" className="top-nav-link">cats</Link></li>
                   <li><Link to="/sessions/horses" className="top-nav-link">horses</Link></li>
