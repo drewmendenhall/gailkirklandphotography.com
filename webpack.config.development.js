@@ -1,13 +1,13 @@
-import webpack from 'webpack'
+const webpack = require('webpack')
 
-import config from './webpack.config'
+const config = require('./webpack.config')
 
 const hotEntry = ['webpack-hot-middleware/client'].concat(
   typeof config.entry === 'string' ?
     config.entry : config.entry.app
 )
 
-export default (
+module.exports = (
   Object.assign({}, config, {
     devtool: '#cheap-module-eval-source-map',
     devServer: {
@@ -41,7 +41,6 @@ export default (
       }),
     }),
     plugins: (config.plugins || []).concat([
-      new webpack.optimize.OccurenceOrderPlugin(),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoErrorsPlugin(),
     ]),
