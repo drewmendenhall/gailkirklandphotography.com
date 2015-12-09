@@ -8,7 +8,7 @@ export default () => (request, response) => {
   `, (error) => {
     if (error) throw error
 
-    exec('npm install', (error) => {
+    exec('npm prune && npm install', (error) => {
       if (error) throw error
 
       response.send()
