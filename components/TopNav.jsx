@@ -25,7 +25,19 @@ export default class TopNav extends React.Component {
     this.state = {}
   }
 
-  handleChange = (event) => {
+  handleGalleriesNavControlChange = (event) => {
+    this.setState({
+      showGalleriesNavMenu: event.target.checked,
+      showSessionsNavMenu: false,
+    })
+  }
+  handleSessionsNavControlChange = (event) => {
+    this.setState({
+      showGalleriesNavMenu: false,
+      showSessionsNavMenu: event.target.checked,
+    })
+  }
+  handleTopNavControlChange = (event) => {
     this.setState({showTopNavMenu: event.target.checked})
   }
   handleSubNavClick = (event) => {
@@ -41,7 +53,11 @@ export default class TopNav extends React.Component {
 
       if (!state || !state.autoplay) {
         /* eslint-disable react/no-did-mount-set-state */
-        this.setState({showTopNavMenu: false})
+        this.setState({
+          showGalleriesNavMenu: false,
+          showSessionsNavMenu: false,
+          showTopNavMenu: false,
+        })
       }
     })
   }
@@ -49,7 +65,11 @@ export default class TopNav extends React.Component {
     this.unlisten()
   }
   render() {
-    const {showTopNavMenu} = this.state
+    const {
+      showGalleriesNavMenu,
+      showSessionsNavMenu,
+      showTopNavMenu,
+    } = this.state
 
     return (
       <label className="top-nav-control-label">
@@ -58,7 +78,7 @@ export default class TopNav extends React.Component {
           className="top-nav-control"
           type="checkbox"
           checked={showTopNavMenu}
-          onChange={this.handleChange}
+          onChange={this.handleTopNavControlChange}
         />
         <div className="top-nav-control-overlay"></div>
         <nav className="top-nav">
@@ -67,6 +87,12 @@ export default class TopNav extends React.Component {
             <li><Link to="/about" className="top-nav-link">about</Link></li>
             <li>
               <label className="top-nav-control-label top-nav-control-label-sub" onClick={this.handleSubNavClick}>
+                <input
+                  className="top-nav-control"
+                  type="checkbox"
+                  checked={showGalleriesNavMenu}
+                  onChange={this.handleGalleriesNavControlChange}
+                />
                 <input className="top-nav-control" type="checkbox" />
                 <span to="/galleries" className="top-nav-link">galleries</span>
                 <div className="top-nav-control-overlay top-nav-control-overlay-sub"></div>
@@ -86,7 +112,12 @@ export default class TopNav extends React.Component {
             </li>
             <li>
               <label className="top-nav-control-label top-nav-control-label-sub" onClick={this.handleSubNavClick}>
-                <input className="top-nav-control" type="checkbox" />
+                <input
+                  className="top-nav-control"
+                  type="checkbox"
+                  checked={showSessionsNavMenu}
+                  onChange={this.handleSessionsNavControlChange}
+                />
                 <span to="/sessions" className="top-nav-link">sessions</span>
                 <div className="top-nav-control-overlay top-nav-control-overlay-sub"></div>
                 <ul className="top-nav-sub top-nav-sub-sessions">
