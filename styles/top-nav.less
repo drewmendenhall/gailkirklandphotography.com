@@ -7,13 +7,30 @@
 );
 
 .top-nav {
+  flex: 1;
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  z-index: 1;
+  transition: all 0.2s;
+  background: @header-background;
+  @media (min-width: 600px) {
+    flex: none;
+    position: static;
+    width: 100%;
+    z-index: auto;
+    transition: none;
+  }
+
   &-control {
     display: none;
     &:checked {
       ~ .top-nav {
         & {
-          @media (max-width: 600px) {
-            transform: translate(-100%);
+          transform: translate(-100%);
+          @media (min-width: 600px) {
+            transform: none;
+            transform: initial;
           }
         }
         &-control-overlay {
@@ -28,12 +45,11 @@
         }
 
         &-control-overlay-sub {
-          @media (max-width: 600px) {
-            display: none;
+          display: none;
+          @media (min-width: 600px) {
+            display: block;
+            display: initial;
           }
-        }
-        &-link {
-
         }
         &-sub {
           &-galleries {
@@ -165,55 +181,27 @@
     padding: 0;
   }
 
-  > ul > li {
-    &,
-    & > label {
-      & > .top-nav-link {
-        padding-top: 36px;
-        padding-bottom: 30px;
-      }
-    }
-  }
-
-  @media (min-width: 600px) {
-    width: 100%;
-
-    > ul {
+  > ul {
+    @media (min-width: 600px) {
       display: flex;
-
-      > li {
+    }
+    > li {
+      @media (min-width: 600px) {
         flex: 1;
       }
-    }
-  }
-  @media (max-width: 1000px) {
-    > ul {
-      > li {
-        &,
-        & > label {
-          & > .top-nav-link {
-            padding: 1em 0;
-          }
-        }
-      }
-    }
-  }
-  @media (max-width: 600px) {
-    flex: 1;
-    position: absolute;
-    top: 100%;
-    left: 100%;
-    z-index: 1;
-    transition: all 0.2s;
-    background: @header-background;
+      &,
+      & > label {
+        & > .top-nav-link {
+          padding: 1em;
+          width: 100%;
 
-    > ul {
-      > li {
-        &,
-        & > label {
-          & > .top-nav-link {
-            padding: 1em;
-            width: 100%;
+          @media (min-width: 600px) {
+            padding: 1em 0;
+            width: auto;
+          }
+          @media (min-width: 1000px) {
+            padding-top: 36px;
+            padding-bottom: 30px;
           }
         }
       }
