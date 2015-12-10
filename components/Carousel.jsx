@@ -128,6 +128,13 @@ export default class Carousel extends React.Component {
         prevIndex: rotateBackward(items.length, index),
       })
     }
+    if (items !== this.props.items) {
+      this.setState({
+        index: 0,
+        nextIndex: rotateForward(items.length, 0),
+        prevIndex: rotateBackward(items.length, 0),
+      })
+    }
   }
   componentDidUpdate(prevProps) {
     if (this.props.autoplay &&
