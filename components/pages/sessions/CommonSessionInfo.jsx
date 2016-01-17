@@ -4,10 +4,10 @@ import {Link} from 'react-router'
 export default class CommonSessionInfo extends React.Component {
   static defaultProps = {
     includes: [],
-  }
+  };
   static propTypes = {
     includes: React.PropTypes.array,
-  }
+  };
 
   render() {
     return (

@@ -17,18 +17,18 @@ export default class Carousel extends React.Component {
   static contextTypes = {
     history,
     location,
-  }
+  };
   static defaultProps = {
     items: [],
     slideInterval: 2000,
-  }
+  };
   static propTypes = {
     index: React.PropTypes.number,
     items: React.PropTypes.arrayOf(React.PropTypes.shape({
       url: React.PropTypes.string,
     })),
     slideInterval: React.PropTypes.number,
-  }
+  };
 
   constructor(props) {
     super(props)
@@ -53,17 +53,17 @@ export default class Carousel extends React.Component {
         this.handleNext(event)
         break
     }
-  }
+  };
   handleNext = (event) => {
     if (this.props.autoplay) this.resetAutoplay()
     this.goToNextSlide()
     event.preventDefault()
-  }
+  };
   handlePrev = (event) => {
     if (this.props.autoplay) this.resetAutoplay()
     this.goToPreviousSlide()
     event.preventDefault()
-  }
+  };
   goToNextSlide = () => {
     const {history} = this.context
     const {children, items} = this.props
@@ -85,7 +85,7 @@ export default class Carousel extends React.Component {
     else {
       history.pushState({autoplay: true}, items[nextIndex].route)
     }
-  }
+  };
   goToPreviousSlide = () => {
     const {history} = this.context
     const {children, items} = this.props
@@ -107,11 +107,11 @@ export default class Carousel extends React.Component {
     else {
       history.pushState({autoplay: true}, items[prevIndex].route)
     }
-  }
+  };
   resetAutoplay = () => {
     window.clearInterval(this.autoplayInterval)
     this.autoplayInterval = window.setInterval(this.goToNextSlide, this.props.slideInterval)
-  }
+  };
 
   componentDidMount() {
     if (this.props.autoplay) {

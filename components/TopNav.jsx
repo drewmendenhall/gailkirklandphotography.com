@@ -17,32 +17,28 @@ const galleries = (Object.keys(galleriesObject)
 export default class TopNav extends React.Component {
   static contextTypes = {
     history,
-  }
+  };
 
-  constructor(props) {
-    super(props)
-
-    this.state = {}
-  }
+  state = {};
 
   handleGalleriesNavControlChange = (event) => {
     this.setState({
       showGalleriesNavMenu: event.target.checked,
       showSessionsNavMenu: false,
     })
-  }
+  };
   handleSessionsNavControlChange = (event) => {
     this.setState({
       showGalleriesNavMenu: false,
       showSessionsNavMenu: event.target.checked,
     })
-  }
+  };
   handleTopNavControlChange = (event) => {
     this.setState({showTopNavMenu: event.target.checked})
-  }
+  };
   handleSubNavClick = (event) => {
     event.stopPropagation()
-  }
+  };
 
   componentDidMount() {
     const {history} = this.context
