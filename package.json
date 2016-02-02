@@ -60,7 +60,7 @@
     "babel-core": "6",
     "babel-eslint": "5.0.0-beta4",
     "babel-loader": "6",
-    "babel-plugin-react-transform": "2.0.0-beta1",
+    "babel-plugin-react-transform": "2",
     "connect-livereload": "0.5",
     "eslint": "1",
     "eslint-loader": "1",
