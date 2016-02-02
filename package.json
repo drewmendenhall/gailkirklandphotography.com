@@ -58,7 +58,7 @@
   "devDependencies": {
     "babel-cli": "6",
     "babel-core": "6",
-    "babel-eslint": "5.0.0-beta4",
+    "babel-eslint": "5",
     "babel-loader": "6",
     "babel-plugin-react-transform": "2",
     "connect-livereload": "0.5",
