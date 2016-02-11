@@ -1,11 +1,7 @@
 import React from 'react'
+import {browserHistory} from 'react-router'
 
-import {
-  Link,
-  PropTypes,
-} from 'react-router'
-
-const {history} = PropTypes
+import {Link} from 'react-router'
 
 import galleriesObject from '../public/galleries.json'
 
@@ -16,7 +12,7 @@ const galleries = (Object.keys(galleriesObject)
 
 export default class TopNav extends React.Component {
   static contextTypes = {
-    history,
+    router: React.PropTypes.object.isRequired,
   };
 
   state = {};
@@ -41,10 +37,7 @@ export default class TopNav extends React.Component {
   };
 
   componentDidMount() {
-    const {history} = this.context
-
-    this.unlisten = history.listen((_, locationState) => {
-      const {location} = locationState
+    this.unlisten = browserHistory.listen((location) => {
       const {state} = location
 
       if (!state || !state.autoplay) {

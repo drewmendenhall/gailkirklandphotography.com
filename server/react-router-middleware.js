@@ -1,7 +1,6 @@
 import Helmet from 'react-helmet'
 import React from 'react'
-import {RoutingContext, match} from 'react-router'
-import {createMemoryHistory} from 'history'
+import {RouterContext, match} from 'react-router'
 import {renderToStaticMarkup, renderToString} from 'react-dom/server'
 
 import Html from '../components/Html'
@@ -12,12 +11,7 @@ export default ({
   renderApp,
   sendErrorStacks,
 }) => ((req, res) => {
-  let history = createMemoryHistory()
-  let location = history.createLocation(req.url)
-
-  location.href = `http://${req.headers.host}${location.pathname}`
-
-  match({routes, location}, (error, redirectLocation, renderProps) => {
+  match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
     if (redirectLocation) {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search)
     }
@@ -36,17 +30,17 @@ export default ({
         )
 
         const markup = (renderApp ? renderToString(
-          React.createElement(RoutingContext, {...renderProps})
+          React.createElement(RouterContext, {...renderProps})
         ) : '')
         const head = Helmet.rewind()
 
         res.send(
           '<!doctype html>' +
           renderToStaticMarkup(React.createElement(Html, {
+            href: `http://${req.headers.host}${req.url}`,
             includeMicrosoftTags,
             includeOpenGraphTags,
             includeTracking,
-            location,
             markup,
             ...head,
           }))

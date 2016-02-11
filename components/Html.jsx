@@ -1,11 +1,11 @@
 import React from 'react'
 
 export default ({
+  href,
   includeMicrosoftTags,
   includeOpenGraphTags,
   includeTracking,
   link,
-  location,
   markup,
   meta,
   title,
@@ -39,7 +39,7 @@ export default ({
           <meta property="og:title" content={titleSegments[0]} />
         }
         {includeOpenGraphTags &&
-          <meta property="og:url" content={location.href} />
+          <meta property="og:url" content={href} />
         }
         {link && link.toComponent()}
         <link rel="stylesheet" href="/app.css" />

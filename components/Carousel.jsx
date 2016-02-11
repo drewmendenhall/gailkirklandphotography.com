@@ -2,9 +2,7 @@ import Helmet from 'react-helmet'
 import React from 'react'
 import classnames from 'classnames'
 
-import {Link, PropTypes} from 'react-router'
-
-const {history, location} = PropTypes
+import {Link} from 'react-router'
 
 function rotateForward(max, index) {
   return (index < max - 1 ? index + 1 : 0)
@@ -15,8 +13,8 @@ function rotateBackward(max, index) {
 
 export default class Carousel extends React.Component {
   static contextTypes = {
-    history,
-    location,
+    location: React.PropTypes.object.isRequired,
+    router: React.PropTypes.object.isRequired,
   };
   static defaultProps = {
     items: [],
@@ -65,7 +63,7 @@ export default class Carousel extends React.Component {
     event.preventDefault()
   };
   goToNextSlide = () => {
-    const {history} = this.context
+    const {router} = this.context
     const {children, items} = this.props
     const {nextIndex} = this.state
 
@@ -83,11 +81,14 @@ export default class Carousel extends React.Component {
       })
     }
     else {
-      history.pushState({autoplay: true}, items[nextIndex].route)
+      router.push({
+        pathname: items[nextIndex].route,
+        state: {autoplay: true},
+      })
     }
   };
   goToPreviousSlide = () => {
-    const {history} = this.context
+    const {router} = this.context
     const {children, items} = this.props
     const {prevIndex} = this.state
 
@@ -105,7 +106,10 @@ export default class Carousel extends React.Component {
       })
     }
     else {
-      history.pushState({autoplay: true}, items[prevIndex].route)
+      router.push({
+        pathname: items[prevIndex].route,
+        state: {autoplay: true},
+      })
     }
   };
   resetAutoplay = () => {

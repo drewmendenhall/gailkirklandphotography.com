@@ -2,14 +2,14 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Router from 'react-router'
-import createHistory from 'history/lib/createBrowserHistory'
+import {Router, browserHistory} from 'react-router'
 
 import routes from './routes'
 
-const history = createHistory()
-
 ReactDOM.render(
-  React.createElement(Router, {history, routes}),
+  React.createElement(Router, {
+    history: browserHistory,
+    routes,
+  }),
   document.querySelector('main'),
 )

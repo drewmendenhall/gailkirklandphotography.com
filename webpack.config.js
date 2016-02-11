@@ -7,7 +7,6 @@ module.exports = {
     vendor: [
       'babel-polyfill',
       'classnames',
-      'history',
       'react',
       'react-dom',
       'react-helmet',
