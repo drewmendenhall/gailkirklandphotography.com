@@ -37,6 +37,6 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({name: 'vendor'}),
   ],
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx', '.json'],
   },
 }
