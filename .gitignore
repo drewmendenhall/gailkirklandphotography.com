@@ -3,6 +3,8 @@
 node_modules
 npm-debug.log
 
+dist/*
 public/*
 !public/images/
 !public/galleries.json
+server.min.js
