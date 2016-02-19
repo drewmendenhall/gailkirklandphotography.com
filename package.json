@@ -19,7 +19,7 @@
     "clean:scripts": "rimraf public/app.js",
     "clean:styles": "rimraf public/app.css*",
     "serve:debug": "npm run serve:dev --debug & node-inspector",
-    "serve:dev": "nodemon --exec babel-node server.js",
+    "serve:dev": "nodemon --exec babel-node server",
     "serve:prod": "forever start --append --uid 'gailkirklandphotography-www' babel-server.js",
     "serve:prod:restart": "forever restart gailkirklandphotography-www",
     "serve:prod:stop": "forever stop gailkirklandphotography-www",
