@@ -64,7 +64,7 @@
     "connect-livereload": "0.5",
     "eslint": "1",
     "eslint-loader": "1",
-    "eslint-plugin-react": "3",
+    "eslint-plugin-react": "4",
     "grunt": "0.4",
     "grunt-cli": "0.1",
     "grunt-contrib-watch": "0.6",
