@@ -1,10 +1,10 @@
-parser: babel-eslint
-
 env:
   es6: true
   node: true
 parserOptions:
   ecmaVersion: 6
+  ecmaFeatures:
+    experimentalObjectRestSpread: true
   sourceType: module
 rules:
   comma-dangle: [1, always-multiline]
