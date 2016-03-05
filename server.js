@@ -1,6 +1,5 @@
 import Analytics from 'analytics-node'
 import express from 'express'
-import path from 'path'
 import serveStatic from 'serve-static'
 import trailingSlashes from 'connect-slashes'
 import url from 'url'
@@ -19,7 +18,7 @@ let analytics = segmentWriteKey && new Analytics(segmentWriteKey, {
 let server = express()
 
 config.server = Object.assign({
-  base: path.resolve('public'),
+  base: `${__dirname}/public`,
   port: 8000,
   protocol: 'http',
 }, config.server || {})
