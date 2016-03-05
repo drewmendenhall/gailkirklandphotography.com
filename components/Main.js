@@ -19,7 +19,7 @@ export default class Main extends React.Component {
   }
   render() {
     const {location} = this.props
-    
+
     return (
       <main>
         <Helmet
