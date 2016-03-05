@@ -11,7 +11,7 @@ export default ({
   title,
 }) => {
   const titleSegments = (includeOpenGraphTags &&
-    title[0].props.children.split(' | ')
+    title.toComponent()[0].props.children.split(' | ')
   )
 
   return (
