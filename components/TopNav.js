@@ -1,7 +1,9 @@
 import React from 'react'
-import {browserHistory} from 'react-router'
 
-import {Link} from 'react-router'
+import {
+  Link,
+  browserHistory,
+} from 'react-router'
 
 import galleriesObject from '../public/galleries.json'
 

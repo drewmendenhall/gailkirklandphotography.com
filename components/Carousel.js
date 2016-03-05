@@ -1,7 +1,7 @@
-import Helmet from 'react-helmet'
 import React from 'react'
-import classnames from 'classnames'
 
+import Helmet from 'react-helmet'
+import classnames from 'classnames'
 import {Link} from 'react-router'
 
 function rotateForward(max, index) {
