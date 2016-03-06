@@ -34,7 +34,7 @@ else {
   let webpackDevMiddleware = require('webpack-dev-middleware')
   let webpackHotMiddleware = require('webpack-hot-middleware')
 
-  let webpackConfig = require('./webpack.config.development')
+  let webpackConfig = require('./webpack.config.development.babel')
 
   let compiler = webpack(webpackConfig)
 

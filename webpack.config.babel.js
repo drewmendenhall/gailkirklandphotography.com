@@ -1,6 +1,6 @@
-const webpack = require('webpack')
+import webpack from 'webpack'
 
-module.exports = {
+export default ({
   entry: {
     app: './client',
     vendor: [
@@ -39,4 +39,4 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx', '.json'],
   },
-}
+})

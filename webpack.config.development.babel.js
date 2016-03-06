@@ -1,14 +1,14 @@
-const webpack = require('webpack')
+import webpack from 'webpack'
 
-const config = require('./webpack.config')
+import config from './webpack.config.babel'
 
 const hotEntry = ['webpack-hot-middleware/client'].concat(
   typeof config.entry === 'string' ?
     config.entry : config.entry.app
 )
 
-module.exports = (
-  Object.assign({}, config, {
+module.exports = ({
+  ...config,
     devtool: '#cheap-module-eval-source-map',
     devServer: {
       publicPath: config.output.publicPath,
@@ -16,9 +16,13 @@ module.exports = (
     entry: (typeof config.entry === 'string' ?
       hotEntry
     :
-      Object.assign({}, config.entry, {app: hotEntry})
+      {
+        ...config.entry,
+        app: hotEntry,
+      }
     ),
-    module: Object.assign({}, config.module, {
+    module: {
+      ...config.module,
       loaders: config.module.loaders.map((loader) => {
         if (loader.loader === 'babel') {
           if (!loader.query) loader.query = {}
@@ -44,10 +48,9 @@ module.exports = (
 
         return loader
       }),
-    }),
+    },
     plugins: (config.plugins || []).concat([
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoErrorsPlugin(),
     ]),
-  })
-)
+})

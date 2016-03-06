@@ -1,10 +1,11 @@
-const webpack = require('webpack')
+import webpack from 'webpack'
 
-const config = require('./webpack.config')
+import config from './webpack.config.babel'
 
-module.exports = (
-  Object.assign({}, config, {
-    plugins: (config.plugins || []).concat([
+export default ({
+  ...config,
+    plugins: [
+      ...(config.plugins || []),
       new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: JSON.stringify('production'),
@@ -17,6 +18,5 @@ module.exports = (
           warnings: false,
         },
       }),
-    ]),
-  })
-)
+    ],
+})

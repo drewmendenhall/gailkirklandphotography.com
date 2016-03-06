@@ -10,7 +10,7 @@
     "build:dev": "mkdirp public && npm run build:styles:dev",
     "build:prod": "mkdirp public && npm run build:styles:prod & npm run build:scripts:prod",
     "build:scripts": "webpack --progress",
-    "build:scripts:prod": "npm run build:scripts -- --config webpack.config.production",
+    "build:scripts:prod": "npm run build:scripts -- --config webpack.config.production.babel.js",
     "build:styles": "lessc styles/index.less public/app.css --npm-import --strict-math=on",
     "build:styles:dev": "npm run build:styles -- --source-map",
     "build:styles:prod": "npm run build:styles -- --autoprefix --clean-css",
