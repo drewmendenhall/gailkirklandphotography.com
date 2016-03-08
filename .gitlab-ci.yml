@@ -11,18 +11,9 @@ build:
   stage: build
 
   script:
-    # build
     - npm update
     - npm run build:prod
-    # TODO: test
-    # - npm test
 
-    # cleanup
-    # - rm -rf node_modules
-    # - npm install --production
-
-    # deploy
-    # - rsync --archive --compress --delete --itemize-changes --no-group --no-owner -e ssh . gailkirklandphotography.com:/var/www/gailkirklandphotography.com
 deploy:
   stage: deploy
 
@@ -32,20 +23,3 @@ deploy:
     - scp public/app.js www@gailkirklandphotography.com:/var/www/gailkirklandphotography-www/public
     - scp public/app.css www@gailkirklandphotography.com:/var/www/gailkirklandphotography-www/public
     - scp public/vendor.js www@gailkirklandphotography.com:/var/www/gailkirklandphotography-www/public
-
-# TODO: docker
-# image: node:latest
-#
-# TODO: stages
-# build:
-#   stage: build
-#   script:
-#     - npm install
-#     - npm run build:prod
-#
-# deploy:
-#   stage: deploy
-#   script:
-#     - scp -r public/app.js gailkirklandphotography.com:/var/www/gailkirklandphotography.com/public
-#     - scp -r public/app.css gailkirklandphotography.com:/var/www/gailkirklandphotography.com/public
-#   when: on_success
