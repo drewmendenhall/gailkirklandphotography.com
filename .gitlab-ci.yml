@@ -1,7 +1,6 @@
 cache:
   key: "$CI_BUILD_REF_NAME"
   paths:
-    - node_modules/
     - public/app.css
     - public/app.js
     - public/vendor.js
@@ -13,6 +12,9 @@ stages:
 build:
   stage: build
 
+  cache:
+    paths:
+      - node_modules/
   script:
     - npm update
     - npm run build:prod
