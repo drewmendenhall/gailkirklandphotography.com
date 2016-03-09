@@ -68,7 +68,7 @@ export default class TopNav extends React.Component {
         <input
           className="top-nav-control"
           type="checkbox"
-          checked={showTopNavMenu}
+          checked={showTopNavMenu || false}
           onChange={this.handleTopNavControlChange}
         />
         <div className="top-nav-control-overlay"></div>
@@ -81,7 +81,7 @@ export default class TopNav extends React.Component {
                 <input
                   className="top-nav-control"
                   type="checkbox"
-                  checked={showGalleriesNavMenu}
+                  checked={showGalleriesNavMenu || false}
                   onChange={this.handleGalleriesNavControlChange}
                 />
                 <input className="top-nav-control" type="checkbox" />
@@ -106,7 +106,7 @@ export default class TopNav extends React.Component {
                 <input
                   className="top-nav-control"
                   type="checkbox"
-                  checked={showSessionsNavMenu}
+                  checked={showSessionsNavMenu || false}
                   onChange={this.handleSessionsNavControlChange}
                 />
                 <span to="/sessions" className="top-nav-link">sessions</span>
