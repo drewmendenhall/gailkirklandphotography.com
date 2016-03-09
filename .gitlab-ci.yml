@@ -1,9 +1,13 @@
 cache:
   key: "$CI_BUILD_REF_NAME"
   paths:
-    - dist/
+    - $BUILD_PATH
     - node_modules/
 variables:
+  BUILD_PATH: "dist/"
+  DEPLOY_HOST: "www@gailkirklandphotography.com"
+  DEPLOY_PATH: "/var/www/gailkirklandphotography-www"
+  DEPLOY_URL: "$DEPLOY_HOST:$DEPLOY_PATH"
   NODE_ENV: production
 
 build:
@@ -35,5 +39,5 @@ deploy:
       --no-owner
       --relative
       -e ssh
-      dist/
-      www@gailkirklandphotography.com:/var/www/gailkirklandphotography-www
+      $BUILD_PATH
+      $DEPLOY_URL
