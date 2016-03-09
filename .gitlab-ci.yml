@@ -1,12 +1,8 @@
 cache:
   key: "$CI_BUILD_REF_NAME"
   paths:
+    - dist/
     - node_modules/
-    - public/app.css
-    - public/app.js
-    - public/vendor.js
-    - monitor.min.js
-    - server.min.js
 variables:
   NODE_ENV: production
 
@@ -39,9 +35,5 @@ deploy:
       --no-owner
       --relative
       -e ssh
-      public/app.css
-      public/app.js
-      public/vendor.js
-      monitor.min.js
-      server.min.js
+      dist/
       www@gailkirklandphotography.com:/var/www/gailkirklandphotography-www
