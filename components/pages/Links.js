@@ -8,19 +8,19 @@ const linkSections = [
     links: [
       {
         title: 'National Horseman',
-        url: 'http://www.nationalhorseman.com/',
+        url: 'http://www.nationalhorseman.com',
       },
       {
         title: 'Saddle Horse Report',
-        url: 'http://www.saddlehorsereport.com//',
+        url: 'http://www.saddlehorsereport.com',
       },
       {
         title: 'Saddle & Bridle Magazine',
-        url: 'https://www.saddleandbridle.com/',
+        url: 'https://www.saddleandbridle.com',
       },
       {
         title: 'Plano Profile',
-        url: 'http://planoprofile.com/',
+        url: 'http://planoprofile.com',
       },
     ],
   },
@@ -29,15 +29,15 @@ const linkSections = [
     links: [
       {
         title: 'American Saddlebred Horse Association',
-        url: 'https://asha.net/',
+        url: 'https://asha.net',
       },
       {
         title: 'North Texas American Saddle Horse Association',
-        url: 'http://www.ntasha.org/',
+        url: 'http://www.ntasha.org',
       },
       {
         title: 'Mill-Again Stables',
-        url: 'http://www.mill-againstables.com/',
+        url: 'http://www.mill-againstables.com',
       },
       {
         title: 'Big D Charity Horse Show',
@@ -49,7 +49,7 @@ const linkSections = [
       },
       {
         title: 'The Greyhound Project calendar',
-        url: 'http://www.adopt-a-greyhound.org/',
+        url: 'http://www.adopt-a-greyhound.org',
       },
       {
         title: 'NTASHA Calendar',
