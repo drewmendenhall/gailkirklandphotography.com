@@ -27,7 +27,7 @@ deploy:
   stage: deploy
 
   only:
-    - master
+    - tags
   script:
     - >-
       rsync
