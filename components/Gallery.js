@@ -41,8 +41,8 @@ export default (props) => {
         {pictureId ?
           <img src={picture.url} />
         :
-          pictures.map((picture, index) => (
-            <img src={picture.url} key={index} />
+          pictures.map((picture) => (
+            <img src={picture.url} key={picture.id} />
           ))
         }
       </Carousel>

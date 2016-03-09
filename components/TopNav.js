@@ -88,8 +88,8 @@ export default class TopNav extends React.Component {
                 <span to="/galleries" className="top-nav-link">galleries</span>
                 <div className="top-nav-control-overlay top-nav-control-overlay-sub"></div>
                 <ul className="top-nav-sub top-nav-sub-galleries">
-                  {galleries.map((gallery, index) => (
-                    <li key={index}>
+                  {galleries.map((gallery) => (
+                    <li key={gallery.id}>
                       <Link
                         to={`/galleries/${gallery.id}`}
                         className="top-nav-link"
