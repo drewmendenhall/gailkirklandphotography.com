@@ -21,6 +21,7 @@ export default class Carousel extends React.Component {
       currentIndex: 0,
     }
 
+    this.handleKeyDown = this.handleKeyDown.bind(this)
     this.handleNext = this.handleNext.bind(this)
     this.handlePrev = this.handlePrev.bind(this)
     this.goToNextSlide = this.goToNextSlide.bind(this)
@@ -28,6 +29,18 @@ export default class Carousel extends React.Component {
     this.resetAutoplay = this.resetAutoplay.bind(this)
   }
 
+  handleKeyDown(event) {
+    var {key} = event
+
+    switch (key) {
+      case 'ArrowLeft':
+        this.handlePrev(event)
+        break
+      case 'ArrowRight':
+        this.handleNext(event)
+        break
+    }
+  }
   handleNext(event) {
     event.preventDefault()
     this.goToNextSlide()
@@ -83,7 +96,7 @@ export default class Carousel extends React.Component {
     var {currentIndex} = this.state
 
     return (
-      <div className="stretch carousel">
+      <div className="stretch carousel" onKeyDown={this.handleKeyDown}>
         <a
           className="carousel-nav carousel-nav-prev"
           href=""
