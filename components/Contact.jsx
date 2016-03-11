@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../styles/contact'
+// import '../styles/contact'
 
 export default class About extends React.Component {
   render() {

@@ -5,7 +5,7 @@ import {
   RouteHandler,
 } from 'react-router'
 
-import '../styles/top-nav'
+// import '../styles/top-nav'
 
 export default class TopNav extends React.Component {
   render() {

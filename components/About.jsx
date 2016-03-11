@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../styles/about'
+// import '../styles/about'
 
 export default class About extends React.Component {
   render() {

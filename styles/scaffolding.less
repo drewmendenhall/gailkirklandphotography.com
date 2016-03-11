@@ -1,9 +1,16 @@
+@import "colors";
+
+@body-background: @gray url(/images/main_bg.png);
+@text-color: @lighter-gray;
+@footer-background: @gray;
+@footer-text-color: #696969;
+
 * {
   box-sizing: border-box;
 }
 body {
-  background: #414141 url(/images/main_bg.png);
-  color: #c5c5c5;
+  background: @body-background;
+  color: @text-color;
 }
 html, body, main {
   height: 100%;
@@ -26,14 +33,14 @@ main {
   left: 0;
   right: 0;
 }
-img {
+.carousel img {
   display: block;
   height: 100%;
   width: auto;
   max-width: 100%;
 }
 footer {
-  background: #414141;
-  color: #696969;
+  background: @footer-background;
+  color: @footer-text-color;
   padding: 20px;
 }

@@ -36,17 +36,9 @@ module.exports = {
 
         devLoader: 'react-hot',
       },
-      {
-        test: /\.css$/,
-        loaders: [
-          'style',
-          'css',
-          'autoprefixer',
-        ],
-      },
     ],
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css'],
+    extensions: ['', '.js', '.jsx'],
   },
 }

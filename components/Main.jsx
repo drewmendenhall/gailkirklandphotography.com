@@ -7,11 +7,6 @@ import {
 
 import TopNav from './TopNav'
 
-import '../styles/buttons'
-import '../styles/flex'
-import '../styles/header'
-import '../styles/scaffolding'
-
 export default class Main extends React.Component {
   render() {
     return (
@@ -36,7 +31,7 @@ export default class Main extends React.Component {
         <footer>
           <div>
             <div className="copyright">
-              Gail Kirkland Photography &copy;
+              Gail Kirkland Photography ©
               {new Date().getFullYear()}
             </div>
           </div>

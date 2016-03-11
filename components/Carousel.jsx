@@ -3,7 +3,7 @@ import classnames from 'classnames'
 
 import {Link} from 'react-router'
 
-import '../styles/carousel'
+// import '../styles/carousel'
 
 export default class Carousel extends React.Component {
   static defaultProps = {
