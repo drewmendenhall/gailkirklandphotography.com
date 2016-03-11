@@ -1,0 +1,14 @@
+{
+  "ext": "js,json",
+  "ignore": [
+    "node_modules/**",
+    "public/**",
+    "styles/**",
+    "!config.json",
+    "gruntfile.js"
+  ],
+  "nodeArgs": [
+    "--debug",
+    "--harmony"
+  ]
+}

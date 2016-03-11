@@ -1,25 +1,30 @@
+var path = require('path')
 var url = require('url')
 var webpack = require('webpack')
 
 module.exports = {
-  devtool: '#eval-source-map',
-  entry: [
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
-    './index.js',
-  ],
+  entry: './client',
+  // entry: {
+  //   app: './client',
+  //   vendor: [
+  //     'babel-runtime',
+  //     'classnames',
+  //     'react',
+  //   ],
+  // },
   output: {
+    // path: path.join(__dirname, 'public'),
+    path: __dirname,
+    publicPath: '/',
     filename: 'bundle.js',
   },
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
-        devLoader: 'react-hot',
         exclude: /node_modules/,
-        // loader: 'babel',
         loaders: [
-          'react-hot',
+          // 'react-hot',
           'babel' + url.format({
             query: {
               cacheDirectory: true,
@@ -28,19 +33,8 @@ module.exports = {
             },
           }),
         ],
-        // query: {
-        //   cacheDirectory: true,
-        //   optional: ['runtime'],
-        //   stage: 0,
-        // },
-      },
-      {
-        // test: /\.js$/,
-        test: /react-image-gallery/,
-        loaders: [
-          'react-hot',
-          'babel',
-        ],
+
+        devLoader: 'react-hot',
       },
       {
         test: /\.css$/,
@@ -52,10 +46,6 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-  ],
   resolve: {
     extensions: ['', '.js', '.jsx', '.css'],
   },
