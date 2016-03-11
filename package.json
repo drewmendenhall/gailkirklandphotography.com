@@ -12,6 +12,9 @@
     "build:styles": "mkdirp public/styles && cp node_modules/normalize.css/normalize.css public/styles/ & npm run build:styles:app:dev",
     "build:styles:app": "lessc styles/index.less public/styles/app.css",
     "build:styles:app:dev": "npm run build:styles:app -- --source-map",
+    "clean:all": "npm run clean:scripts & npm run clean:styles",
+    "clean:scripts": "rimraf public/bundle.js",
+    "clean:styles": "rimraf public/styles",
     "serve": "nodemon server.js",
     "start": "npm run serve",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -39,6 +42,7 @@
     "mkdirp": "0.5",
     "nodemon": "1",
     "react-hot-loader": "1",
+    "rimraf": "2",
     "webpack": "1",
     "webpack-dev-server": "1"
   }
