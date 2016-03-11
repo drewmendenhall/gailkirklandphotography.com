@@ -1,6 +1,7 @@
 var React = require('react')
 var Router = require('react-router')
 var connect = require('connect')
+var livereload = require('connect-livereload')
 var path = require('path')
 var serveStatic = require('serve-static')
 var trailingSlashes = require('connect-slashes')
@@ -26,6 +27,7 @@ server.use(webpackDevServer({
 	server: config.server,
 	makeHot: 'app',
 }))
+server.use(livereload())
 server.use(serveStatic(config.server.base))
 server.use(trailingSlashes(false))
 server.use(function(req, res) {
