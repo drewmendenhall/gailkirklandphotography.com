@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://code.mendenhall.io/drew/gailkirklandphotography-www"
   },
+  "license": "UNLICENSED",
   "author": "Drew Mendenhall <drew@mendenhall.io>",
   "scripts": {
     "build:dev": "mkdirp public && npm run build:styles:dev",
