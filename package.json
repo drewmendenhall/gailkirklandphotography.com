@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://code.mendenhall.io/drew/gailkirklandphotography-www"
   },
+  "author": "Drew Mendenhall <drew@mendenhall.io>",
   "scripts": {
     "build:dev": "mkdirp public && npm run build:styles:dev",
     "build:prod": "mkdirp public && npm run build:styles:prod & npm run build:scripts:prod",
@@ -29,7 +30,6 @@
     "prod": "npm run build:prod && npm run serve:prod",
     "start": "npm run prod"
   },
-  "author": "Drew Mendenhall",
   "dependencies": {
     "analytics-node": "^2.0.2",
     "babel-plugin-transform-runtime": "^6.6.0",
