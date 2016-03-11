@@ -7,7 +7,8 @@
     "url": "https://code.mendenhall.io/drew/gailkirklandphotography-www"
   },
   "scripts": {
-    "build": "webpack --progress",
+    "build": "npm run build:styles & npm run build:scripts",
+    "build:scripts": "webpack --progress",
     "build:styles": "mkdirp public/styles && cp node_modules/normalize.css/normalize.css public/styles/ & npm run build:styles:app:dev",
     "build:styles:app": "lessc styles/index.less public/styles/app.css",
     "build:styles:app:dev": "npm run build:styles:app -- --source-map",
