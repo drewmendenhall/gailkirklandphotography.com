@@ -21,9 +21,7 @@ rules:
   semi:
     - 2
     - never
-  strict:
-    - 2
-    - never
+  strict: 0
   react/jsx-quotes: 1
   react/jsx-sort-prop-types: 1
   react/jsx-uses-vars: 1
