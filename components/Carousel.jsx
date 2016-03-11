@@ -73,7 +73,7 @@ export default class Carousel extends React.Component {
     if (this.props.autoplay &&
       prevProps.slideInterval !== this.props.slideInterval
     ) {
-      this.resetAutoplay();
+      this.resetAutoplay()
     }
   }
   componentWillUnmount() {
