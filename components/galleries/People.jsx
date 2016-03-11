@@ -5,7 +5,7 @@ import React from 'react'
 import Carousel from '../Carousel'
 
 var pictureNames = []
-for (var i = 1; i <= 16; i++) {
+for (var i = 1; i <= 19; i++) {
   pictureNames.push(i)
 }
 
