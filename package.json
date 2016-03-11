@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://code.mendenhall.io/drew/gailkirklandphotography-www"
   },
+  "bugs": "https://code.mendenhall.io/drew/gailkirklandphotography-www/issues",
   "license": "UNLICENSED",
   "author": "Drew Mendenhall <drew@mendenhall.io>",
   "scripts": {
