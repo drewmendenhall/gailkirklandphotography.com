@@ -6,6 +6,7 @@ import Main from './components/Main'
 import Dogs from './components/galleries/Dogs'
 import Horses from './components/galleries/Horses'
 import People from './components/galleries/People'
+import Twilight from './components/galleries/Twilight'
 
 // TODO: migrate to react-router 1.0
 // export default {
@@ -33,7 +34,7 @@ export default (
       <Route name="dogs" handler={Dogs} />
       <Route name="horses" handler={Horses} />
       <Route name="people" handler={People} />
-      <Route name="weddings" handler={Home} />
+      <Route name="twilight" handler={Twilight} />
     </Route>
   </Route>
 )
