@@ -26,8 +26,16 @@ deploy:
     - master
   script:
     - >-
-      scp
+      rsync
+      --archive
+      --compress
+      --delete
+      --itemize-changes
+      --no-group
+      --no-owner
+      --relative
+      -e ssh
       public/app.css
       public/app.js
       public/vendor.js
-      www@gailkirklandphotography.com:/var/www/gailkirklandphotography-www/public
+      www@gailkirklandphotography.com:/var/www/gailkirklandphotography-www
