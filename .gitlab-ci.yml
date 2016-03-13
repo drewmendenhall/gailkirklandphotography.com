@@ -17,6 +17,7 @@ build:
       - node_modules/
   script:
     - npm install
+    - npm list --depth=0
     - npm run build:prod
 
 deploy:
