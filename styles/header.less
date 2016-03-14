@@ -1,6 +1,10 @@
 @import "colors";
 
+@logo-height: 3rem;
+@logo-padding: 1rem;
+
 @header-background: @gray;
+@header-height: (@logo-height + 2 * @logo-padding);
 @tagline-color: @pink;
 
 header {
@@ -23,7 +27,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1em;
+  padding: @logo-padding;
   padding-right: 0;
   color: #b31474;
   font: bolder 'Century Gothic', sans-serif;
@@ -33,18 +37,18 @@ header {
   letter-spacing: 1px;
   white-space: nowrap;
   @media (min-width: 600px) {
-    padding: 1em;
+    padding: @logo-padding;
     padding-bottom: 0;
     width: 100%;
     font-size: 1.25rem;
   }
   @media (min-width: 1000px) {
-    padding: 0 1em;
+    padding: 0 @logo-padding;
     width: auto;
   }
 
   img {
-    height: 3em;
+    height: @logo-height;
   }
 }
 .logo-company-name {

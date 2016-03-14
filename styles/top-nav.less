@@ -10,15 +10,18 @@
 
 .top-nav {
   flex: 1;
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  max-height: calc(100% - @header-height);
+  top: @header-height;
   left: 100%;
+  overflow: auto;
   transition: all 0.2s;
   background: @header-background;
   @media (min-width: 600px) {
     flex: none;
     position: static;
     width: 100%;
+    overflow: visible;
     transition: none;
   }
 
