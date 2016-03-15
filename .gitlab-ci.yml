@@ -5,10 +5,6 @@ cache:
     - public/app.js
     - public/vendor.js
 
-stages:
-  - build
-  - deploy
-
 build:
   stage: build
 
