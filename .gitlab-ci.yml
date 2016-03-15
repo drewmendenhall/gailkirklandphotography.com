@@ -1,8 +1,3 @@
-cache:
-  key: "$CI_BUILD_REF_NAME"
-  paths:
-    - $BUILD_PATH
-    - node_modules/
 variables:
   BUILD_PATH: "dist/"
   DEPLOY_HOST: "www@gailkirklandphotography.com"
@@ -13,6 +8,13 @@ variables:
 build:
   stage: build
 
+  artifacts:
+    paths:
+      - $BUILD_PATH
+      - package.json
+  cache:
+    paths:
+      - node_modules/
   script:
     - npm prune --production=false
     - npm install
