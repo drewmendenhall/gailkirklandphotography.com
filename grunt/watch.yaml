@@ -1,4 +1,0 @@
-css:
-  files: public/app.css
-  options:
-    livereload: true

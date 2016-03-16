@@ -1,10 +1,11 @@
 {
   "ext": "js,json",
   "ignore": [
+    "gulp/**",
     "node_modules/**",
     "public/**",
     "styles/**",
     "!config.json",
-    "gruntfile.js"
+    "gulpfile.babel.js"
   ]
 }
