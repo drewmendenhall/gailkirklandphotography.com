@@ -1,4 +1,5 @@
 import Analytics from 'analytics-node'
+import bodyParser from 'body-parser'
 import express from 'express'
 import serveStatic from 'serve-static'
 import trailingSlashes from 'connect-slashes'
@@ -26,7 +27,7 @@ config.server = Object.assign({
 server.disable('x-powered-by')
 if (PROD) {
   server.use(tracker(analytics))
-  server.use('/trigger-update', triggerUpdate())
+  server.use('/trigger-update', bodyParser.json(), triggerUpdate())
 }
 else {
   let livereload = require('connect-livereload')
