@@ -13,7 +13,7 @@ build:
     - npm prune
     - npm install
     - npm list --depth=0
-    - npm run build:prod
+    - NODE_ENV=production npm run build:prod
 
 deploy:
   stage: deploy
