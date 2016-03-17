@@ -23,7 +23,7 @@
     "serve:debug": "npm run serve:dev --debug & node-inspector",
     "serve:dev": "nodemon --exec babel-node server",
     "serve:prod": "npm run serve:prod:www & npm run serve:prod:monitor",
-    "serve:prod:www": "forever start --append --uid 'gailkirklandphotography-www' babel-server.js",
+    "serve:prod:www": "forever start --append --uid 'gailkirklandphotography-www' server.babel.js",
     "serve:prod:monitor": "forever start --append --uid 'gailkirklandphotography-www-monitor' server/monitor.babel.js",
     "serve:prod:restart": "forever restart gailkirklandphotography-www",
     "serve:prod:stop": "forever stop gailkirklandphotography-www",
