@@ -17,7 +17,9 @@ build:
     - npm install
     - npm install --only=dev
     - npm list --depth=0 --only=prod
-    - npm list --depth=0 --only=dev
+    # this prints both dev and prod
+    # TODO: replace with --only=dev when npm issue is resolved
+    - npm list --depth=0 --dev
     - npm run build:prod
 
 deploy:
