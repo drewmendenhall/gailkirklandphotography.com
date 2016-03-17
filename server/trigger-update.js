@@ -21,7 +21,7 @@ export default () => (request, response) => {
       if (error) throw error
 
       response.send()
-      exec('npm run serve:prod:restart')
+      process.exit()
     })
   })
 }
