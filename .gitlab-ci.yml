@@ -5,6 +5,8 @@ cache:
     - public/app.css
     - public/app.js
     - public/vendor.js
+    - monitor.min.js
+    - server.min.js
 variables:
   NODE_ENV: production
 
@@ -16,7 +18,9 @@ build:
     - npm install
     - npm install --only=dev
     - npm list --depth=0 --only=prod
-    - npm list --depth=0 --only=dev
+    # this prints both dev and prod
+    # TODO: replace with --only=dev when npm issue is resolved
+    - npm list --depth=0 --dev
     - npm run build:prod
 
 deploy:
@@ -38,4 +42,6 @@ deploy:
       public/app.css
       public/app.js
       public/vendor.js
+      monitor.min.js
+      server.min.js
       www@gailkirklandphotography.com:/var/www/gailkirklandphotography-www

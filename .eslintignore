@@ -1,1 +1,4 @@
+dist/**
 public/**
+monitor.min.js
+server.min.js
