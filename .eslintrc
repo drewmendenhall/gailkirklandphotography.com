@@ -7,13 +7,13 @@ parserOptions:
     experimentalObjectRestSpread: true
   sourceType: module
 rules:
-  comma-dangle: [1, always-multiline]
-  curly: [1, multi-line]
-  indent: [1, 2, {SwitchCase: 1}]
-  no-irregular-whitespace: 2
-  no-mixed-spaces-and-tabs: 1
-  no-undef: 2
-  no-unused-vars: 1
-  quotes: [1, single, avoid-escape]
-  semi: [2, never]
-  strict: [2, never]
+  comma-dangle: [warn, always-multiline]
+  curly: [warn, multi-line]
+  indent: [warn, 2, {SwitchCase: 1}]
+  no-irregular-whitespace: error
+  no-mixed-spaces-and-tabs: warn
+  no-undef: error
+  no-unused-vars: warn
+  quotes: [warn, single, avoid-escape]
+  semi: [error, never]
+  strict: [error, never]
