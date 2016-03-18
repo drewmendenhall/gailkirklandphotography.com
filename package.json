@@ -11,7 +11,7 @@
   "author": "Drew Mendenhall <drew@mendenhall.io>",
   "scripts": {
     "build:dev": "mkdirp public && npm run build:styles:dev",
-    "build:prod": "mkdirp dist public && (npm run build:styles:prod & npm run build:scripts:prod & npm run build:server:prod && cp dist/server.js server.min.js)",
+    "build:prod": "mkdirp dist public && (npm run build:styles:prod & npm run build:scripts:prod & npm run build:server:prod && (cp dist/server.js server.min.js & cp dist/monitor.js monitor.min.js))",
     "build:server:prod": "webpack --config webpack.config.server.production.babel.js",
     "build:scripts:prod": "webpack --config webpack.config.production.babel.js",
     "build:styles": "lessc styles/index.less public/app.css --npm-import --strict-math=on",
@@ -25,7 +25,7 @@
     "serve:dev": "nodemon --exec babel-node --plugins transform-es2015-modules-commonjs server",
     "serve:prod": "npm run serve:prod:www & npm run serve:prod:monitor",
     "serve:prod:www": "forever start --append --uid 'gailkirklandphotography-www' server.min.js",
-    "serve:prod:monitor": "forever start --append --uid 'gailkirklandphotography-www-monitor' server/monitor.babel.js",
+    "serve:prod:monitor": "forever start --append --uid 'gailkirklandphotography-www-monitor' monitor.min.js",
     "serve:prod:restart": "forever restart gailkirklandphotography-www",
     "serve:prod:stop": "forever stop gailkirklandphotography-www",
     "test": "echo \"Error: no test specified\" && exit 1",

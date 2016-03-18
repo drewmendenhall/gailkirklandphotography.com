@@ -5,6 +5,7 @@ cache:
     - public/app.css
     - public/app.js
     - public/vendor.js
+    - monitor.min.js
     - server.min.js
 variables:
   NODE_ENV: production
@@ -41,5 +42,6 @@ deploy:
       public/app.css
       public/app.js
       public/vendor.js
+      monitor.min.js
       server.min.js
       www@gailkirklandphotography.com:/var/www/gailkirklandphotography-www

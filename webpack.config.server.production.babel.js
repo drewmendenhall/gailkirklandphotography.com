@@ -7,6 +7,7 @@ export default ({
   ...config,
   entry: {
     server: './server',
+    monitor: './server/monitor',
   },
   output: {
     path: `${__dirname}/dist`,
