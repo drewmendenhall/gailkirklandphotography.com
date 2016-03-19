@@ -10,7 +10,7 @@
   "license": "UNLICENSED",
   "author": "Drew Mendenhall <drew@mendenhall.io>",
   "scripts": {
-    "build": "run-p build:* && rsync --archive --delete public dist",
+    "build": "run-p build:* && gulp static-files",
     "build:client": "gulp client",
     "build:images": "gulp images",
     "build:server": "gulp server",
