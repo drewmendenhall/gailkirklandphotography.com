@@ -42,4 +42,5 @@ deploy:
       --relative
       -e ssh
       $BUILD_PATH
+      package.json
       $DEPLOY_URL
