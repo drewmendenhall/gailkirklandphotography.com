@@ -1,18 +1,20 @@
-cache:
-  key: "$CI_BUILD_REF_NAME"
-  paths:
-    - node_modules/
-    - public/app.css
-    - public/app.js
-    - public/vendor.js
-    - monitor.min.js
-    - server.min.js
 variables:
+  BUILD_PATH: "dist/"
+  DEPLOY_HOST: "www@gailkirklandphotography.com"
+  DEPLOY_PATH: "/var/www/gailkirklandphotography-www"
+  DEPLOY_URL: "$DEPLOY_HOST:$DEPLOY_PATH"
   NODE_ENV: production
 
 build:
   stage: build
 
+  artifacts:
+    paths:
+      - $BUILD_PATH
+      - package.json
+  cache:
+    paths:
+      - node_modules/
   script:
     - npm prune --production=false
     - npm install
@@ -27,7 +29,7 @@ deploy:
   stage: deploy
 
   only:
-    - master
+    - tags
   script:
     - >-
       rsync
@@ -39,9 +41,6 @@ deploy:
       --no-owner
       --relative
       -e ssh
-      public/app.css
-      public/app.js
-      public/vendor.js
-      monitor.min.js
-      server.min.js
-      www@gailkirklandphotography.com:/var/www/gailkirklandphotography-www
+      $BUILD_PATH
+      package.json
+      $DEPLOY_URL
