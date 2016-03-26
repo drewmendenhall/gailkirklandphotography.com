@@ -6,8 +6,6 @@ variables:
   NODE_ENV: production
 
 build:
-  stage: build
-
   artifacts:
     paths:
       - $BUILD_PATH
@@ -24,10 +22,9 @@ build:
     # TODO: replace with --only=dev when npm issue is resolved
     - npm list --depth=0 --dev
     - npm run build:prod
+  stage: build
 
 deploy:
-  stage: deploy
-
   only:
     - tags
   script:
@@ -44,3 +41,4 @@ deploy:
       $BUILD_PATH
       package.json
       $DEPLOY_URL
+  stage: deploy
