@@ -12,6 +12,7 @@ build:
       - package.json
   cache:
     paths:
+      - $BUILD_PATH
       - node_modules/
   script:
     - npm prune --production=false
