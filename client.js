@@ -11,5 +11,5 @@ ReactDOM.render(
     history: browserHistory,
     routes,
   }),
-  document.querySelector('main'),
+  document.querySelector('main')
 )

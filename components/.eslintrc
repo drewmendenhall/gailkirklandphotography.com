@@ -5,18 +5,18 @@ env:
 plugins:
   - react
 rules:
-  react/jsx-boolean-value: 1
-  react/jsx-closing-bracket-location: 1
-  react/jsx-curly-spacing: [1, never]
-  react/jsx-indent-props: [1, 2]
-  react/jsx-no-undef: 2
-  react/jsx-uses-react: 1
-  react/jsx-uses-vars: 1
-  react/no-did-mount-set-state: 2
-  react/no-did-update-set-state: 2
-  react/no-direct-mutation-state: 2
-  react/no-multi-comp: 1
-  react/no-unknown-property: 2
-  react/react-in-jsx-scope: 2
-  react/sort-prop-types: 1
-  react/wrap-multilines: 1
+  react/jsx-boolean-value: warn
+  react/jsx-closing-bracket-location: warn
+  react/jsx-curly-spacing: [warn, never]
+  react/jsx-indent-props: [warn, 2]
+  react/jsx-no-undef: error
+  react/jsx-uses-react: warn
+  react/jsx-uses-vars: warn
+  react/no-did-mount-set-state: error
+  react/no-did-update-set-state: error
+  react/no-direct-mutation-state: error
+  react/no-multi-comp: warn
+  react/no-unknown-property: error
+  react/react-in-jsx-scope: error
+  react/sort-prop-types: warn
+  react/wrap-multilines: warn
