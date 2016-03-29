@@ -18,8 +18,6 @@ export default class Main extends React.Component {
     }
   }
   render() {
-    const {location} = this.props
-
     return (
       <main>
         <Helmet
@@ -33,8 +31,9 @@ export default class Main extends React.Component {
             },
             {name: 'viewport', content: 'width=device-width,initial-scale=1'},
           ]}
-          title={title}
-          titleTemplate={location.pathname === '/' ? null : `%s | ${title}`}
+
+          defaultTitle={title}
+          titleTemplate={`%s | ${title}`}
         />
         <header>
           <Link to="/" className="logo-link">
