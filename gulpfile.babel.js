@@ -1,2 +1,3 @@
-import './gulp/client'
+import './gulp/scripts/client'
+import './gulp/scripts/server'
 import './gulp/styles'
