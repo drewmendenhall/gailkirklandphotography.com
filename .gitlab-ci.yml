@@ -32,11 +32,11 @@ build-tag:
     paths:
       - $BUILD_PATH
       - package.json
-  only:
-    - tags
   cache:
     <<: *build-cache
     key: "$CI_BUILD_STAGE/tags"
+  only:
+    - tags
 
 deploy:
   only:
