@@ -6,10 +6,6 @@ variables:
   NODE_ENV: production
 
 .build: &build
-  artifacts:
-    paths:
-      - $BUILD_PATH
-      - package.json
   cache: &build-cache
     paths:
       - $BUILD_PATH
@@ -32,6 +28,10 @@ build:
 
 build-tag:
   <<: *build
+  artifacts:
+    paths:
+      - $BUILD_PATH
+      - package.json
   only:
     - tags
   cache:
