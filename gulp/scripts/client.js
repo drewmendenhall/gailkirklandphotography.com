@@ -13,7 +13,10 @@ export default registerTask({
   source: {
     file: sourceFile,
     pattern: [
+      '.babelrc',
       'components/**',
+      'webpack.config.babel.js',
+      'webpack.config.production.babel.js',
       __filename,
       sourceFile,
     ],
