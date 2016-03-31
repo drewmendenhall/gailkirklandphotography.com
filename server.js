@@ -37,7 +37,7 @@ else {
   let compiler = webpack(webpackConfig)
 
   server.use(webpackDevMiddleware(compiler, {noInfo: true}))
-  server.use(webpackHotMiddleware(compiler))
+  server.use(webpackHotMiddleware(compiler, {reload: true}))
   server.use(livereload())
   server.use('/styles', serveStatic('styles'))
 }
