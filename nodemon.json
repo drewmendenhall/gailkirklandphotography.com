@@ -1,6 +1,7 @@
 {
   "ext": "js,json",
   "ignore": [
+    "components/**",
     "gulp/**",
     "node_modules/**",
     "public/**",
