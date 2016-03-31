@@ -25,25 +25,13 @@ module.exports = ({
     ...config.module,
     loaders: config.module.loaders.map((loader) => {
       if (loader.loader === 'babel') {
-        if (!loader.query) loader.query = {}
-        if (!Array.isArray(loader.query.plugins)) loader.query.plugins = []
-        let plugin = loader.query.plugins.find((plugin) => (
-          plugin[0] === 'react-transform'
-        ))
-        if (!plugin) {
-          plugin = ['react-transform', {}]
-          loader.query.plugins.push(plugin)
-        }
-        let pluginOptions = plugin[1]
-        if (!Array.isArray(pluginOptions.transforms)) {
-          pluginOptions.transforms = []
-        }
+        const presetName = 'react-hmre'
 
-        pluginOptions.transforms.push({
-          transform: 'react-transform-hmr',
-          imports: ['react'],
-          locals: ['module'],
-        })
+        if (!loader.query) loader.query = {}
+        if (!Array.isArray(loader.query.presets)) loader.query.presets = []
+        if (!loader.query.presets.includes(presetName)) {
+          loader.query.presets.push(presetName)
+        }
       }
 
       return loader
