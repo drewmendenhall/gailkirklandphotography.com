@@ -27,11 +27,11 @@ export default ({
     {path: 'galleries', childRoutes: [
       {path: ':galleryId(/:pictureId)', component: Gallery},
     ],
-      onEnter(nextState, replaceState) {
+      onEnter(nextState, replace) {
         const gallery = galleries[nextState.params.galleryId]
 
         if (!gallery) {
-          replaceState(null, `/galleries/${defaultGalleryId}`)
+          replace({pathname: `/galleries/${defaultGalleryId}`})
         }
       },
     },
@@ -45,8 +45,8 @@ export default ({
       {path: 'twilight', component: TwilightSessionsInfo},
       {
         path: '*',
-        onEnter(nextState, replaceState) {
-          replaceState(null, '/sessions')
+        onEnter(nextState, replace) {
+          replace({pathname: '/sessions'})
         },
       },
     ]},
