@@ -10,8 +10,7 @@
   "license": "UNLICENSED",
   "author": "Drew Mendenhall <drew@mendenhall.io>",
   "scripts": {
-    "build:dev": "mkdirp public && npm run build:styles",
-    "build:prod": "mkdirp dist public && parallelshell 'npm run build:client' 'npm run build:server' 'npm run build:styles' && rsync --archive --delete public dist",
+    "build": "mkdirp dist public && parallelshell 'npm run build:client' 'npm run build:server' 'npm run build:styles' && rsync --archive --delete public dist",
     "build:client": "gulp client",
     "build:server": "gulp server",
     "build:styles": "gulp styles",
@@ -31,8 +30,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "npm run watch:styles",
     "watch:styles": "gulp watch:styles",
-    "dev": "npm run build:dev && (npm run watch & npm run serve:dev)",
-    "prod": "npm run build:prod && npm run serve:prod",
+    "dev": "npm run build:styles && (npm run watch & npm run serve:dev)",
+    "prod": "npm run build && npm run serve:prod",
     "start": "npm run prod"
   },
   "dependencies": {
