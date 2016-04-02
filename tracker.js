@@ -36,6 +36,8 @@ function compact(object) {
 }
 
 export default function eventMiddleware(analytics, userIdSegment) {
+  if (!analytics) return (req, res, next) => {next()}
+
   return (req, res, next) => {
     const {body, headers} = req
     const parsed = url.parse(req.url, true)
