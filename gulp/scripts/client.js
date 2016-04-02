@@ -14,6 +14,7 @@ export default registerTask({
     file: sourceFile,
     pattern: [
       '.babelrc',
+      'components/.babelrc',
       'components/**',
       'webpack.config.babel.js',
       'webpack.config.production.babel.js',

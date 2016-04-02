@@ -3,18 +3,16 @@
     "production": {
       "plugins": [
         "transform-inline-environment-variables",
-        "transform-node-env-inline",
-        "transform-react-constant-elements",
-        "transform-react-inline-elements"
+        "transform-node-env-inline"
+      ],
+      "presets": [
+        "es2015-node"
       ]
     }
   },
-  "presets": [
-    "es2015",
-    "react",
-    "stage-1"
-  ],
   "plugins": [
+    "transform-es2015-modules-commonjs",
+    "transform-object-rest-spread",
     "transform-runtime"
   ]
 }
