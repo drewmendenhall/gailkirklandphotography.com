@@ -1,9 +1,9 @@
 import filter from 'gulp-filter'
 import gulp from 'gulp'
-import gutil from 'gulp-util'
 import newer from 'gulp-newer'
 import rename from 'gulp-rename'
 import webpack from 'webpack'
+import {PluginError} from 'gulp-util'
 import {Transform} from 'stream'
 
 export default ({
@@ -21,7 +21,7 @@ export default ({
     .pipe(rename(dest.filename))
     .pipe(new Transform({objectMode: true, transform: () => {
       webpack(webpackConfig, (error) => {
-        if (error) throw new gutil.PluginError('webpack', error)
+        if (error) throw new PluginError('webpack', error)
 
         callback()
       })
