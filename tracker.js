@@ -26,11 +26,11 @@ export function page(analytics, req, userIdSegment) {
   })
 }
 
-function compact(obj) {
+function compact(object) {
   const result = {}
 
-  Object.keys(obj).filter(function(key) {return obj[key]}).forEach(function(key) {
-    result[key] = obj[key]
+  Object.keys(object).filter(function(key) {return object[key]}).forEach(function(key) {
+    result[key] = object[key]
   })
 
   return result
