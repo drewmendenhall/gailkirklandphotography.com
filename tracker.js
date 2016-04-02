@@ -27,13 +27,12 @@ export function page(analytics, req, userIdSegment) {
 }
 
 function compact(object) {
-  const result = {}
-
-  Object.keys(object).filter(function(key) {return object[key]}).forEach(function(key) {
-    result[key] = object[key]
-  })
-
-  return result
+  return Object.keys(object).reduce((result, key) => {
+    if (object[key]) {
+      result[key] = object[key]
+    }
+    return result
+  }, {})
 }
 
 export default function eventMiddleware(analytics, userIdSegment) {
