@@ -4,9 +4,9 @@ import serveStatic from 'serve-static'
 import trailingSlashes from 'connect-slashes'
 import url from 'url'
 
-import config from './config'
-import reactRouter from './server/react-router-middleware'
-import tracker from './server/tracker'
+import config from '../config'
+import reactRouter from './react-router-middleware'
+import tracker from './tracker'
 
 const PROD = (process.env.NODE_ENV === 'production')
 const segmentWriteKey = process.env.SEGMENT_WRITE_KEY
@@ -17,7 +17,7 @@ let analytics = segmentWriteKey && new Analytics(segmentWriteKey, {
 let server = express()
 
 config.server = Object.assign({
-  base: `${__dirname}/public`,
+  base: '..',
   port: 8000,
   protocol: 'http',
 }, config.server || {})
@@ -32,14 +32,14 @@ else {
   let webpackDevMiddleware = require('webpack-dev-middleware')
   let webpackHotMiddleware = require('webpack-hot-middleware')
 
-  let webpackConfig = require('./webpack.config.development.babel')
+  let webpackConfig = require('../webpack.config.development.babel')
 
   let compiler = webpack(webpackConfig)
 
   server.use(webpackDevMiddleware(compiler, {noInfo: true}))
   server.use(webpackHotMiddleware(compiler, {reload: true}))
   server.use(livereload())
-  server.use('/styles', serveStatic('styles'))
+  server.use('/styles', serveStatic('../styles'))
 }
 server.use(serveStatic(config.server.base))
 server.use(serveStatic(`${config.server.base}/images/favicons`))

@@ -6,7 +6,7 @@ import config from './webpack.config.production.babel'
 export default ({
   ...config,
   entry: {
-    server: './server',
+    server: './server/index',
     monitor: './server/monitor',
   },
   output: {

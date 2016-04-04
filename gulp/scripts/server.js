@@ -1,7 +1,7 @@
 import registerTask from './registerTask'
 import webpackConfig from '../../webpack.config.server.production.babel'
 
-const sourceFile = 'server.js'
+const sourceFile = 'server/index.js'
 
 export default registerTask({
   name: 'server',
