@@ -10,7 +10,7 @@
   "license": "UNLICENSED",
   "author": "Drew Mendenhall <drew@mendenhall.io>",
   "scripts": {
-    "build": "mkdirp dist public && npm-run-all --parallel build:* && rsync --archive --delete public dist",
+    "build": "npm-run-all --parallel build:* && rsync --archive --delete public dist",
     "build:client": "gulp client",
     "build:server": "gulp server",
     "build:styles": "gulp styles",
@@ -82,7 +82,6 @@
     "less-plugin-autoprefix": "^1.5.1",
     "less-plugin-clean-css": "^1.5.1",
     "less-plugin-npm-import": "^2.1.0",
-    "mkdirp": "^0.5.1",
     "nodemon": "^1.9.1",
     "npm-run-all": "^1.7.0",
     "rimraf": "^2.5.2",
