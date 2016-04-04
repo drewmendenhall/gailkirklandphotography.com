@@ -15,7 +15,6 @@
     "build:server": "gulp server",
     "build:styles": "gulp styles",
     "clean": "npm-run-all --parallel clean:*",
-    "clean:npm": "rimraf node_modules",
     "clean:client": "rimraf public/app.js public/vendor.js",
     "clean:prod": "rimraf dist",
     "clean:server": "rimraf dist/monitor.js dist/server.js",
