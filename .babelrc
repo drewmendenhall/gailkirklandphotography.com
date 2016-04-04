@@ -2,8 +2,7 @@
   "env": {
     "production": {
       "plugins": [
-        "transform-inline-environment-variables",
-        "transform-node-env-inline"
+        "transform-inline-environment-variables"
       ],
       "presets": [
         "es2015"
