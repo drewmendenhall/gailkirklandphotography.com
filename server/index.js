@@ -12,16 +12,22 @@ import tracker from './tracker'
 dotenv.config({allowEmptyValues: true})
 
 const PROD = (process.env.NODE_ENV === 'production')
-const segmentWriteKey = process.env.SEGMENT_WRITE_KEY
-
-let analytics = segmentWriteKey && new Analytics(segmentWriteKey, {
-  flushAt: (!PROD ? 1 : null),
-})
 let server = express()
 
 server.disable('x-powered-by')
-if (process.env.ANALYTICS) {
-  server.use(tracker(analytics))
+if (config.analytics) {
+  const {segmentWriteKey} = config.analytics
+
+  if (segmentWriteKey) {
+    let analytics = new Analytics(segmentWriteKey, {
+      flushAt: (!PROD ? 1 : null),
+    })
+    server.use(tracker(analytics))
+  } else {
+    throw new Error('analytics requires `SEGMENT_WRITE_KEY`' +
+      ' environment variable'
+    )
+  }
 }
 if (!PROD) {
   let livereload = require('connect-livereload')

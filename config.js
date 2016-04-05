@@ -3,6 +3,9 @@ import dotenv from 'dotenv-safe'
 dotenv.config({allowEmptyValues: true})
 
 export default {
+  analytics: process.env.ANALYTICS && {
+    segmentWriteKey: process.env.SEGMENT_WRITE_KEY,
+  },
   server: {
     base: process.env.SERVER_BASE || `${__dirname}/public`,
     port: process.env.SERVER_PORT || 8000,
