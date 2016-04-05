@@ -3,7 +3,9 @@ variables:
   DEPLOY_HOST: "www@gailkirklandphotography.com"
   DEPLOY_PATH: "/var/www/gailkirklandphotography-www"
   DEPLOY_URL: "$DEPLOY_HOST:$DEPLOY_PATH"
+  ANALYTICS: "true"
   NODE_ENV: production
+  SERVER_SIDE_RENDERING: "true"
 
 .build: &build
   cache: &build-cache

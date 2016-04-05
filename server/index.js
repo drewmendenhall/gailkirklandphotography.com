@@ -1,4 +1,5 @@
 import Analytics from 'analytics-node'
+import dotenv from 'dotenv-safe'
 import express from 'express'
 import serveStatic from 'serve-static'
 import trailingSlashes from 'connect-slashes'
@@ -8,6 +9,8 @@ import config from '../config'
 import reactRouter from './react-router-middleware'
 import tracker from './tracker'
 
+dotenv.config({allowEmptyValues: true})
+
 const PROD = (process.env.NODE_ENV === 'production')
 const segmentWriteKey = process.env.SEGMENT_WRITE_KEY
 
@@ -16,17 +19,11 @@ let analytics = segmentWriteKey && new Analytics(segmentWriteKey, {
 })
 let server = express()
 
-config.server = Object.assign({
-  base: '..',
-  port: 8000,
-  protocol: 'http',
-}, config.server || {})
-
 server.disable('x-powered-by')
-if (PROD) {
+if (process.env.ANALYTICS) {
   server.use(tracker(analytics))
 }
-else {
+if (!PROD) {
   let livereload = require('connect-livereload')
   let webpack = require('webpack')
   let webpackDevMiddleware = require('webpack-dev-middleware')
@@ -44,10 +41,9 @@ else {
 server.use(serveStatic(config.server.base))
 server.use(serveStatic(`${config.server.base}/images/favicons`))
 server.use(trailingSlashes(false))
-// TODO: cli switches for these options
 server.use(reactRouter({
-  includeTracking: PROD,
-  renderApp: PROD,
+  includeTracking: process.env.ANALYTICS,
+  renderApp: process.env.SERVER_SIDE_RENDER,
   sendErrorStacks: !PROD,
 }))
 

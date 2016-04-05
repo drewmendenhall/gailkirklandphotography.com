@@ -14,6 +14,7 @@ export default registerTask({
     file: sourceFile,
     pattern: [
       '.babelrc',
+      '.env',
       'components/.babelrc',
       'components/**',
       'server/.babelrc',

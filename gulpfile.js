@@ -1,3 +1,5 @@
+require('dotenv-safe').config({allowEmptyValues: true})
+
 require('babel-register')
 
 require('./gulp/scripts/client')

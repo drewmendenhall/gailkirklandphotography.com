@@ -14,6 +14,7 @@ const destFilename = 'app.css'
 const destPath = 'public'
 const sourceFile = 'styles/index.less'
 const sourceFilePattern = [
+  '.env',
   'styles/**/*.less',
   __filename,
 ]
