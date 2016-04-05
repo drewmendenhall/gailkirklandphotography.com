@@ -12,7 +12,7 @@ import tracker from './tracker'
 dotenv.config({allowEmptyValues: true})
 
 const PROD = (process.env.NODE_ENV === 'production')
-let server = express()
+const server = express()
 
 server.disable('x-powered-by')
 if (config.analytics) {
