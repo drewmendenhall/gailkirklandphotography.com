@@ -9,7 +9,10 @@ import config from '../config'
 import reactRouter from './react-router-middleware'
 import tracker from './tracker'
 
-dotenv.config({allowEmptyValues: true})
+dotenv.config({
+  allowEmptyValues: true,
+  silent: true,
+})
 
 const PROD = (process.env.NODE_ENV === 'production')
 const server = express()

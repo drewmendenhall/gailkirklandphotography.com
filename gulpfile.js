@@ -1,4 +1,7 @@
-require('dotenv-safe').config({allowEmptyValues: true})
+require('dotenv').config({
+  allowEmptyValues: true,
+  silent: true,
+})
 
 require('babel-register')
 

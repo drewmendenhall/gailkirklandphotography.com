@@ -1,6 +1,9 @@
 import dotenv from 'dotenv-safe'
 
-dotenv.config({allowEmptyValues: true})
+dotenv.config({
+  allowEmptyValues: true,
+  silent: true,
+})
 
 export default {
   analytics: process.env.ANALYTICS && {
