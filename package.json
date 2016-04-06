@@ -27,6 +27,7 @@
     "serve:prod:restart": "forever restart gailkirklandphotography-www",
     "serve:prod:stop": "forever stop gailkirklandphotography-www",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "postversion": "git push && git push --tags --force",
     "watch": "npm-run-all --parallel watch:*",
     "watch:styles": "gulp watch:styles",
     "dev": "npm run build:styles && npm-run-all --parallel watch serve:dev",
