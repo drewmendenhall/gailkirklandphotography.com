@@ -9,6 +9,6 @@ function restartServer() {
   exec('npm prune && npm install', (error) => {
     if (error) throw error
 
-    exec('npm run serve:prod:stop && npm run serve:prod:www')
+    exec('npm run serve:prod:www:stop && npm run serve:prod:www')
   })
 }
