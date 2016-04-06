@@ -51,8 +51,8 @@ server.use(serveStatic(config.server.base))
 server.use(serveStatic(`${config.server.base}/images/favicons`))
 server.use(trailingSlashes(false))
 server.use(reactRouter({
-  includeTracking: process.env.ANALYTICS,
-  renderApp: process.env.SERVER_SIDE_RENDER,
+  includeTracking: config.analytics,
+  renderApp: config.serverSideRendering,
   sendErrorStacks: !PROD,
 }))
 
