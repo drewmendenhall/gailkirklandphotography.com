@@ -1,5 +1,5 @@
 variables:
-  BUILD_PATH: "dist/"
+  BUILD_PATH: "dist"
   DEPLOY_HOST: "www@gailkirklandphotography.com"
   DEPLOY_PATH: "/var/www/gailkirklandphotography-www"
   DEPLOY_URL: "$DEPLOY_HOST:$DEPLOY_PATH"
@@ -10,9 +10,9 @@ variables:
 .build: &build
   cache: &build-cache
     paths:
-      - $BUILD_PATH
-      - node_modules/
-      - public/
+      - $BUILD_PATH/*.js
+      - node_modules
+      - public
   script:
     - node -v
     - npm -v
