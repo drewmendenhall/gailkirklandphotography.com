@@ -7,7 +7,7 @@ fs.watch(path.resolve(__dirname, '../package.json'), restartServer)
 fs.watch(path.resolve(__dirname, 'server.js'), restartServer)
 
 function restartServer() {
-  console.log(`${timestamp('[YYYY/MM/DD HH:mm:ss.ms]')} detected change`)
+  console.log(`${timestamp('[YYYY/MM/DD HH:mm:ss.ms]')} restarting server`)
 
   exec('npm prune && npm install', (error, stdout, stderr) => {
     if (error) throw error
