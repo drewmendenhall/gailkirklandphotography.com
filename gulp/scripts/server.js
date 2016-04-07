@@ -7,7 +7,7 @@ export default registerTask({
   name: 'server',
 
   dest: {
-    filename: sourceFile,
+    filename: 'server.js',
     path: 'dist',
   },
   source: {
