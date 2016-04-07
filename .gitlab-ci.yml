@@ -12,6 +12,7 @@ variables:
     paths:
       - $BUILD_PATH
       - node_modules/
+      - public/
   script:
     - node -v
     - npm -v
