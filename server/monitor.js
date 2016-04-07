@@ -1,12 +1,11 @@
 import {exec} from 'child_process'
-import fs from 'fs'
-import path from 'path'
+import chokidar from 'chokidar'
 import timestamp from 'time-stamp'
 
-fs.watch(path.resolve(__dirname, '../package.json'), restartServer)
-fs.watch(path.resolve(__dirname, 'server.js'), restartServer)
-
-function restartServer() {
+chokidar.watch([
+  '../package.json',
+  'server.js',
+]).on('change', function restartServer() {
   console.log(`${timestamp('[YYYY/MM/DD HH:mm:ss.ms]')} restarting server`)
 
   exec('npm prune && npm install', (error, stdout, stderr) => {
@@ -17,4 +16,4 @@ function restartServer() {
 
     exec('npm run serve:prod:www:stop && npm run serve:prod:www')
   })
-}
+})
