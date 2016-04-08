@@ -3,11 +3,17 @@ import chokidar from 'chokidar'
 import path from 'path'
 import timestamp from 'time-stamp'
 
+const log = (...messages) => {
+  console.log.apply(console, [
+    timestamp('[YYYY/MM/DD HH:mm:ss.ms]'),
+  ].concat(messages))
+}
+
 chokidar.watch([
   path.resolve(__dirname, '../package.json'),
   path.resolve(__dirname, 'server.js'),
 ]).on('change', function restartServer() {
-  console.log(`${timestamp('[YYYY/MM/DD HH:mm:ss.ms]')} restarting server`)
+  log('restarting server')
 
   exec('npm prune && npm install', (error, stdout, stderr) => {
     if (error) throw error
