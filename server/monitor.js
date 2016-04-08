@@ -12,7 +12,8 @@ const log = (...messages) => {
 chokidar.watch([
   path.resolve(__dirname, '../package.json'),
   path.resolve(__dirname, 'server.js'),
-]).on('change', function restartServer() {
+]).on('change', function restartServer(path) {
+  log(`${path} changed`)
   log('restarting server')
 
   exec('npm prune && npm install', (error, stdout, stderr) => {
