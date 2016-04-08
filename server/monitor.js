@@ -22,7 +22,12 @@ chokidar.watch([
     console.log(stdout)
     console.error(stderr)
 
-    exec('npm run serve:prod:www:stop && npm run serve:prod:www')
+    exec('npm run serve:prod:www:stop && npm run serve:prod:www', (error, stdout, stderr) => {
+      if (error) throw error
+
+      console.log(stdout)
+      console.error(stderr)
+    })
   })
 })
 
