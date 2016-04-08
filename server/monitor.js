@@ -1,10 +1,11 @@
 import {exec} from 'child_process'
 import chokidar from 'chokidar'
+import path from 'path'
 import timestamp from 'time-stamp'
 
 chokidar.watch([
-  '../package.json',
-  'server.js',
+  path.resolve(__dirname, '../package.json'),
+  path.resolve(__dirname, 'server.js'),
 ]).on('change', function restartServer() {
   console.log(`${timestamp('[YYYY/MM/DD HH:mm:ss.ms]')} restarting server`)
 
