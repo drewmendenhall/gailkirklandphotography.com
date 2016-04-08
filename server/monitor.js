@@ -24,3 +24,5 @@ chokidar.watch([
     exec('npm run serve:prod:www:stop && npm run serve:prod:www')
   })
 })
+
+log('monitor started')
