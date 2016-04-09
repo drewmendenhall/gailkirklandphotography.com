@@ -59,6 +59,7 @@ deploy:
       --relative
       -e ssh
       $BUILD_PATH
+      .env.example
       package.json
       $DEPLOY_URL
   stage: deploy
