@@ -12,6 +12,7 @@
   "scripts": {
     "build": "run-p build:* && rsync --archive --delete public dist",
     "build:client": "gulp client",
+    "build:images": "gulp images",
     "build:server": "gulp server",
     "build:styles": "gulp styles",
     "clean": "run-p clean:*",
@@ -30,7 +31,7 @@
     "postversion": "git push -f && git push -f --tags",
     "watch": "run-p watch:*",
     "watch:styles": "gulp watch:styles",
-    "dev": "npm run build:styles && run-p watch serve:dev",
+    "dev": "run-p build:images build:styles && run-p watch serve:dev",
     "prod": "npm run build && npm run serve:prod",
     "start": "npm run prod"
   },
@@ -75,6 +76,7 @@
     "eslint-plugin-react": "^5.1.1",
     "gulp": "^3.9.1",
     "gulp-filter": "^4.0.0",
+    "gulp-imagemin": "^3.0.1",
     "gulp-less": "^3.1.0",
     "gulp-livereload": "^3.8.1",
     "gulp-newer": "^1.1.0",

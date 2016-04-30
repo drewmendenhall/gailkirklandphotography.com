@@ -6,5 +6,4 @@ npm-debug.log
 
 dist/*
 public/*
-!public/images/
 !public/galleries.json
