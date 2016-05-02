@@ -1,4 +1,5 @@
 import Analytics from 'analytics-node'
+import compression from 'compression'
 import express from 'express'
 import serveStatic from 'serve-static'
 import trailingSlashes from 'connect-slashes'
@@ -26,7 +27,9 @@ if (config.analytics) {
     )
   }
 }
-if (!PROD) {
+if (PROD) {
+  server.use(compression())
+} else {
   let livereload = require('connect-livereload')
   let webpack = require('webpack')
   let webpackDevMiddleware = require('webpack-dev-middleware')
