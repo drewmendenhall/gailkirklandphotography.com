@@ -57,7 +57,5 @@ server.use(reactRouter({
 }))
 
 server.listen(config.server.port, config.server.hostname, () => {
-  console.log(`Express started at ${url.format(
-    Object.assign({hostname: 'localhost'}, config.server)
-  )}`)
+  console.log(`Express started at ${url.format(config.server)}`)
 })
