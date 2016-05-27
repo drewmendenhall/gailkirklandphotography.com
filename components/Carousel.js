@@ -131,8 +131,7 @@ export default class Carousel extends React.Component {
         nextIndex: rotateForward(items.length, index),
         prevIndex: rotateBackward(items.length, index),
       })
-    }
-    if (items !== this.props.items) {
+    } else if (items !== this.props.items) {
       this.setState({
         index: 0,
         nextIndex: rotateForward(items.length, 0),
