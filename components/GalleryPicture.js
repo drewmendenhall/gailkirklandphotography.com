@@ -2,16 +2,14 @@ import React from 'react'
 
 import Helmet from 'react-helmet'
 
+export default (props) => {
+  const {picture} = props
 
-// TODO: use object rest to spread all props
-// export default ({picture, ...props}) => (
-export default ({id, picture}) => {
+  const id = props.id || `picture-${picture.id}`
   const {minHeight, minWidth} = picture
 
-  id = id || `picture-${picture.id}`
-
   return (
-    <picture id={id}>
+    <picture id={id} {...props}>
       <Helmet
         style={[{cssText: picture.srcSet.map((src, index) => (`${index > 0 ? `
           @media (min-width: ${src.width}px) and (min-height: ${src.height}px) {
