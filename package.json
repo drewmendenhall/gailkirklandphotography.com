@@ -83,7 +83,7 @@
     "less-plugin-autoprefix": "^1.5.1",
     "less-plugin-clean-css": "^1.5.1",
     "less-plugin-npm-import": "^2.1.0",
-    "normalize.css": "^4.0.0",
+    "normalize.css": "^4.1.1",
     "rimraf": "^2.5.2",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
