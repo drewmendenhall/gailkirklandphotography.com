@@ -7,121 +7,586 @@
         "id": "1",
         "sequenceNumber": 1,
         "title": "1",
-        "url": "/images/home/1.jpg"
+        "url": "/images/home/1.jpg",
+        "minWidth": 984,
+        "minHeight": 1013,
+        "srcSet": [
+          {
+            "url": "/images/home/1-200.jpg"
+          },
+          {
+            "height": 444,
+            "width": 320,
+            "url": "/images/home/1-255.jpg"
+          },
+          {
+            "height": 491,
+            "width": 375,
+            "url": "/images/home/1-305.jpg"
+          },
+          {
+            "height": 534,
+            "width": 425,
+            "url": "/images/home/1-648.jpg"
+          }
+        ]
       },
       {
         "id": "2",
         "sequenceNumber": 2,
         "title": "2",
-        "url": "/images/home/2.jpg"
+        "url": "/images/home/2.jpg",
+        "minWidth": 1050,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/home/2-200.jpg"
+          },
+          {
+            "height": 411,
+            "width": 320,
+            "url": "/images/home/2-255.jpg"
+          },
+          {
+            "height": 450,
+            "width": 375,
+            "url": "/images/home/2-305.jpg"
+          },
+          {
+            "height": 485,
+            "width": 425,
+            "url": "/images/home/2-648.jpg"
+          },
+          {
+            "height": 724,
+            "width": 768,
+            "url": "/images/home/2-904.jpg"
+          }
+        ]
       },
       {
         "id": "3",
         "sequenceNumber": 3,
         "title": "3",
-        "url": "/images/home/3.jpg"
+        "url": "/images/home/3.jpg",
+        "minWidth": 892,
+        "minHeight": 785,
+        "srcSet": [
+          {
+            "url": "/images/home/3-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/home/3-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/home/3-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/home/3-648.jpg"
+          }
+        ]
       },
       {
         "id": "4",
         "sequenceNumber": 4,
         "title": "4",
-        "url": "/images/home/4.jpg"
+        "url": "/images/home/4.jpg",
+        "minWidth": 1853,
+        "minHeight": 1424,
+        "srcSet": [
+          {
+            "url": "/images/home/4-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/home/4-255.jpg"
+          },
+          {
+            "height": 442,
+            "width": 375,
+            "url": "/images/home/4-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/home/4-648.jpg"
+          },
+          {
+            "height": 703,
+            "width": 768,
+            "url": "/images/home/4-904.jpg"
+          }
+        ]
       },
       {
         "id": "5",
         "sequenceNumber": 5,
         "title": "5",
-        "url": "/images/home/5.jpg"
+        "url": "/images/home/5.jpg",
+        "minWidth": 892,
+        "minHeight": 785,
+        "srcSet": [
+          {
+            "url": "/images/home/5-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/home/5-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/home/5-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/home/5-648.jpg"
+          }
+        ]
       },
       {
         "id": "6",
         "sequenceNumber": 6,
         "title": "6",
-        "url": "/images/home/6.jpg"
+        "url": "/images/home/6.jpg",
+        "minWidth": 842,
+        "minHeight": 752,
+        "srcSet": [
+          {
+            "url": "/images/home/6-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/home/6-255.jpg"
+          },
+          {
+            "height": 442,
+            "width": 375,
+            "url": "/images/home/6-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/home/6-648.jpg"
+          }
+        ]
       },
       {
         "id": "7",
         "sequenceNumber": 7,
         "title": "7",
-        "url": "/images/home/7.jpg"
+        "url": "/images/home/7.jpg",
+        "minWidth": 892,
+        "minHeight": 785,
+        "srcSet": [
+          {
+            "url": "/images/home/7-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/home/7-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/home/7-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/home/7-648.jpg"
+          }
+        ]
       },
       {
         "id": "8",
         "sequenceNumber": 8,
         "title": "8",
-        "url": "/images/home/8.jpg"
+        "url": "/images/home/8.jpg",
+        "minWidth": 661,
+        "minHeight": 632,
+        "srcSet": [
+          {
+            "url": "/images/home/8-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/home/8-255.jpg"
+          },
+          {
+            "height": 442,
+            "width": 375,
+            "url": "/images/home/8-305.jpg"
+          }
+        ]
       },
       {
         "id": "9",
         "sequenceNumber": 9,
         "title": "9",
-        "url": "/images/home/9.jpg"
+        "url": "/images/home/9.jpg",
+        "minWidth": 1853,
+        "minHeight": 1424,
+        "srcSet": [
+          {
+            "url": "/images/home/9-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/home/9-255.jpg"
+          },
+          {
+            "height": 442,
+            "width": 375,
+            "url": "/images/home/9-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/home/9-648.jpg"
+          },
+          {
+            "height": 703,
+            "width": 768,
+            "url": "/images/home/9-904.jpg"
+          }
+        ]
       },
       {
         "id": "10",
         "sequenceNumber": 10,
         "title": "10",
-        "url": "/images/home/10.jpg"
+        "url": "/images/home/10.jpg",
+        "minWidth": 842,
+        "minHeight": 752,
+        "srcSet": [
+          {
+            "url": "/images/home/10-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/home/10-255.jpg"
+          },
+          {
+            "height": 442,
+            "width": 375,
+            "url": "/images/home/10-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/home/10-648.jpg"
+          }
+        ]
       },
       {
         "id": "11",
         "sequenceNumber": 11,
         "title": "11",
-        "url": "/images/home/11.jpg"
+        "url": "/images/home/11.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/home/11-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/home/11-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/home/11-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/home/11-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/home/11-904.jpg"
+          }
+        ]
       },
       {
         "id": "12",
         "sequenceNumber": 12,
         "title": "12",
-        "url": "/images/home/12.jpg"
+        "url": "/images/home/12.jpg",
+        "minWidth": 840,
+        "minHeight": 791,
+        "srcSet": [
+          {
+            "url": "/images/home/12-200.jpg"
+          },
+          {
+            "height": 416,
+            "width": 320,
+            "url": "/images/home/12-255.jpg"
+          },
+          {
+            "height": 456,
+            "width": 375,
+            "url": "/images/home/12-305.jpg"
+          },
+          {
+            "height": 492,
+            "width": 425,
+            "url": "/images/home/12-648.jpg"
+          }
+        ]
       },
       {
         "id": "13",
         "sequenceNumber": 13,
         "title": "13",
-        "url": "/images/home/13.jpg"
+        "url": "/images/home/13.jpg",
+        "minWidth": 766,
+        "minHeight": 875,
+        "srcSet": [
+          {
+            "url": "/images/home/13-200.jpg"
+          },
+          {
+            "height": 459,
+            "width": 320,
+            "url": "/images/home/13-255.jpg"
+          },
+          {
+            "height": 510,
+            "width": 375,
+            "url": "/images/home/13-305.jpg"
+          }
+        ]
       },
       {
         "id": "14",
         "sequenceNumber": 14,
         "title": "14",
-        "url": "/images/home/14.jpg"
+        "url": "/images/home/14.jpg",
+        "minWidth": 1095,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/home/14-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/home/14-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/home/14-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/home/14-648.jpg"
+          },
+          {
+            "height": 703,
+            "width": 768,
+            "url": "/images/home/14-904.jpg"
+          }
+        ]
       },
       {
         "id": "15",
         "sequenceNumber": 15,
         "title": "15",
-        "url": "/images/home/15.jpg"
+        "url": "/images/home/15.jpg",
+        "minWidth": 892,
+        "minHeight": 785,
+        "srcSet": [
+          {
+            "url": "/images/home/15-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/home/15-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/home/15-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/home/15-648.jpg"
+          }
+        ]
       },
       {
         "id": "16",
         "sequenceNumber": 16,
         "title": "16",
-        "url": "/images/home/16.jpg"
+        "url": "/images/home/16.jpg",
+        "minWidth": 984,
+        "minHeight": 1066,
+        "srcSet": [
+          {
+            "url": "/images/home/16-200.jpg"
+          },
+          {
+            "height": 456,
+            "width": 320,
+            "url": "/images/home/16-255.jpg"
+          },
+          {
+            "height": 506,
+            "width": 375,
+            "url": "/images/home/16-305.jpg"
+          },
+          {
+            "height": 552,
+            "width": 425,
+            "url": "/images/home/16-648.jpg"
+          }
+        ]
       },
       {
         "id": "17",
         "sequenceNumber": 17,
         "title": "17",
-        "url": "/images/home/17.jpg"
+        "url": "/images/home/17.jpg",
+        "minWidth": 1095,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/home/17-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/home/17-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/home/17-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/home/17-648.jpg"
+          },
+          {
+            "height": 703,
+            "width": 768,
+            "url": "/images/home/17-904.jpg"
+          }
+        ]
       },
       {
         "id": "18",
         "sequenceNumber": 18,
         "title": "18",
-        "url": "/images/home/18.jpg"
+        "url": "/images/home/18.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/home/18-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/home/18-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/home/18-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/home/18-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/home/18-904.jpg"
+          }
+        ]
       },
       {
         "id": "19",
         "sequenceNumber": 19,
         "title": "19",
-        "url": "/images/home/19.jpg"
+        "url": "/images/home/19.jpg",
+        "minWidth": 1205,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/home/19-200.jpg"
+          },
+          {
+            "height": 391,
+            "width": 320,
+            "url": "/images/home/19-255.jpg"
+          },
+          {
+            "height": 424,
+            "width": 375,
+            "url": "/images/home/19-305.jpg"
+          },
+          {
+            "height": 454,
+            "width": 425,
+            "url": "/images/home/19-648.jpg"
+          },
+          {
+            "height": 659,
+            "width": 768,
+            "url": "/images/home/19-904.jpg"
+          }
+        ]
       },
       {
         "id": "20",
         "sequenceNumber": 20,
         "title": "20",
-        "url": "/images/home/20.jpg"
+        "url": "/images/home/20.jpg",
+        "minWidth": 633,
+        "minHeight": 1044,
+        "srcSet": [
+          {
+            "url": "/images/home/20-200.jpg"
+          },
+          {
+            "height": 573,
+            "width": 320,
+            "url": "/images/home/20-255.jpg"
+          },
+          {
+            "height": 656,
+            "width": 375,
+            "url": "/images/home/20-305.jpg"
+          }
+        ]
       }
     ]
   },
@@ -133,211 +598,1061 @@
         "id": "1",
         "sequenceNumber": 1,
         "title": "1",
-        "url": "/images/dogs/1.jpg"
+        "url": "/images/dogs/1.jpg",
+        "minWidth": 1044,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/dogs/1-200.jpg"
+          },
+          {
+            "height": 412,
+            "width": 320,
+            "url": "/images/dogs/1-255.jpg"
+          },
+          {
+            "height": 451,
+            "width": 375,
+            "url": "/images/dogs/1-305.jpg"
+          },
+          {
+            "height": 486,
+            "width": 425,
+            "url": "/images/dogs/1-648.jpg"
+          },
+          {
+            "height": 726,
+            "width": 768,
+            "url": "/images/dogs/1-904.jpg"
+          }
+        ]
       },
       {
         "id": "2",
         "sequenceNumber": 2,
         "title": "2",
-        "url": "/images/dogs/2.jpg"
+        "url": "/images/dogs/2.jpg",
+        "minWidth": 1095,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/dogs/2-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/dogs/2-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/dogs/2-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/dogs/2-648.jpg"
+          },
+          {
+            "height": 703,
+            "width": 768,
+            "url": "/images/dogs/2-904.jpg"
+          }
+        ]
       },
       {
         "id": "3",
         "sequenceNumber": 3,
         "title": "3",
-        "url": "/images/dogs/3.jpg"
+        "url": "/images/dogs/3.jpg",
+        "minWidth": 892,
+        "minHeight": 785,
+        "srcSet": [
+          {
+            "url": "/images/dogs/3-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/dogs/3-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/dogs/3-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/dogs/3-648.jpg"
+          }
+        ]
       },
       {
         "id": "4",
         "sequenceNumber": 4,
         "title": "4",
-        "url": "/images/dogs/4.jpg"
+        "url": "/images/dogs/4.jpg",
+        "minWidth": 984,
+        "minHeight": 986,
+        "srcSet": [
+          {
+            "url": "/images/dogs/4-200.jpg"
+          },
+          {
+            "height": 437,
+            "width": 320,
+            "url": "/images/dogs/4-255.jpg"
+          },
+          {
+            "height": 483,
+            "width": 375,
+            "url": "/images/dogs/4-305.jpg"
+          },
+          {
+            "height": 524,
+            "width": 425,
+            "url": "/images/dogs/4-648.jpg"
+          }
+        ]
       },
       {
         "id": "5",
         "sequenceNumber": 5,
         "title": "5",
-        "url": "/images/dogs/5.jpg"
+        "url": "/images/dogs/5.jpg",
+        "minWidth": 984,
+        "minHeight": 749,
+        "srcSet": [
+          {
+            "url": "/images/dogs/5-200.jpg"
+          },
+          {
+            "height": 382,
+            "width": 320,
+            "url": "/images/dogs/5-255.jpg"
+          },
+          {
+            "height": 413,
+            "width": 375,
+            "url": "/images/dogs/5-305.jpg"
+          },
+          {
+            "height": 440,
+            "width": 425,
+            "url": "/images/dogs/5-648.jpg"
+          }
+        ]
       },
       {
         "id": "6",
         "sequenceNumber": 6,
         "title": "6",
-        "url": "/images/dogs/6.jpg"
+        "url": "/images/dogs/6.jpg",
+        "minWidth": 1091,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/dogs/6-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/dogs/6-255.jpg"
+          },
+          {
+            "height": 442,
+            "width": 375,
+            "url": "/images/dogs/6-305.jpg"
+          },
+          {
+            "height": 476,
+            "width": 425,
+            "url": "/images/dogs/6-648.jpg"
+          },
+          {
+            "height": 704,
+            "width": 768,
+            "url": "/images/dogs/6-904.jpg"
+          }
+        ]
       },
       {
         "id": "7",
         "sequenceNumber": 7,
         "title": "7",
-        "url": "/images/dogs/7.jpg"
+        "url": "/images/dogs/7.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/dogs/7-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/dogs/7-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/dogs/7-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/dogs/7-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/dogs/7-904.jpg"
+          }
+        ]
       },
       {
         "id": "8",
         "sequenceNumber": 8,
         "title": "8",
-        "url": "/images/dogs/8.jpg"
+        "url": "/images/dogs/8.jpg",
+        "minWidth": 984,
+        "minHeight": 927,
+        "srcSet": [
+          {
+            "url": "/images/dogs/8-200.jpg"
+          },
+          {
+            "height": 424,
+            "width": 320,
+            "url": "/images/dogs/8-255.jpg"
+          },
+          {
+            "height": 465,
+            "width": 375,
+            "url": "/images/dogs/8-305.jpg"
+          },
+          {
+            "height": 503,
+            "width": 425,
+            "url": "/images/dogs/8-648.jpg"
+          }
+        ]
       },
       {
         "id": "9",
         "sequenceNumber": 9,
         "title": "9",
-        "url": "/images/dogs/9.jpg"
+        "url": "/images/dogs/9.jpg",
+        "minWidth": 3128,
+        "minHeight": 2272,
+        "srcSet": [
+          {
+            "url": "/images/dogs/9-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/dogs/9-255.jpg"
+          },
+          {
+            "height": 442,
+            "width": 375,
+            "url": "/images/dogs/9-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/dogs/9-648.jpg"
+          },
+          {
+            "height": 703,
+            "width": 768,
+            "url": "/images/dogs/9-904.jpg"
+          }
+        ]
       },
       {
         "id": "10",
         "sequenceNumber": 10,
         "title": "10",
-        "url": "/images/dogs/10.jpg"
+        "url": "/images/dogs/10.jpg",
+        "minWidth": 892,
+        "minHeight": 785,
+        "srcSet": [
+          {
+            "url": "/images/dogs/10-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/dogs/10-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/dogs/10-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/dogs/10-648.jpg"
+          }
+        ]
       },
       {
         "id": "11",
         "sequenceNumber": 11,
         "title": "11",
-        "url": "/images/dogs/11.jpg"
+        "url": "/images/dogs/11.jpg",
+        "minWidth": 600,
+        "minHeight": 905,
+        "srcSet": [
+          {
+            "url": "/images/dogs/11-200.jpg"
+          },
+          {
+            "height": 536,
+            "width": 320,
+            "url": "/images/dogs/11-255.jpg"
+          },
+          {
+            "height": 608,
+            "width": 375,
+            "url": "/images/dogs/11-305.jpg"
+          }
+        ]
       },
       {
         "id": "12",
         "sequenceNumber": 12,
         "title": "12",
-        "url": "/images/dogs/12.jpg"
+        "url": "/images/dogs/12.jpg",
+        "minWidth": 984,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/dogs/12-200.jpg"
+          },
+          {
+            "height": 422,
+            "width": 320,
+            "url": "/images/dogs/12-255.jpg"
+          },
+          {
+            "height": 463,
+            "width": 375,
+            "url": "/images/dogs/12-305.jpg"
+          },
+          {
+            "height": 501,
+            "width": 425,
+            "url": "/images/dogs/12-648.jpg"
+          }
+        ]
       },
       {
         "id": "13",
         "sequenceNumber": 13,
         "title": "13",
-        "url": "/images/dogs/13.jpg"
+        "url": "/images/dogs/13.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/dogs/13-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/dogs/13-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/dogs/13-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/dogs/13-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/dogs/13-904.jpg"
+          }
+        ]
       },
       {
         "id": "14",
         "sequenceNumber": 14,
         "title": "14",
-        "url": "/images/dogs/14.jpg"
+        "url": "/images/dogs/14.jpg",
+        "minWidth": 1095,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/dogs/14-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/dogs/14-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/dogs/14-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/dogs/14-648.jpg"
+          },
+          {
+            "height": 703,
+            "width": 768,
+            "url": "/images/dogs/14-904.jpg"
+          }
+        ]
       },
       {
         "id": "15",
         "sequenceNumber": 15,
         "title": "15",
-        "url": "/images/dogs/15.jpg"
+        "url": "/images/dogs/15.jpg",
+        "minWidth": 1161,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/dogs/15-200.jpg"
+          },
+          {
+            "height": 396,
+            "width": 320,
+            "url": "/images/dogs/15-255.jpg"
+          },
+          {
+            "height": 431,
+            "width": 375,
+            "url": "/images/dogs/15-305.jpg"
+          },
+          {
+            "height": 462,
+            "width": 425,
+            "url": "/images/dogs/15-648.jpg"
+          },
+          {
+            "height": 675,
+            "width": 768,
+            "url": "/images/dogs/15-904.jpg"
+          }
+        ]
       },
       {
         "id": "16",
         "sequenceNumber": 16,
         "title": "16",
-        "url": "/images/dogs/16.jpg"
+        "url": "/images/dogs/16.jpg",
+        "minWidth": 1045,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/dogs/16-200.jpg"
+          },
+          {
+            "height": 412,
+            "width": 320,
+            "url": "/images/dogs/16-255.jpg"
+          },
+          {
+            "height": 451,
+            "width": 375,
+            "url": "/images/dogs/16-305.jpg"
+          },
+          {
+            "height": 486,
+            "width": 425,
+            "url": "/images/dogs/16-648.jpg"
+          },
+          {
+            "height": 726,
+            "width": 768,
+            "url": "/images/dogs/16-904.jpg"
+          }
+        ]
       },
       {
         "id": "17",
         "sequenceNumber": 17,
         "title": "17",
-        "url": "/images/dogs/17.jpg"
+        "url": "/images/dogs/17.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/dogs/17-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/dogs/17-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/dogs/17-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/dogs/17-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/dogs/17-904.jpg"
+          }
+        ]
       },
       {
         "id": "18",
         "sequenceNumber": 18,
         "title": "18",
-        "url": "/images/dogs/18.jpg"
+        "url": "/images/dogs/18.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/dogs/18-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/dogs/18-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/dogs/18-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/dogs/18-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/dogs/18-904.jpg"
+          }
+        ]
       },
       {
         "id": "19",
         "sequenceNumber": 19,
         "title": "19",
-        "url": "/images/dogs/19.jpg"
+        "url": "/images/dogs/19.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/dogs/19-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/dogs/19-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/dogs/19-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/dogs/19-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/dogs/19-904.jpg"
+          }
+        ]
       },
       {
         "id": "20",
         "sequenceNumber": 20,
         "title": "20",
-        "url": "/images/dogs/20.jpg"
+        "url": "/images/dogs/20.jpg",
+        "minWidth": 1030,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/dogs/20-200.jpg"
+          },
+          {
+            "height": 414,
+            "width": 320,
+            "url": "/images/dogs/20-255.jpg"
+          },
+          {
+            "height": 454,
+            "width": 375,
+            "url": "/images/dogs/20-305.jpg"
+          },
+          {
+            "height": 489,
+            "width": 425,
+            "url": "/images/dogs/20-648.jpg"
+          },
+          {
+            "height": 733,
+            "width": 768,
+            "url": "/images/dogs/20-904.jpg"
+          }
+        ]
       },
       {
         "id": "21",
         "sequenceNumber": 21,
         "title": "21",
-        "url": "/images/dogs/21.jpg"
+        "url": "/images/dogs/21.jpg",
+        "minWidth": 984,
+        "minHeight": 957,
+        "srcSet": [
+          {
+            "url": "/images/dogs/21-200.jpg"
+          },
+          {
+            "height": 431,
+            "width": 320,
+            "url": "/images/dogs/21-255.jpg"
+          },
+          {
+            "height": 474,
+            "width": 375,
+            "url": "/images/dogs/21-305.jpg"
+          },
+          {
+            "height": 514,
+            "width": 425,
+            "url": "/images/dogs/21-648.jpg"
+          }
+        ]
       },
       {
         "id": "22",
         "sequenceNumber": 22,
         "title": "22",
-        "url": "/images/dogs/22.jpg"
+        "url": "/images/dogs/22.jpg",
+        "minWidth": 1057,
+        "minHeight": 955,
+        "srcSet": [
+          {
+            "url": "/images/dogs/22-200.jpg"
+          },
+          {
+            "height": 418,
+            "width": 320,
+            "url": "/images/dogs/22-255.jpg"
+          },
+          {
+            "height": 458,
+            "width": 375,
+            "url": "/images/dogs/22-305.jpg"
+          },
+          {
+            "height": 494,
+            "width": 425,
+            "url": "/images/dogs/22-648.jpg"
+          },
+          {
+            "height": 744,
+            "width": 768,
+            "url": "/images/dogs/22-904.jpg"
+          }
+        ]
       },
       {
         "id": "23",
         "sequenceNumber": 23,
         "title": "23",
-        "url": "/images/dogs/23.jpg"
+        "url": "/images/dogs/23.jpg",
+        "minWidth": 984,
+        "minHeight": 999,
+        "srcSet": [
+          {
+            "url": "/images/dogs/23-200.jpg"
+          },
+          {
+            "height": 440,
+            "width": 320,
+            "url": "/images/dogs/23-255.jpg"
+          },
+          {
+            "height": 487,
+            "width": 375,
+            "url": "/images/dogs/23-305.jpg"
+          },
+          {
+            "height": 529,
+            "width": 425,
+            "url": "/images/dogs/23-648.jpg"
+          }
+        ]
       },
       {
         "id": "24",
         "sequenceNumber": 24,
         "title": "24",
-        "url": "/images/dogs/24.jpg"
+        "url": "/images/dogs/24.jpg",
+        "minWidth": 1094,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/dogs/24-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/dogs/24-255.jpg"
+          },
+          {
+            "height": 442,
+            "width": 375,
+            "url": "/images/dogs/24-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/dogs/24-648.jpg"
+          },
+          {
+            "height": 703,
+            "width": 768,
+            "url": "/images/dogs/24-904.jpg"
+          }
+        ]
       },
       {
         "id": "25",
         "sequenceNumber": 25,
         "title": "25",
-        "url": "/images/dogs/25.jpg"
+        "url": "/images/dogs/25.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/dogs/25-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/dogs/25-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/dogs/25-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/dogs/25-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/dogs/25-904.jpg"
+          }
+        ]
       },
       {
         "id": "26",
         "sequenceNumber": 26,
         "title": "26",
-        "url": "/images/dogs/26.jpg"
+        "url": "/images/dogs/26.jpg",
+        "minWidth": 873,
+        "minHeight": 929,
+        "srcSet": [
+          {
+            "url": "/images/dogs/26-200.jpg"
+          },
+          {
+            "height": 447,
+            "width": 320,
+            "url": "/images/dogs/26-255.jpg"
+          },
+          {
+            "height": 494,
+            "width": 375,
+            "url": "/images/dogs/26-305.jpg"
+          },
+          {
+            "height": 538,
+            "width": 425,
+            "url": "/images/dogs/26-648.jpg"
+          }
+        ]
       },
       {
         "id": "27",
         "sequenceNumber": 27,
         "title": "27",
-        "url": "/images/dogs/27.jpg"
+        "url": "/images/dogs/27.jpg",
+        "minWidth": 984,
+        "minHeight": 1091,
+        "srcSet": [
+          {
+            "url": "/images/dogs/27-200.jpg"
+          },
+          {
+            "height": 462,
+            "width": 320,
+            "url": "/images/dogs/27-255.jpg"
+          },
+          {
+            "height": 514,
+            "width": 375,
+            "url": "/images/dogs/27-305.jpg"
+          },
+          {
+            "height": 561,
+            "width": 425,
+            "url": "/images/dogs/27-648.jpg"
+          }
+        ]
       },
       {
         "id": "28",
         "sequenceNumber": 28,
         "title": "28",
-        "url": "/images/dogs/28.jpg"
+        "url": "/images/dogs/28.jpg",
+        "minWidth": 984,
+        "minHeight": 1233,
+        "srcSet": [
+          {
+            "url": "/images/dogs/28-200.jpg"
+          },
+          {
+            "height": 494,
+            "width": 320,
+            "url": "/images/dogs/28-255.jpg"
+          },
+          {
+            "height": 556,
+            "width": 375,
+            "url": "/images/dogs/28-305.jpg"
+          },
+          {
+            "height": 611,
+            "width": 425,
+            "url": "/images/dogs/28-648.jpg"
+          }
+        ]
       },
       {
         "id": "29",
         "sequenceNumber": 29,
         "title": "29",
-        "url": "/images/dogs/29.jpg"
+        "url": "/images/dogs/29.jpg",
+        "minWidth": 984,
+        "minHeight": 1136,
+        "srcSet": [
+          {
+            "url": "/images/dogs/29-200.jpg"
+          },
+          {
+            "height": 472,
+            "width": 320,
+            "url": "/images/dogs/29-255.jpg"
+          },
+          {
+            "height": 527,
+            "width": 375,
+            "url": "/images/dogs/29-305.jpg"
+          },
+          {
+            "height": 577,
+            "width": 425,
+            "url": "/images/dogs/29-648.jpg"
+          }
+        ]
       },
       {
         "id": "30",
         "sequenceNumber": 30,
         "title": "30",
-        "url": "/images/dogs/30.jpg"
+        "url": "/images/dogs/30.jpg",
+        "minWidth": 1161,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/dogs/30-200.jpg"
+          },
+          {
+            "height": 396,
+            "width": 320,
+            "url": "/images/dogs/30-255.jpg"
+          },
+          {
+            "height": 431,
+            "width": 375,
+            "url": "/images/dogs/30-305.jpg"
+          },
+          {
+            "height": 462,
+            "width": 425,
+            "url": "/images/dogs/30-648.jpg"
+          },
+          {
+            "height": 675,
+            "width": 768,
+            "url": "/images/dogs/30-904.jpg"
+          }
+        ]
       },
       {
         "id": "31",
         "sequenceNumber": 31,
         "title": "31",
-        "url": "/images/dogs/31.jpg"
+        "url": "/images/dogs/31.jpg",
+        "minWidth": 626,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/dogs/31-200.jpg"
+          },
+          {
+            "height": 528,
+            "width": 320,
+            "url": "/images/dogs/31-255.jpg"
+          },
+          {
+            "height": 599,
+            "width": 375,
+            "url": "/images/dogs/31-305.jpg"
+          }
+        ]
       },
       {
         "id": "32",
         "sequenceNumber": 32,
         "title": "32",
-        "url": "/images/dogs/32.jpg"
+        "url": "/images/dogs/32.jpg",
+        "minWidth": 1124,
+        "minHeight": 992,
+        "srcSet": [
+          {
+            "url": "/images/dogs/32-200.jpg"
+          },
+          {
+            "height": 415,
+            "width": 320,
+            "url": "/images/dogs/32-255.jpg"
+          },
+          {
+            "height": 455,
+            "width": 375,
+            "url": "/images/dogs/32-305.jpg"
+          },
+          {
+            "height": 491,
+            "width": 425,
+            "url": "/images/dogs/32-648.jpg"
+          },
+          {
+            "height": 737,
+            "width": 768,
+            "url": "/images/dogs/32-904.jpg"
+          }
+        ]
       },
       {
         "id": "33",
         "sequenceNumber": 33,
         "title": "33",
-        "url": "/images/dogs/33.jpg"
+        "url": "/images/dogs/33.jpg",
+        "minWidth": 552,
+        "minHeight": 661,
+        "srcSet": [
+          {
+            "url": "/images/dogs/33-200.jpg"
+          },
+          {
+            "height": 452,
+            "width": 320,
+            "url": "/images/dogs/33-255.jpg"
+          },
+          {
+            "height": 502,
+            "width": 375,
+            "url": "/images/dogs/33-305.jpg"
+          }
+        ]
       },
       {
         "id": "34",
         "sequenceNumber": 34,
         "title": "34",
-        "url": "/images/dogs/34.jpg"
+        "url": "/images/dogs/34.jpg",
+        "minWidth": 984,
+        "minHeight": 1187,
+        "srcSet": [
+          {
+            "url": "/images/dogs/34-200.jpg"
+          },
+          {
+            "height": 484,
+            "width": 320,
+            "url": "/images/dogs/34-255.jpg"
+          },
+          {
+            "height": 542,
+            "width": 375,
+            "url": "/images/dogs/34-305.jpg"
+          },
+          {
+            "height": 595,
+            "width": 425,
+            "url": "/images/dogs/34-648.jpg"
+          }
+        ]
       },
       {
         "id": "35",
         "sequenceNumber": 35,
         "title": "35",
-        "url": "/images/dogs/35.jpg"
+        "url": "/images/dogs/35.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/dogs/35-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/dogs/35-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/dogs/35-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/dogs/35-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/dogs/35-904.jpg"
+          }
+        ]
       }
     ]
   },
@@ -350,70 +1665,320 @@
         "sequenceNumber": 1,
         "title": "ablueDSC_7124",
         "uploaded": "10/6/2015, 3:59:52 AM",
-        "url": "/images/cats/ablueDSC_7124.jpg"
+        "url": "/images/cats/ablueDSC_7124.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/cats/ablueDSC_7124-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/cats/ablueDSC_7124-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/cats/ablueDSC_7124-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/cats/ablueDSC_7124-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/cats/ablueDSC_7124-904.jpg"
+          }
+        ]
       },
       {
         "id": "acalliedsc_0805",
         "sequenceNumber": 2,
         "title": "acallieDSC_0805",
         "uploaded": "10/6/2015, 4:00:52 AM",
-        "url": "/images/cats/acallieDSC_0805.jpg"
+        "url": "/images/cats/acallieDSC_0805.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/cats/acallieDSC_0805-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/cats/acallieDSC_0805-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/cats/acallieDSC_0805-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/cats/acallieDSC_0805-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/cats/acallieDSC_0805-904.jpg"
+          }
+        ]
       },
       {
         "id": "achurchilldsc_4866-3",
         "sequenceNumber": 3,
         "title": "achurchillDSC_4866 3",
         "uploaded": "10/6/2015, 4:01:00 AM",
-        "url": "/images/cats/achurchillDSC_4866 3.jpg"
+        "url": "/images/cats/achurchillDSC_4866 3.jpg",
+        "minWidth": 1095,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/cats/achurchillDSC_4866 3-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/cats/achurchillDSC_4866 3-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/cats/achurchillDSC_4866 3-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/cats/achurchillDSC_4866 3-648.jpg"
+          },
+          {
+            "height": 703,
+            "width": 768,
+            "url": "/images/cats/achurchillDSC_4866 3-904.jpg"
+          }
+        ]
       },
       {
         "id": "adsc_8104-copy",
         "sequenceNumber": 4,
         "title": "aDSC_8104 copy",
         "uploaded": "10/6/2015, 4:01:53 AM",
-        "url": "/images/cats/aDSC_8104 copy.jpg"
+        "url": "/images/cats/aDSC_8104 copy.jpg",
+        "minWidth": 984,
+        "minHeight": 1270,
+        "srcSet": [
+          {
+            "url": "/images/cats/aDSC_8104 copy-200.jpg"
+          },
+          {
+            "height": 503,
+            "width": 320,
+            "url": "/images/cats/aDSC_8104 copy-255.jpg"
+          },
+          {
+            "height": 567,
+            "width": 375,
+            "url": "/images/cats/aDSC_8104 copy-305.jpg"
+          },
+          {
+            "height": 624,
+            "width": 425,
+            "url": "/images/cats/aDSC_8104 copy-648.jpg"
+          }
+        ]
       },
       {
         "id": "adsc_8202",
         "sequenceNumber": 5,
         "title": "aDSC_8202",
         "uploaded": "10/6/2015, 4:03:08 AM",
-        "url": "/images/cats/aDSC_8202.jpg"
+        "url": "/images/cats/aDSC_8202.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/cats/aDSC_8202-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/cats/aDSC_8202-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/cats/aDSC_8202-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/cats/aDSC_8202-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/cats/aDSC_8202-904.jpg"
+          }
+        ]
       },
       {
         "id": "ajdsc_1771",
         "sequenceNumber": 6,
         "title": "ajDSC_1771",
         "uploaded": "10/6/2015, 4:03:17 AM",
-        "url": "/images/cats/ajDSC_1771.jpg"
+        "url": "/images/cats/ajDSC_1771.jpg",
+        "minWidth": 1036,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/cats/ajDSC_1771-200.jpg"
+          },
+          {
+            "height": 413,
+            "width": 320,
+            "url": "/images/cats/ajDSC_1771-255.jpg"
+          },
+          {
+            "height": 452,
+            "width": 375,
+            "url": "/images/cats/ajDSC_1771-305.jpg"
+          },
+          {
+            "height": 488,
+            "width": 425,
+            "url": "/images/cats/ajDSC_1771-648.jpg"
+          },
+          {
+            "height": 730,
+            "width": 768,
+            "url": "/images/cats/ajDSC_1771-904.jpg"
+          }
+        ]
       },
       {
         "id": "amaincoondsc_7056",
         "sequenceNumber": 7,
         "title": "amaincoonDSC_7056",
         "uploaded": "10/6/2015, 4:03:27 AM",
-        "url": "/images/cats/amaincoonDSC_7056.jpg"
+        "url": "/images/cats/amaincoonDSC_7056.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/cats/amaincoonDSC_7056-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/cats/amaincoonDSC_7056-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/cats/amaincoonDSC_7056-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/cats/amaincoonDSC_7056-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/cats/amaincoonDSC_7056-904.jpg"
+          }
+        ]
       },
       {
         "id": "amona",
         "sequenceNumber": 8,
         "title": "amona",
         "uploaded": "10/6/2015, 4:03:35 AM",
-        "url": "/images/cats/amona.jpg"
+        "url": "/images/cats/amona.jpg",
+        "minWidth": 1014,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/cats/amona-200.jpg"
+          },
+          {
+            "height": 417,
+            "width": 320,
+            "url": "/images/cats/amona-255.jpg"
+          },
+          {
+            "height": 457,
+            "width": 375,
+            "url": "/images/cats/amona-305.jpg"
+          },
+          {
+            "height": 493,
+            "width": 425,
+            "url": "/images/cats/amona-648.jpg"
+          }
+        ]
       },
       {
         "id": "axdsc_1778",
         "sequenceNumber": 9,
         "title": "aXDSC_1778",
         "uploaded": "10/6/2015, 4:03:42 AM",
-        "url": "/images/cats/aXDSC_1778.jpg"
+        "url": "/images/cats/aXDSC_1778.jpg",
+        "minWidth": 984,
+        "minHeight": 1112,
+        "srcSet": [
+          {
+            "url": "/images/cats/aXDSC_1778-200.jpg"
+          },
+          {
+            "height": 466,
+            "width": 320,
+            "url": "/images/cats/aXDSC_1778-255.jpg"
+          },
+          {
+            "height": 520,
+            "width": 375,
+            "url": "/images/cats/aXDSC_1778-305.jpg"
+          },
+          {
+            "height": 569,
+            "width": 425,
+            "url": "/images/cats/aXDSC_1778-648.jpg"
+          }
+        ]
       },
       {
         "id": "axdsc_1837",
         "sequenceNumber": 10,
         "title": "aXDSC_1837",
         "uploaded": "10/6/2015, 4:03:50 AM",
-        "url": "/images/cats/aXDSC_1837.jpg"
+        "url": "/images/cats/aXDSC_1837.jpg",
+        "minWidth": 984,
+        "minHeight": 1027,
+        "srcSet": [
+          {
+            "url": "/images/cats/aXDSC_1837-200.jpg"
+          },
+          {
+            "height": 447,
+            "width": 320,
+            "url": "/images/cats/aXDSC_1837-255.jpg"
+          },
+          {
+            "height": 495,
+            "width": 375,
+            "url": "/images/cats/aXDSC_1837-305.jpg"
+          },
+          {
+            "height": 539,
+            "width": 425,
+            "url": "/images/cats/aXDSC_1837-648.jpg"
+          }
+        ]
       }
     ]
   },
@@ -425,223 +1990,1137 @@
         "id": "0",
         "sequenceNumber": 0,
         "title": "0",
-        "url": "/images/horses/0.jpg"
+        "url": "/images/horses/0.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/0-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/horses/0-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/horses/0-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/horses/0-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/horses/0-904.jpg"
+          }
+        ]
       },
       {
         "id": "1",
         "sequenceNumber": 1,
         "title": "1",
-        "url": "/images/horses/1.jpg"
+        "url": "/images/horses/1.jpg",
+        "minWidth": 984,
+        "minHeight": 1117,
+        "srcSet": [
+          {
+            "url": "/images/horses/1-200.jpg"
+          },
+          {
+            "height": 468,
+            "width": 320,
+            "url": "/images/horses/1-255.jpg"
+          },
+          {
+            "height": 521,
+            "width": 375,
+            "url": "/images/horses/1-305.jpg"
+          },
+          {
+            "height": 570,
+            "width": 425,
+            "url": "/images/horses/1-648.jpg"
+          }
+        ]
       },
       {
         "id": "2",
         "sequenceNumber": 2,
         "title": "2",
-        "url": "/images/horses/2.jpg"
+        "url": "/images/horses/2.jpg",
+        "minWidth": 984,
+        "minHeight": 1101,
+        "srcSet": [
+          {
+            "url": "/images/horses/2-200.jpg"
+          },
+          {
+            "height": 464,
+            "width": 320,
+            "url": "/images/horses/2-255.jpg"
+          },
+          {
+            "height": 517,
+            "width": 375,
+            "url": "/images/horses/2-305.jpg"
+          },
+          {
+            "height": 565,
+            "width": 425,
+            "url": "/images/horses/2-648.jpg"
+          }
+        ]
       },
       {
         "id": "3",
         "sequenceNumber": 3,
         "title": "3",
-        "url": "/images/horses/3.jpg"
+        "url": "/images/horses/3.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/3-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/horses/3-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/horses/3-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/horses/3-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/horses/3-904.jpg"
+          }
+        ]
       },
       {
         "id": "4",
         "sequenceNumber": 4,
         "title": "4",
-        "url": "/images/horses/4.jpg"
+        "url": "/images/horses/4.jpg",
+        "minWidth": 892,
+        "minHeight": 785,
+        "srcSet": [
+          {
+            "url": "/images/horses/4-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/horses/4-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/horses/4-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/horses/4-648.jpg"
+          }
+        ]
       },
       {
         "id": "5",
         "sequenceNumber": 5,
         "title": "5",
-        "url": "/images/horses/5.jpg"
+        "url": "/images/horses/5.jpg",
+        "minWidth": 646,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/5-200.jpg"
+          },
+          {
+            "height": 518,
+            "width": 320,
+            "url": "/images/horses/5-255.jpg"
+          },
+          {
+            "height": 586,
+            "width": 375,
+            "url": "/images/horses/5-305.jpg"
+          }
+        ]
       },
       {
         "id": "6",
         "sequenceNumber": 6,
         "title": "6",
-        "url": "/images/horses/6.jpg"
+        "url": "/images/horses/6.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/6-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/horses/6-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/horses/6-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/horses/6-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/horses/6-904.jpg"
+          }
+        ]
       },
       {
         "id": "7",
         "sequenceNumber": 7,
         "title": "7",
-        "url": "/images/horses/7.jpg"
+        "url": "/images/horses/7.jpg",
+        "minWidth": 984,
+        "minHeight": 1122,
+        "srcSet": [
+          {
+            "url": "/images/horses/7-200.jpg"
+          },
+          {
+            "height": 469,
+            "width": 320,
+            "url": "/images/horses/7-255.jpg"
+          },
+          {
+            "height": 523,
+            "width": 375,
+            "url": "/images/horses/7-305.jpg"
+          },
+          {
+            "height": 572,
+            "width": 425,
+            "url": "/images/horses/7-648.jpg"
+          }
+        ]
       },
       {
         "id": "8",
         "sequenceNumber": 8,
         "title": "8",
-        "url": "/images/horses/8.jpg"
+        "url": "/images/horses/8.jpg",
+        "minWidth": 1262,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/8-200.jpg"
+          },
+          {
+            "height": 385,
+            "width": 320,
+            "url": "/images/horses/8-255.jpg"
+          },
+          {
+            "height": 417,
+            "width": 375,
+            "url": "/images/horses/8-305.jpg"
+          },
+          {
+            "height": 445,
+            "width": 425,
+            "url": "/images/horses/8-648.jpg"
+          },
+          {
+            "height": 640,
+            "width": 768,
+            "url": "/images/horses/8-904.jpg"
+          }
+        ]
       },
       {
         "id": "9",
         "sequenceNumber": 9,
         "title": "9",
-        "url": "/images/horses/9.jpg"
+        "url": "/images/horses/9.jpg",
+        "minWidth": 974,
+        "minHeight": 1558,
+        "srcSet": [
+          {
+            "url": "/images/horses/9-200.jpg"
+          },
+          {
+            "height": 573,
+            "width": 320,
+            "url": "/images/horses/9-255.jpg"
+          },
+          {
+            "height": 656,
+            "width": 375,
+            "url": "/images/horses/9-305.jpg"
+          },
+          {
+            "height": 731,
+            "width": 425,
+            "url": "/images/horses/9-648.jpg"
+          }
+        ]
       },
       {
         "id": "10",
         "sequenceNumber": 10,
         "title": "10",
-        "url": "/images/horses/10.jpg"
+        "url": "/images/horses/10.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/10-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/horses/10-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/horses/10-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/horses/10-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/horses/10-904.jpg"
+          }
+        ]
       },
       {
         "id": "11",
         "sequenceNumber": 11,
         "title": "11",
-        "url": "/images/horses/11.jpg"
+        "url": "/images/horses/11.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/11-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/horses/11-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/horses/11-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/horses/11-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/horses/11-904.jpg"
+          }
+        ]
       },
       {
         "id": "12",
         "sequenceNumber": 12,
         "title": "12",
-        "url": "/images/horses/12.jpg"
+        "url": "/images/horses/12.jpg",
+        "minWidth": 1095,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/12-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/horses/12-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/horses/12-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/horses/12-648.jpg"
+          },
+          {
+            "height": 703,
+            "width": 768,
+            "url": "/images/horses/12-904.jpg"
+          }
+        ]
       },
       {
         "id": "13",
         "sequenceNumber": 13,
         "title": "13",
-        "url": "/images/horses/13.jpg"
+        "url": "/images/horses/13.jpg",
+        "minWidth": 1095,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/13-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/horses/13-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/horses/13-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/horses/13-648.jpg"
+          },
+          {
+            "height": 703,
+            "width": 768,
+            "url": "/images/horses/13-904.jpg"
+          }
+        ]
       },
       {
         "id": "14",
         "sequenceNumber": 14,
         "title": "14",
-        "url": "/images/horses/14.jpg"
+        "url": "/images/horses/14.jpg",
+        "minWidth": 769,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/14-200.jpg"
+          },
+          {
+            "height": 472,
+            "width": 320,
+            "url": "/images/horses/14-255.jpg"
+          },
+          {
+            "height": 527,
+            "width": 375,
+            "url": "/images/horses/14-305.jpg"
+          },
+          {
+            "height": 577,
+            "width": 425,
+            "url": "/images/horses/14-648.jpg"
+          }
+        ]
       },
       {
         "id": "15",
         "sequenceNumber": 15,
         "title": "15",
-        "url": "/images/horses/15.jpg"
+        "url": "/images/horses/15.jpg",
+        "minWidth": 984,
+        "minHeight": 1252,
+        "srcSet": [
+          {
+            "url": "/images/horses/15-200.jpg"
+          },
+          {
+            "height": 499,
+            "width": 320,
+            "url": "/images/horses/15-255.jpg"
+          },
+          {
+            "height": 561,
+            "width": 375,
+            "url": "/images/horses/15-305.jpg"
+          },
+          {
+            "height": 618,
+            "width": 425,
+            "url": "/images/horses/15-648.jpg"
+          }
+        ]
       },
       {
         "id": "16",
         "sequenceNumber": 16,
         "title": "16",
-        "url": "/images/horses/16.jpg"
+        "url": "/images/horses/16.jpg",
+        "minWidth": 1149,
+        "minHeight": 955,
+        "srcSet": [
+          {
+            "url": "/images/horses/16-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/horses/16-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/horses/16-305.jpg"
+          },
+          {
+            "height": 474,
+            "width": 425,
+            "url": "/images/horses/16-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/horses/16-904.jpg"
+          }
+        ]
       },
       {
         "id": "17",
         "sequenceNumber": 17,
         "title": "17",
-        "url": "/images/horses/17.jpg"
+        "url": "/images/horses/17.jpg",
+        "minWidth": 2968,
+        "minHeight": 4560,
+        "srcSet": [
+          {
+            "url": "/images/horses/17-200.jpg"
+          },
+          {
+            "height": 573,
+            "width": 320,
+            "url": "/images/horses/17-255.jpg"
+          },
+          {
+            "height": 656,
+            "width": 375,
+            "url": "/images/horses/17-305.jpg"
+          },
+          {
+            "height": 731,
+            "width": 425,
+            "url": "/images/horses/17-648.jpg"
+          },
+          {
+            "height": 1248,
+            "width": 768,
+            "url": "/images/horses/17-904.jpg"
+          }
+        ]
       },
       {
         "id": "18",
         "sequenceNumber": 18,
         "title": "18",
-        "url": "/images/horses/18.jpg"
+        "url": "/images/horses/18.jpg",
+        "minWidth": 1135,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/18-200.jpg"
+          },
+          {
+            "height": 400,
+            "width": 320,
+            "url": "/images/horses/18-255.jpg"
+          },
+          {
+            "height": 435,
+            "width": 375,
+            "url": "/images/horses/18-305.jpg"
+          },
+          {
+            "height": 467,
+            "width": 425,
+            "url": "/images/horses/18-648.jpg"
+          },
+          {
+            "height": 686,
+            "width": 768,
+            "url": "/images/horses/18-904.jpg"
+          }
+        ]
       },
       {
         "id": "19",
         "sequenceNumber": 19,
         "title": "19",
-        "url": "/images/horses/19.jpg"
+        "url": "/images/horses/19.jpg",
+        "minWidth": 1094,
+        "minHeight": 955,
+        "srcSet": [
+          {
+            "url": "/images/horses/19-200.jpg"
+          },
+          {
+            "height": 412,
+            "width": 320,
+            "url": "/images/horses/19-255.jpg"
+          },
+          {
+            "height": 451,
+            "width": 375,
+            "url": "/images/horses/19-305.jpg"
+          },
+          {
+            "height": 486,
+            "width": 425,
+            "url": "/images/horses/19-648.jpg"
+          },
+          {
+            "height": 726,
+            "width": 768,
+            "url": "/images/horses/19-904.jpg"
+          }
+        ]
       },
       {
         "id": "20",
         "sequenceNumber": 20,
         "title": "20",
-        "url": "/images/horses/20.jpg"
+        "url": "/images/horses/20.jpg",
+        "minWidth": 984,
+        "minHeight": 1573,
+        "srcSet": [
+          {
+            "url": "/images/horses/20-200.jpg"
+          },
+          {
+            "height": 573,
+            "width": 320,
+            "url": "/images/horses/20-255.jpg"
+          },
+          {
+            "height": 656,
+            "width": 375,
+            "url": "/images/horses/20-305.jpg"
+          },
+          {
+            "height": 731,
+            "width": 425,
+            "url": "/images/horses/20-648.jpg"
+          }
+        ]
       },
       {
         "id": "21",
         "sequenceNumber": 21,
         "title": "21",
-        "url": "/images/horses/21.jpg"
+        "url": "/images/horses/21.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/21-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/horses/21-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/horses/21-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/horses/21-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/horses/21-904.jpg"
+          }
+        ]
       },
       {
         "id": "22",
         "sequenceNumber": 22,
         "title": "22",
-        "url": "/images/horses/22.jpg"
+        "url": "/images/horses/22.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/22-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/horses/22-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/horses/22-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/horses/22-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/horses/22-904.jpg"
+          }
+        ]
       },
       {
         "id": "23",
         "sequenceNumber": 23,
         "title": "23",
-        "url": "/images/horses/23.jpg"
+        "url": "/images/horses/23.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/23-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/horses/23-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/horses/23-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/horses/23-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/horses/23-904.jpg"
+          }
+        ]
       },
       {
         "id": "24",
         "sequenceNumber": 24,
         "title": "24",
-        "url": "/images/horses/24.jpg"
+        "url": "/images/horses/24.jpg",
+        "minWidth": 1076,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/24-200.jpg"
+          },
+          {
+            "height": 408,
+            "width": 320,
+            "url": "/images/horses/24-255.jpg"
+          },
+          {
+            "height": 445,
+            "width": 375,
+            "url": "/images/horses/24-305.jpg"
+          },
+          {
+            "height": 479,
+            "width": 425,
+            "url": "/images/horses/24-648.jpg"
+          },
+          {
+            "height": 711,
+            "width": 768,
+            "url": "/images/horses/24-904.jpg"
+          }
+        ]
       },
       {
         "id": "25",
         "sequenceNumber": 25,
         "title": "25",
-        "url": "/images/horses/25.jpg"
+        "url": "/images/horses/25.jpg",
+        "minWidth": 1205,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/25-200.jpg"
+          },
+          {
+            "height": 391,
+            "width": 320,
+            "url": "/images/horses/25-255.jpg"
+          },
+          {
+            "height": 424,
+            "width": 375,
+            "url": "/images/horses/25-305.jpg"
+          },
+          {
+            "height": 454,
+            "width": 425,
+            "url": "/images/horses/25-648.jpg"
+          },
+          {
+            "height": 659,
+            "width": 768,
+            "url": "/images/horses/25-904.jpg"
+          }
+        ]
       },
       {
         "id": "26",
         "sequenceNumber": 26,
         "title": "26",
-        "url": "/images/horses/26.jpg"
+        "url": "/images/horses/26.jpg",
+        "minWidth": 984,
+        "minHeight": 1152,
+        "srcSet": [
+          {
+            "url": "/images/horses/26-200.jpg"
+          },
+          {
+            "height": 476,
+            "width": 320,
+            "url": "/images/horses/26-255.jpg"
+          },
+          {
+            "height": 532,
+            "width": 375,
+            "url": "/images/horses/26-305.jpg"
+          },
+          {
+            "height": 583,
+            "width": 425,
+            "url": "/images/horses/26-648.jpg"
+          }
+        ]
       },
       {
         "id": "27",
         "sequenceNumber": 27,
         "title": "27",
-        "url": "/images/horses/27.jpg"
+        "url": "/images/horses/27.jpg",
+        "minWidth": 1259,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/27-200.jpg"
+          },
+          {
+            "height": 386,
+            "width": 320,
+            "url": "/images/horses/27-255.jpg"
+          },
+          {
+            "height": 417,
+            "width": 375,
+            "url": "/images/horses/27-305.jpg"
+          },
+          {
+            "height": 446,
+            "width": 425,
+            "url": "/images/horses/27-648.jpg"
+          },
+          {
+            "height": 641,
+            "width": 768,
+            "url": "/images/horses/27-904.jpg"
+          }
+        ]
       },
       {
         "id": "28",
         "sequenceNumber": 28,
         "title": "28",
-        "url": "/images/horses/28.jpg"
+        "url": "/images/horses/28.jpg",
+        "minWidth": 1095,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/28-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/horses/28-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/horses/28-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/horses/28-648.jpg"
+          },
+          {
+            "height": 703,
+            "width": 768,
+            "url": "/images/horses/28-904.jpg"
+          }
+        ]
       },
       {
         "id": "29",
         "sequenceNumber": 29,
         "title": "29",
-        "url": "/images/horses/29.jpg"
+        "url": "/images/horses/29.jpg",
+        "minWidth": 1122,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/29-200.jpg"
+          },
+          {
+            "height": 401,
+            "width": 320,
+            "url": "/images/horses/29-255.jpg"
+          },
+          {
+            "height": 437,
+            "width": 375,
+            "url": "/images/horses/29-305.jpg"
+          },
+          {
+            "height": 469,
+            "width": 425,
+            "url": "/images/horses/29-648.jpg"
+          },
+          {
+            "height": 691,
+            "width": 768,
+            "url": "/images/horses/29-904.jpg"
+          }
+        ]
       },
       {
         "id": "30",
         "sequenceNumber": 30,
         "title": "30",
-        "url": "/images/horses/30.jpg"
+        "url": "/images/horses/30.jpg",
+        "minWidth": 600,
+        "minHeight": 994,
+        "srcSet": [
+          {
+            "url": "/images/horses/30-200.jpg"
+          },
+          {
+            "height": 573,
+            "width": 320,
+            "url": "/images/horses/30-255.jpg"
+          },
+          {
+            "height": 656,
+            "width": 375,
+            "url": "/images/horses/30-305.jpg"
+          }
+        ]
       },
       {
         "id": "31",
         "sequenceNumber": 31,
         "title": "31",
-        "url": "/images/horses/31.jpg"
+        "url": "/images/horses/31.jpg",
+        "minWidth": 633,
+        "minHeight": 1044,
+        "srcSet": [
+          {
+            "url": "/images/horses/31-200.jpg"
+          },
+          {
+            "height": 573,
+            "width": 320,
+            "url": "/images/horses/31-255.jpg"
+          },
+          {
+            "height": 656,
+            "width": 375,
+            "url": "/images/horses/31-305.jpg"
+          }
+        ]
       },
       {
         "id": "32",
         "sequenceNumber": 32,
         "title": "32",
-        "url": "/images/horses/32.jpg"
+        "url": "/images/horses/32.jpg",
+        "minWidth": 984,
+        "minHeight": 1069,
+        "srcSet": [
+          {
+            "url": "/images/horses/32-200.jpg"
+          },
+          {
+            "height": 456,
+            "width": 320,
+            "url": "/images/horses/32-255.jpg"
+          },
+          {
+            "height": 507,
+            "width": 375,
+            "url": "/images/horses/32-305.jpg"
+          },
+          {
+            "height": 553,
+            "width": 425,
+            "url": "/images/horses/32-648.jpg"
+          }
+        ]
       },
       {
         "id": "33",
         "sequenceNumber": 33,
         "title": "33",
-        "url": "/images/horses/33.jpg"
+        "url": "/images/horses/33.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/33-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/horses/33-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/horses/33-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/horses/33-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/horses/33-904.jpg"
+          }
+        ]
       },
       {
         "id": "34",
         "sequenceNumber": 34,
         "title": "34",
-        "url": "/images/horses/34.jpg"
+        "url": "/images/horses/34.jpg",
+        "minWidth": 1286,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/34-200.jpg"
+          },
+          {
+            "height": 383,
+            "width": 320,
+            "url": "/images/horses/34-255.jpg"
+          },
+          {
+            "height": 414,
+            "width": 375,
+            "url": "/images/horses/34-305.jpg"
+          },
+          {
+            "height": 442,
+            "width": 425,
+            "url": "/images/horses/34-648.jpg"
+          },
+          {
+            "height": 632,
+            "width": 768,
+            "url": "/images/horses/34-904.jpg"
+          }
+        ]
       },
       {
         "id": "35",
         "sequenceNumber": 35,
         "title": "35",
-        "url": "/images/horses/35.jpg"
+        "url": "/images/horses/35.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/horses/35-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/horses/35-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/horses/35-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/horses/35-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/horses/35-904.jpg"
+          }
+        ]
       },
       {
         "id": "36",
         "sequenceNumber": 36,
         "title": "36",
-        "url": "/images/horses/36.jpg"
+        "url": "/images/horses/36.jpg",
+        "minWidth": 984,
+        "minHeight": 711,
+        "srcSet": [
+          {
+            "url": "/images/horses/36-200.jpg"
+          },
+          {
+            "height": 374,
+            "width": 320,
+            "url": "/images/horses/36-255.jpg"
+          },
+          {
+            "height": 402,
+            "width": 375,
+            "url": "/images/horses/36-305.jpg"
+          },
+          {
+            "height": 427,
+            "width": 425,
+            "url": "/images/horses/36-648.jpg"
+          }
+        ]
       }
     ]
   },
@@ -653,19 +3132,90 @@
         "id": "1",
         "sequenceNumber": 1,
         "title": "1",
-        "url": "/images/twilight/1.jpg"
+        "url": "/images/twilight/1.jpg",
+        "minWidth": 984,
+        "minHeight": 1228,
+        "srcSet": [
+          {
+            "url": "/images/twilight/1-200.jpg"
+          },
+          {
+            "height": 493,
+            "width": 320,
+            "url": "/images/twilight/1-255.jpg"
+          },
+          {
+            "height": 554,
+            "width": 375,
+            "url": "/images/twilight/1-305.jpg"
+          },
+          {
+            "height": 609,
+            "width": 425,
+            "url": "/images/twilight/1-648.jpg"
+          }
+        ]
       },
       {
         "id": "2",
         "sequenceNumber": 2,
         "title": "2",
-        "url": "/images/twilight/2.jpg"
+        "url": "/images/twilight/2.jpg",
+        "minWidth": 2724,
+        "minHeight": 2054,
+        "srcSet": [
+          {
+            "url": "/images/twilight/2-200.jpg"
+          },
+          {
+            "height": 409,
+            "width": 320,
+            "url": "/images/twilight/2-255.jpg"
+          },
+          {
+            "height": 447,
+            "width": 375,
+            "url": "/images/twilight/2-305.jpg"
+          },
+          {
+            "height": 481,
+            "width": 425,
+            "url": "/images/twilight/2-648.jpg"
+          },
+          {
+            "height": 715,
+            "width": 768,
+            "url": "/images/twilight/2-904.jpg"
+          }
+        ]
       },
       {
         "id": "3",
         "sequenceNumber": 3,
         "title": "3",
-        "url": "/images/twilight/3.jpg"
+        "url": "/images/twilight/3.jpg",
+        "minWidth": 892,
+        "minHeight": 785,
+        "srcSet": [
+          {
+            "url": "/images/twilight/3-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/twilight/3-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/twilight/3-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/twilight/3-648.jpg"
+          }
+        ]
       }
     ]
   },
@@ -677,223 +3227,1087 @@
         "id": "1",
         "sequenceNumber": 1,
         "title": "1",
-        "url": "/images/people/1.jpg"
+        "url": "/images/people/1.jpg",
+        "minWidth": 1050,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/1-200.jpg"
+          },
+          {
+            "height": 411,
+            "width": 320,
+            "url": "/images/people/1-255.jpg"
+          },
+          {
+            "height": 450,
+            "width": 375,
+            "url": "/images/people/1-305.jpg"
+          },
+          {
+            "height": 485,
+            "width": 425,
+            "url": "/images/people/1-648.jpg"
+          },
+          {
+            "height": 724,
+            "width": 768,
+            "url": "/images/people/1-904.jpg"
+          }
+        ]
       },
       {
         "id": "2",
         "sequenceNumber": 2,
         "title": "2",
-        "url": "/images/people/2.jpg"
+        "url": "/images/people/2.jpg",
+        "minWidth": 1023,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/2-200.jpg"
+          },
+          {
+            "height": 416,
+            "width": 320,
+            "url": "/images/people/2-255.jpg"
+          },
+          {
+            "height": 455,
+            "width": 375,
+            "url": "/images/people/2-305.jpg"
+          },
+          {
+            "height": 491,
+            "width": 425,
+            "url": "/images/people/2-648.jpg"
+          }
+        ]
       },
       {
         "id": "3",
         "sequenceNumber": 3,
         "title": "3",
-        "url": "/images/people/3.jpg"
+        "url": "/images/people/3.jpg",
+        "minWidth": 984,
+        "minHeight": 1066,
+        "srcSet": [
+          {
+            "url": "/images/people/3-200.jpg"
+          },
+          {
+            "height": 456,
+            "width": 320,
+            "url": "/images/people/3-255.jpg"
+          },
+          {
+            "height": 506,
+            "width": 375,
+            "url": "/images/people/3-305.jpg"
+          },
+          {
+            "height": 552,
+            "width": 425,
+            "url": "/images/people/3-648.jpg"
+          }
+        ]
       },
       {
         "id": "4",
         "sequenceNumber": 4,
         "title": "4",
-        "url": "/images/people/4.jpg"
+        "url": "/images/people/4.jpg",
+        "minWidth": 1026,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/4-200.jpg"
+          },
+          {
+            "height": 415,
+            "width": 320,
+            "url": "/images/people/4-255.jpg"
+          },
+          {
+            "height": 454,
+            "width": 375,
+            "url": "/images/people/4-305.jpg"
+          },
+          {
+            "height": 490,
+            "width": 425,
+            "url": "/images/people/4-648.jpg"
+          },
+          {
+            "height": 735,
+            "width": 768,
+            "url": "/images/people/4-904.jpg"
+          }
+        ]
       },
       {
         "id": "5",
         "sequenceNumber": 5,
         "title": "5",
-        "url": "/images/people/5.jpg"
+        "url": "/images/people/5.jpg",
+        "minWidth": 1035,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/5-200.jpg"
+          },
+          {
+            "height": 414,
+            "width": 320,
+            "url": "/images/people/5-255.jpg"
+          },
+          {
+            "height": 453,
+            "width": 375,
+            "url": "/images/people/5-305.jpg"
+          },
+          {
+            "height": 488,
+            "width": 425,
+            "url": "/images/people/5-648.jpg"
+          },
+          {
+            "height": 731,
+            "width": 768,
+            "url": "/images/people/5-904.jpg"
+          }
+        ]
       },
       {
         "id": "6",
         "sequenceNumber": 6,
         "title": "6",
-        "url": "/images/people/6.jpg"
+        "url": "/images/people/6.jpg",
+        "minWidth": 737,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/6-200.jpg"
+          },
+          {
+            "height": 482,
+            "width": 320,
+            "url": "/images/people/6-255.jpg"
+          },
+          {
+            "height": 540,
+            "width": 375,
+            "url": "/images/people/6-305.jpg"
+          }
+        ]
       },
       {
         "id": "7",
         "sequenceNumber": 7,
         "title": "7",
-        "url": "/images/people/7.jpg"
+        "url": "/images/people/7.jpg",
+        "minWidth": 984,
+        "minHeight": 1252,
+        "srcSet": [
+          {
+            "url": "/images/people/7-200.jpg"
+          },
+          {
+            "height": 499,
+            "width": 320,
+            "url": "/images/people/7-255.jpg"
+          },
+          {
+            "height": 561,
+            "width": 375,
+            "url": "/images/people/7-305.jpg"
+          },
+          {
+            "height": 618,
+            "width": 425,
+            "url": "/images/people/7-648.jpg"
+          }
+        ]
       },
       {
         "id": "8",
         "sequenceNumber": 8,
         "title": "8",
-        "url": "/images/people/8.jpg"
+        "url": "/images/people/8.jpg",
+        "minWidth": 600,
+        "minHeight": 994,
+        "srcSet": [
+          {
+            "url": "/images/people/8-200.jpg"
+          },
+          {
+            "height": 573,
+            "width": 320,
+            "url": "/images/people/8-255.jpg"
+          },
+          {
+            "height": 656,
+            "width": 375,
+            "url": "/images/people/8-305.jpg"
+          }
+        ]
       },
       {
         "id": "9",
         "sequenceNumber": 9,
         "title": "9",
-        "url": "/images/people/9.jpg"
+        "url": "/images/people/9.jpg",
+        "minWidth": 840,
+        "minHeight": 808,
+        "srcSet": [
+          {
+            "url": "/images/people/9-200.jpg"
+          },
+          {
+            "height": 421,
+            "width": 320,
+            "url": "/images/people/9-255.jpg"
+          },
+          {
+            "height": 462,
+            "width": 375,
+            "url": "/images/people/9-305.jpg"
+          },
+          {
+            "height": 499,
+            "width": 425,
+            "url": "/images/people/9-648.jpg"
+          }
+        ]
       },
       {
         "id": "10",
         "sequenceNumber": 10,
         "title": "10",
-        "url": "/images/people/10.jpg"
+        "url": "/images/people/10.jpg",
+        "minWidth": 984,
+        "minHeight": 1343,
+        "srcSet": [
+          {
+            "url": "/images/people/10-200.jpg"
+          },
+          {
+            "height": 520,
+            "width": 320,
+            "url": "/images/people/10-255.jpg"
+          },
+          {
+            "height": 588,
+            "width": 375,
+            "url": "/images/people/10-305.jpg"
+          },
+          {
+            "height": 650,
+            "width": 425,
+            "url": "/images/people/10-648.jpg"
+          }
+        ]
       },
       {
         "id": "11",
         "sequenceNumber": 11,
         "title": "11",
-        "url": "/images/people/11.jpg"
+        "url": "/images/people/11.jpg",
+        "minWidth": 840,
+        "minHeight": 750,
+        "srcSet": [
+          {
+            "url": "/images/people/11-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/people/11-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/people/11-305.jpg"
+          },
+          {
+            "height": 474,
+            "width": 425,
+            "url": "/images/people/11-648.jpg"
+          }
+        ]
       },
       {
         "id": "12",
         "sequenceNumber": 12,
         "title": "12",
-        "url": "/images/people/12.jpg"
+        "url": "/images/people/12.jpg",
+        "minWidth": 840,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/12-200.jpg"
+          },
+          {
+            "height": 452,
+            "width": 320,
+            "url": "/images/people/12-255.jpg"
+          },
+          {
+            "height": 502,
+            "width": 375,
+            "url": "/images/people/12-305.jpg"
+          },
+          {
+            "height": 547,
+            "width": 425,
+            "url": "/images/people/12-648.jpg"
+          }
+        ]
       },
       {
         "id": "13",
         "sequenceNumber": 13,
         "title": "13",
-        "url": "/images/people/13.jpg"
+        "url": "/images/people/13.jpg",
+        "minWidth": 984,
+        "minHeight": 930,
+        "srcSet": [
+          {
+            "url": "/images/people/13-200.jpg"
+          },
+          {
+            "height": 424,
+            "width": 320,
+            "url": "/images/people/13-255.jpg"
+          },
+          {
+            "height": 466,
+            "width": 375,
+            "url": "/images/people/13-305.jpg"
+          },
+          {
+            "height": 504,
+            "width": 425,
+            "url": "/images/people/13-648.jpg"
+          }
+        ]
       },
       {
         "id": "14",
         "sequenceNumber": 14,
         "title": "14",
-        "url": "/images/people/14.jpg"
+        "url": "/images/people/14.jpg",
+        "minWidth": 638,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/14-200.jpg"
+          },
+          {
+            "height": 522,
+            "width": 320,
+            "url": "/images/people/14-255.jpg"
+          },
+          {
+            "height": 591,
+            "width": 375,
+            "url": "/images/people/14-305.jpg"
+          }
+        ]
       },
       {
         "id": "15",
         "sequenceNumber": 15,
         "title": "15",
-        "url": "/images/people/15.jpg"
+        "url": "/images/people/15.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/15-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/people/15-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/people/15-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/people/15-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/people/15-904.jpg"
+          }
+        ]
       },
       {
         "id": "16",
         "sequenceNumber": 16,
         "title": "16",
-        "url": "/images/people/16.jpg"
+        "url": "/images/people/16.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/16-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/people/16-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/people/16-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/people/16-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/people/16-904.jpg"
+          }
+        ]
       },
       {
         "id": "17",
         "sequenceNumber": 17,
         "title": "17",
-        "url": "/images/people/17.jpg"
+        "url": "/images/people/17.jpg",
+        "minWidth": 614,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/17-200.jpg"
+          },
+          {
+            "height": 534,
+            "width": 320,
+            "url": "/images/people/17-255.jpg"
+          },
+          {
+            "height": 606,
+            "width": 375,
+            "url": "/images/people/17-305.jpg"
+          }
+        ]
       },
       {
         "id": "18",
         "sequenceNumber": 18,
         "title": "18",
-        "url": "/images/people/18.jpg"
+        "url": "/images/people/18.jpg",
+        "minWidth": 984,
+        "minHeight": 1015,
+        "srcSet": [
+          {
+            "url": "/images/people/18-200.jpg"
+          },
+          {
+            "height": 444,
+            "width": 320,
+            "url": "/images/people/18-255.jpg"
+          },
+          {
+            "height": 491,
+            "width": 375,
+            "url": "/images/people/18-305.jpg"
+          },
+          {
+            "height": 534,
+            "width": 425,
+            "url": "/images/people/18-648.jpg"
+          }
+        ]
       },
       {
         "id": "19",
         "sequenceNumber": 19,
         "title": "19",
-        "url": "/images/people/19.jpg"
+        "url": "/images/people/19.jpg",
+        "minWidth": 1025,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/19-200.jpg"
+          },
+          {
+            "height": 415,
+            "width": 320,
+            "url": "/images/people/19-255.jpg"
+          },
+          {
+            "height": 455,
+            "width": 375,
+            "url": "/images/people/19-305.jpg"
+          },
+          {
+            "height": 490,
+            "width": 425,
+            "url": "/images/people/19-648.jpg"
+          },
+          {
+            "height": 736,
+            "width": 768,
+            "url": "/images/people/19-904.jpg"
+          }
+        ]
       },
       {
         "id": "20",
         "sequenceNumber": 20,
         "title": "20",
-        "url": "/images/people/20.jpg"
+        "url": "/images/people/20.jpg",
+        "minWidth": 888,
+        "minHeight": 1333,
+        "srcSet": [
+          {
+            "url": "/images/people/20-200.jpg"
+          },
+          {
+            "height": 548,
+            "width": 320,
+            "url": "/images/people/20-255.jpg"
+          },
+          {
+            "height": 624,
+            "width": 375,
+            "url": "/images/people/20-305.jpg"
+          },
+          {
+            "height": 693,
+            "width": 425,
+            "url": "/images/people/20-648.jpg"
+          }
+        ]
       },
       {
         "id": "21",
         "sequenceNumber": 21,
         "title": "21",
-        "url": "/images/people/21.jpg"
+        "url": "/images/people/21.jpg",
+        "minWidth": 1095,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/21-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/people/21-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/people/21-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/people/21-648.jpg"
+          },
+          {
+            "height": 703,
+            "width": 768,
+            "url": "/images/people/21-904.jpg"
+          }
+        ]
       },
       {
         "id": "22",
         "sequenceNumber": 22,
         "title": "22",
-        "url": "/images/people/22.jpg"
+        "url": "/images/people/22.jpg",
+        "minWidth": 1095,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/22-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/people/22-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/people/22-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/people/22-648.jpg"
+          },
+          {
+            "height": 703,
+            "width": 768,
+            "url": "/images/people/22-904.jpg"
+          }
+        ]
       },
       {
         "id": "23",
         "sequenceNumber": 23,
         "title": "23",
-        "url": "/images/people/23.jpg"
+        "url": "/images/people/23.jpg",
+        "minWidth": 1164,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/23-200.jpg"
+          },
+          {
+            "height": 396,
+            "width": 320,
+            "url": "/images/people/23-255.jpg"
+          },
+          {
+            "height": 430,
+            "width": 375,
+            "url": "/images/people/23-305.jpg"
+          },
+          {
+            "height": 461,
+            "width": 425,
+            "url": "/images/people/23-648.jpg"
+          },
+          {
+            "height": 674,
+            "width": 768,
+            "url": "/images/people/23-904.jpg"
+          }
+        ]
       },
       {
         "id": "24",
         "sequenceNumber": 24,
         "title": "24",
-        "url": "/images/people/24.jpg"
+        "url": "/images/people/24.jpg",
+        "minWidth": 1095,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/24-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/people/24-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/people/24-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/people/24-648.jpg"
+          },
+          {
+            "height": 703,
+            "width": 768,
+            "url": "/images/people/24-904.jpg"
+          }
+        ]
       },
       {
         "id": "25",
         "sequenceNumber": 25,
         "title": "25",
-        "url": "/images/people/25.jpg"
+        "url": "/images/people/25.jpg",
+        "minWidth": 2120,
+        "minHeight": 3280,
+        "srcSet": [
+          {
+            "url": "/images/people/25-200.jpg"
+          },
+          {
+            "height": 573,
+            "width": 320,
+            "url": "/images/people/25-255.jpg"
+          },
+          {
+            "height": 656,
+            "width": 375,
+            "url": "/images/people/25-305.jpg"
+          },
+          {
+            "height": 731,
+            "width": 425,
+            "url": "/images/people/25-648.jpg"
+          },
+          {
+            "height": 1247,
+            "width": 768,
+            "url": "/images/people/25-904.jpg"
+          }
+        ]
       },
       {
         "id": "26",
         "sequenceNumber": 26,
         "title": "26",
-        "url": "/images/people/26.jpg"
+        "url": "/images/people/26.jpg",
+        "minWidth": 672,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/26-200.jpg"
+          },
+          {
+            "height": 507,
+            "width": 320,
+            "url": "/images/people/26-255.jpg"
+          },
+          {
+            "height": 571,
+            "width": 375,
+            "url": "/images/people/26-305.jpg"
+          }
+        ]
       },
       {
         "id": "27",
         "sequenceNumber": 27,
         "title": "27",
-        "url": "/images/people/27.jpg"
+        "url": "/images/people/27.jpg",
+        "minWidth": 892,
+        "minHeight": 785,
+        "srcSet": [
+          {
+            "url": "/images/people/27-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/people/27-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/people/27-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/people/27-648.jpg"
+          }
+        ]
       },
       {
         "id": "28",
         "sequenceNumber": 28,
         "title": "28",
-        "url": "/images/people/28.jpg"
+        "url": "/images/people/28.jpg",
+        "minWidth": 936,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/28-200.jpg"
+          },
+          {
+            "height": 431,
+            "width": 320,
+            "url": "/images/people/28-255.jpg"
+          },
+          {
+            "height": 475,
+            "width": 375,
+            "url": "/images/people/28-305.jpg"
+          },
+          {
+            "height": 514,
+            "width": 425,
+            "url": "/images/people/28-648.jpg"
+          }
+        ]
       },
       {
         "id": "29",
         "sequenceNumber": 29,
         "title": "29",
-        "url": "/images/people/29.jpg"
+        "url": "/images/people/29.jpg",
+        "minWidth": 1095,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/29-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/people/29-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/people/29-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/people/29-648.jpg"
+          },
+          {
+            "height": 703,
+            "width": 768,
+            "url": "/images/people/29-904.jpg"
+          }
+        ]
       },
       {
         "id": "30",
         "sequenceNumber": 30,
         "title": "30",
-        "url": "/images/people/30.jpg"
+        "url": "/images/people/30.jpg",
+        "minWidth": 984,
+        "minHeight": 996,
+        "srcSet": [
+          {
+            "url": "/images/people/30-200.jpg"
+          },
+          {
+            "height": 440,
+            "width": 320,
+            "url": "/images/people/30-255.jpg"
+          },
+          {
+            "height": 486,
+            "width": 375,
+            "url": "/images/people/30-305.jpg"
+          },
+          {
+            "height": 528,
+            "width": 425,
+            "url": "/images/people/30-648.jpg"
+          }
+        ]
       },
       {
         "id": "31",
         "sequenceNumber": 31,
         "title": "31",
-        "url": "/images/people/31.jpg"
+        "url": "/images/people/31.jpg",
+        "minWidth": 840,
+        "minHeight": 751,
+        "srcSet": [
+          {
+            "url": "/images/people/31-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/people/31-255.jpg"
+          },
+          {
+            "height": 442,
+            "width": 375,
+            "url": "/images/people/31-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/people/31-648.jpg"
+          }
+        ]
       },
       {
         "id": "32",
         "sequenceNumber": 32,
         "title": "32",
-        "url": "/images/people/32.jpg"
+        "url": "/images/people/32.jpg",
+        "minWidth": 840,
+        "minHeight": 789,
+        "srcSet": [
+          {
+            "url": "/images/people/32-200.jpg"
+          },
+          {
+            "height": 416,
+            "width": 320,
+            "url": "/images/people/32-255.jpg"
+          },
+          {
+            "height": 455,
+            "width": 375,
+            "url": "/images/people/32-305.jpg"
+          },
+          {
+            "height": 491,
+            "width": 425,
+            "url": "/images/people/32-648.jpg"
+          }
+        ]
       },
       {
         "id": "33",
         "sequenceNumber": 33,
         "title": "33",
-        "url": "/images/people/33.jpg"
+        "url": "/images/people/33.jpg",
+        "minWidth": 1095,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/33-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/people/33-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/people/33-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/people/33-648.jpg"
+          },
+          {
+            "height": 703,
+            "width": 768,
+            "url": "/images/people/33-904.jpg"
+          }
+        ]
       },
       {
         "id": "34",
         "sequenceNumber": 34,
         "title": "34",
-        "url": "/images/people/34.jpg"
+        "url": "/images/people/34.jpg",
+        "minWidth": 1096,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/34-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/people/34-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/people/34-305.jpg"
+          },
+          {
+            "height": 475,
+            "width": 425,
+            "url": "/images/people/34-648.jpg"
+          },
+          {
+            "height": 702,
+            "width": 768,
+            "url": "/images/people/34-904.jpg"
+          }
+        ]
       },
       {
         "id": "35",
         "sequenceNumber": 35,
         "title": "35",
-        "url": "/images/people/35.jpg"
+        "url": "/images/people/35.jpg",
+        "minWidth": 1059,
+        "minHeight": 920,
+        "srcSet": [
+          {
+            "url": "/images/people/35-200.jpg"
+          },
+          {
+            "height": 410,
+            "width": 320,
+            "url": "/images/people/35-255.jpg"
+          },
+          {
+            "height": 448,
+            "width": 375,
+            "url": "/images/people/35-305.jpg"
+          },
+          {
+            "height": 482,
+            "width": 425,
+            "url": "/images/people/35-648.jpg"
+          },
+          {
+            "height": 719,
+            "width": 768,
+            "url": "/images/people/35-904.jpg"
+          }
+        ]
       },
       {
         "id": "36",
         "sequenceNumber": 36,
         "title": "36",
-        "url": "/images/people/36.jpg"
+        "url": "/images/people/36.jpg",
+        "minWidth": 840,
+        "minHeight": 750,
+        "srcSet": [
+          {
+            "url": "/images/people/36-200.jpg"
+          },
+          {
+            "height": 405,
+            "width": 320,
+            "url": "/images/people/36-255.jpg"
+          },
+          {
+            "height": 441,
+            "width": 375,
+            "url": "/images/people/36-305.jpg"
+          },
+          {
+            "height": 474,
+            "width": 425,
+            "url": "/images/people/36-648.jpg"
+          }
+        ]
       },
       {
         "id": "37",
         "sequenceNumber": 37,
         "title": "37",
-        "url": "/images/people/37.jpg"
+        "url": "/images/people/37.jpg",
+        "minWidth": 984,
+        "minHeight": 955,
+        "srcSet": [
+          {
+            "url": "/images/people/37-200.jpg"
+          },
+          {
+            "height": 430,
+            "width": 320,
+            "url": "/images/people/37-255.jpg"
+          },
+          {
+            "height": 474,
+            "width": 375,
+            "url": "/images/people/37-305.jpg"
+          },
+          {
+            "height": 513,
+            "width": 425,
+            "url": "/images/people/37-648.jpg"
+          }
+        ]
       }
     ]
   }
