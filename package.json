@@ -29,7 +29,7 @@
     "serve:prod:www:restart": "forever restart gailkirklandphotography-www",
     "serve:prod:www:stop": "forever stop gailkirklandphotography-www",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postversion": "git push -f && git push -f --tags",
+    "postversion": "git push && git push --tags",
     "watch": "run-p watch:*",
     "watch:styles": "gulp watch:styles",
     "dev": "run-p build:images build:styles && run-p watch serve:dev",
