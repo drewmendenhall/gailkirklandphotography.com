@@ -1,6 +1,6 @@
 {
   "name": "gailkirklandphotography-www",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "The source that powers the photo portfolio web site for [Gail Kirkland Photography](gailkirklandphotography.com)",
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "serve:prod:www:restart": "forever restart gailkirklandphotography-www",
     "serve:prod:www:stop": "forever stop gailkirklandphotography-www",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postversion": "git push && git push --tags",
+    "postversion": "git push -f && git push -f --tags",
     "watch": "run-p watch:*",
     "watch:styles": "gulp watch:styles",
     "dev": "npm run build:styles && run-p watch serve:dev",
