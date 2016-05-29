@@ -3,14 +3,14 @@
     "development": {
       "plugins": [
         ["transform-define", {
-          "PROD": "false"
+          "__DEV__": "true"
         }]
       ]
     },
     "production": {
       "plugins": [
         ["transform-define", {
-          "PROD": "true"
+          "__DEV__": "false"
         }]
       ],
       "presets": [

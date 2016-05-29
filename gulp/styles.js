@@ -28,10 +28,10 @@ gulp.task('styles', () => gulp.src(sourceFile)
   .pipe(less({
     plugins: [
       new LessPluginNpmImport(),
-    ].concat(PROD ? [
+    ].concat(__DEV__ ? [] : [
       new LessPluginAutoPrefix(),
       new LessPluginCleanCSS(),
-    ] : []),
+    ]),
     strictMath: true,
   }))
   .pipe(sourcemaps.write('.'))

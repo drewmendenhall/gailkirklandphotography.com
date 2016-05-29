@@ -19,7 +19,7 @@ if (config.analytics) {
 
   if (segmentWriteKey) {
     let analytics = new Analytics(segmentWriteKey, {
-      flushAt: (!PROD ? 1 : null),
+      flushAt: (__DEV__ ? null : 1),
     })
     server.use(tracker(analytics))
   } else {
@@ -28,9 +28,7 @@ if (config.analytics) {
     )
   }
 }
-if (PROD) {
-  server.use(compression())
-} else {
+if (__DEV__) {
   let livereload = require('connect-livereload')
   let webpack = require('webpack')
   let webpackDevMiddleware = require('webpack-dev-middleware')
@@ -44,6 +42,8 @@ if (PROD) {
   server.use(webpackHotMiddleware(compiler, {reload: true}))
   server.use(livereload())
   server.use('/styles', serveStatic('../styles'))
+} else {
+  server.use(compression())
 }
 server.use(serveStatic(config.server.base))
 server.use(serveStatic(`${config.server.base}/images/favicons`))
@@ -52,7 +52,7 @@ server.use(reactRouter({
   includeTracking: config.analytics,
   renderApp: config.serverSideRendering,
   segmentWriteKey,
-  sendErrorStacks: !PROD,
+  sendErrorStacks: __DEV__,
 }))
 
 server.listen(config.server.port, config.server.hostname, () => {
