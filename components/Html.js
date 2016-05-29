@@ -8,6 +8,7 @@ export default ({
   link,
   markup,
   meta,
+  style,
   title,
 }) => {
   const titleSegments = (includeOpenGraphTags &&
@@ -43,6 +44,7 @@ export default ({
         }
         {link && link.toComponent()}
         <link rel="stylesheet" href="/app.css" />
+        {style && style.toComponent()}
       </head>
       <body>
         <main dangerouslySetInnerHTML={{__html: markup}}></main>

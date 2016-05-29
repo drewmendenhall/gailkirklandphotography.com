@@ -3,6 +3,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import Carousel from './Carousel'
+import GalleryPicture from './GalleryPicture'
 
 import galleries from '../public/galleries.json'
 
@@ -33,16 +34,15 @@ export default (props) => {
         />
       }
       <Carousel
-        autoplay
         slideInterval={3000}
         items={pictures}
         index={index}
       >
         {pictureId ?
-          <img src={picture.url} />
+          <GalleryPicture picture={picture} />
         :
           pictures.map((picture) => (
-            <img src={picture.url} key={picture.id} />
+            <GalleryPicture key={picture.id} picture={picture} />
           ))
         }
       </Carousel>
