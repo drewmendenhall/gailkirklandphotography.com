@@ -1,8 +1,17 @@
 {
   "env": {
+    "development": {
+      "plugins": [
+        ["transform-define", {
+          "PROD": "false"
+        }]
+      ]
+    },
     "production": {
       "plugins": [
-        "transform-node-env-inline"
+        ["transform-define", {
+          "PROD": "true"
+        }]
       ],
       "presets": [
         "es2015"

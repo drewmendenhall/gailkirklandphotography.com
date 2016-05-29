@@ -9,7 +9,6 @@ import livereload from 'gulp-livereload'
 import rename from 'gulp-rename'
 import sourcemaps from 'gulp-sourcemaps'
 
-const PROD = (process.env.NODE_ENV === 'production')
 const destFilename = 'app.css'
 const destPath = 'public'
 const sourceFile = 'styles/index.less'

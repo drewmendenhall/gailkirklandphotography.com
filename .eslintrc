@@ -1,6 +1,8 @@
 env:
   es6: true
   node: true
+globals:
+  PROD: true
 parserOptions:
   ecmaVersion: 6
   ecmaFeatures:

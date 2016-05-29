@@ -35,6 +35,10 @@ export default ({
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({name: 'vendor'}),
+    new webpack.DefinePlugin({
+      'PROD': JSON.stringify(process.env.NODE_ENV === 'production'),
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    }),
   ],
   resolve: {
     extensions: ['', '.js', '.jsx', '.json'],

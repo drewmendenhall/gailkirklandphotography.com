@@ -9,7 +9,6 @@ import config from '../config'
 import reactRouter from './react-router-middleware'
 import tracker from './tracker'
 
-const PROD = (process.env.NODE_ENV === 'production')
 const server = express()
 
 let segmentWriteKey
