@@ -1,5 +1,4 @@
 import Analytics from 'analytics-node'
-import dotenv from 'dotenv-safe'
 import express from 'express'
 import serveStatic from 'serve-static'
 import trailingSlashes from 'connect-slashes'
@@ -8,11 +7,6 @@ import url from 'url'
 import config from '../config'
 import reactRouter from './react-router-middleware'
 import tracker from './tracker'
-
-dotenv.config({
-  allowEmptyValues: true,
-  silent: true,
-})
 
 const PROD = (process.env.NODE_ENV === 'production')
 const server = express()
