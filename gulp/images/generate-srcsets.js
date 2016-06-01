@@ -18,28 +18,33 @@ export default (filename) => {
   if (!gallery) return
 
   const pictureUrl = matches[0]
+  const {pictures} = gallery
 
   const ext = path.extname(pictureUrl)
-  const picture = gallery.pictures.find((picture) => (
+  const picture = pictures.find((picture) => (
     picture.url === pictureUrl
   ))
 
   if (!picture) return
 
+  const serializedPicture = JSON.stringify(picture)
+
+  const newPicture = JSON.parse(serializedPicture)
+
   return im.identifyAsync(filename).then((features) => {
     const aspectRatio = features.width / features.height
 
-    picture.minWidth = features.width + layoutWidth
-    picture.minHeight = features.height + layoutHeight
+    newPicture.minWidth = features.width + layoutWidth
+    newPicture.minHeight = features.height + layoutHeight
 
-    picture.srcSet = [{
+    newPicture.srcSet = [{
       url: pictureUrl.replace(ext, `-${widths[0] - layoutWidth}` + ext),
     }]
     widths.forEach((width, index) => {
       const pictureWidth = pictureWidths[index + 1]
 
       if (pictureWidth && pictureWidth < features.width) {
-        picture.srcSet.push({
+        newPicture.srcSet.push({
           height: Math.round(
             (width - layoutWidth) / aspectRatio
           ) + layoutHeight,
@@ -49,7 +54,14 @@ export default (filename) => {
       }
     })
   }).then(() => {
-    return fs.writeFileAsync(path.resolve(__dirname, '../../public/galleries.json'),
+    if (JSON.stringify(newPicture) === serializedPicture) {
+      return Promise.resolve()
+    }
+
+    pictures[pictures.indexOf(picture)] = newPicture
+
+    return fs.writeFileAsync(
+      path.resolve(__dirname, '../../public/galleries.json'),
       JSON.stringify(galleries, null, 2) + '\n'
     )
   })
