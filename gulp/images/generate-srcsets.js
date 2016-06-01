@@ -47,8 +47,8 @@ export default (filename) => {
         newPicture.srcSet.push({
           height: Math.round(
             (width - layoutWidth) / aspectRatio
-          ) + layoutHeight,
-          width,
+          ) + layoutHeight + 1,
+          width: width + 1,
           url: pictureUrl.replace(ext, `-${pictureWidth}` + ext),
         })
       }
