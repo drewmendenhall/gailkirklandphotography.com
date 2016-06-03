@@ -15,6 +15,6 @@ rules:
   no-undef: error
   no-unused-vars: warn
   object-shorthand: warn
-  quotes: [warn, single, avoid-escape]
+  quotes: [warn, single, {avoidEscape: true, allowTemplateLiterals: true}]
   semi: [error, never]
   strict: [error, never]
