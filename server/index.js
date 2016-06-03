@@ -12,9 +12,11 @@ import tracker from './tracker'
 const PROD = (process.env.NODE_ENV === 'production')
 const server = express()
 
+let segmentWriteKey
+
 server.disable('x-powered-by')
 if (config.analytics) {
-  const {segmentWriteKey} = config.analytics
+  segmentWriteKey = config.analytics.segmentWriteKey
 
   if (segmentWriteKey) {
     let analytics = new Analytics(segmentWriteKey, {
@@ -50,6 +52,7 @@ server.use(trailingSlashes(false))
 server.use(reactRouter({
   includeTracking: config.analytics,
   renderApp: config.serverSideRendering,
+  segmentWriteKey,
   sendErrorStacks: !PROD,
 }))
 

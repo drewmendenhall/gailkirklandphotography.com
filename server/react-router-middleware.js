@@ -9,6 +9,7 @@ import routes from '../routes'
 export default ({
   includeTracking,
   renderApp,
+  segmentWriteKey,
   sendErrorStacks,
 }) => ((req, res) => {
   match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
@@ -42,6 +43,7 @@ export default ({
             includeOpenGraphTags,
             includeTracking,
             markup,
+            segmentWriteKey,
             ...head,
           }))
         )
