@@ -21,27 +21,25 @@ export default ({
         <meta charSet="utf-8" />
         {title && title.toComponent()}
         {meta && meta.toComponent()}
-        {includeMicrosoftTags &&
-          <meta name="msapplication-TileColor" content="#414141" />
-        }
-        {includeMicrosoftTags &&
-          <meta name="msapplication-TileImage" content="/touch-icon-144x144.png" />
-        }
-        {includeOpenGraphTags &&
-          <meta property="og:description" content="A picture says more than a thousand words..." />
-        }
-        {includeOpenGraphTags &&
+        {includeMicrosoftTags && [
+          <meta name="msapplication-TileColor" content="#414141" />,
+          <meta
+            name="msapplication-TileImage"
+            content="/touch-icon-144x144.png"
+          />,
+        ]}
+        {includeOpenGraphTags && [
+          <meta
+            property="og:description"
+            content="A picture says more than a thousand words..."
+          />,
           <meta
             property="og:site_name"
             content={titleSegments[titleSegments.length - 1]}
-          />
-        }
-        {includeOpenGraphTags &&
-          <meta property="og:title" content={titleSegments[0]} />
-        }
-        {includeOpenGraphTags &&
-          <meta property="og:url" content={href} />
-        }
+          />,
+          <meta property="og:title" content={titleSegments[0]} />,
+          <meta property="og:url" content={href} />,
+        ]}
         {link && link.toComponent()}
         <link rel="stylesheet" href="/app.css" />
         {style && style.toComponent()}
