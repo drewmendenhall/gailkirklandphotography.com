@@ -20,13 +20,17 @@ export default ({
     .pipe(filter(source.file))
     .pipe(rename(dest.filename))
     .pipe(new Transform({objectMode: true, transform: () => {
-      webpack(webpackConfig, (error, stats) => {
+      webpack(webpackConfig, (err, stats) => {
+        const {errors} = stats.compilation
+
+        const error = err || errors[0]
+
+        if (error) throw new PluginError('webpack', error)
+
         console.log(stats.toString({
           chunks: false,
           colors: true,
         }))
-
-        if (error) throw new PluginError('webpack', error)
 
         callback()
       })
