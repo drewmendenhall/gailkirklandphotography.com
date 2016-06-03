@@ -15,8 +15,8 @@ variables:
       - node_modules
       - public
   script:
-    - node -v
-    - npm -v
+    - node --version
+    - npm --version
     - npm prune --production=false
     - npm install
     - npm install --only=dev
