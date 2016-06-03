@@ -20,10 +20,8 @@ variables:
     - npm prune --production=false
     - npm install
     - npm install --only=dev
-    - npm list --depth=0 --only=prod
-    # this prints both dev and prod
-    # TODO: replace with --only=dev when npm issue is resolved
-    - npm list --depth=0 --dev
+    - npm list --depth=0
+    - NODE_ENV= npm list --depth=0 --only=dev
     - npm run build
   stage: build
 
