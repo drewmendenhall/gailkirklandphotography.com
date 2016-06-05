@@ -33,7 +33,7 @@
     "watch:styles": "gulp watch:styles",
     "dev": "run-p build:images build:styles && run-p watch serve:dev",
     "prod": "npm run build && npm run serve:prod",
-    "start": "npm run prod"
+    "start": "node dist/server"
   },
   "dependencies": {
     "analytics-node": "^2.1.0",
