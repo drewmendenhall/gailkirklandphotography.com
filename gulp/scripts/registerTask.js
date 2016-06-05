@@ -1,4 +1,3 @@
-import filter from 'gulp-filter'
 import gulp from 'gulp'
 import newer from 'gulp-newer'
 import rename from 'gulp-rename'
@@ -15,9 +14,11 @@ export default ({
 }) => {
   source.pattern = [__filename].concat(source.pattern || [])
 
-  gulp.task(name, (callback) => gulp.src(source.pattern)
-    .pipe(newer(`${dest.path}/${dest.filename}`))
-    .pipe(filter(source.file))
+  gulp.task(name, (callback) => gulp.src(source.file)
+    .pipe(newer({
+      dest: `${dest.path}/${dest.filename}`,
+      extra: source.pattern,
+    }))
     .pipe(rename(dest.filename))
     .pipe(new Transform({objectMode: true, transform: () => {
       webpack(webpackConfig, (err, stats) => {

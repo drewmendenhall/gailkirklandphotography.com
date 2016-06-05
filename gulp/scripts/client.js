@@ -1,8 +1,6 @@
 import registerTask from './registerTask'
 import webpackConfig from '../../webpack.config.production.babel'
 
-const sourceFile = 'client/index.js'
-
 export default registerTask({
   name: 'client',
 
@@ -11,7 +9,7 @@ export default registerTask({
     path: 'public',
   },
   source: {
-    file: sourceFile,
+    file: 'client/index.js',
     pattern: [
       '.babelrc',
       '.env',
@@ -23,7 +21,6 @@ export default registerTask({
       'webpack.config.babel.js',
       'webpack.config.production.babel.js',
       __filename,
-      sourceFile,
     ],
   },
   webpackConfig,

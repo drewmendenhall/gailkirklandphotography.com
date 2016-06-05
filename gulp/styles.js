@@ -19,9 +19,11 @@ const sourceFilePattern = [
   __filename,
 ]
 
-gulp.task('styles', () => gulp.src(sourceFilePattern)
-  .pipe(newer(`${destPath}/${destFilename}`))
-  .pipe(filter(sourceFile))
+gulp.task('styles', () => gulp.src(sourceFile)
+  .pipe(newer({
+    dest: `${destPath}/${destFilename}`,
+    extra: sourceFilePattern,
+  }))
   .pipe(rename(destFilename))
   .pipe(sourcemaps.init())
   .pipe(less({
