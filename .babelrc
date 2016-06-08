@@ -2,7 +2,7 @@
   "env": {
     "production": {
       "plugins": [
-        "transform-inline-environment-variables"
+        "transform-node-env-inline"
       ],
       "presets": [
         "es2015"
@@ -10,6 +10,7 @@
     }
   },
   "plugins": [
+    "dev",
     "transform-es2015-modules-commonjs",
     "transform-object-rest-spread",
     "transform-runtime"
