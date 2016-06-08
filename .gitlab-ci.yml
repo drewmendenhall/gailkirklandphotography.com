@@ -24,6 +24,8 @@ variables:
     - NODE_ENV= npm list --depth=0 --only=dev
     - npm run build
   stage: build
+  tags:
+    - docker-node
 
 build:
   <<: *build
@@ -61,3 +63,5 @@ deploy:
       package.json
       $DEPLOY_URL
   stage: deploy
+  tags:
+    - shell
