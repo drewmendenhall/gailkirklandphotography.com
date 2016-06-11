@@ -1,14 +1,29 @@
+stages:
+  - build
+  - build-container
+  - release
+  - deploy
+
 variables:
   BUILD_PATH: "dist"
-  DEPLOY_HOST: "www@gailkirklandphotography.com"
-  DEPLOY_PATH: "/var/www/gailkirklandphotography-www"
-  DEPLOY_URL: "$DEPLOY_HOST:$DEPLOY_PATH"
+  CONTAINER_REGISTRY: containers.mendenhall.io
+  CONTAINER_USERNAME: drew
+  DEPLOY_HOST: gailkirklandphotography.com
+  REPO_NAME: gailkirklandphotography-www
+
+  CONTAINER_NAME: $CONTAINER_REGISTRY/$CONTAINER_USERNAME/$REPO_NAME
+  DEPLOY_PATH: "/root/$REPO_NAME"
 
   ANALYTICS: "true"
   NODE_ENV: production
   SERVER_SIDE_RENDERING: "true"
 
 .build: &build
+  artifacts:
+    paths:
+      - $BUILD_PATH
+      - package.json
+      - public
   cache: &build-cache
     paths:
       - $BUILD_PATH
@@ -34,36 +49,42 @@ build:
 
 build-tag:
   <<: *build
-  artifacts:
-    paths:
-      - $BUILD_PATH
-      - package.json
-      - public
   cache:
     <<: *build-cache
     key: "$CI_BUILD_STAGE/tags"
   only:
     - tags
 
+build-container:
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CONTAINER_REGISTRY
+    - docker build -t $CONTAINER_NAME:$CI_BUILD_REF_NAME .
+    - docker push $CONTAINER_NAME:$CI_BUILD_REF_NAME
+  stage: build-container
+  tags:
+    - shell
+
+release:
+  only:
+    - tags
+  script:
+    - docker tag $CONTAINER_NAME:$CI_BUILD_REF_NAME $CONTAINER_NAME
+    - docker push $CONTAINER_NAME
+  stage: release
+  tags:
+    - shell
+
 deploy:
   only:
     - tags
   script:
     - >-
-      rsync
-      --archive
-      --compress
-      --delete
-      --itemize-changes
-      --no-group
-      --no-owner
-      --relative
-      -e ssh
-      $BUILD_PATH
-      .env.example
-      package.json
-      public
-      $DEPLOY_URL
+      ssh
+      $DEPLOY_HOST
+      "cd $DEPLOY_PATH && '$SHELL' -s" <<-EOF
+        docker-compose pull &&
+        docker-compose up -d
+      EOF
   stage: deploy
   tags:
     - shell
