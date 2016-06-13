@@ -12,7 +12,7 @@ npm install --global forever
 systemctl enable gailkirklandphotography-www
 systemctl start gailkirklandphotography-www
 
-apt-get install -y nginx
+apt-get install -y nginx-extras
 
 cd /etc/nginx
 
