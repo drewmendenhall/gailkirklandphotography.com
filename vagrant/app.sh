@@ -1,16 +1,9 @@
 #!/bin/sh
 
-adduser --disabled-password -gecos '' www
-
 cd $APP_DIR
-chown -R www:www .
 
-su www -c 'npm install --production'
-
-npm install --global forever
-
-systemctl enable gailkirklandphotography-www
-systemctl start gailkirklandphotography-www
+docker pull $DOCKER_REGISTRY/$ORG_NAME/$REPO_NAME
+docker-compose up -d
 
 apt-get install -y nginx-extras
 
