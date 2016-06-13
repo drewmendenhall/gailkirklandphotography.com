@@ -1,0 +1,18 @@
+[Service]
+Type=forking
+PIDFile=/home/www/.forever/pids/gailkirklandphotography-www.pid
+
+ExecRestart=/usr/bin/npm run serve:prod:restart
+ExecStart=/usr/bin/npm run serve:prod
+ExecStop=/usr/bin/npm run serve:prod:stop
+WorkingDirectory=/var/www/gailkirklandphotography-www
+
+User=www
+Group=www
+
+StandardError=syslog
+StandardOutput=syslog
+SyslogIdentifier=gailkirklandphotography-www
+
+[Install]
+WantedBy=multi-user.target
