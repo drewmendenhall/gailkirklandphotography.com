@@ -55,33 +55,36 @@ build-tag:
   only:
     - tags
 
-release:
+.release: &release
   only:
     - tags
-  script:
+  before_script:
     - export VERSION=$(git log -1 --pretty=%B | xargs)
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CONTAINER_REGISTRY
-    - docker build -t $CONTAINER_NAME:$VERSION .
-    - docker tag $CONTAINER_NAME:$VERSION $CONTAINER_NAME
+  after_script:
     - docker push $CONTAINER_NAME
     - docker-clean
   stage: release
   tags:
     - shell
 
+release:
+  <<: *release
+  only:
+    - tags
+  script:
+    - export VERSION=$(git log -1 --pretty=%B | xargs)
+    - docker build -t $CONTAINER_NAME:$VERSION .
+    - docker tag $CONTAINER_NAME:$VERSION $CONTAINER_NAME
+
 release-branch:
+  <<: *release
   only:
     - branches
   except:
     - master
   script:
-    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CONTAINER_REGISTRY
     - docker build -t $CONTAINER_NAME:$CI_BUILD_REF_NAME .
-    - docker push $CONTAINER_NAME
-    - docker-clean
-  stage: release
-  tags:
-    - shell
 
 deploy:
   only:
