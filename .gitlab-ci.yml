@@ -60,6 +60,7 @@ build-container:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CONTAINER_REGISTRY
     - docker build -t $CONTAINER_NAME:$CI_BUILD_REF_NAME .
     - docker push $CONTAINER_NAME:$CI_BUILD_REF_NAME
+    - docker-clean
   stage: build-container
   tags:
     - shell
@@ -70,6 +71,7 @@ release:
   script:
     - docker tag $CONTAINER_NAME:$CI_BUILD_REF_NAME $CONTAINER_NAME
     - docker push $CONTAINER_NAME
+    - docker-clean
   stage: release
   tags:
     - shell
@@ -83,7 +85,8 @@ deploy:
       $DEPLOY_HOST
       "cd $DEPLOY_PATH && '$SHELL' -s" <<-EOF
         docker-compose pull &&
-        docker-compose up -d
+        docker-compose up -d &&
+        docker-clean
       EOF
   stage: deploy
   tags:

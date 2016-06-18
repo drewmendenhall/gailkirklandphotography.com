@@ -11,6 +11,10 @@ apt-get update
 apt-get install -y docker-engine
 pip install docker-compose
 
+curl -s https://raw.githubusercontent.com/ZZROTDesign/docker-clean/v2.0.4/docker-clean |
+  sudo tee /usr/local/bin/docker-clean > /dev/null && \
+  sudo chmod +x /usr/local/bin/docker-clean
+
 docker login \
   --username=$DOCKER_USERNAME \
   --password=$DOCKER_PASSWORD \
