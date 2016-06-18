@@ -4,14 +4,14 @@ stages:
   - deploy
 
 variables:
-  BUILD_PATH: "dist"
+  BUILD_PATH: dist
   CONTAINER_REGISTRY: containers.mendenhall.io
   CONTAINER_USERNAME: drew
   DEPLOY_HOST: gailkirklandphotography.com
   REPO_NAME: gailkirklandphotography-www
 
   CONTAINER_NAME: $CONTAINER_REGISTRY/$CONTAINER_USERNAME/$REPO_NAME
-  DEPLOY_PATH: "/root/$REPO_NAME"
+  DEPLOY_PATH: /root/$REPO_NAME
 
   ANALYTICS: "true"
   NODE_ENV: production
@@ -51,7 +51,7 @@ build-tag:
   <<: *build
   cache:
     <<: *build-cache
-    key: "$CI_BUILD_STAGE/tags"
+    key: $CI_BUILD_STAGE/tags
   only:
     - tags
 
