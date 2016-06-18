@@ -9,6 +9,8 @@ echo "deb https://apt.dockerproject.org/repo ubuntu-$DISTRO main" | sudo tee /et
 
 apt-get update
 apt-get install -y docker-engine
+
+pip install --upgrade pip
 pip install docker-compose
 
 curl -s https://raw.githubusercontent.com/ZZROTDesign/docker-clean/v2.0.4/docker-clean |
