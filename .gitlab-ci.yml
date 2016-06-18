@@ -69,7 +69,10 @@ release:
   only:
     - tags
   script:
+    - export VERSION=$(git log -1 --pretty=%B | xargs)
+    - docker tag $CONTAINER_NAME:$CI_BUILD_REF_NAME $CONTAINER_NAME:$VERSION
     - docker tag $CONTAINER_NAME:$CI_BUILD_REF_NAME $CONTAINER_NAME
+    - docker rmi $CONTAINER_NAME:$CI_BUILD_REF_NAME
     - docker push $CONTAINER_NAME
     - docker-clean
   stage: release
