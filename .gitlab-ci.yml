@@ -1,6 +1,5 @@
 stages:
   - build
-  - build-container
   - release
   - deploy
 
@@ -55,24 +54,28 @@ build-tag:
   only:
     - tags
 
-build-container:
-  script:
-    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CONTAINER_REGISTRY
-    - docker build -t $CONTAINER_NAME:$CI_BUILD_REF_NAME .
-    - docker push $CONTAINER_NAME:$CI_BUILD_REF_NAME
-    - docker-clean
-  stage: build-container
-  tags:
-    - shell
-
 release:
   only:
     - tags
   script:
     - export VERSION=$(git log -1 --pretty=%B | xargs)
-    - docker tag $CONTAINER_NAME:$CI_BUILD_REF_NAME $CONTAINER_NAME:$VERSION
-    - docker tag $CONTAINER_NAME:$CI_BUILD_REF_NAME $CONTAINER_NAME
-    - docker rmi $CONTAINER_NAME:$CI_BUILD_REF_NAME
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CONTAINER_REGISTRY
+    - docker build -t $CONTAINER_NAME:$VERSION .
+    - docker tag $CONTAINER_NAME:$VERSION $CONTAINER_NAME
+    - docker push $CONTAINER_NAME
+    - docker-clean
+  stage: release
+  tags:
+    - shell
+
+release-branch:
+  only:
+    - branches
+  except:
+    - master
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CONTAINER_REGISTRY
+    - docker build -t $CONTAINER_NAME:$CI_BUILD_REF_NAME .
     - docker push $CONTAINER_NAME
     - docker-clean
   stage: release
