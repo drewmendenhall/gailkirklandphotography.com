@@ -42,6 +42,9 @@ if (__DEV__) {
   server.use(webpackDevMiddleware(compiler, {noInfo: true}))
   server.use(webpackHotMiddleware(compiler, {reload: true}))
   server.use(livereload())
+  server.use('/node_modules', serveStatic(path.join(
+    __dirname, '../node_modules'
+  )))
   server.use('/styles', serveStatic(path.join(__dirname, '../styles')))
 } else {
   server.use(compression())
