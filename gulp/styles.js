@@ -35,6 +35,7 @@ gulp.task('styles', () => gulp.src(sourceFile)
     strictMath: true,
   }))
   .pipe(sourcemaps.write('.', {
+    addComment: __DEV__,
     includeContent: false,
     sourceRoot: '../styles',
   }))
