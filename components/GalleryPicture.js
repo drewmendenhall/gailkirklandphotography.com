@@ -9,7 +9,7 @@ export default (props) => {
   const {minHeight, minWidth} = picture
 
   return (
-    <picture id={id} {...props}>
+    <picture id={id}>
       <Helmet
         style={[{cssText: picture.srcSet.map((src, index) => (`${index > 0 ? `
           @media (min-width: ${src.width}px) and (min-height: ${src.height}px) {
