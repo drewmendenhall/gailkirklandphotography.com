@@ -1,6 +1,7 @@
 import Analytics from 'analytics-node'
 import compression from 'compression'
 import express from 'express'
+import path from 'path'
 import serveStatic from 'serve-static'
 import trailingSlashes from 'connect-slashes'
 import url from 'url'
@@ -41,7 +42,7 @@ if (__DEV__) {
   server.use(webpackDevMiddleware(compiler, {noInfo: true}))
   server.use(webpackHotMiddleware(compiler, {reload: true}))
   server.use(livereload())
-  server.use('/styles', serveStatic('../styles'))
+  server.use('/styles', serveStatic(path.join(__dirname, '../styles')))
 } else {
   server.use(compression())
 }
