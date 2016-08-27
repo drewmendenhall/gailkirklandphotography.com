@@ -11,14 +11,15 @@ import sourcemaps from 'gulp-sourcemaps'
 
 const destFilename = 'app.css'
 const destPath = 'public'
-const sourceFile = 'styles/index.less'
+const sourcePath = 'styles'
+const sourceFilename = `${sourcePath}/index.less`
 const sourceFilePattern = [
   '.env',
-  'styles/**/*.less',
+  `${sourcePath}/**/*.less`,
   __filename,
 ]
 
-gulp.task('styles', () => gulp.src(sourceFile)
+gulp.task('styles', () => gulp.src(sourceFilename)
   .pipe(newer({
     dest: `${destPath}/${destFilename}`,
     extra: sourceFilePattern,
@@ -37,7 +38,7 @@ gulp.task('styles', () => gulp.src(sourceFile)
   .pipe(sourcemaps.write('.', {
     addComment: __DEV__,
     includeContent: false,
-    sourceRoot: '../styles',
+    sourceRoot: sourcePath,
   }))
   .pipe(gulp.dest(destPath))
   .pipe(filter('**/*.css'))
