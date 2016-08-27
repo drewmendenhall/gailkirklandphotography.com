@@ -24,8 +24,8 @@ if (config.analytics) {
     })
     server.use(tracker(analytics))
   } else {
-    throw new Error('analytics requires `SEGMENT_WRITE_KEY`' +
-      ' environment variable'
+    throw new Error(
+      'analytics requires `SEGMENT_WRITE_KEY` environment variable'
     )
   }
 }
