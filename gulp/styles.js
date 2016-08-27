@@ -34,7 +34,10 @@ gulp.task('styles', () => gulp.src(sourceFile)
     ]),
     strictMath: true,
   }))
-  .pipe(sourcemaps.write('.'))
+  .pipe(sourcemaps.write('.', {
+    includeContent: false,
+    sourceRoot: '../styles',
+  }))
   .pipe(gulp.dest(destPath))
   .pipe(filter('**/*.css'))
   .pipe(livereload())
