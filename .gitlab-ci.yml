@@ -11,7 +11,7 @@ variables:
   REPO_NAME: gailkirklandphotography-www
 
   CONTAINER_NAME: $CONTAINER_REGISTRY/$CONTAINER_USERNAME/$REPO_NAME
-  DEPLOY_PATH: /root/$REPO_NAME
+  DEPLOY_PATH: $REPO_NAME
 
   ANALYTICS: "true"
   NODE_ENV: production
