@@ -8,13 +8,13 @@ docker-compose up -d
 apt-get install -y nginx-extras
 
 cd /etc/nginx
-
 rm sites-*/default
-sed -i "s|gailkirklandphotography.localhost|$HOSTNAME|" \
-  sites-available/gailkirklandphotography.com.conf
 
-ln -s -fn \
-  ../sites-available/gailkirklandphotography.com.conf \
-  sites-enabled/gailkirklandphotography.com.conf
+cd sites-available
+mv gailkirklandphotography.com.conf $HOSTNAME.conf
+sed -i "s|gailkirklandphotography.localhost|$HOSTNAME|" $HOSTNAME.conf
+
+cd ../sites-enabled
+ln -s -fn ../sites-available/$HOSTNAME.conf
 
 service nginx reload
