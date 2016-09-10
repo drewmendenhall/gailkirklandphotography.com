@@ -9,6 +9,8 @@ import newer from 'gulp-newer'
 import rename from 'gulp-rename'
 import sourcemaps from 'gulp-sourcemaps'
 
+import passthrough from './passthrough'
+
 const destFilename = 'app.css'
 const destPath = 'public'
 const sourcePath = 'styles'
@@ -25,7 +27,7 @@ gulp.task('styles', () => gulp.src(sourceFilename)
     extra: sourceFilePattern,
   }))
   .pipe(rename(destFilename))
-  .pipe(sourcemaps.init())
+  .pipe(__DEV__ ? sourcemaps.init() : passthrough())
   .pipe(less({
     plugins: [
       new LessPluginNpmImport(),
@@ -35,11 +37,11 @@ gulp.task('styles', () => gulp.src(sourceFilename)
     ]),
     strictMath: true,
   }))
-  .pipe(sourcemaps.write('.', {
-    addComment: __DEV__,
+  .pipe(__DEV__ ? sourcemaps.write('.', {
+    addComment: true,
     includeContent: false,
     sourceRoot: sourcePath,
-  }))
+  }) : passthrough())
   .pipe(gulp.dest(destPath))
   .pipe(filter('**/*.css'))
   .pipe(livereload())
