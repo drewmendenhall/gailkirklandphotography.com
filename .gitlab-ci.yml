@@ -56,8 +56,6 @@ build-tag:
     - tags
 
 .release: &release
-  only:
-    - tags
   before_script:
     - export VERSION=$(git log -1 --pretty=%B | xargs)
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CONTAINER_REGISTRY
