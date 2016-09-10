@@ -17,4 +17,4 @@ ln -s -fn \
   ../sites-available/gailkirklandphotography.com.conf \
   sites-enabled/gailkirklandphotography.com.conf
 
-service nginx restart
+service nginx reload
