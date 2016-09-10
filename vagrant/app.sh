@@ -2,7 +2,7 @@
 
 cd $APP_DIR
 
-docker pull $DOCKER_REGISTRY/$ORG_NAME/$REPO_NAME
+docker pull
 docker-compose up -d
 
 apt-get install -y nginx-extras
