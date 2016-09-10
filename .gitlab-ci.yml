@@ -84,11 +84,9 @@ release-branch:
   except:
     - master
   script:
-    - docker build -t $CONTAINER_NAME:$CI_BUILD_REF_NAME .
+    - docker build -t $CONTAINER_NAME:qa .
 
-deploy:
-  only:
-    - tags
+.deploy: &deploy
   script:
     - >-
       ssh
@@ -101,3 +99,17 @@ deploy:
   stage: deploy
   tags:
     - shell
+
+deploy:
+  <<: *deploy
+  only:
+    - tags
+
+deploy-branch:
+  <<: *deploy
+  only:
+    - branches
+  except:
+    - master
+  variables:
+    DEPLOY_PATH: $REPO_NAME-qa
