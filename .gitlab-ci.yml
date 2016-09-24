@@ -86,7 +86,7 @@ release-branch:
 
 .deploy: &deploy
   environment:
-    url: http://$HOSTNAME
+    url: https://$HOSTNAME
   script:
     - envsubst < docker-compose.template.production.yml > docker-compose.production.yml
     - >-
@@ -104,6 +104,10 @@ release-branch:
         export HOSTNAME=$HOSTNAME &&
         export HOST_PORT=$(get-port) &&
         envsubst < docker-compose.template.yml > docker-compose.yml &&
+        envsubst < site.bootstrap.template.conf | sudo tee /etc/nginx/sites-available/$HOSTNAME.conf &&
+        sudo ln -s -fn /etc/nginx/sites-{available,enabled}/$HOSTNAME.conf &&
+        sudo service nginx reload &&
+        letsencrypt certonly --noninteractive --webroot --webroot-path /var/www/challenges --domain $HOSTNAME &&
         envsubst < site.template.conf | sudo tee /etc/nginx/sites-available/$HOSTNAME.conf &&
         sudo ln -s -fn /etc/nginx/sites-{available,enabled}/$HOSTNAME.conf &&
         sudo service nginx reload &&
