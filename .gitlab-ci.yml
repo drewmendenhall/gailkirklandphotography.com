@@ -82,16 +82,31 @@ release-branch:
   except:
     - master
   script:
-    - docker build -t $CONTAINER_NAME:qa .
+    - docker build -t $CONTAINER_NAME:$CI_BUILD_REF_NAME .
 
 .deploy: &deploy
   environment:
     url: http://$HOSTNAME
   script:
+    - envsubst < docker-compose.template.production.yml > docker-compose.production.yml
+    - >-
+      rsync
+      --itemize-changes
+      --times
+      .env
+      deploy/*
+      docker-compose.template.*
+      $DEPLOY_HOST:$DEPLOY_PATH
     - >-
       ssh
       $DEPLOY_HOST
       "cd $DEPLOY_PATH && '$SHELL' -s" <<-EOF
+        export HOSTNAME=$HOSTNAME &&
+        export HOST_PORT=$(get-port) &&
+        envsubst < docker-compose.template.yml > docker-compose.yml &&
+        envsubst < site.template.conf | sudo tee /etc/nginx/sites-available/$HOSTNAME.conf &&
+        sudo ln -s -fn /etc/nginx/sites-{available,enabled}/$HOSTNAME.conf &&
+        sudo service nginx reload &&
         docker-compose pull &&
         docker-compose up -d &&
         docker-clean
@@ -109,12 +124,13 @@ deploy:
   only:
     - tags
   variables:
+    CONTAINER_TAG: latest
     HOSTNAME: $DEPLOY_HOST
 
 deploy-branch:
   <<: *deploy
   environment:
-    name: qa
+    name: $CI_BUILD_REF_NAME
   before_script:
     - cp .env.qa .env
   only:
@@ -122,5 +138,6 @@ deploy-branch:
   except:
     - master
   variables:
-    DEPLOY_PATH: $REPO_NAME-qa
-    HOSTNAME: qa.$DEPLOY_HOST
+    CONTAINER_TAG: $CI_BUILD_REF_NAME
+    DEPLOY_PATH: $REPO_NAME-$CI_BUILD_REF_NAME
+    HOSTNAME: $CI_BUILD_REF_NAME.$DEPLOY_HOST
