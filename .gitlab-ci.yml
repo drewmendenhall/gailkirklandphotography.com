@@ -85,6 +85,8 @@ release-branch:
     - docker build -t $CONTAINER_NAME:qa .
 
 .deploy: &deploy
+  environment:
+    url: http://$HOSTNAME
   script:
     - >-
       ssh
@@ -100,14 +102,25 @@ release-branch:
 
 deploy:
   <<: *deploy
+  environment:
+    name: production
+  before_script:
+    - cp .env.production .env
   only:
     - tags
+  variables:
+    HOSTNAME: $DEPLOY_HOST
 
 deploy-branch:
   <<: *deploy
+  environment:
+    name: qa
+  before_script:
+    - cp .env.qa .env
   only:
     - branches
   except:
     - master
   variables:
     DEPLOY_PATH: $REPO_NAME-qa
+    HOSTNAME: qa.$DEPLOY_HOST
