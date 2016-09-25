@@ -1,0 +1,7 @@
+version: '2'
+services:
+  web:
+    build: .
+    env_file: .env
+    ports:
+      - "$HOST_PORT:8000"
