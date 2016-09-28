@@ -1,4 +1,4 @@
-FROM node
+FROM node:slim
 
 ENV NODE_ENV=production
 ENV NPM_CONFIG_LOGLEVEL=warn
