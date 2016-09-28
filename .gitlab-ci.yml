@@ -82,7 +82,7 @@ release-branch:
   environment:
     url: https://$HOSTNAME
   script:
-    - envsubst < docker-compose.template.production.yml > docker-compose.production.yml
+    - envsubst < docker-compose.template.production.yml > deploy/docker-compose.production.yml
     - >-
       rsync
       --itemize-changes
