@@ -4,5 +4,5 @@ services:
     extends:
       file: docker-compose.yml
       service: web
-    image: $CONTAINER_NAME:$CONTAINER_TAG
+    image: $CI_REGISTRY_IMAGE:$CONTAINER_TAG
     restart: always
