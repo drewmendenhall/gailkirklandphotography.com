@@ -1,6 +1,6 @@
 import React from 'react'
 
-import analyticsSnippet from 'segmentio-snippet'
+import analyticsSnippet from '@segment/snippet'
 
 export default ({
   href,
