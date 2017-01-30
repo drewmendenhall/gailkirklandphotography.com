@@ -55,7 +55,7 @@ build-tag:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
   after_script:
     - docker push $CI_REGISTRY_IMAGE
-    - docker-clean
+    - docker system prune --all --force
   stage: release
   tags:
     - shell
@@ -110,7 +110,7 @@ release-branch:
         fi
         docker-compose pull &&
         docker-compose up -d &&
-        docker-clean
+        docker system prune --all --force
       EOF
   stage: deploy
   tags:
