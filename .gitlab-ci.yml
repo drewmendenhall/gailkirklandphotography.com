@@ -91,6 +91,7 @@ release-branch:
       deploy/*
       docker-compose.template.*
       $DEPLOY_HOST:$DEPLOY_PATH
+    - export DOLLAR='$'
     - >-
       ssh
       $DEPLOY_HOST
@@ -98,7 +99,7 @@ release-branch:
         if [ ! -e /etc/nginx/sites-enabled/$HOSTNAME.conf ]; then
           echo 'creating new environment'
           export HOSTNAME=$HOSTNAME &&
-          export HOST_PORT=$(get-port) &&
+          export HOST_PORT=${DOLLAR}(get-port) &&
           envsubst < docker-compose.template.yml > docker-compose.yml &&
           envsubst < site.bootstrap.template.conf | sudo tee /etc/nginx/sites-available/$HOSTNAME.conf &&
           sudo ln -s -fn /etc/nginx/sites-{available,enabled}/$HOSTNAME.conf &&
