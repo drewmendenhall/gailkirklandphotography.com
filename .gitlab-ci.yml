@@ -121,7 +121,7 @@ deploy:
     # TODO: remove this line when custom variables are supported
     url: https://gailkirklandphotography.com
   before_script:
-    - cp .env.production .env
+    - envsubst < .env.production > .env
   only:
     - tags
   variables:
@@ -136,7 +136,7 @@ deploy-branch:
     # TODO: remove this line when custom variables are supported
     url: https://$CI_BUILD_REF_NAME.gailkirklandphotography.com
   before_script:
-    - cp .env.qa .env
+    - envsubst < .env.qa > .env
   only:
     - branches
   except:
