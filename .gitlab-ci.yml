@@ -105,7 +105,7 @@ release-branch:
         letsencrypt certonly --noninteractive --webroot --webroot-path /var/www/challenges --domain $HOSTNAME &&
         envsubst < site.template.conf | sudo tee /etc/nginx/sites-available/$HOSTNAME.conf &&
         sudo ln -s -fn /etc/nginx/sites-{available,enabled}/$HOSTNAME.conf &&
-        sudo service nginx reload &&
+        sudo nginx -s reload &&
         docker-compose pull &&
         docker-compose up -d &&
         docker system prune --force
