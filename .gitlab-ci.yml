@@ -2,6 +2,7 @@ stages:
   - build
   - release
   - deploy
+  - stop
 
 variables:
   BUILD_PATH: dist
@@ -145,3 +146,34 @@ deploy-branch:
     CONTAINER_TAG: $CI_BUILD_REF_NAME
     DEPLOY_PATH: $CI_PROJECT_NAME-$CI_BUILD_REF_NAME
     HOSTNAME: $CI_BUILD_REF_NAME.$DEPLOY_HOST
+
+stop:
+  environment:
+    action: stop
+    name: $CI_COMMIT_REF_NAME
+  except:
+    - master
+  script:
+    - >-
+      ssh
+      $DEPLOY_HOST
+      "cd $DEPLOY_PATH && '$SHELL' -s" <<-EOF
+        docker-compose down
+        docker rmi $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+        cd ..
+        rm -rf $DEPLOY_PATH
+        rm /etc/nginx/sites-{available,enabled}/$HOSTNAME.conf
+        rm -rf /etc/letsencrypt/{archive,live,renewal}/$HOSTNAME*
+        sudo nginx -s reload
+      EOF
+    - sudo --user=registry docker-distribution-pruner -config=/var/opt/gitlab/registry/config.yml -delete -soft-delete=false
+  stage: stop
+  tags:
+    - shell
+  variables:
+    CONTAINER_TAG: $CI_COMMIT_REF_NAME
+    DEPLOY_PATH: $CI_PROJECT_NAME-$CI_COMMIT_REF_NAME
+    GIT_STRATEGY: none
+    HOSTNAME: $CI_COMMIT_REF_NAME.$DEPLOY_HOST
+
+  when: manual
