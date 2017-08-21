@@ -38,9 +38,10 @@
     "connect-slashes": "^1.3.1",
     "dotenv-safe": "^2.3.1",
     "express": "^4.15.4",
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-helmet": "^3.1.0",
+    "react-helmet": "^5.1.3",
     "react-router": "^2.4.1",
     "serve-static": "^1.12.4"
   },
