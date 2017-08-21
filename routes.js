@@ -13,42 +13,19 @@ import DogSessionsInfo from './components/pages/sessions/DogSessionsInfo'
 import HorseSessionsInfo from './components/pages/sessions/HorseSessionsInfo'
 import TwilightSessionsInfo from './components/pages/sessions/TwilightSessionsInfo'
 
-import galleries from './public/galleries.json'
-
-const defaultGalleryId = Object.keys(galleries)[0]
-
-export default ({
-  path: '/',
+export default [{
   component: Main,
-  indexRoute: {component: Home},
-  childRoutes: [
-    {path: 'about', component: About},
-    {path: 'contact', component: Contact},
-    {path: 'galleries', childRoutes: [
-      {path: ':galleryId(/:pictureId)', component: Gallery},
-    ],
-      onEnter(nextState, replace) {
-        const gallery = galleries[nextState.params.galleryId]
-
-        if (!gallery) {
-          replace({pathname: `/galleries/${defaultGalleryId}`})
-        }
-      },
-    },
-    {path: 'copyright', component: Copyright},
-    {path: 'links', component: Links},
-    {path: 'sessions', component: SessionInfo},
-    {path: 'sessions', childRoutes: [
-      {path: 'cats', component: CatSessionsInfo},
-      {path: 'dogs', component: DogSessionsInfo},
-      {path: 'horses', component: HorseSessionsInfo},
-      {path: 'twilight', component: TwilightSessionsInfo},
-      {
-        path: '*',
-        onEnter(nextState, replace) {
-          replace({pathname: '/sessions'})
-        },
-      },
-    ]},
+  routes: [
+    {path: '/', exact: true, component: Home},
+    {path: '/about', component: About},
+    {path: '/contact', component: Contact},
+    {path: '/galleries/:galleryId/:pictureId?', component: Gallery},
+    {path: '/copyright', component: Copyright},
+    {path: '/links', component: Links},
+    {path: '/sessions', exact: true, component: SessionInfo},
+    {path: '/sessions/cats', component: CatSessionsInfo},
+    {path: '/sessions/dogs', component: DogSessionsInfo},
+    {path: '/sessions/horses', component: HorseSessionsInfo},
+    {path: '/sessions/twilight', component: TwilightSessionsInfo},
   ],
-})
+}]

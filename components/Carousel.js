@@ -3,7 +3,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import {Link} from 'react-router'
+import {Link} from 'react-router-dom'
 
 function rotateForward(max, index) {
   return (index < max - 1 ? index + 1 : 0)
