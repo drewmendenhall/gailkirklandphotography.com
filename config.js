@@ -1,6 +1,6 @@
-import dotenv from 'dotenv-safe'
+import {config} from 'dotenv-safe'
 
-dotenv.config({
+config({
   allowEmptyValues: true,
   silent: true,
 })
