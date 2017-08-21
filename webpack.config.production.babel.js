@@ -6,11 +6,6 @@ export default ({
   ...config,
   plugins: [
     ...(config.plugins || []),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-      },
-    }),
+    new webpack.optimize.UglifyJsPlugin(),
   ],
 })
