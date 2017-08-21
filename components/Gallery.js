@@ -8,7 +8,7 @@ import GalleryPicture from './GalleryPicture'
 import galleries from '../public/galleries.json'
 
 export default (props) => {
-  const {location, params} = props
+  const {location, match: {params}} = props
   const {
     galleryId,
     pictureId,

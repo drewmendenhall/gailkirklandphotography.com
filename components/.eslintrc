@@ -12,6 +12,7 @@ rules:
   react/jsx-no-undef: error
   react/jsx-uses-react: warn
   react/jsx-uses-vars: warn
+  react/jsx-wrap-multilines: warn
   react/no-did-mount-set-state: error
   react/no-did-update-set-state: error
   react/no-direct-mutation-state: error
@@ -19,4 +20,3 @@ rules:
   react/no-unknown-property: error
   react/react-in-jsx-scope: error
   react/sort-prop-types: warn
-  react/wrap-multilines: warn

@@ -1,6 +1,7 @@
 import Helmet from 'react-helmet'
 import React from 'react'
-import {RouterContext, match} from 'react-router'
+import {StaticRouter} from 'react-router'
+import {renderRoutes} from 'react-router-config'
 import {renderToStaticMarkup, renderToString} from 'react-dom/server'
 
 import Html from '../components/Html'
@@ -12,46 +13,44 @@ export default ({
   segmentWriteKey,
   sendErrorStacks,
 }) => ((req, res) => {
-  match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
-    if (redirectLocation) {
-      res.redirect(302, redirectLocation.pathname + redirectLocation.search)
-    }
-    else if (error) {
-      res.status(500).send(sendErrorStacks ? error.stack : null)
-    }
-    else if (!renderProps) {
-      res.status(404).send()
-    }
-    else {
-      try {
-        const userAgent = req.headers['user-agent']
-        const includeOpenGraphTags = /^facebook/.test(userAgent)
-        const includeMicrosoftTags = (
-          /^Mozilla\/\d+\.0 \(compatible; MSIE \d+\.0; Windows /.test(userAgent)
-        )
+  const context = {}
+  
+  try {
+    const markup = (renderApp ? renderToString(
+      React.createElement(StaticRouter,
+        {context, location: req.url},
+        renderRoutes(routes)
+      )
+    ) : '')
 
-        const markup = (renderApp ? renderToString(
-          React.createElement(RouterContext, {...renderProps})
-        ) : '')
-        const head = Helmet.rewind()
-
-        res.send(
-          '<!doctype html>' +
-          renderToStaticMarkup(React.createElement(Html, {
-            href: `http://${req.headers.host}${req.url}`,
-            includeMicrosoftTags,
-            includeOpenGraphTags,
-            includeTracking,
-            markup,
-            segmentWriteKey,
-            ...head,
-          }))
-        )
-      }
-      catch (error) {
-        res.status(500).send(sendErrorStacks ? error.stack : null)
-        throw error
-      }
+    if (context.url) {
+      res.redirect(302, context.url)
+      return
     }
-  })
+    
+    const head = Helmet.renderStatic()
+    const userAgent = req.headers['user-agent']
+
+    const includeOpenGraphTags = /^facebook/.test(userAgent)
+    const includeMicrosoftTags = (
+      /^Mozilla\/\d+\.0 \(compatible; MSIE \d+\.0; Windows /.test(userAgent)
+    )
+
+    res.send(
+      '<!doctype html>' +
+      renderToStaticMarkup(React.createElement(Html, {
+        href: `http://${req.headers.host}${req.url}`,
+        includeMicrosoftTags,
+        includeOpenGraphTags,
+        includeTracking,
+        markup,
+        segmentWriteKey,
+        ...head,
+      }))
+    )
+  }
+  catch (error) {
+    res.status(500).send(sendErrorStacks ? error.stack : null)
+    throw error
+  }
 })

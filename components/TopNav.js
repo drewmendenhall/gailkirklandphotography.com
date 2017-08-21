@@ -1,9 +1,7 @@
 import React from 'react'
 
-import {
-  Link,
-  browserHistory,
-} from 'react-router'
+import {Link} from 'react-router-dom'
+import {withRouter} from 'react-router'
 
 import galleriesObject from '../public/galleries.json'
 
@@ -12,11 +10,7 @@ const galleries = (Object.keys(galleriesObject)
   .map((key) => galleriesObject[key])
 )
 
-export default class TopNav extends React.Component {
-  static contextTypes = {
-    router: React.PropTypes.object.isRequired,
-  }
-
+export default withRouter(class TopNav extends React.Component {
   state = {}
 
   handleGalleriesNavControlChange = (event) => {
@@ -39,7 +33,7 @@ export default class TopNav extends React.Component {
   }
 
   componentDidMount() {
-    this.unlisten = browserHistory.listen((location) => {
+    this.unlisten = this.props.history.listen((location) => {
       const {state} = location
 
       if (!state || !state.autoplay) {
@@ -126,4 +120,4 @@ export default class TopNav extends React.Component {
       </label>
     )
   }
-}
+})
