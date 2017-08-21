@@ -1,13 +1,14 @@
 import React from 'react'
 
-import {Link} from 'react-router'
+import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
 
 export default class CommonSessionInfo extends React.Component {
   static defaultProps = {
     includes: [],
   }
   static propTypes = {
-    includes: React.PropTypes.array,
+    includes: PropTypes.array,
   }
 
   render() {

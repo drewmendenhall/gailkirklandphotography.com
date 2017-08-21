@@ -1,8 +1,9 @@
 import React from 'react'
 
 import Helmet from 'react-helmet'
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import {Link} from 'react-router'
+import {Link} from 'react-router-dom'
 
 function rotateForward(max, index) {
   return (index < max - 1 ? index + 1 : 0)
@@ -13,19 +14,19 @@ function rotateBackward(max, index) {
 
 export default class Carousel extends React.Component {
   static contextTypes = {
-    location: React.PropTypes.object.isRequired,
-    router: React.PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    router: PropTypes.object.isRequired,
   }
   static defaultProps = {
     items: [],
     slideInterval: 2000,
   }
   static propTypes = {
-    index: React.PropTypes.number,
-    items: React.PropTypes.arrayOf(React.PropTypes.shape({
-      url: React.PropTypes.string,
+    index: PropTypes.number,
+    items: PropTypes.arrayOf(PropTypes.shape({
+      url: PropTypes.string,
     })),
-    slideInterval: React.PropTypes.number,
+    slideInterval: PropTypes.number,
   }
 
   constructor(props) {

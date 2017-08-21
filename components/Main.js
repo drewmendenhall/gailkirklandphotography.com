@@ -1,7 +1,9 @@
 import React from 'react'
 
 import Helmet from 'react-helmet'
-import {Link} from 'react-router'
+import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
+import {renderRoutes} from 'react-router-config'
 
 import TopNav from './TopNav'
 
@@ -9,7 +11,7 @@ const title = 'Gail Kirkland Photography'
 
 export default class Main extends React.Component {
   static childContextTypes = {
-    location: React.PropTypes.object,
+    location: PropTypes.object,
   };
 
   getChildContext() {
@@ -56,7 +58,7 @@ export default class Main extends React.Component {
           */}
         </div>
         <section className="content">
-          {this.props.children}
+          {renderRoutes(this.props.route.routes)}
         </section>
         <footer>
           <div>

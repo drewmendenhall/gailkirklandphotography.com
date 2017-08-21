@@ -9,7 +9,7 @@ const hotEntry = ['webpack-hot-middleware/client'].concat(
 
 module.exports = ({
   ...config,
-  devtool: '#cheap-module-eval-source-map',
+  devtool: 'inline-source-map',
   devServer: {
     publicPath: config.output.publicPath,
   },
@@ -23,7 +23,7 @@ module.exports = ({
   ),
   module: {
     ...config.module,
-    loaders: config.module.loaders.map((loader) => {
+    rules: config.module.rules.map((loader) => {
       if (loader.loader === 'babel') {
         const presetName = 'react-hmre'
 
@@ -39,6 +39,5 @@ module.exports = ({
   },
   plugins: (config.plugins || []).concat([
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
   ]),
 })
