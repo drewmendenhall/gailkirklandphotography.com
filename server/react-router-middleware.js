@@ -33,7 +33,7 @@ export default ({
         const markup = (renderApp ? renderToString(
           React.createElement(RouterContext, {...renderProps})
         ) : '')
-        const head = Helmet.rewind()
+        const head = Helmet.renderStatic()
 
         res.send(
           '<!doctype html>' +
