@@ -26,7 +26,7 @@
     "postversion": "git push && git push --tags",
     "watch": "run-p watch:*",
     "watch:styles": "gulp watch:styles",
-    "dev": "run-p build:images build:styles && run-p watch serve:dev",
+    "dev": "run-p build:images build:styles serve:dev watch",
     "start": "node dist/server"
   },
   "dependencies": {
