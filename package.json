@@ -83,7 +83,7 @@
     "less-plugin-clean-css": "^1.5.1",
     "less-plugin-npm-import": "^2.1.0",
     "normalize.css": "^4.1.1",
-    "npm-run-all": "^2.1.2",
+    "npm-run-all": "^4.0.2",
     "rimraf": "^2.5.2",
     "webpack": "^3.5.5",
     "webpack-dev-middleware": "^1.12.0",
