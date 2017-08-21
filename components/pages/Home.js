@@ -5,9 +5,12 @@ import Gallery from '../Gallery'
 export default (props) => (
   <Gallery
     {...props}
-    params={{
-      ...props.params,
-      galleryId: 'home',
+    match={{
+      ...props.match,
+      params: {
+        ...props.match.params,
+        galleryId: 'home',
+      },
     }}
   />
 )

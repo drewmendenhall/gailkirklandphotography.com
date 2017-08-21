@@ -2,7 +2,8 @@ import React from 'react'
 
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
-import {Link} from 'react-router'
+import {Link} from 'react-router-dom'
+import {renderRoutes} from 'react-router-config'
 
 import TopNav from './TopNav'
 
@@ -57,7 +58,7 @@ export default class Main extends React.Component {
           */}
         </div>
         <section className="content">
-          {this.props.children}
+          {renderRoutes(this.props.route.routes)}
         </section>
         <footer>
           <div>
