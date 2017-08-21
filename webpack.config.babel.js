@@ -18,19 +18,20 @@ export default ({
     filename: '[name].js',
   },
   module: {
-    preLoaders: [
-      {test: /\.jsx?$/, loader: 'eslint'},
-    ],
-    loaders: [
+    rules: [
+      {
+        test: /\.jsx?$/,
+        enforce: 'pre',
+        loader: 'eslint-loader',
+      },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel',
-        query: {
+        loader: 'babel-loader',
+        options: {
           cacheDirectory: true,
         },
       },
-      {test: /\.json$/, loader: 'json'},
     ],
   },
   plugins: [
@@ -40,7 +41,4 @@ export default ({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
   ],
-  resolve: {
-    extensions: ['', '.js', '.jsx', '.json'],
-  },
 })
