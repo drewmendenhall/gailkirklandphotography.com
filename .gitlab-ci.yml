@@ -26,8 +26,6 @@ variables:
     - node --version
     - npm --version
     - NODE_ENV= npm install
-    - npm list --depth=0
-    - NODE_ENV= npm list --depth=0 --only=dev
     - npm run build
   stage: build
   tags:
