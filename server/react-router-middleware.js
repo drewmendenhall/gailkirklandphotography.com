@@ -8,9 +8,7 @@ import Html from '../components/Html'
 import routes from '../routes'
 
 export default ({
-  includeTracking,
   renderApp,
-  segmentWriteKey,
   sendErrorStacks,
 }) => ((req, res) => {
   const context = {}
@@ -42,9 +40,7 @@ export default ({
         href: `http://${req.headers.host}${req.url}`,
         includeMicrosoftTags,
         includeOpenGraphTags,
-        includeTracking,
         markup,
-        segmentWriteKey,
         ...head,
       }))
     )

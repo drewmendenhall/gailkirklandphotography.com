@@ -7,7 +7,6 @@ variables:
   BUILD_PATH: dist
   DEPLOY_HOST: gailkirklandphotography.com
 
-  ANALYTICS: "true"
   NODE_ENV: production
   SERVER_SIDE_RENDERING: "true"
 

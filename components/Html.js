@@ -1,16 +1,12 @@
 import React from 'react'
 
-import analyticsSnippet from '@segment/snippet'
-
 export default ({
   href,
   includeMicrosoftTags,
   includeOpenGraphTags,
-  includeTracking,
   link,
   markup,
   meta,
-  segmentWriteKey,
   style,
   title,
 }) => {
@@ -51,13 +47,6 @@ export default ({
         <main dangerouslySetInnerHTML={{__html: markup}}></main>
         <script src="/vendor.js"></script>
         <script src="/app.js"></script>
-        {includeTracking &&
-          <script
-            dangerouslySetInnerHTML={{
-              __html: analyticsSnippet.min({apiKey: segmentWriteKey}),
-            }}
-          ></script>
-        }
       </body>
     </html>
   )
