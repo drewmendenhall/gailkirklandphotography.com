@@ -5,8 +5,6 @@ stages:
 
 variables:
   BUILD_PATH: dist
-  DEPLOY_HOST: gailkirklandphotography.com
-
   HOME: /home/gitlab-runner
   NODE_ENV: production
   SERVER_SIDE_RENDERING: "true"
@@ -110,8 +108,7 @@ deploy:
   <<: *deploy
   environment:
     name: production
-    # TODO: remove this line when custom variables are supported
-    url: https://gailkirklandphotography.com
+    url: https://$DEPLOY_HOST
   before_script:
     - envsubst < .env.production > $DEPLOY_PATH/.env
   only:
@@ -125,8 +122,7 @@ deploy-branch:
   <<: *deploy
   environment:
     name: $CI_BUILD_REF_NAME
-    # TODO: remove this line when custom variables are supported
-    url: https://$CI_BUILD_REF_NAME.gailkirklandphotography.com
+    url: https://$CI_COMMIT_REF_SLUG.$DEPLOY_HOST
   before_script:
     - envsubst < .env.qa > $DEPLOY_PATH/.env
   only:
