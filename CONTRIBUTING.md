@@ -2,7 +2,7 @@ Run the `dev` task to start a development server. Hot reloading is enabled, so c
 ```
 npm run dev
 ```
-Run the `prod` task to start a server that operates in production mode. Production-ready files will be placed in `public/`, hot reloading will be not be enabled, and analytics will be enabled.
+Run the `prod` task to start a server that operates in production mode. Production-ready files will be placed in `public/` and hot reloading will be not be enabled.
 ```
 npm run prod
 ```

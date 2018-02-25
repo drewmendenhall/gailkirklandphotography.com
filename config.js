@@ -6,9 +6,6 @@ config({
 })
 
 export default {
-  analytics: process.env.ANALYTICS && {
-    segmentWriteKey: process.env.SEGMENT_WRITE_KEY,
-  },
   server: {
     base: process.env.SERVER_BASE || `${__dirname}/public`,
     hostname: process.env.SERVER_HOST || '0.0.0.0',
