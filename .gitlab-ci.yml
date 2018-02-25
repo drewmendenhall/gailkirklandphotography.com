@@ -2,7 +2,6 @@ stages:
   - build
   - release
   - deploy
-  - stop
 
 variables:
   BUILD_PATH: dist
@@ -80,6 +79,7 @@ release-branch:
 
 .deploy: &deploy
   environment:
+    on_stop: stop
     url: https://$HOSTNAME
   script:
     - envsubst < docker-compose.template.production.yml > deploy/docker-compose.production.yml
@@ -166,7 +166,7 @@ stop:
         sudo nginx -s reload
       EOF
     - sudo --user=registry docker-distribution-pruner -config=/var/opt/gitlab/registry/config.yml -delete -soft-delete=false
-  stage: stop
+  stage: deploy
   tags:
     - shell
   variables:
