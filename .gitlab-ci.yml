@@ -25,8 +25,7 @@ variables:
   script:
     - node --version
     - npm --version
-    - npm install
-    - npm install --only=dev
+    - NODE_ENV= npm install
     - npm list --depth=0
     - NODE_ENV= npm list --depth=0 --only=dev
     - npm run build
