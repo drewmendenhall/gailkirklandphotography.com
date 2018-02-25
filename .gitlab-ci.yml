@@ -7,6 +7,7 @@ variables:
   BUILD_PATH: dist
   DEPLOY_HOST: gailkirklandphotography.com
 
+  HOME: /home/gitlab-runner
   NODE_ENV: production
   SERVER_SIDE_RENDERING: "true"
 
@@ -83,26 +84,27 @@ release-tag:
     on_stop: stop
     url: https://$HOSTNAME
   script:
-    - cp -r deploy ~/$DEPLOY_PATH
-    - cd ~/$DEPLOY_PATH
     - export HOST_PORT=$(get-port)
     
-    - envsubst < site.bootstrap.template.conf > /etc/nginx/sites-available/$HOSTNAME.conf
-    - sudo ln -s -fn /etc/nginx/sites-{available,enabled}/$HOSTNAME.conf
+    - envsubst < deploy/site.bootstrap.template.conf > /etc/nginx/sites-available/$HOSTNAME.conf
+    - ln -s -fn ../sites-available/$HOSTNAME.conf /etc/nginx/sites-enabled/$HOSTNAME.conf
     - sudo nginx -s reload
-    - letsencrypt certonly --noninteractive --webroot --webroot-path /var/www/challenges --domain $HOSTNAME
-    - envsubst < site.template.conf > /etc/nginx/sites-available/$HOSTNAME.conf
-    - sudo ln -s -fn /etc/nginx/sites-{available,enabled}/$HOSTNAME.conf
+    - sudo letsencrypt certonly --noninteractive --webroot --webroot-path /var/www/challenges --domain $HOSTNAME
+    - envsubst < deploy/site.template.conf > /etc/nginx/sites-available/$HOSTNAME.conf
     - sudo nginx -s reload
     
-    - envsubst < docker-compose.template.yml > docker-compose.yml
-    - envsubst < docker-compose.template.production.yml > deploy/docker-compose.production.yml
+    - mkdir -p $DEPLOY_PATH
+    - envsubst < docker-compose.production.template.yml > $DEPLOY_PATH/docker-compose.production.yml
+    - envsubst < docker-compose.template.yml > $DEPLOY_PATH/docker-compose.yml
+
+    - cd $DEPLOY_PATH
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
     - docker-compose pull
     - docker-compose up -d
     - docker system prune --force
   stage: deploy
   tags:
-    - ssh-gailkirklandphotography
+    - www-server
 
 deploy:
   <<: *deploy
@@ -111,12 +113,12 @@ deploy:
     # TODO: remove this line when custom variables are supported
     url: https://gailkirklandphotography.com
   before_script:
-    - envsubst < .env.production > .env
+    - envsubst < .env.production > $DEPLOY_PATH/.env
   only:
     - master
   variables:
     CONTAINER_TAG: latest
-    DEPLOY_PATH: $CI_PROJECT_NAME
+    DEPLOY_PATH: $HOME/$CI_PROJECT_NAME
     HOSTNAME: $DEPLOY_HOST
 
 deploy-branch:
@@ -126,14 +128,14 @@ deploy-branch:
     # TODO: remove this line when custom variables are supported
     url: https://$CI_BUILD_REF_NAME.gailkirklandphotography.com
   before_script:
-    - envsubst < .env.qa > .env
+    - envsubst < .env.qa > $DEPLOY_PATH/.env
   only:
     - branches
   except:
     - master
   variables:
     CONTAINER_TAG: $CI_BUILD_REF_NAME
-    DEPLOY_PATH: $CI_PROJECT_NAME-$CI_BUILD_REF_NAME
+    DEPLOY_PATH: $HOME/$CI_PROJECT_NAME-$CI_BUILD_REF_NAME
     HOSTNAME: $CI_BUILD_REF_NAME.$DEPLOY_HOST
 
 stop:
