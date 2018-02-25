@@ -58,12 +58,9 @@ build-tag:
 release:
   <<: *release
   only:
-    - tags
+    - master
   script:
-    - export VERSION=$(git log -1 --pretty=%B | xargs)
-    - docker build -t $CI_REGISTRY_IMAGE:$VERSION .
-    - docker tag $CI_REGISTRY_IMAGE:$VERSION $CI_REGISTRY_IMAGE
-
+    - docker build -t $CI_REGISTRY_IMAGE:latest .
 release-branch:
   <<: *release
   only:
@@ -72,6 +69,14 @@ release-branch:
     - master
   script:
     - docker build -t $CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME .
+release-tag:
+  <<: *release
+  only:
+    - tags
+  script:
+    - export VERSION=$(git log -1 --pretty=%B | xargs)
+    - docker build -t $CI_REGISTRY_IMAGE:$VERSION .
+    - docker tag $CI_REGISTRY_IMAGE:$VERSION $CI_REGISTRY_IMAGE
 
 .deploy: &deploy
   environment:
@@ -108,7 +113,7 @@ deploy:
   before_script:
     - envsubst < .env.production > .env
   only:
-    - tags
+    - master
   variables:
     CONTAINER_TAG: latest
     DEPLOY_PATH: $CI_PROJECT_NAME
