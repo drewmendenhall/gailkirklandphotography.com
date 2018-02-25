@@ -82,11 +82,11 @@ release-branch:
     - cd ~/$DEPLOY_PATH
     - export HOST_PORT=$(get-port)
     
-    - envsubst < site.bootstrap.template.conf | sudo tee - /etc/nginx/sites-available/$HOSTNAME.conf
+    - envsubst < site.bootstrap.template.conf > /etc/nginx/sites-available/$HOSTNAME.conf
     - sudo ln -s -fn /etc/nginx/sites-{available,enabled}/$HOSTNAME.conf
     - sudo nginx -s reload
     - letsencrypt certonly --noninteractive --webroot --webroot-path /var/www/challenges --domain $HOSTNAME
-    - envsubst < site.template.conf | sudo tee - /etc/nginx/sites-available/$HOSTNAME.conf
+    - envsubst < site.template.conf > /etc/nginx/sites-available/$HOSTNAME.conf
     - sudo ln -s -fn /etc/nginx/sites-{available,enabled}/$HOSTNAME.conf
     - sudo nginx -s reload
     
