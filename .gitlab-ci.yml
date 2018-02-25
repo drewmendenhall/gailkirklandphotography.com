@@ -141,24 +141,18 @@ stop:
   except:
     - master
   script:
-    - >-
-      ssh
-      $DEPLOY_HOST
-      "cd $DEPLOY_PATH && '$SHELL' -s" <<-EOF
-        docker-compose down
-        docker rmi $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
-        cd ..
-        rm -rf $DEPLOY_PATH
-        rm /etc/nginx/sites-{available,enabled}/$HOSTNAME.conf
-        rm -rf /etc/letsencrypt/{archive,live,renewal}/$HOSTNAME*
-        sudo nginx -s reload
-      EOF
-    - sudo --user=registry docker-distribution-pruner -config=/var/opt/gitlab/registry/config.yml -delete -soft-delete=false
+    - cd $DEPLOY_PATH
+    - docker-compose down
+    - docker rmi $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+    - cd ..
+    - rm -rf $DEPLOY_PATH
+    - rm /etc/nginx/sites-{available,enabled}/$HOSTNAME.conf
+    - rm -rf /etc/letsencrypt/{archive,live,renewal}/$HOSTNAME*
+    - sudo nginx -s reload
   stage: deploy
   tags:
-    - shell
+    - www-server
   variables:
-    CONTAINER_TAG: $CI_COMMIT_REF_SLUG
     DEPLOY_PATH: $HOME/$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG
     GIT_STRATEGY: none
     HOSTNAME: $CI_COMMIT_REF_SLUG.$DEPLOY_HOST
