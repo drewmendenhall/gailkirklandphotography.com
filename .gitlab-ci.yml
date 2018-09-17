@@ -27,7 +27,7 @@ variables:
     - npm run build
   stage: build
   tags:
-    - docker-node
+    - docker-node-8
 
 build:
   <<: *build
@@ -44,7 +44,6 @@ build-tag:
 
 .release: &release
   before_script:
-    - export VERSION=$(git log -1 --pretty=%B | xargs)
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
   after_script:
     - docker push $CI_REGISTRY_IMAGE
@@ -86,7 +85,7 @@ release-tag:
     - envsubst < deploy/site.bootstrap.template.conf > /etc/nginx/sites-available/$HOSTNAME.conf
     - ln -s -fn ../sites-available/$HOSTNAME.conf /etc/nginx/sites-enabled/$HOSTNAME.conf
     - sudo nginx -s reload
-    - sudo letsencrypt certonly --noninteractive --webroot --webroot-path /var/www/challenges --domain $HOSTNAME
+    - sudo letsencrypt certonly --domain $HOSTNAME
     - envsubst < deploy/site.template.conf > /etc/nginx/sites-available/$HOSTNAME.conf
     - sudo nginx -s reload
 
