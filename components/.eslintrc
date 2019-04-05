@@ -20,3 +20,6 @@ rules:
   react/no-unknown-property: error
   react/react-in-jsx-scope: error
   react/sort-prop-types: warn
+settings:
+  react:
+    version: detect
