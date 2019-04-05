@@ -4,9 +4,7 @@ env:
 globals:
   __DEV__: true
 parserOptions:
-  ecmaVersion: 6
-  ecmaFeatures:
-    experimentalObjectRestSpread: true
+  ecmaVersion: 2019
   sourceType: module
 rules:
   comma-dangle: [warn, always-multiline]
