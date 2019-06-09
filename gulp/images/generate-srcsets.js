@@ -1,8 +1,8 @@
-const Promise = require('bluebird')
-
-const fs = Promise.promisifyAll(require('fs'))
-const im = Promise.promisifyAll(require('imagemagick'))
 const path = require('path')
+const {promisify} = require('util')
+
+const identify = promisify(require('imagemagick').identify)
+const writeFile = promisify(require('fs').writeFile)
 
 const galleries = require('../../public/galleries.json')
 const {layoutHeight, layoutWidth, pictureWidths, widths} = require('./layout')
@@ -31,7 +31,7 @@ export default (filename) => {
 
   const newPicture = JSON.parse(serializedPicture)
 
-  return im.identifyAsync(filename).then((features) => {
+  return identify(filename).then((features) => {
     const aspectRatio = features.width / features.height
 
     newPicture.minWidth = features.width + layoutWidth
@@ -60,7 +60,7 @@ export default (filename) => {
 
     pictures[pictures.indexOf(picture)] = newPicture
 
-    return fs.writeFileAsync(
+    return writeFile(
       path.resolve(__dirname, '../../public/galleries.json'),
       JSON.stringify(galleries, null, 2) + '\n'
     )
