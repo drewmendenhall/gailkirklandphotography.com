@@ -49,5 +49,5 @@ gulp.task('styles', () => gulp.src(sourceFilename)
 
 gulp.task('watch:styles', () => {
   livereload.listen()
-  gulp.watch(sourceFilePattern, ['styles'])
+  gulp.watch(sourceFilePattern, gulp.series('styles'))
 })
