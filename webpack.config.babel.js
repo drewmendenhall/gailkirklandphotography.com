@@ -4,7 +4,6 @@ export default ({
   entry: {
     app: './client',
     vendor: [
-      'babel-polyfill',
       'classnames',
       'react',
       'react-dom',

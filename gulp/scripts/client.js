@@ -11,11 +11,10 @@ export default registerTask({
   source: {
     file: 'client/index.js',
     pattern: [
-      '.babelrc',
+      '.babelrc.js',
       '.env',
-      'client/.babelrc',
       'client/**',
-      'components/.babelrc',
+      'components/.babelrc.js',
       'components/**',
       'package.json',
       'webpack.config.babel.js',
