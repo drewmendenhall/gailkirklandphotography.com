@@ -47,5 +47,5 @@ gulp.task('images', () => gulp.src(sourceFilePattern)
 
 gulp.task('watch:images', () => {
   livereload.listen()
-  gulp.watch(sourceFilePattern, ['images'])
+  gulp.watch(sourceFilePattern, gulp.series('images'))
 })
