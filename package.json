@@ -59,7 +59,6 @@
     "babel-plugin-dev": "^1.0.0",
     "babel-preset-react-hmre": "^1.1.1",
     "babel-watch": "^7.0.0",
-    "bluebird": "^3.5.5",
     "connect-livereload": "^0.6.1",
     "eslint": "^5.16.0",
     "eslint-loader": "^2.1.2",
