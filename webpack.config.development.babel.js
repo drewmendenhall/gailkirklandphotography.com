@@ -15,12 +15,10 @@ module.exports = ({
   },
   entry: (typeof config.entry === 'string' ?
     hotEntry
-  :
-    {
-      ...config.entry,
-      app: hotEntry,
-    }
-  ),
+  : {
+    ...config.entry,
+    app: hotEntry,
+  }),
   module: {
     ...config.module,
     rules: config.module.rules.map((loader) => {
