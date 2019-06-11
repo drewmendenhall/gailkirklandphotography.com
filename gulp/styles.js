@@ -11,6 +11,7 @@ import sourcemaps from 'gulp-sourcemaps'
 
 import passthrough from './passthrough'
 
+const __DEV__ = process.env.NODE_ENV !== 'production'
 const destFilename = 'app.css'
 const destPath = 'public'
 const sourcePath = 'styles'
