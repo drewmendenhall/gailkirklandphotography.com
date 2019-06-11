@@ -4,7 +4,6 @@ const COMMONJS = (!process.env.WEBPACK_VERSION ||
 
 module.exports = {
   plugins: [
-    'dev',
     '@babel/proposal-object-rest-spread',
     '@babel/transform-runtime',
   ].concat(COMMONJS

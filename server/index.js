@@ -8,6 +8,7 @@ import url from 'url'
 import config from '../config'
 import reactRouter from './react-router-middleware'
 
+const __DEV__ = process.env.NODE_ENV !== 'production'
 const server = express()
 
 server.disable('x-powered-by')
