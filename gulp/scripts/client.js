@@ -1,5 +1,5 @@
 import registerTask from './registerTask'
-import webpackConfig from '../../webpack.config.production.babel'
+import webpackConfig from '../../webpack.config.babel'
 
 export default registerTask({
   name: 'client',
@@ -18,7 +18,6 @@ export default registerTask({
       'components/**',
       'package.json',
       'webpack.config.babel.js',
-      'webpack.config.production.babel.js',
       __filename,
     ],
   },

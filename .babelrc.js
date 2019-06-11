@@ -10,5 +10,8 @@ module.exports = {
   ].concat(COMMONJS
     ? '@babel/transform-modules-commonjs'
     : []
+  ).concat(process.env.NODE_ENV !== 'production'
+    ? 'react-hot-loader/babel'
+    : []
   )
 }

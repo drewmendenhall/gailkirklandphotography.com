@@ -45,7 +45,7 @@ export default ({
       </head>
       <body>
         <main dangerouslySetInnerHTML={{__html: markup}}></main>
-        <script src="/vendor.js"></script>
+        <script src="/vendors~app.js"></script>
         <script src="/app.js"></script>
       </body>
     </html>

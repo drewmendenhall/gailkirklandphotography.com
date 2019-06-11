@@ -1,9 +1,8 @@
-import nodeExternals from 'webpack-node-externals'
-import webpack from 'webpack'
+const nodeExternals = require('webpack-node-externals')
 
-import config from './webpack.config.production.babel'
+const config = require('./webpack.config.babel')
 
-export default ({
+module.exports = {
   ...config,
   entry: {
     server: './server/index',
@@ -18,8 +17,4 @@ export default ({
     __dirname: false,
   },
   target: 'node',
-
-  plugins: (config.plugins || []).filter((plugin) => (
-    !(plugin instanceof webpack.optimize.CommonsChunkPlugin)
-  )),
-})
+}
