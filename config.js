@@ -1,9 +1,4 @@
-import {config} from 'dotenv-safe'
-
-config({
-  allowEmptyValues: true,
-  silent: true,
-})
+import 'dotenv/config'
 
 export default {
   server: {
