@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import {Link} from 'react-router-dom'
+import {withRouter} from 'react-router'
 
 function rotateForward(max, index) {
   return (index < max - 1 ? index + 1 : 0)
@@ -12,11 +13,7 @@ function rotateBackward(max, index) {
   return (index > 0 ? index - 1 : max - 1)
 }
 
-export default class Carousel extends React.Component {
-  static contextTypes = {
-    location: PropTypes.object.isRequired,
-    router: PropTypes.object.isRequired,
-  }
+export default withRouter(class Carousel extends React.Component {
   static defaultProps = {
     items: [],
     slideInterval: 2000,
@@ -64,8 +61,7 @@ export default class Carousel extends React.Component {
     event.preventDefault()
   }
   goToNextSlide = () => {
-    const {router} = this.context
-    const {children, items} = this.props
+    const {children, history, items} = this.props
     const {nextIndex} = this.state
 
     if (this.props.index == null) {
@@ -82,15 +78,14 @@ export default class Carousel extends React.Component {
       })
     }
     else {
-      router.push({
+      history.push({
         pathname: items[nextIndex].route,
         state: {autoplay: true},
       })
     }
   }
   goToPreviousSlide = () => {
-    const {router} = this.context
-    const {children, items} = this.props
+    const {children, history, items} = this.props
     const {prevIndex} = this.state
 
     if (this.props.index == null) {
@@ -107,7 +102,7 @@ export default class Carousel extends React.Component {
       })
     }
     else {
-      router.push({
+      history.push({
         pathname: items[prevIndex].route,
         state: {autoplay: true},
       })
@@ -151,8 +146,7 @@ export default class Carousel extends React.Component {
     window.clearInterval(this.autoplayInterval)
   }
   render() {
-    const {location} = this.context
-    const {items} = this.props
+    const {items, location} = this.props
     const {index, nextIndex, prevIndex} = this.state
 
     const url = items[index].route
@@ -197,4 +191,4 @@ export default class Carousel extends React.Component {
       </div>
     )
   }
-}
+})
