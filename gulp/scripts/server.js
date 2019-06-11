@@ -17,7 +17,6 @@ export default registerTask({
       'components/**',
       'server/**',
       'webpack.config.babel.js',
-      'webpack.config.production.babel.js',
       'webpack.config.server.production.babel.js',
       __filename,
     ],

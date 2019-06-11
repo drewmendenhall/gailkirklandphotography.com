@@ -1,15 +1,12 @@
-import webpack from 'webpack'
+const webpack = require('webpack')
 
-export default ({
+process.env.WEBPACK_VERSION = require('webpack/package.json').version
+
+module.exports = {
+  mode: (process.env.NODE_ENV || 'development'),
+
   entry: {
     app: './client',
-    vendor: [
-      'classnames',
-      'react',
-      'react-dom',
-      'react-helmet',
-      'react-router',
-    ],
   },
   output: {
     path: `${__dirname}/public`,
@@ -33,11 +30,15 @@ export default ({
       },
     ],
   },
+  optimization: {
+    minimize: process.env.NODE_ENV === 'production',
+    splitChunks: {chunks: 'all'},
+  },
+  performance: {hints: false},
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({name: 'vendor'}),
     new webpack.DefinePlugin({
       '__DEV__': JSON.stringify(process.env.NODE_ENV !== 'production'),
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
   ],
-})
+}
