@@ -16,7 +16,6 @@ const destPath = 'public'
 const sourcePath = 'styles'
 const sourceFilename = `${sourcePath}/index.less`
 const sourceFilePattern = [
-  '.env',
   `${sourcePath}/**/*.less`,
   __filename,
 ]

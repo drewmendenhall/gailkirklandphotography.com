@@ -12,7 +12,6 @@ import resizeImage from './resize-image'
 
 const destPath = 'public/images'
 const sourceFilePattern = [
-  '.env',
   'images/**',
   path.join(__dirname, '**'),
 ]
