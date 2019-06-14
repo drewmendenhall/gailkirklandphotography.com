@@ -22,4 +22,9 @@ module.exports = ({
   plugins: (config.plugins || []).concat([
     new webpack.HotModuleReplacementPlugin(),
   ]),
+  resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom',
+    },
+  },
 })
