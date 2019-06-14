@@ -8,4 +8,6 @@ export default {
     protocol: process.env.SERVER_PROTOCOL || 'http',
   },
   serverSideRendering: process.env.SERVER_SIDE_RENDERING,
+
+  livereloadUrl: process.env.LIVERELOAD_URL,
 }

@@ -24,7 +24,7 @@ if (__DEV__) {
 
   server.use(webpackDevMiddleware(compiler, {noInfo: true}))
   server.use(webpackHotMiddleware(compiler, {reload: true}))
-  server.use(livereload())
+  server.use(livereload({src: config.livereloadUrl}))
   server.use('/node_modules', serveStatic(path.join(
     __dirname, '../node_modules'
   )))
