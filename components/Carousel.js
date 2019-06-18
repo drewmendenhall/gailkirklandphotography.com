@@ -4,191 +4,142 @@ import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import {Link} from 'react-router-dom'
-import {withRouter} from 'react-router'
+import {useCallback, useEffect, useRef, useState} from 'react'
 
-function rotateForward(max, index) {
-  return (index < max - 1 ? index + 1 : 0)
-}
-function rotateBackward(max, index) {
-  return (index > 0 ? index - 1 : max - 1)
-}
+import useRouter from './useRouter'
 
-export default withRouter(class Carousel extends React.Component {
-  static defaultProps = {
-    items: [],
-    slideInterval: 2000,
+const rotateForward = (max, index) => (
+  index < max - 1 ? index + 1 : 0
+)
+
+const rotateBackward = (max, index) => (
+  index > 0 ? index - 1 : max - 1
+)
+
+const Carousel = (props) => {
+  const {history, location} = useRouter()
+  const {items} = props
+
+  const [index, setIndex] = useState(props.index || 0)
+  const autoplayInterval = useRef(null)
+
+  const nextIndex = rotateForward(items.length, index)
+  const prevIndex = rotateBackward(items.length, index)
+
+  const url = items[index].route
+  const nextUrl = items[nextIndex].route
+  const prevUrl = items[prevIndex].route
+
+  const handleNext = (event) => {
+    if (props.autoplay) resetAutoplay()
+    goToNextSlide()
+    event.preventDefault()
   }
-  static propTypes = {
-    index: PropTypes.number,
-    items: PropTypes.arrayOf(PropTypes.shape({
-      url: PropTypes.string,
-    })),
-    slideInterval: PropTypes.number,
+  const handlePrev = (event) => {
+    if (props.autoplay) resetAutoplay()
+    goToPreviousSlide()
+    event.preventDefault()
   }
-
-  constructor(props) {
-    super(props)
-
-    const {index = 0, items} = props
-
-    this.state = {
-      index,
-      nextIndex: rotateForward(items.length, index),
-      prevIndex: rotateBackward(items.length, index),
-    }
-  }
-
-  handleKeyDown = (event) => {
+  const handleKeyDown = (event) => {
     const {key} = event
 
     switch (key) {
       case 'ArrowLeft':
-        this.handlePrev(event)
+        handlePrev(event)
         break
       case 'ArrowRight':
-        this.handleNext(event)
+        handleNext(event)
         break
     }
   }
-  handleNext = (event) => {
-    if (this.props.autoplay) this.resetAutoplay()
-    this.goToNextSlide()
-    event.preventDefault()
-  }
-  handlePrev = (event) => {
-    if (this.props.autoplay) this.resetAutoplay()
-    this.goToPreviousSlide()
-    event.preventDefault()
-  }
-  goToNextSlide = () => {
-    const {children, history, items} = this.props
-    const {nextIndex} = this.state
-
-    if (this.props.index == null) {
-      let {index} = this.state
-
-      index = (index >= children.length - 1 ?
-        0 : index + 1
-      )
-
-      this.setState({
-        index,
-        nextIndex: rotateForward(items.length, index),
-        prevIndex: rotateBackward(items.length, index),
-      })
+  const goToNextSlide = useCallback(() => {
+    if (props.index == null) {
+      setIndex(nextIndex)
     }
     else {
       history.push({
-        pathname: items[nextIndex].route,
+        pathname: nextUrl,
+        state: {autoplay: true},
+      })
+    }
+  }, [history, nextIndex, nextUrl, props.index])
+  const goToPreviousSlide = () => {
+    if (props.index == null) {
+      setIndex(prevIndex)
+    }
+    else {
+      history.push({
+        pathname: prevUrl,
         state: {autoplay: true},
       })
     }
   }
-  goToPreviousSlide = () => {
-    const {children, history, items} = this.props
-    const {prevIndex} = this.state
-
-    if (this.props.index == null) {
-      let {index} = this.state
-
-      index = (index <= 0 ?
-        children.length - 1 : index - 1
-      )
-
-      this.setState({
-        index,
-        nextIndex: rotateForward(items.length, index),
-        prevIndex: rotateBackward(items.length, index),
-      })
+  const resetAutoplay = useCallback(() => {
+    if (autoplayInterval.current) {
+      window.clearInterval(autoplayInterval.current)
     }
-    else {
-      history.push({
-        pathname: items[prevIndex].route,
-        state: {autoplay: true},
-      })
-    }
-  }
-  resetAutoplay = () => {
-    window.clearInterval(this.autoplayInterval)
-    this.autoplayInterval = window.setInterval(this.goToNextSlide, this.props.slideInterval)
-  }
+    autoplayInterval.current = window.setInterval(goToNextSlide, props.slideInterval)
+  }, [props.slideInterval, goToNextSlide])
 
-  componentDidMount() {
-    if (this.props.autoplay) {
-      this.autoplayInterval = window.setInterval(this.goToNextSlide, this.props.slideInterval)
+  useEffect(() => {
+    if (props.autoplay) {
+      resetAutoplay()
     }
-  }
-  componentWillReceiveProps(nextProps) {
-    const {index, items} = nextProps
 
-    if (items && index != null) {
-      this.setState({
-        index,
-        nextIndex: rotateForward(items.length, index),
-        prevIndex: rotateBackward(items.length, index),
-      })
-    } else if (items !== this.props.items) {
-      this.setState({
-        index: 0,
-        nextIndex: rotateForward(items.length, 0),
-        prevIndex: rotateBackward(items.length, 0),
-      })
+    return () => {
+      window.clearInterval(autoplayInterval.current)
     }
-  }
-  componentDidUpdate(prevProps) {
-    if (this.props.autoplay &&
-      prevProps.slideInterval !== this.props.slideInterval
-    ) {
-      this.resetAutoplay()
-    }
-  }
-  componentWillUnmount() {
-    window.clearInterval(this.autoplayInterval)
-  }
-  render() {
-    const {items, location} = this.props
-    const {index, nextIndex, prevIndex} = this.state
+  }, [props.autoplay, props.slideInterval, resetAutoplay])
 
-    const url = items[index].route
-    const nextUrl = items[nextIndex].route
-    const prevUrl = items[prevIndex].route
-
-    return (
-      <div className="stretch carousel" onKeyDown={this.handleKeyDown}>
-        <Helmet
-          link={[
-            {rel: 'canonical', href: (location.pathname === '/' ? '/' : url)},
-            {rel: 'next', href: nextUrl},
-            {rel: 'prev', href: prevUrl},
-          ]}
-        />
-        {React.Children.map(this.props.children, (child, index) => (
-          <div
-            className={classnames('carousel-slide', {
-              'carousel-slide-current': this.props.index || this.state.index === index,
-              'carousel-slide-next': (this.props.index || index === nextIndex),
-              'carousel-slide-prev': (this.props.index || index === prevIndex),
-            })}
-            key={index}
-          >
-            {child}
-          </div>
-        ))}
-        <Link
-          to={prevUrl || ''}
-          className="carousel-nav carousel-nav-prev"
-          onClick={this.handlePrev}
-          rel="prev"
+  return (
+    <div className="stretch carousel" onKeyDown={handleKeyDown}>
+      <Helmet
+        link={[
+          {rel: 'canonical', href: (location.pathname === '/' ? '/' : url)},
+          {rel: 'next', href: nextUrl},
+          {rel: 'prev', href: prevUrl},
+        ]}
+      />
+      {React.Children.map(props.children, (child, i) => (
+        <div
+          className={classnames('carousel-slide', {
+            'carousel-slide-current': (props.index || index === i),
+            'carousel-slide-next': (i === nextIndex),
+            'carousel-slide-prev': (i === prevIndex),
+          })}
+          key={child.key || index}
         >
-        </Link>
-        <Link
-          to={nextUrl || ''}
-          className="carousel-nav carousel-nav-next"
-          onClick={this.handleNext}
-          rel="next"
-        >
-        </Link>
-      </div>
-    )
-  }
-})
+          {child}
+        </div>
+      ))}
+      <Link
+        to={prevUrl || ''}
+        className="carousel-nav carousel-nav-prev"
+        onClick={handlePrev}
+        rel="prev"
+      >
+      </Link>
+      <Link
+        to={nextUrl || ''}
+        className="carousel-nav carousel-nav-next"
+        onClick={handleNext}
+        rel="next"
+      >
+      </Link>
+    </div>
+  )
+}
+
+Carousel.defaultProps = {
+  slideInterval: 2000,
+}
+Carousel.propTypes = {
+  children: PropTypes.node.isRequired,
+  index: PropTypes.number,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    url: PropTypes.string,
+  })),
+  slideInterval: PropTypes.number,
+}
+
+export default Carousel
