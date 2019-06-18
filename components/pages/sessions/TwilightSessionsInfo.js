@@ -3,7 +3,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import {Link} from 'react-router-dom'
 
-export default () => (
+const TwilightSessionsInfo = () => (
   <div className="container">
     <Helmet title="Twilight Sessions" />
     <h1>Twilight Sessions</h1>
@@ -11,3 +11,5 @@ export default () => (
     <p>Sometimes, even worse is when your pets are taken from us too soon due to terminal illness. That is why I offer designed Twilight Sessions. They are an opportunity to capture those details of your blessed pet and cherish them forever. Because I understand these decisions have to be made in a short period of time, I try to be available to come to you when needed. Please <Link to="/contact">contact me</Link> to look into scheduling a session.</p>
   </div>
 )
+
+export default TwilightSessionsInfo

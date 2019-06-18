@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 
 import CommonSessionInfo from './CommonSessionInfo'
 
-export default ({
+const PetSessionsInfo = ({
   type = 'pet',
 }) => {
   const capitalizedType = type[0].toUpperCase() + type.slice(1)
@@ -22,3 +22,5 @@ export default ({
     </div>
   )
 }
+
+export default PetSessionsInfo

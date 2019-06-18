@@ -2,7 +2,7 @@ import React from 'react'
 
 import Helmet from 'react-helmet'
 
-export default (props) => {
+const GalleryPicture = (props) => {
   const {picture} = props
 
   const id = props.id || `picture-${picture.id}`
@@ -39,3 +39,5 @@ export default (props) => {
     </picture>
   )
 }
+
+export default GalleryPicture

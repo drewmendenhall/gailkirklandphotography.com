@@ -2,7 +2,7 @@ import React from 'react'
 
 import Helmet from 'react-helmet'
 
-export default () => (
+const About = () => (
   <div className="container">
     <Helmet title="About" />
     <img className="about-picture pull-left" src="/images/about_img1.jpg" />
@@ -21,3 +21,5 @@ export default () => (
     </p>
   </div>
 )
+
+export default About

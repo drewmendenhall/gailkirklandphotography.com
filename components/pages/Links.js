@@ -59,7 +59,7 @@ const linkSections = [
   },
 ]
 
-export default () => (
+const Links = () => (
   <div>
     <Helmet title="Links" />
     <p>
@@ -79,3 +79,5 @@ export default () => (
     ))}
   </div>
 )
+
+export default Links
