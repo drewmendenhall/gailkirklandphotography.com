@@ -4,6 +4,7 @@ env:
   browser: true
 plugins:
   - react
+  - react-hooks
 rules:
   react/jsx-boolean-value: warn
   react/jsx-closing-bracket-location: warn
@@ -20,6 +21,8 @@ rules:
   react/no-unknown-property: error
   react/react-in-jsx-scope: error
   react/sort-prop-types: warn
+  react-hooks/rules-of-hooks: error
+  react-hooks/exhaustive-deps: warn
 settings:
   react:
     version: detect
