@@ -123,6 +123,7 @@ deploy-branch:
   environment:
     name: $CI_COMMIT_REF_NAME
     url: https://$CI_COMMIT_REF_SLUG.$DEPLOY_HOST
+    on_stop: stop
   before_script:
     - mkdir -p ~/$DEPLOY_PATH
     - envsubst < .env.qa > ~/$DEPLOY_PATH/.env
