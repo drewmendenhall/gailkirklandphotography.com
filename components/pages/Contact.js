@@ -2,7 +2,7 @@ import React from 'react'
 
 import Helmet from 'react-helmet'
 
-export default () => (
+const Contact = () => (
   <div className="contact-page">
     <Helmet title="Contact" />
     <p>You can reach us via phone or email at:</p>
@@ -20,3 +20,5 @@ export default () => (
     */}
   </div>
 )
+
+export default Contact

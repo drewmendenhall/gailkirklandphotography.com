@@ -3,7 +3,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import {Link} from 'react-router-dom'
 
-export default () => (
+const SessionInfo = () => (
   <div className="container">
     <Helmet title="Sessions" />
     <h1>Sessions</h1>
@@ -19,3 +19,5 @@ export default () => (
     <p><Link to="/contact">Contact us</Link></p>
   </div>
 )
+
+export default SessionInfo

@@ -2,6 +2,8 @@ import React from 'react'
 
 import PetSessionsInfo from './PetSessionsInfo'
 
-export default () => (
+const DogSessionsInfo = () => (
   <PetSessionsInfo type="dog" />
 )
+
+export default DogSessionsInfo

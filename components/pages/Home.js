@@ -2,7 +2,7 @@ import React from 'react'
 
 import Gallery from '../Gallery'
 
-export default (props) => (
+const Home = (props) => (
   <Gallery
     {...props}
     match={{
@@ -14,3 +14,5 @@ export default (props) => (
     }}
   />
 )
+
+export default Home

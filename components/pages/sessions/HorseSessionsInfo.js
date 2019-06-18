@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 
 import CommonSessionInfo from './CommonSessionInfo'
 
-export default () => (
+const HorseSessionsInfo = () => (
   <div className="container">
     <Helmet title="Horse Sessions" />
     <h1>Horse Sessions</h1>
@@ -16,3 +16,5 @@ export default () => (
     />
   </div>
 )
+
+export default HorseSessionsInfo

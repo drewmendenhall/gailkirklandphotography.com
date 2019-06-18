@@ -2,7 +2,7 @@ import React from 'react'
 
 import Helmet from 'react-helmet'
 
-export default () => (
+const Copyright = () => (
   <div className="container">
     <Helmet title="Copyright" />
     <h1>Copyright</h1>
@@ -32,3 +32,5 @@ export default () => (
     </p>
   </div>
 )
+
+export default Copyright
