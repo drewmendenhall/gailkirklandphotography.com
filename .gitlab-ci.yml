@@ -142,7 +142,7 @@ stop:
   except:
     - master
   script:
-    - cd $DEPLOY_PATH
+    - cd ~/$DEPLOY_PATH
     - docker-compose down
     - docker rmi $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
     - cd ..
