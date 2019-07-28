@@ -6,8 +6,12 @@ const Contact = () => (
   <div className="contact-page">
     <Helmet title="Contact" />
     <p>You can reach us via phone or email at:</p>
-    <p><a href="tel:214-538-9427">214-538-9427</a></p>
-    <p><a href="mailto:gmkirkland@juno.com">gmkirkland@juno.com</a></p>
+    <p>
+      <a href="tel:214-538-9427">214-538-9427</a>
+    </p>
+    <p>
+      <a href="mailto:gmkirkland@juno.com">gmkirkland@juno.com</a>
+    </p>
     <img src="/images/merlo.jpg" />
     {/*
       <form method="post">

@@ -7,12 +7,6 @@ import {renderRoutes} from 'react-router-config'
 
 import routes from '../routes'
 
-const App = () => React.createElement(BrowserRouter,
-  null,
-  renderRoutes(routes)
-)
+const App = () => React.createElement(BrowserRouter, null, renderRoutes(routes))
 
-ReactDOM.render(
-  React.createElement(hot(App)),
-  document.querySelector('main')
-)
+ReactDOM.render(React.createElement(hot(App)), document.querySelector('main'))

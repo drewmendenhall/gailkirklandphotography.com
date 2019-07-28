@@ -4,9 +4,7 @@ import Helmet from 'react-helmet'
 
 import CommonSessionInfo from './CommonSessionInfo'
 
-const PetSessionsInfo = ({
-  type = 'pet',
-}) => {
+const PetSessionsInfo = ({type = 'pet'}) => {
   const capitalizedType = type[0].toUpperCase() + type.slice(1)
 
   return (

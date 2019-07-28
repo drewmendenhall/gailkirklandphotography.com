@@ -25,9 +25,10 @@ if (__DEV__) {
   server.use(webpackDevMiddleware(compiler, {noInfo: true}))
   server.use(webpackHotMiddleware(compiler, {reload: true}))
   server.use(livereload({src: config.livereloadUrl}))
-  server.use('/node_modules', serveStatic(path.join(
-    __dirname, '../node_modules'
-  )))
+  server.use(
+    '/node_modules',
+    serveStatic(path.join(__dirname, '../node_modules')),
+  )
   server.use('/styles', serveStatic(path.join(__dirname, '../styles')))
 } else {
   server.use(compression())
@@ -35,10 +36,12 @@ if (__DEV__) {
 server.use(serveStatic(config.server.base))
 server.use(serveStatic(`${config.server.base}/images/favicons`))
 server.use(trailingSlashes(false))
-server.use(reactRouter({
-  renderApp: config.serverSideRendering,
-  sendErrorStacks: __DEV__,
-}))
+server.use(
+  reactRouter({
+    renderApp: config.serverSideRendering,
+    sendErrorStacks: __DEV__,
+  }),
+)
 
 server.listen(config.server.port, config.server.hostname, () => {
   console.log(`Express started at ${url.format(config.server)}`)

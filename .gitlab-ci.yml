@@ -6,7 +6,7 @@ stages:
 variables:
   BUILD_PATH: dist
   NODE_ENV: production
-  SERVER_SIDE_RENDERING: "true"
+  SERVER_SIDE_RENDERING: 'true'
 
 .build: &build
   artifacts:
