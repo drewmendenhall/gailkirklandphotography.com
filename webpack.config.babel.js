@@ -3,7 +3,7 @@ const webpack = require('webpack')
 process.env.WEBPACK_VERSION = require('webpack/package.json').version
 
 module.exports = {
-  mode: (process.env.NODE_ENV || 'development'),
+  mode: process.env.NODE_ENV || 'development',
 
   entry: {
     app: './client',
@@ -37,7 +37,7 @@ module.exports = {
   performance: {hints: false},
   plugins: [
     new webpack.DefinePlugin({
-      '__DEV__': JSON.stringify(process.env.NODE_ENV !== 'production'),
+      __DEV__: JSON.stringify(process.env.NODE_ENV !== 'production'),
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
   ],

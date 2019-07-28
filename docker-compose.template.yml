@@ -4,4 +4,4 @@ services:
     build: .
     env_file: .env
     ports:
-      - "$HOST_PORT:8000"
+      - '$HOST_PORT:8000'

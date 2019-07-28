@@ -10,9 +10,8 @@ export default ({
   style,
   title,
 }) => {
-  const titleSegments = (includeOpenGraphTags &&
-    title.toComponent()[0].props.children.split(' | ')
-  )
+  const titleSegments =
+    includeOpenGraphTags && title.toComponent()[0].props.children.split(' | ')
 
   return (
     <html lang="en">

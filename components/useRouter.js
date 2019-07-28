@@ -6,10 +6,9 @@ export default (options = {}) => {
 
   const location = options.location || context.location
 
-  const match = (options.path
+  const match = options.path
     ? matchPath(location.pathname, options)
     : context.match
-  )
 
   return {...context, location, match}
 }

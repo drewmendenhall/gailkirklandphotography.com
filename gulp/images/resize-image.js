@@ -16,14 +16,19 @@ export default async (filename) => {
 
   const shouldWriteImages = !dstStat || srcStat.mtime > dstStat.mtime
 
-  return (shouldWriteImages && Promise.all(pictureWidths.map((width) => (
-    resize({
-      srcPath: filename,
-      dstPath: filename.replace(ext, `-${width}` + ext),
-      width,
-    }).then((stdout, stderr) => {
-      if (stdout) console.log(stdout)
-      if (stderr) console.error(stderr)
-    })
-  ))))
+  return (
+    shouldWriteImages &&
+    Promise.all(
+      pictureWidths.map((width) =>
+        resize({
+          srcPath: filename,
+          dstPath: filename.replace(ext, `-${width}` + ext),
+          width,
+        }).then((stdout, stderr) => {
+          if (stdout) console.log(stdout)
+          if (stderr) console.error(stderr)
+        }),
+      ),
+    )
+  )
 }

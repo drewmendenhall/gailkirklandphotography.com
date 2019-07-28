@@ -16,35 +16,39 @@ const destFilename = 'app.css'
 const destPath = 'public'
 const sourcePath = 'styles'
 const sourceFilename = `${sourcePath}/index.less`
-const sourceFilePattern = [
-  `${sourcePath}/**/*.less`,
-  __filename,
-]
+const sourceFilePattern = [`${sourcePath}/**/*.less`, __filename]
 
-gulp.task('styles', () => gulp.src(sourceFilename)
-  .pipe(newer({
-    dest: `${destPath}/${destFilename}`,
-    extra: sourceFilePattern,
-  }))
-  .pipe(rename(destFilename))
-  .pipe(__DEV__ ? sourcemaps.init() : passthrough())
-  .pipe(less({
-    plugins: [
-      new LessPluginNpmImport(),
-    ].concat(__DEV__ ? [] : [
-      new LessPluginAutoPrefix(),
-      new LessPluginCleanCSS(),
-    ]),
-    strictMath: true,
-  }))
-  .pipe(__DEV__ ? sourcemaps.write('.', {
-    addComment: true,
-    includeContent: false,
-    sourceRoot: sourcePath,
-  }) : passthrough())
-  .pipe(gulp.dest(destPath))
-  .pipe(filter('**/*.css'))
-  .pipe(livereload())
+gulp.task('styles', () =>
+  gulp
+    .src(sourceFilename)
+    .pipe(
+      newer({
+        dest: `${destPath}/${destFilename}`,
+        extra: sourceFilePattern,
+      }),
+    )
+    .pipe(rename(destFilename))
+    .pipe(__DEV__ ? sourcemaps.init() : passthrough())
+    .pipe(
+      less({
+        plugins: [new LessPluginNpmImport()].concat(
+          __DEV__ ? [] : [new LessPluginAutoPrefix(), new LessPluginCleanCSS()],
+        ),
+        strictMath: true,
+      }),
+    )
+    .pipe(
+      __DEV__
+        ? sourcemaps.write('.', {
+          addComment: true,
+          includeContent: false,
+          sourceRoot: sourcePath,
+        })
+        : passthrough(),
+    )
+    .pipe(gulp.dest(destPath))
+    .pipe(filter('**/*.css'))
+    .pipe(livereload()),
 )
 
 gulp.task('watch:styles', () => {

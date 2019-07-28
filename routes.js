@@ -13,19 +13,21 @@ import DogSessionsInfo from './components/pages/sessions/DogSessionsInfo'
 import HorseSessionsInfo from './components/pages/sessions/HorseSessionsInfo'
 import TwilightSessionsInfo from './components/pages/sessions/TwilightSessionsInfo'
 
-export default [{
-  component: Main,
-  routes: [
-    {path: '/', exact: true, component: Home},
-    {path: '/about', component: About},
-    {path: '/contact', component: Contact},
-    {path: '/galleries/:galleryId/:pictureId?', component: Gallery},
-    {path: '/copyright', component: Copyright},
-    {path: '/links', component: Links},
-    {path: '/sessions', exact: true, component: SessionInfo},
-    {path: '/sessions/cats', component: CatSessionsInfo},
-    {path: '/sessions/dogs', component: DogSessionsInfo},
-    {path: '/sessions/horses', component: HorseSessionsInfo},
-    {path: '/sessions/twilight', component: TwilightSessionsInfo},
-  ],
-}]
+export default [
+  {
+    component: Main,
+    routes: [
+      {path: '/', exact: true, component: Home},
+      {path: '/about', component: About},
+      {path: '/contact', component: Contact},
+      {path: '/galleries/:galleryId/:pictureId?', component: Gallery},
+      {path: '/copyright', component: Copyright},
+      {path: '/links', component: Links},
+      {path: '/sessions', exact: true, component: SessionInfo},
+      {path: '/sessions/cats', component: CatSessionsInfo},
+      {path: '/sessions/dogs', component: DogSessionsInfo},
+      {path: '/sessions/horses', component: HorseSessionsInfo},
+      {path: '/sessions/twilight', component: TwilightSessionsInfo},
+    ],
+  },
+]

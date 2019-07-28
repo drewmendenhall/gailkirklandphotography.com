@@ -11,9 +11,7 @@ const title = 'Gail Kirkland Photography'
 const Main = ({route}) => (
   <React.Fragment>
     <Helmet
-      link={[
-        {rel: 'license', href: '/copyright'},
-      ]}
+      link={[{rel: 'license', href: '/copyright'}]}
       meta={[
         {
           name: 'description',
@@ -21,7 +19,6 @@ const Main = ({route}) => (
         },
         {name: 'viewport', content: 'width=device-width,initial-scale=1'},
       ]}
-
       defaultTitle={title}
       titleTemplate={`%s | ${title}`}
     />
@@ -30,7 +27,9 @@ const Main = ({route}) => (
         <img src="/images/logo-pink.svg" />
         <span className="logo-company-name">
           <div>Gail Kirkland</div>
-          <div><small>Photography</small></div>
+          <div>
+            <small>Photography</small>
+          </div>
         </span>
       </Link>
       <TopNav />
@@ -45,13 +44,12 @@ const Main = ({route}) => (
       </Link>
       */}
     </div>
-    <section className="content">
-      {renderRoutes(route.routes)}
-    </section>
+    <section className="content">{renderRoutes(route.routes)}</section>
     <footer>
       <div>
         <Link to="/copyright" className="copyright" rel="license">
-          © Gail Kirkland Photography {new Date().getFullYear()}. All rights reserved.
+          © Gail Kirkland Photography {new Date().getFullYear()}. All rights
+          reserved.
         </Link>
       </div>
     </footer>

@@ -21,9 +21,7 @@ export default async (filename) => {
   const {pictures} = gallery
 
   const ext = path.extname(pictureUrl)
-  const picture = pictures.find((picture) => (
-    picture.url === pictureUrl
-  ))
+  const picture = pictures.find((picture) => picture.url === pictureUrl)
 
   if (!picture) return
 
@@ -38,17 +36,18 @@ export default async (filename) => {
   newPicture.minWidth = features.width + layoutWidth
   newPicture.minHeight = features.height + layoutHeight
 
-  newPicture.srcSet = [{
-    url: pictureUrl.replace(ext, `-${widths[0] - layoutWidth}` + ext),
-  }]
+  newPicture.srcSet = [
+    {
+      url: pictureUrl.replace(ext, `-${widths[0] - layoutWidth}` + ext),
+    },
+  ]
   widths.forEach((width, index) => {
     const pictureWidth = pictureWidths[index + 1]
 
     if (pictureWidth && pictureWidth < features.width) {
       newPicture.srcSet.push({
-        height: Math.round(
-          (width - layoutWidth) / aspectRatio
-        ) + layoutHeight + 1,
+        height:
+          Math.round((width - layoutWidth) / aspectRatio) + layoutHeight + 1,
         width: width + 1,
         url: pictureUrl.replace(ext, `-${pictureWidth}` + ext),
       })
@@ -62,6 +61,6 @@ export default async (filename) => {
 
   return writeFile(
     path.resolve(__dirname, '../../public/galleries.json'),
-    (JSON.stringify(galleries, null, 2) + '\n'),
+    JSON.stringify(galleries, null, 2) + '\n',
   )
 }

@@ -8,13 +8,9 @@ import {useCallback, useEffect, useRef, useState} from 'react'
 
 import useRouter from './useRouter'
 
-const rotateForward = (max, index) => (
-  index < max - 1 ? index + 1 : 0
-)
+const rotateForward = (max, index) => (index < max - 1 ? index + 1 : 0)
 
-const rotateBackward = (max, index) => (
-  index > 0 ? index - 1 : max - 1
-)
+const rotateBackward = (max, index) => (index > 0 ? index - 1 : max - 1)
 
 const Carousel = (props) => {
   const {history, location} = useRouter()
@@ -55,8 +51,7 @@ const Carousel = (props) => {
   const goToNextSlide = useCallback(() => {
     if (props.index == null) {
       setIndex(nextIndex)
-    }
-    else {
+    } else {
       history.push({
         pathname: nextUrl,
         state: {autoplay: true},
@@ -66,8 +61,7 @@ const Carousel = (props) => {
   const goToPreviousSlide = () => {
     if (props.index == null) {
       setIndex(prevIndex)
-    }
-    else {
+    } else {
       history.push({
         pathname: prevUrl,
         state: {autoplay: true},
@@ -78,7 +72,10 @@ const Carousel = (props) => {
     if (autoplayInterval.current) {
       window.clearInterval(autoplayInterval.current)
     }
-    autoplayInterval.current = window.setInterval(goToNextSlide, props.slideInterval)
+    autoplayInterval.current = window.setInterval(
+      goToNextSlide,
+      props.slideInterval,
+    )
   }, [props.slideInterval, goToNextSlide])
 
   useEffect(() => {
@@ -95,7 +92,7 @@ const Carousel = (props) => {
     <div className="stretch carousel" onKeyDown={handleKeyDown}>
       <Helmet
         link={[
-          {rel: 'canonical', href: (location.pathname === '/' ? '/' : url)},
+          {rel: 'canonical', href: location.pathname === '/' ? '/' : url},
           {rel: 'next', href: nextUrl},
           {rel: 'prev', href: prevUrl},
         ]}
@@ -103,9 +100,9 @@ const Carousel = (props) => {
       {React.Children.map(props.children, (child, i) => (
         <div
           className={classnames('carousel-slide', {
-            'carousel-slide-current': (props.index || index === i),
-            'carousel-slide-next': (i === nextIndex),
-            'carousel-slide-prev': (i === prevIndex),
+            'carousel-slide-current': props.index || index === i,
+            'carousel-slide-next': i === nextIndex,
+            'carousel-slide-prev': i === prevIndex,
           })}
           key={child.key || index}
         >
@@ -117,15 +114,13 @@ const Carousel = (props) => {
         className="carousel-nav carousel-nav-prev"
         onClick={handlePrev}
         rel="prev"
-      >
-      </Link>
+      ></Link>
       <Link
         to={nextUrl || ''}
         className="carousel-nav carousel-nav-next"
         onClick={handleNext}
         rel="next"
-      >
-      </Link>
+      ></Link>
     </div>
   )
 }
@@ -136,9 +131,11 @@ Carousel.defaultProps = {
 Carousel.propTypes = {
   children: PropTypes.node.isRequired,
   index: PropTypes.number,
-  items: PropTypes.arrayOf(PropTypes.shape({
-    url: PropTypes.string,
-  })),
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      url: PropTypes.string,
+    }),
+  ),
   slideInterval: PropTypes.number,
 }
 

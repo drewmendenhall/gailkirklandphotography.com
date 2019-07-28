@@ -10,13 +10,8 @@ const subheaderHeight = 32
 const fontSize = baseFontSize * 1.25
 const padding = fontSize * 3
 
-export const layoutHeight = padding * 2 + headerHeight + subheaderHeight + footerHeight
+export const layoutHeight =
+  padding * 2 + headerHeight + subheaderHeight + footerHeight
 export const layoutWidth = padding * 2
-export const widths = [
-  320,
-  375,
-  425,
-  768,
-  1024,
-]
-export const pictureWidths = widths.map((width) => (width - layoutWidth))
+export const widths = [320, 375, 425, 768, 1024]
+export const pictureWidths = widths.map((width) => width - layoutWidth)
