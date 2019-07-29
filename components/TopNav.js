@@ -12,29 +12,8 @@ const galleries = Object.keys(galleriesObject)
 
 const TopNav = () => {
   const {history} = useRouter()
-  const [
-    {showGalleriesNavMenu, showSessionsNavMenu, showTopNavMenu},
-    setMenuState,
-  ] = useState({})
+  const [{showTopNavMenu}, setMenuState] = useState({})
 
-  const handleGalleriesNavControlChange = ({
-    target: {checked: showGalleriesNavMenu},
-  }) => {
-    setMenuState((menuState) => ({
-      ...menuState,
-      showGalleriesNavMenu,
-      showSessionsNavMenu: false,
-    }))
-  }
-  const handleSessionsNavControlChange = ({
-    target: {checked: showSessionsNavMenu},
-  }) => {
-    setMenuState((menuState) => ({
-      ...menuState,
-      showGalleriesNavMenu: false,
-      showSessionsNavMenu,
-    }))
-  }
   const handleTopNavControlChange = ({target: {checked: showTopNavMenu}}) => {
     setMenuState((menuState) => ({
       ...menuState,
@@ -86,15 +65,21 @@ const TopNav = () => {
             >
               <input
                 className="top-nav-control"
-                type="checkbox"
-                checked={showGalleriesNavMenu || false}
-                onChange={handleGalleriesNavControlChange}
+                name="top-nav"
+                value="galleries"
+                type="radio"
               />
-              <input className="top-nav-control" type="checkbox" />
               <span to="/galleries" className="top-nav-link">
                 galleries
               </span>
-              <div className="top-nav-control-overlay top-nav-control-overlay-sub"></div>
+              <label className="top-nav-control-overlay top-nav-control-overlay-sub">
+                <input
+                  className="top-nav-control"
+                  name="top-nav"
+                  value="hide"
+                  type="radio"
+                />
+              </label>
               <ul className="top-nav-sub top-nav-sub-galleries">
                 {galleries.map((gallery) => (
                   <li key={gallery.id}>
@@ -116,14 +101,21 @@ const TopNav = () => {
             >
               <input
                 className="top-nav-control"
-                type="checkbox"
-                checked={showSessionsNavMenu || false}
-                onChange={handleSessionsNavControlChange}
+                name="top-nav"
+                value="sessions"
+                type="radio"
               />
               <span to="/sessions" className="top-nav-link">
                 sessions
               </span>
-              <div className="top-nav-control-overlay top-nav-control-overlay-sub"></div>
+              <label className="top-nav-control-overlay top-nav-control-overlay-sub">
+                <input
+                  className="top-nav-control"
+                  name="top-nav"
+                  value="hide"
+                  type="radio"
+                />
+              </label>
               <ul className="top-nav-sub top-nav-sub-sessions">
                 <li>
                   <Link to="/sessions/dogs" className="top-nav-link">
