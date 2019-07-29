@@ -45,18 +45,17 @@ const TopNav = () => {
     event.stopPropagation()
   }
 
-  useEffect(() => {
-    const unlisten = history.listen(({state}) => {
-      if (!state || !state.autoplay) {
-        setMenuState({
-          showGalleriesNavMenu: false,
-          showSessionsNavMenu: false,
-          showTopNavMenu: false,
-        })
-      }
-    })
-    return unlisten
-  }, [history])
+  useEffect(
+    () =>
+      history.listen(({state}) => {
+        if (!state || !state.autoplay) {
+          setMenuState({
+            showTopNavMenu: false,
+          })
+        }
+      }),
+    [history],
+  )
 
   return (
     <label className="top-nav-control-label">
