@@ -12,13 +12,10 @@ const galleries = Object.keys(galleriesObject)
 
 const TopNav = () => {
   const {history} = useRouter()
-  const [{showTopNavMenu}, setMenuState] = useState({})
+  const [showMenu, setShowMenu] = useState(false)
 
-  const handleTopNavControlChange = ({target: {checked: showTopNavMenu}}) => {
-    setMenuState((menuState) => ({
-      ...menuState,
-      showTopNavMenu,
-    }))
+  const handleTopNavControlChange = () => {
+    setShowMenu((show) => !show)
   }
   const handleSubNavClick = (event) => {
     event.stopPropagation()
@@ -28,9 +25,7 @@ const TopNav = () => {
     () =>
       history.listen(({state}) => {
         if (!state || !state.autoplay) {
-          setMenuState({
-            showTopNavMenu: false,
-          })
+          setShowMenu(false)
         }
       }),
     [history],
@@ -42,7 +37,7 @@ const TopNav = () => {
       <input
         className="top-nav-control"
         type="checkbox"
-        checked={showTopNavMenu || false}
+        checked={showMenu}
         onChange={handleTopNavControlChange}
       />
       <div className="top-nav-control-overlay"></div>
