@@ -21,7 +21,7 @@ gulp.task('images', () => gulp.src(sourceFilePattern)
   .pipe(filter('images/**'))
   .pipe(imagemin())
   .pipe(gulp.dest(destPath))
-  .pipe(new Transform({objectMode: true, transform(file, encoding, callback) {
+  .pipe(new Transform({objectMode: true, transform: async (file, encoding, callback) => {
     if (file.isDirectory() ||
       file.relative.startsWith('favicons') ||
       path.extname(file.relative) !== '.jpg'
@@ -33,13 +33,13 @@ gulp.task('images', () => gulp.src(sourceFilePattern)
 
     log(`images generated for ${relativePath}`)
 
-    resizeImage(relativePath).then((imagesWritten) => (
-      imagesWritten && generateSrcsets(relativePath)
-    )).then(() => {
+    try {
+      await resizeImage(relativePath)
+      await generateSrcsets(relativePath)
       callback(null, file)
-    }).catch((error) => {
+    } catch (error) {
       throw new PluginError('image', error)
-    })
+    }
   }}))
   .pipe(livereload())
 )
