@@ -9,7 +9,7 @@ parserOptions:
 rules:
   comma-dangle: [warn, always-multiline]
   curly: [warn, multi-line]
-  indent-legacy: [warn, 2, {SwitchCase: 1}]
+  indent: [warn, 2, {SwitchCase: 1}]
   no-irregular-whitespace: error
   no-mixed-spaces-and-tabs: warn
   no-undef: error
