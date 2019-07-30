@@ -7,14 +7,36 @@ parserOptions:
   ecmaVersion: 2019
   sourceType: module
 rules:
-  comma-dangle: [warn, always-multiline]
+  arrow-parens: warn
+  comma-dangle:
+    [
+      warn,
+      {
+        arrays: always-multiline,
+        objects: always-multiline,
+        imports: always-multiline,
+        exports: always-multiline,
+        functions: always-multiline,
+      },
+    ]
   curly: [warn, multi-line]
   indent: [warn, 2, {SwitchCase: 1}]
+  max-len:
+    [
+      warn,
+      {
+        code: 80,
+        ignoreRegExpLiterals: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+      },
+    ]
   no-irregular-whitespace: error
   no-mixed-spaces-and-tabs: warn
   no-undef: error
   no-unused-vars: warn
+  object-curly-spacing: warn
   object-shorthand: warn
-  quotes: [warn, single, {avoidEscape: true, allowTemplateLiterals: true}]
+  quotes: [warn, single]
   semi: [error, never]
   strict: [error, never]
