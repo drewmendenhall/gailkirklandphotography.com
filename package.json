@@ -58,7 +58,7 @@
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.6.0",
-    "@hot-loader/react-dom": "^16.8.6",
+    "@hot-loader/react-dom": "^16.9.0",
     "babel-loader": "^8.0.6",
     "babel-watch": "^7.0.0",
     "connect-livereload": "^0.6.1",
