@@ -13,6 +13,8 @@ const galleries = Object.keys(galleriesObject)
 const TopNav = () => {
   const {history} = useRouter()
   const [showMenu, setShowMenu] = useState(false)
+  const [showGalleriesSubNavMenu, setShowGalleriesSubNavMenu] = useState(false)
+  const [showSessionsSubNavMenu, setShowSessionsSubNavMenu] = useState(false)
 
   const handleTopNavControlChange = () => {
     setShowMenu((show) => !show)
@@ -26,6 +28,8 @@ const TopNav = () => {
       history.listen(({state}) => {
         if (!state || !state.autoplay) {
           setShowMenu(false)
+          setShowGalleriesSubNavMenu(false)
+          setShowSessionsSubNavMenu(false)
         }
       }),
     [history],
@@ -63,6 +67,11 @@ const TopNav = () => {
                 name="top-nav"
                 value="galleries"
                 type="radio"
+                checked={showGalleriesSubNavMenu}
+                onChange={() => {
+                  setShowGalleriesSubNavMenu(true)
+                  setShowSessionsSubNavMenu(false)
+                }}
               />
               <span to="/galleries" className="top-nav-link">
                 galleries
@@ -73,6 +82,10 @@ const TopNav = () => {
                   name="top-nav"
                   value="hide"
                   type="radio"
+                  onChange={() => {
+                    setShowGalleriesSubNavMenu(false)
+                    setShowSessionsSubNavMenu(false)
+                  }}
                 />
               </label>
               <ul className="top-nav-sub top-nav-sub-galleries">
@@ -99,6 +112,11 @@ const TopNav = () => {
                 name="top-nav"
                 value="sessions"
                 type="radio"
+                checked={showSessionsSubNavMenu}
+                onChange={() => {
+                  setShowGalleriesSubNavMenu(false)
+                  setShowSessionsSubNavMenu(true)
+                }}
               />
               <span to="/sessions" className="top-nav-link">
                 sessions
@@ -109,6 +127,10 @@ const TopNav = () => {
                   name="top-nav"
                   value="hide"
                   type="radio"
+                  onChange={() => {
+                    setShowGalleriesSubNavMenu(false)
+                    setShowSessionsSubNavMenu(false)
+                  }}
                 />
               </label>
               <ul className="top-nav-sub top-nav-sub-sessions">
