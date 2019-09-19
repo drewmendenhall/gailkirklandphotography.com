@@ -19,9 +19,6 @@ const TopNav = () => {
   const handleTopNavControlChange = () => {
     setShowMenu((show) => !show)
   }
-  const handleSubNavClick = (event) => {
-    event.stopPropagation()
-  }
 
   useEffect(
     () =>
@@ -58,10 +55,7 @@ const TopNav = () => {
             </Link>
           </li>
           <li>
-            <label
-              className="top-nav-control-label top-nav-control-label-sub"
-              onClick={handleSubNavClick}
-            >
+            <label className="top-nav-control-label top-nav-control-label-sub">
               <input
                 className="top-nav-control"
                 name="top-nav"
@@ -103,10 +97,7 @@ const TopNav = () => {
             </label>
           </li>
           <li>
-            <label
-              className="top-nav-control-label top-nav-control-label-sub"
-              onClick={handleSubNavClick}
-            >
+            <label className="top-nav-control-label top-nav-control-label-sub">
               <input
                 className="top-nav-control"
                 name="top-nav"
