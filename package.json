@@ -83,7 +83,7 @@
     "prettier-eslint-cli": "^5.0.0",
     "react-hot-loader": "^4.12.13",
     "rimraf": "^3.0.0",
-    "webpack": "^4.33.0",
+    "webpack": "^4.40.2",
     "webpack-dev-middleware": "^3.7.0",
     "webpack-hot-middleware": "^2.25.0",
     "webpack-node-externals": "^1.7.2"
