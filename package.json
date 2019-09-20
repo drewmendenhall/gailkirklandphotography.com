@@ -63,7 +63,7 @@
     "babel-watch": "^7.0.0",
     "connect-livereload": "^0.6.1",
     "eslint": "^5.16.0",
-    "eslint-loader": "^2.2.1",
+    "eslint-loader": "^3.0.0",
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-react-hooks": "^2.0.1",
     "gulp": "^4.0.2",
