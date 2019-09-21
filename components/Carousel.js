@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
+import {Helmet} from 'react-helmet-async'
 import {Link} from 'react-router-dom'
 import {useCallback, useEffect, useRef, useState} from 'react'
 
