@@ -1,4 +1,9 @@
 {
   "extends": ["config:base"],
+
+  "commitMessageAction": "",
+  "commitMessageTopic": "{{{depName}}}@{{{toVersion}}}",
+  "commitMessageExtra": "",
+
   "rangeStrategy": "bump"
 }
