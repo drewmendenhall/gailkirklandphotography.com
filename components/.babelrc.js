@@ -4,7 +4,6 @@ module.exports = {
   extends: '../.babelrc.js',
 
   plugins: [
-    ['@babel/proposal-class-properties', {loose: true}],
     ...(__DEV__
       ? ['react-hot-loader/babel']
       : [
