@@ -5,5 +5,6 @@ module.exports = {
   plugins: [
     '@babel/proposal-object-rest-spread',
     '@babel/transform-runtime',
-  ].concat(COMMONJS ? '@babel/transform-modules-commonjs' : []),
+    ...(COMMONJS ? ['@babel/transform-modules-commonjs'] : []),
+  ],
 }
