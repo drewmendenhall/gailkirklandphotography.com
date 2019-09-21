@@ -20,7 +20,7 @@
     "clean:images": "rimraf public/images",
     "clean:server": "rimraf dist",
     "clean:styles": "rimraf public/app.css*",
-    "format": "prettier-eslint --write '**/*.{js{,on},y{,a}ml}'",
+    "format": "prettier-eslint --write '**/{,.}*.{js{,on},y{,a}ml}'",
     "serve:dev": "babel-watch --exclude components server",
     "serve:debug": "babel-node --debug -- server/index.js --debug & node-inspector",
     "test": "echo \"Error: no test specified\" && exit 1",
