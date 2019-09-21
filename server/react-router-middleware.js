@@ -1,5 +1,5 @@
-import Helmet from 'react-helmet'
 import React from 'react'
+import {HelmetProvider} from 'react-helmet-async'
 import {StaticRouter} from 'react-router'
 import {renderRoutes} from 'react-router-config'
 import {renderToStaticMarkup, renderToString} from 'react-dom/server'
@@ -8,25 +8,29 @@ import Html from '../components/Html'
 import routes from '../routes'
 
 export default ({renderApp, sendErrorStacks}) => (req, res) => {
-  const context = {}
+  const helmetContext = {}
+  const routerContext = {}
 
   try {
     const markup = renderApp
       ? renderToString(
           React.createElement(
             StaticRouter,
-            {context, location: req.url},
-            renderRoutes(routes),
+            {context: routerContext, location: req.url},
+            React.createElement(
+              HelmetProvider,
+              {context: helmetContext},
+              renderRoutes(routes),
+            ),
           ),
         )
       : ''
 
-    if (context.url) {
-      res.redirect(302, context.url)
+    if (routerContext.url) {
+      res.redirect(302, routerContext.url)
       return
     }
 
-    const head = Helmet.renderStatic()
     const userAgent = req.headers['user-agent']
 
     const includeOpenGraphTags = /^facebook/.test(userAgent)
@@ -42,7 +46,7 @@ export default ({renderApp, sendErrorStacks}) => (req, res) => {
             includeMicrosoftTags,
             includeOpenGraphTags,
             markup,
-            ...head,
+            ...helmetContext.helmet,
           }),
         ),
     )
