@@ -5,7 +5,9 @@ module.exports = {
 
   plugins: [
     ['@babel/proposal-class-properties', {loose: true}],
-    ...(__DEV__ ? [] : [
+    ...(__DEV__ ? [
+      'react-hot-loader/babel'
+    ] : [
       '@babel/transform-react-constant-elements',
       '@babel/transform-react-inline-elements',
     ]),
