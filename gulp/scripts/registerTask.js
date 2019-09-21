@@ -1,8 +1,8 @@
+import PluginError from 'plugin-error'
 import gulp from 'gulp'
 import newer from 'gulp-newer'
 import rename from 'gulp-rename'
 import webpack from 'webpack'
-import {PluginError} from 'gulp-util'
 import {Transform} from 'stream'
 
 export default ({
