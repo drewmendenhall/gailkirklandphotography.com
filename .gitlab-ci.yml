@@ -27,7 +27,7 @@ variables:
     - npm run build
   stage: build
   tags:
-    - docker-node-8
+    - docker-node
 
 build:
   <<: *build
