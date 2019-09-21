@@ -5,14 +5,12 @@ module.exports = {
 
   plugins: [
     ['@babel/proposal-class-properties', {loose: true}],
-    ...(__DEV__ ? [
-      'react-hot-loader/babel'
-    ] : [
-      '@babel/transform-react-constant-elements',
-      '@babel/transform-react-inline-elements',
-    ]),
+    ...(__DEV__
+      ? ['react-hot-loader/babel']
+      : [
+          '@babel/transform-react-constant-elements',
+          '@babel/transform-react-inline-elements',
+        ]),
   ],
-  presets: [
-    ['@babel/react', {development: __DEV__}],
-  ],
+  presets: [['@babel/react', {development: __DEV__}]],
 }
