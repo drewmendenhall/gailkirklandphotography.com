@@ -143,17 +143,23 @@ stop:
   except:
     - master
   script:
-    - cd ~/$DEPLOY_PATH
-    - docker-compose down
+    - >-
+      ssh
+      $DEPLOY_HOST
+      "cd $DEPLOY_PATH && '$SHELL' -s" <<-EOF
+        docker-compose down
+        docker rmi $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+        cd ..
+        rm -rf $DEPLOY_PATH
+        rm /etc/nginx/sites-{available,enabled}/$HOSTNAME.conf
+        sudo letsencrypt revoke --cert-path /etc/letsencrypt/live/$HOSTNAME/cert.pem
+        sudo nginx -s reload
+      EOF
     - docker rmi $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
-    - cd ..
-    - rm -rf $DEPLOY_PATH
-    - rm /etc/nginx/sites-{available,enabled}/$HOSTNAME.conf
-    - sudo letsencrypt revoke --cert-path /etc/letsencrypt/live/$HOSTNAME/cert.pem
-    - sudo nginx -s reload
+    - sudo --preserve-env --user=registry delete_docker_registry_image --image $CI_PROJECT_PATH:$CI_COMMIT_REF_SLUG
   stage: deploy
   tags:
-    - www-server
+    - shell
   variables:
     DEPLOY_PATH: $CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG
     GIT_STRATEGY: none
