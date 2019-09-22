@@ -1,10 +1,10 @@
 import PluginError from 'plugin-error'
 import filter from 'gulp-filter'
-import gulp from 'gulp'
 import imagemin from 'gulp-imagemin'
 import newer from 'gulp-newer'
 import path from 'path'
 import {Transform} from 'stream'
+import {dest, src} from 'gulp'
 
 import generateSrcsets from './generate-srcsets'
 import resizeImage from './resize-image'
@@ -12,13 +12,12 @@ import resizeImage from './resize-image'
 const destPath = 'public/images'
 const sourceFilePattern = ['images/**', path.join(__dirname, '**')]
 
-gulp.task('images', () =>
-  gulp
-    .src(sourceFilePattern)
+export default () =>
+  src(sourceFilePattern)
     .pipe(newer(destPath))
     .pipe(filter('images/**'))
     .pipe(imagemin())
-    .pipe(gulp.dest(destPath))
+    .pipe(dest(destPath))
     .pipe(
       new Transform({
         objectMode: true,
@@ -44,5 +43,4 @@ gulp.task('images', () =>
           }
         },
       }),
-    ),
-)
+    )
