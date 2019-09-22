@@ -6,7 +6,7 @@ import {HelmetProvider} from 'react-helmet-async'
 
 import App from './App'
 
-ReactDOM.render(
+ReactDOM.hydrate(
   React.createElement(
     BrowserRouter,
     null,

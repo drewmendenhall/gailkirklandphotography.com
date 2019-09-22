@@ -22,6 +22,28 @@ if (__DEV__) {
 
   let compiler = webpack(webpackConfig)
 
+  compiler.hooks.done.tap('ReactSsrHmrPlugin', () => {
+    Object.keys(require.cache).forEach((id) => {
+      if (
+        id.startsWith(path.resolve(__dirname, '..', 'components')) ||
+        [
+          path.join(__dirname, 'react-router-middleware.js'),
+          path.resolve(__dirname, '..', 'routes.js'),
+        ].includes(id)
+      ) {
+        delete require.cache[id]
+      }
+    })
+
+    server._router.stack.pop()
+    server.use(
+      require('./react-router-middleware').default({
+        renderApp: config.serverSideRendering,
+        sendErrorStacks: __DEV__,
+      }),
+    )
+  })
+
   server.use(webpackDevMiddleware(compiler, {noInfo: true}))
   server.use(webpackHotMiddleware(compiler, {reload: true}))
   server.use(livereload({src: config.livereloadUrl}))
