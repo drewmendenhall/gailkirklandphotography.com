@@ -1,10 +1,11 @@
 import React from 'react'
 
+export const splitMark = '__SPLIT_MARK__'
+
 export default ({
   includeMicrosoftTags,
   includeOpenGraphTags,
   link,
-  markup,
   meta,
   style,
   title,
@@ -43,7 +44,7 @@ export default ({
         {style && style.toComponent()}
       </head>
       <body>
-        <main dangerouslySetInnerHTML={{__html: markup}}></main>
+        <main dangerouslySetInnerHTML={{__html: splitMark}}></main>
         <script src="/vendors~app.js"></script>
         <script src="/app.js"></script>
       </body>

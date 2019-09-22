@@ -41,7 +41,6 @@ if (__DEV__) {
     )
     server.use(
       require('./react-router-middleware').default({
-        renderApp: config.serverSideRendering,
         sendErrorStacks: __DEV__,
       }),
     )
@@ -63,7 +62,6 @@ server.use(serveStatic(`${config.server.base}/images/favicons`))
 server.use(trailingSlashes(false))
 server.use(
   reactRouter({
-    renderApp: config.serverSideRendering,
     sendErrorStacks: __DEV__,
   }),
 )
