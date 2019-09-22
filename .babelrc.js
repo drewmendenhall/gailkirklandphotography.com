@@ -3,7 +3,6 @@ const COMMONJS =
 
 module.exports = {
   plugins: [
-    '@babel/proposal-object-rest-spread',
     '@babel/transform-runtime',
     ...(COMMONJS ? ['@babel/transform-modules-commonjs'] : []),
   ],
