@@ -1,51 +1,40 @@
 import PluginError from 'plugin-error'
-import gulp from 'gulp'
 import newer from 'gulp-newer'
 import rename from 'gulp-rename'
 import webpack from 'webpack'
 import {Transform} from 'stream'
+import {src} from 'gulp'
 
-export default ({
-  name,
+export default ({dest = {}, source = {}, webpackConfig}) => (callback) => {
+  src(source.file)
+    .pipe(
+      newer({
+        dest: `${dest.path}/${dest.filename}`,
+        extra: [__filename].concat(source.pattern || []),
+      }),
+    )
+    .pipe(rename(dest.filename))
+    .pipe(
+      new Transform({
+        objectMode: true,
+        transform: () => {
+          webpack(webpackConfig, (err, stats) => {
+            const {errors} = stats.compilation
 
-  dest = {},
-  source = {},
-  webpackConfig,
-}) => {
-  source.pattern = [__filename].concat(source.pattern || [])
+            const error = err || errors[0]
 
-  gulp.task(name, (callback) =>
-    gulp
-      .src(source.file)
-      .pipe(
-        newer({
-          dest: `${dest.path}/${dest.filename}`,
-          extra: source.pattern,
-        }),
-      )
-      .pipe(rename(dest.filename))
-      .pipe(
-        new Transform({
-          objectMode: true,
-          transform: () => {
-            webpack(webpackConfig, (err, stats) => {
-              const {errors} = stats.compilation
+            if (error) throw new PluginError('webpack', error)
 
-              const error = err || errors[0]
+            console.log(
+              stats.toString({
+                chunks: false,
+                colors: true,
+              }),
+            )
 
-              if (error) throw new PluginError('webpack', error)
-
-              console.log(
-                stats.toString({
-                  chunks: false,
-                  colors: true,
-                }),
-              )
-
-              callback()
-            })
-          },
-        }),
-      ),
-  )
+            callback()
+          })
+        },
+      }),
+    )
 }

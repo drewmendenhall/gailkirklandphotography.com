@@ -2,8 +2,6 @@ import registerTask from './registerTask'
 import webpackConfig from '../../webpack.config.babel'
 
 export default registerTask({
-  name: 'client',
-
   dest: {
     filename: 'app.js',
     path: 'public',
