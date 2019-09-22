@@ -35,7 +35,9 @@ if (__DEV__) {
       }
     })
 
-    server._router.stack.pop()
+    server._router.stack = server._router.stack.filter(
+      ({name}) => name !== 'reactRouter',
+    )
     server.use(
       require('./react-router-middleware').default({
         renderApp: config.serverSideRendering,
