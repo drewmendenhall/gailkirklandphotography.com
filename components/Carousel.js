@@ -5,15 +5,15 @@ import classnames from 'classnames'
 import {Helmet} from 'react-helmet-async'
 import {Link} from 'react-router-dom'
 import {useCallback, useEffect, useRef, useState} from 'react'
-
-import useRouter from './useRouter'
+import {useHistory, useLocation} from 'react-router'
 
 const rotateForward = (max, index) => (index < max - 1 ? index + 1 : 0)
 
 const rotateBackward = (max, index) => (index > 0 ? index - 1 : max - 1)
 
 const Carousel = (props) => {
-  const {history, location} = useRouter()
+  const history = useHistory()
+  const location = useLocation()
   const {items} = props
 
   const [index, setIndex] = useState(props.index || 0)

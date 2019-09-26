@@ -1,20 +1,20 @@
 import React from 'react'
 
-import {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
+import {useEffect, useState} from 'react'
+import {useHistory} from 'react-router'
 
 import galleriesObject from '../public/galleries.json'
-import useRouter from './useRouter'
 
 const galleries = Object.keys(galleriesObject)
   .filter((key) => key !== 'home')
   .map((key) => galleriesObject[key])
 
 const TopNav = () => {
-  const {history} = useRouter()
-  const [showMenu, setShowMenu] = useState(false)
   const [showGalleriesSubNavMenu, setShowGalleriesSubNavMenu] = useState(false)
+  const [showMenu, setShowMenu] = useState(false)
   const [showSessionsSubNavMenu, setShowSessionsSubNavMenu] = useState(false)
+  const history = useHistory()
 
   const handleTopNavControlChange = () => {
     setShowMenu((show) => !show)
