@@ -12,6 +12,7 @@ const __DEV__ = process.env.NODE_ENV !== 'production'
 const server = express()
 
 server.disable('x-powered-by')
+server.enable('trust proxy')
 if (__DEV__) {
   let livereload = require('connect-livereload')
   let webpack = require('webpack')
