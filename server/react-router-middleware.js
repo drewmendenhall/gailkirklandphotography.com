@@ -43,10 +43,10 @@ export default ({renderApp, sendErrorStacks}) =>
         '<!doctype html>' +
           renderToStaticMarkup(
             React.createElement(Html, {
-              href: `http://${req.headers.host}${req.url}`,
               includeMicrosoftTags,
               includeOpenGraphTags,
               markup,
+              url: `https://${req.headers.host}${req.url}`,
               ...helmetContext.helmet,
             }),
           ),
