@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default ({
-  href,
   includeMicrosoftTags,
   includeOpenGraphTags,
   link,
@@ -9,6 +8,7 @@ export default ({
   meta,
   style,
   title,
+  url,
 }) => {
   const titleSegments =
     includeOpenGraphTags && title.toComponent()[0].props.children.split(' | ')
@@ -36,7 +36,7 @@ export default ({
             content={titleSegments[titleSegments.length - 1]}
           />,
           <meta property="og:title" content={titleSegments[0]} />,
-          <meta property="og:url" content={href} />,
+          <meta property="og:url" content={url} />,
         ]}
         {link && link.toComponent()}
         <link rel="stylesheet" href="/app.css" />
