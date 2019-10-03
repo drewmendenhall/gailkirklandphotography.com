@@ -111,6 +111,13 @@ deploy:
   before_script:
     - mkdir -p ~/$DEPLOY_PATH
     - envsubst < .env.production > ~/$DEPLOY_PATH/.env
+  after_script:
+    - HOSTNAME=$REDIRECT_HOSTNAME envsubst < deploy/site.bootstrap.template.conf > /etc/nginx/sites-available/$REDIRECT_HOSTNAME.conf
+    - ln -s -fn ../sites-available/$REDIRECT_HOSTNAME.conf /etc/nginx/sites-enabled/$REDIRECT_HOSTNAME.conf
+    - sudo nginx -s reload
+    - sudo letsencrypt certonly --domain $REDIRECT_HOSTNAME
+    - envsubst < deploy/site.redirect.template.conf > /etc/nginx/sites-available/$REDIRECT_HOSTNAME.conf
+    - sudo nginx -s reload
   only:
     - master
   variables:
