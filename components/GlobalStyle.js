@@ -48,9 +48,6 @@ export default createGlobalStyle(
     a {
       color: ${textColor};
     }
-    i {
-      font-style: normal;
-    }
 
     input,
     textarea {
