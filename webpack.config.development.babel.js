@@ -2,7 +2,7 @@ import webpack from 'webpack'
 
 import config from './webpack.config.babel'
 
-const hotEntry = ['webpack-hot-middleware/client'].concat(
+const hotEntry = ['webpack-hot-middleware/client?reload'].concat(
   typeof config.entry === 'string' ? config.entry : config.entry.app,
 )
 
