@@ -43,7 +43,7 @@ export default ({
         {style && style.toComponent()}
       </head>
       <body>
-        <main dangerouslySetInnerHTML={{__html: splitMark}}></main>
+        <main>{splitMark}</main>
         <script src="/vendors~app.js"></script>
         <script src="/app.js"></script>
       </body>
