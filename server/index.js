@@ -46,8 +46,8 @@ if (__DEV__) {
     )
   })
 
-  server.use(webpackDevMiddleware(compiler, {noInfo: true}))
-  server.use(webpackHotMiddleware(compiler, {reload: true}))
+  server.use(webpackDevMiddleware(compiler))
+  server.use(webpackHotMiddleware(compiler))
   server.use(livereload({src: config.livereloadUrl}))
   server.use(
     '/node_modules',
