@@ -1,6 +1,11 @@
 import React from 'react'
 
+import styled from 'styled-components'
 import {Helmet} from 'react-helmet-async'
+
+const Image = styled.img`
+  max-width: 50%;
+`
 
 const Contact = () => (
   <div className="contact-page">
@@ -12,7 +17,7 @@ const Contact = () => (
     <p>
       <a href="mailto:gmkirkland@juno.com">gmkirkland@juno.com</a>
     </p>
-    <img src="/images/merlo.jpg" />
+    <Image src="/images/merlo.jpg" />
     {/*
       <form method="post">
         <input name="name" autoFocus placeholder="Name" />

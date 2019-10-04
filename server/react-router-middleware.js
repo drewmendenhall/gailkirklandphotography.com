@@ -2,6 +2,7 @@ import React from 'react'
 import ssrPrepass from 'react-ssr-prepass'
 import {HelmetProvider} from 'react-helmet-async'
 import {StaticRouter} from 'react-router'
+import {ServerStyleSheet} from 'styled-components'
 import {renderRoutes} from 'react-router-config'
 import {renderToNodeStream, renderToStaticMarkup} from 'react-dom/server'
 
@@ -12,15 +13,18 @@ export default ({sendErrorStacks}) =>
   async function reactRouter(req, res) {
     const helmetContext = {}
     const routerContext = {}
+    const sheet = new ServerStyleSheet()
 
     try {
-      const app = React.createElement(
-        StaticRouter,
-        {context: routerContext, location: req.url},
+      const app = sheet.collectStyles(
         React.createElement(
-          HelmetProvider,
-          {context: helmetContext},
-          renderRoutes(routes),
+          StaticRouter,
+          {context: routerContext, location: req.url},
+          React.createElement(
+            HelmetProvider,
+            {context: helmetContext},
+            renderRoutes(routes),
+          ),
         ),
       )
 
@@ -50,7 +54,8 @@ export default ({sendErrorStacks}) =>
       res.type('html')
       res.write('<!doctype html>')
       res.write(header)
-      renderToNodeStream(app)
+      sheet
+        .interleaveWithNodeStream(renderToNodeStream(app))
         .on('end', () => {
           res.write(footer)
           res.end()

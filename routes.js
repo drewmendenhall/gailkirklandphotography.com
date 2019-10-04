@@ -3,7 +3,7 @@ import Contact from './components/pages/Contact'
 import Home from './components/pages/Home'
 import Copyright from './components/pages/Copyright'
 import Links from './components/pages/Links'
-import Main from './components/Main'
+import Layout from './components/Layout'
 
 import Gallery from './components/Gallery'
 
@@ -15,7 +15,7 @@ import TwilightSessionsInfo from './components/pages/sessions/TwilightSessionsIn
 
 export default [
   {
-    component: Main,
+    component: Layout,
     routes: [
       {path: '/', exact: true, component: Home},
       {path: '/about', component: About},

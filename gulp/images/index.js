@@ -2,7 +2,6 @@ import PluginError from 'plugin-error'
 import filter from 'gulp-filter'
 import gulp from 'gulp'
 import imagemin from 'gulp-imagemin'
-import livereload from 'gulp-livereload'
 import newer from 'gulp-newer'
 import path from 'path'
 import {Transform} from 'stream'
@@ -45,11 +44,5 @@ gulp.task('images', () =>
           }
         },
       }),
-    )
-    .pipe(livereload()),
+    ),
 )
-
-gulp.task('watch:images', () => {
-  livereload.listen()
-  gulp.watch(sourceFilePattern, gulp.series('images'))
-})

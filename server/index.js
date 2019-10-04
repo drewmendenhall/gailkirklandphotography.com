@@ -14,7 +14,6 @@ const server = express()
 server.disable('x-powered-by')
 server.enable('trust proxy')
 if (__DEV__) {
-  let livereload = require('connect-livereload')
   let webpack = require('webpack')
   let webpackDevMiddleware = require('webpack-dev-middleware')
   let webpackHotMiddleware = require('webpack-hot-middleware')
@@ -48,12 +47,6 @@ if (__DEV__) {
 
   server.use(webpackDevMiddleware(compiler))
   server.use(webpackHotMiddleware(compiler))
-  server.use(livereload({src: config.livereloadUrl}))
-  server.use(
-    '/node_modules',
-    serveStatic(path.join(__dirname, '../node_modules')),
-  )
-  server.use('/styles', serveStatic(path.join(__dirname, '../styles')))
 } else {
   server.use(compression())
 }
