@@ -19,13 +19,8 @@ export default createGlobalStyle(
       background: ${bodyBackground};
       color: ${textColor};
     }
-    html,
-    body,
     main {
-      height: 100%;
-      overflow: hidden;
-    }
-    main {
+      min-height: 100vh;
       display: flex;
       flex-flow: column;
     }
