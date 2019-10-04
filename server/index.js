@@ -45,7 +45,11 @@ if (__DEV__) {
     )
   })
 
-  server.use(webpackDevMiddleware(compiler))
+  server.use(
+    webpackDevMiddleware(compiler, {
+      serverSideRender: true,
+    }),
+  )
   server.use(webpackHotMiddleware(compiler))
 } else {
   server.use(compression())

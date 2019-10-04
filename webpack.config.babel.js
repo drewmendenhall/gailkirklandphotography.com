@@ -1,3 +1,4 @@
+const ManifestPlugin = require('webpack-manifest-plugin')
 const webpack = require('webpack')
 
 process.env.WEBPACK_VERSION = require('webpack/package.json').version
@@ -40,5 +41,6 @@ module.exports = {
       __DEV__: JSON.stringify(process.env.NODE_ENV !== 'production'),
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
+    new ManifestPlugin(),
   ],
 }

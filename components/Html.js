@@ -44,8 +44,7 @@ export default ({
       </head>
       <body>
         <main>{splitMark}</main>
-        <script src="/vendors~app.js"></script>
-        <script src="/app.js"></script>
+        {splitMark}
       </body>
     </html>
   )
