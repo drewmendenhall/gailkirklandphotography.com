@@ -11,9 +11,10 @@ const footerTextColor = '#696969'
 export default createGlobalStyle(
   () => css`
     * {
-      box-sizing: border-box;
+      box-sizing: inherit;
     }
     body {
+      box-sizing: border-box;
       margin: 0;
       background: ${bodyBackground};
       color: ${textColor};
