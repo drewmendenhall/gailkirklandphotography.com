@@ -4,6 +4,7 @@ module.exports = {
   extends: '../.babelrc.js',
 
   plugins: [
+    'babel-plugin-styled-components',
     ...(__DEV__
       ? ['react-hot-loader/babel']
       : [

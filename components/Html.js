@@ -40,7 +40,6 @@ export default ({
           <meta property="og:url" content={url} />,
         ]}
         {link && link.toComponent()}
-        <link rel="stylesheet" href="/app.css" />
         {style && style.toComponent()}
       </head>
       <body>
