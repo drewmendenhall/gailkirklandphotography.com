@@ -3,17 +3,31 @@ import ssrPrepass from 'react-ssr-prepass'
 import {HelmetProvider} from 'react-helmet-async'
 import {StaticRouter} from 'react-router'
 import {ServerStyleSheet} from 'styled-components'
+import {readFileSync} from 'fs'
 import {renderRoutes} from 'react-router-config'
 import {renderToNodeStream, renderToStaticMarkup} from 'react-dom/server'
 
 import Html, {splitMark} from '../components/Html'
+import config from '../config'
 import routes from '../routes'
+
+const __DEV__ = process.env.NODE_ENV !== 'production'
+
+let scripts =
+  !__DEV__ &&
+  Object.values(JSON.parse(readFileSync(`${config.server.base}/manifest.json`)))
 
 export default ({sendErrorStacks}) =>
   async function reactRouter(req, res) {
     const helmetContext = {}
     const routerContext = {}
     const sheet = new ServerStyleSheet()
+
+    if (__DEV__) {
+      scripts = res.locals.webpackStats
+        .toJson()
+        .entrypoints.app.assets.map((asset) => `/${asset}`)
+    }
 
     try {
       const app = sheet.collectStyles(
@@ -42,7 +56,7 @@ export default ({sendErrorStacks}) =>
         userAgent,
       )
 
-      const [header, footer] = renderToStaticMarkup(
+      const [header, appClosingTag, footer] = renderToStaticMarkup(
         React.createElement(Html, {
           includeMicrosoftTags,
           includeOpenGraphTags,
@@ -57,6 +71,12 @@ export default ({sendErrorStacks}) =>
       sheet
         .interleaveWithNodeStream(renderToNodeStream(app))
         .on('end', () => {
+          res.write(appClosingTag)
+          res.write(
+            scripts
+              .map((src) => `<script async src="${src}"></script>`)
+              .join(''),
+          )
           res.write(footer)
           res.end()
         })
