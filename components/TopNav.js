@@ -59,6 +59,7 @@ const StyledTopNav = styled.nav`
 
 const TopNavControlIcon = styled.i`
   font-size: 2rem;
+  font-style: normal;
   padding: 0 2rem;
 
   ::before {
