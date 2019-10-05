@@ -10,10 +10,6 @@ import {useHistory, useLocation} from 'react-router'
 
 import {stretch} from './styled/layout'
 
-const rotateForward = (max, index) => (index < max - 1 ? index + 1 : 0)
-
-const rotateBackward = (max, index) => (index > 0 ? index - 1 : max - 1)
-
 const carouselNavPadding = 10
 
 const StyledCarousel = styled.div`
@@ -110,8 +106,8 @@ const Carousel = (props) => {
   const [index, setIndex] = useState(props.index || 0)
   const autoplayInterval = useRef(null)
 
-  const nextIndex = rotateForward(items.length, index)
-  const prevIndex = rotateBackward(items.length, index)
+  const nextIndex = (index + 1) % items.length
+  const prevIndex = index > 0 ? index - 1 : items.length - 1
 
   const url = items[index].route
   const nextUrl = items[nextIndex].route
