@@ -8,6 +8,6 @@ Each page is fully-rendered on the server. Subsequent interaction and page navig
 
 The top navigation bar has pure-CSS dropdowns which group navigation to related pages.
 
-The app does not require that the client run Javascript. Running Javascript enables gallery picture transitions and quicker navigation (no full-page reloads). Also, opening one dropdown will close the others.
+The app does not require that the client run Javascript. Running Javascript enables gallery picture transitions and quicker navigation (no full-page reloads).
 
 [Gail Kirkland Photography]: gailkirklandphotography.com
