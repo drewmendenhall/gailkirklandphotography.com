@@ -53,7 +53,7 @@
     "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
-    "@hot-loader/react-dom": "^16.9.0",
+    "@hot-loader/react-dom": "^16.10.2",
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.6",
     "babel-watch": "^7.0.0",
