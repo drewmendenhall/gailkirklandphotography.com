@@ -1,0 +1,12 @@
+description: Provides Common Setup for Workflows Dependent on NodeJS
+name: setup-node
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3.5.1
+      with:
+        cache: npm
+        node-version-file: .node-version
+    - run: npm ci
+      shell: sh
