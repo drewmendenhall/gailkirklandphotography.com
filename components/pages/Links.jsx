@@ -1,6 +1,8 @@
 import React from 'react'
 
-import {Helmet} from 'react-helmet-async'
+import Head from 'next/head'
+
+import {siteTitle} from '../Layout'
 
 const linkSections = [
   {
@@ -61,7 +63,9 @@ const linkSections = [
 
 const Links = () => (
   <div>
-    <Helmet title="Links" />
+    <Head>
+      <title>Links | {siteTitle}</title>
+    </Head>
     <p>
       <a href="http://www.equinephotographers.org">
         Member of Equine Photographers Network

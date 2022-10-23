@@ -1,7 +1,9 @@
 import React from 'react'
 
+import Head from 'next/head'
 import styled from 'styled-components'
-import {Helmet} from 'react-helmet-async'
+
+import {siteTitle} from '../Layout'
 
 const Image = styled.img`
   max-width: 50%;
@@ -9,7 +11,9 @@ const Image = styled.img`
 
 const Contact = () => (
   <div className="contact-page">
-    <Helmet title="Contact" />
+    <Head>
+      <title>Contact | {siteTitle}</title>
+    </Head>
     <p>You can reach us via phone or email at:</p>
     <p>
       <a href="tel:214-538-9427">214-538-9427</a>

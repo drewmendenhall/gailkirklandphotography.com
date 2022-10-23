@@ -1,12 +1,15 @@
 import React from 'react'
 
-import {Helmet} from 'react-helmet-async'
+import Head from 'next/head'
 
 import CommonSessionInfo from './CommonSessionInfo'
+import {siteTitle} from '../../Layout'
 
 const HorseSessionsInfo = () => (
   <div className="container">
-    <Helmet title="Horse Sessions" />
+    <Head>
+      <title>Horse Sessions | {siteTitle}</title>
+    </Head>
     <h1>Horse Sessions</h1>
     <p>Session fee: $200 per horse (includes setup)</p>
     <CommonSessionInfo

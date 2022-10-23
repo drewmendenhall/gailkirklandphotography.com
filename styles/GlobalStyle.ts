@@ -1,7 +1,7 @@
 import {createGlobalStyle, css} from 'styled-components'
 
-import {gray, lighterGray} from './styled/colors'
-import textOverflow from './styled/text-overflow'
+import {gray, lighterGray} from '../components/styled/colors'
+import textOverflow from '../components/styled/text-overflow'
 
 const bodyBackground = `${gray} url(/images/main_bg.png)`
 const textColor = lighterGray
@@ -19,7 +19,7 @@ export default createGlobalStyle(
       background: ${bodyBackground};
       color: ${textColor};
     }
-    main {
+    #__next {
       min-height: 100vh;
       display: flex;
       flex-flow: column;

@@ -1,16 +1,14 @@
 import React from 'react'
 
+import Head from 'next/head'
+import Link from 'next/link'
 import styled from 'styled-components'
-import {Helmet} from 'react-helmet-async'
-import {Link} from 'react-router-dom'
-import {renderRoutes} from 'react-router-config'
 
-import GlobalStyle from './GlobalStyle'
 import TopNav from './TopNav'
 import {gray} from './styled/colors'
 import {logoHeight, logoPadding} from './styled/variables'
 
-const title = 'Gail Kirkland Photography'
+export const siteTitle = 'Gail Kirkland Photography'
 
 const contentFontSize = '1.25rem'
 const headerBackground = gray
@@ -63,7 +61,7 @@ const Tagline = styled.span`
   }
 `
 
-const BrandLink = styled(Link)`
+const BrandLink = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,23 +95,16 @@ const CompanyName = styled.span`
   padding-left: 0.5em;
 `
 
-const Layout = ({route}) => (
+const Layout = ({children}) => (
   <React.Fragment>
-    <GlobalStyle />
-    <Helmet
-      link={[{rel: 'license', href: '/copyright'}]}
-      meta={[
-        {
-          name: 'description',
-          content: 'A picture says more than a thousand words...',
-        },
-        {name: 'viewport', content: 'width=device-width,initial-scale=1'},
-      ]}
-      defaultTitle={title}
-      titleTemplate={`%s | ${title}`}
-    />
+    <Head>
+      <title>{siteTitle}</title>
+      <link rel="license" href="/copyright" />
+      <meta name="description" content="A picture says more than a thousand words..." />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+    </Head>
     <Header>
-      <BrandLink to="/">
+      <BrandLink href="/">
         <img src="/images/logo-pink.svg" />
         <CompanyName>
           <div>Gail Kirkland</div>
@@ -127,17 +118,17 @@ const Layout = ({route}) => (
     <SubHeader>
       <Tagline>A picture says more than a thousand words...</Tagline>
       {/*
-      <Link to="/contact" className="book-session-button button-primary">
-      Book a Session
+      <Link href="/contact" className="book-session-button button-primary">
+      <a>Book a Session</a>
       </Link>
       */}
     </SubHeader>
-    <Content>{renderRoutes(route.routes)}</Content>
+    <Content>{children}</Content>
     <footer>
       <div>
-        <Link to="/copyright" className="copyright" rel="license">
-          © Gail Kirkland Photography {new Date().getFullYear()}. All rights
-          reserved.
+        <Link href="/copyright" rel="license">
+          <a>© Gail Kirkland Photography {new Date().getFullYear()}. All rights
+          reserved.</a>
         </Link>
       </div>
     </footer>
