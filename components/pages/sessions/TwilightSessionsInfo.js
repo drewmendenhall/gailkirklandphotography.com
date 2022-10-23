@@ -1,11 +1,15 @@
 import React from 'react'
 
-import {Helmet} from 'react-helmet-async'
-import {Link} from 'react-router-dom'
+import Head from 'next/head'
+import Link from 'next/link'
+
+import {siteTitle} from '../../Layout'
 
 const TwilightSessionsInfo = () => (
   <div className="container">
-    <Helmet title="Twilight Sessions" />
+    <Head>
+      <title>Twilight Sessions | {siteTitle}</title>
+    </Head>
     <h1>Twilight Sessions</h1>
     <p>
       Often times, a pet is more than just a pet, but a true member of your
@@ -20,7 +24,7 @@ const TwilightSessionsInfo = () => (
       an opportunity to capture those details of your blessed pet and cherish
       them forever. Because I understand these decisions have to be made in a
       short period of time, I try to be available to come to you when needed.
-      Please <Link to="/contact">contact me</Link> to look into scheduling a
+      Please <Link href="/contact"><a>contact me</a></Link> to look into scheduling a
       session.
     </p>
   </div>

@@ -1,11 +1,15 @@
 import React from 'react'
 
-import {Helmet} from 'react-helmet-async'
-import {Link} from 'react-router-dom'
+import Head from 'next/head'
+import Link from 'next/link'
+
+import {siteTitle} from '../Layout'
 
 const SessionInfo = () => (
   <div className="container">
-    <Helmet title="Sessions" />
+    <Head>
+      <title>Sessions | {siteTitle}</title>
+    </Head>
     <h1>Sessions</h1>
     <p>
       Photographs capture the character and personality of your best friend and
@@ -32,7 +36,7 @@ const SessionInfo = () => (
       information you need.
     </p>
     <p>
-      <Link to="/contact">Contact us</Link>
+      <Link href="/contact"><a>Contact us</a></Link>
     </p>
   </div>
 )

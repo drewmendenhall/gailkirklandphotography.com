@@ -1,10 +1,14 @@
 import React from 'react'
 
-import {Helmet} from 'react-helmet-async'
+import Head from 'next/head'
+
+import {siteTitle} from '../Layout'
 
 const Copyright = () => (
   <div className="container">
-    <Helmet title="Copyright" />
+    <Head>
+      <title>Copyright | {siteTitle}</title>
+    </Head>
     <h1>Copyright</h1>
     <p>
       What is Copyright? How does it apply to you? The photographer holds

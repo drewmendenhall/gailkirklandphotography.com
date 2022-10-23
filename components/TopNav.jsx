@@ -1,10 +1,10 @@
 import React from 'react'
 
 import styled from 'styled-components'
-import {NavLink} from 'react-router-dom'
 import {useEffect, useState} from 'react'
-import {useHistory} from 'react-router'
+import {useRouter} from 'next/router'
 
+import NavLink from './NavLink'
 import galleriesObject from '../public/galleries.json'
 import {headerBackground, headerHeight} from './styled/variables'
 
@@ -90,10 +90,7 @@ const TopNavControlLabel = styled.label`
     display: flex;
   }
 `
-const NavMenuItem = styled.span.attrs(({to}) => ({
-  as: to ? NavLink : 'span',
-  exact: true,
-}))`
+const NavMenuItem = styled.a`
   display: block;
   flex: 1;
   width: 100%;
@@ -227,23 +224,23 @@ const TopNav = () => {
   const [showGalleriesSubNavMenu, setShowGalleriesSubNavMenu] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
   const [showSessionsSubNavMenu, setShowSessionsSubNavMenu] = useState(false)
-  const history = useHistory()
+  const router = useRouter()
 
   const handleTopNavControlChange = () => {
     setShowMenu((show) => !show)
   }
 
-  useEffect(
-    () =>
-      history.listen(({state}) => {
-        if (!state || !state.autoplay) {
-          setShowMenu(false)
-          setShowGalleriesSubNavMenu(false)
-          setShowSessionsSubNavMenu(false)
-        }
-      }),
-    [history],
-  )
+  // useEffect(
+  //   () =>
+  //     router.beforePopState(({options}) => {
+  //       if (!state || !state.autoplay) {
+  //         setShowMenu(false)
+  //         setShowGalleriesSubNavMenu(false)
+  //         setShowSessionsSubNavMenu(false)
+  //       }
+  //     }),
+  //   [router],
+  // )
 
   return (
     <TopNavControlLabel>
@@ -253,10 +250,10 @@ const TopNav = () => {
       <StyledTopNav>
         <ul>
           <li>
-            <TopNavMenuItem to="/">home</TopNavMenuItem>
+            <NavLink href="/" passHref><TopNavMenuItem>home</TopNavMenuItem></NavLink>
           </li>
           <li>
-            <TopNavMenuItem to="/about">about</TopNavMenuItem>
+            <NavLink href="/about" passHref><TopNavMenuItem>about</TopNavMenuItem></NavLink>
           </li>
           <li>
             <SubNavControlLabel>
@@ -285,7 +282,7 @@ const TopNav = () => {
               <StyledSubNavGalleries>
                 {galleries.map((gallery) => (
                   <li key={gallery.id}>
-                    <SubNavMenuItem to={`/galleries/${gallery.id}`}>
+                    <SubNavMenuItem href={`/galleries/${gallery.id}`}>
                       {gallery.title}
                     </SubNavMenuItem>
                   </li>
@@ -319,27 +316,25 @@ const TopNav = () => {
               </SubNavOverlay>
               <StyledSubNavSessions>
                 <li>
-                  <SubNavMenuItem to="/sessions/dogs">dogs</SubNavMenuItem>
+                  <NavLink href="/sessions/dogs" passHref><SubNavMenuItem>dogs</SubNavMenuItem></NavLink>
                 </li>
                 <li>
-                  <SubNavMenuItem to="/sessions/cats">cats</SubNavMenuItem>
+                  <NavLink href="/sessions/cats" passHref><SubNavMenuItem>cats</SubNavMenuItem></NavLink>
                 </li>
                 <li>
-                  <SubNavMenuItem to="/sessions/horses">horses</SubNavMenuItem>
+                  <NavLink href="/sessions/horses" passHref><SubNavMenuItem>horses</SubNavMenuItem></NavLink>
                 </li>
                 <li>
-                  <SubNavMenuItem to="/sessions/twilight">
-                    twilight
-                  </SubNavMenuItem>
+                  <NavLink href="/sessions/twilight" passHref><SubNavMenuItem>twilight</SubNavMenuItem></NavLink>
                 </li>
               </StyledSubNavSessions>
             </SubNavControlLabel>
           </li>
           <li>
-            <TopNavMenuItem to="/links">links</TopNavMenuItem>
+            <NavLink href="/links" passHref><TopNavMenuItem>links</TopNavMenuItem></NavLink>
           </li>
           <li>
-            <TopNavMenuItem to="/contact">contact us</TopNavMenuItem>
+            <NavLink href="/contact" passHref><TopNavMenuItem>contact us</TopNavMenuItem></NavLink>
           </li>
         </ul>
       </StyledTopNav>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Link} from 'react-router-dom'
+import Link from 'next/link'
 
 const CommonSessionInfo = ({includes = []}) => (
   <React.Fragment>
@@ -26,7 +26,7 @@ const CommonSessionInfo = ({includes = []}) => (
       capture some of your final memories with them. Since these types of events
       can happen at the blink of an eye, I will do my absolute best to
       accomodate you and be available for your needs. Please visit{' '}
-      <Link to="/sessions/twilight">Twilight Sessions</Link> for more
+      <Link href="/sessions/twilight"><a>Twilight Sessions</a></Link> for more
       information.
     </p>
   </React.Fragment>

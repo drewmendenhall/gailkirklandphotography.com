@@ -1,7 +1,9 @@
 import React from 'react'
 
+import Head from 'next/head'
 import styled from 'styled-components'
-import {Helmet} from 'react-helmet-async'
+
+import {siteTitle} from '../Layout'
 
 import {
   ClearLeft,
@@ -28,7 +30,9 @@ const ImagePullRight = styled(Image)`
 
 const About = () => (
   <Container>
-    <Helmet title="About" />
+    <Head>
+      <title>About | {siteTitle}</title>
+    </Head>
     <ImagePullLeft src="/images/about_img1.jpg" />
     <p>
       I understand that unique bond between you and your fur kids. For me

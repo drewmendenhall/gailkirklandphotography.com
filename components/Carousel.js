@@ -1,12 +1,12 @@
 import React from 'react'
 
 import PropTypes from 'prop-types'
+import Head from 'next/head'
+import Link from 'next/link'
 import classnames from 'classnames'
 import styled from 'styled-components'
-import {Helmet} from 'react-helmet-async'
-import {Link} from 'react-router-dom'
 import {useCallback, useEffect, useRef, useState} from 'react'
-import {useHistory, useLocation} from 'react-router'
+import {useRouter} from 'next/router'
 
 import {stretch} from './styled/layout'
 
@@ -16,16 +16,9 @@ const StyledCarousel = styled.div`
   ${stretch}
   overflow: hidden;
 
-  picture {
-    height: 100%;
-    width: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 50%;
-
-    img {
-      display: none;
-    }
+  img {
+    max-height: 100%;
+    max-width: 100%;
   }
 `
 
@@ -56,7 +49,7 @@ const CarouselSlide = styled.div`
     transform: translate(0);
   }
 `
-const CarouselSlideNavLink = styled(Link)`
+const CarouselSlideNavLink = styled.a`
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -99,8 +92,7 @@ const CarouselSlidePreviousLink = styled(CarouselSlideNavLink)`
 `
 
 const Carousel = (props) => {
-  const history = useHistory()
-  const location = useLocation()
+  const router = useRouter()
   const {items} = props
 
   const [index, setIndex] = useState(props.index || 0)
@@ -116,12 +108,12 @@ const Carousel = (props) => {
   const handleNext = (event) => {
     if (props.autoplay) resetAutoplay()
     goToNextSlide()
-    event.preventDefault()
+    event.stopPropagation()
   }
   const handlePrev = (event) => {
     if (props.autoplay) resetAutoplay()
     goToPreviousSlide()
-    event.preventDefault()
+    event.stopPropagation()
   }
   const handleKeyDown = (event) => {
     const {key} = event
@@ -139,17 +131,17 @@ const Carousel = (props) => {
     if (props.index == null) {
       setIndex(nextIndex)
     } else {
-      history.push({
+      router.push({
         pathname: nextUrl,
         state: {autoplay: true},
       })
     }
-  }, [history, nextIndex, nextUrl, props.index])
+  }, [nextIndex, nextUrl, props.index, router])
   const goToPreviousSlide = () => {
     if (props.index == null) {
       setIndex(prevIndex)
     } else {
-      history.push({
+      router.push({
         pathname: prevUrl,
         state: {autoplay: true},
       })
@@ -177,13 +169,11 @@ const Carousel = (props) => {
 
   return (
     <StyledCarousel className="carousel" onKeyDown={handleKeyDown}>
-      <Helmet
-        link={[
-          {rel: 'canonical', href: location.pathname === '/' ? '/' : url},
-          {rel: 'next', href: nextUrl},
-          {rel: 'prev', href: prevUrl},
-        ]}
-      />
+      <Head>
+        <link rel="canonical" href={router.pathname === '/' ? '/' : url} />
+        <link rel="next" href={nextUrl} />
+        <link rel="prev" href={prevUrl} />
+      </Head>
       {React.Children.map(props.children, (child, i) => (
         <CarouselSlide
           className={classnames({
@@ -197,15 +187,16 @@ const Carousel = (props) => {
         </CarouselSlide>
       ))}
       <CarouselSlidePreviousLink
-        to={prevUrl || ''}
+        href={prevUrl || ''}
         onClick={handlePrev}
         rel="prev"
       />
-      <CarouselSlideNextLink
-        to={nextUrl || ''}
-        onClick={handleNext}
-        rel="next"
-      />
+      <Link href={nextUrl || ''} passHref>
+        <CarouselSlideNextLink
+          onClick={handleNext}
+          rel="next"
+        />
+      </Link>
     </StyledCarousel>
   )
 }

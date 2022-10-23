@@ -1,25 +1,23 @@
 import React from 'react'
 
-import {Helmet} from 'react-helmet-async'
+import Head from 'next/head'
+import {useRouter} from 'next/router'
 
 import Carousel from './Carousel'
 import GalleryPicture from './GalleryPicture'
+import {siteTitle} from './Layout'
 
 import galleries from '../public/galleries.json'
 
-const Gallery = (props) => {
-  const {
-    location,
-    match: {params},
-  } = props
-  const {galleryId, pictureId} = params
+const Gallery = ({galleryId, pictureId = ''}) => {
+  const router = useRouter()
+
   const gallery = galleries[galleryId]
   const pictures = gallery.pictures.map((picture) => {
     picture.route = `/galleries/${gallery.id}/${picture.id}`
     return picture
   })
-  let index =
-    pictureId && pictures.findIndex((picture) => picture.id === pictureId)
+  let index = pictures.findIndex((picture) => picture.id === pictureId)
 
   if (index === -1) index = 0
 
@@ -27,10 +25,14 @@ const Gallery = (props) => {
 
   return (
     <div>
-      {location.pathname !== '/' && (
-        <Helmet
-          title={`${props.index ? picture.title + ' | ' : ''}${gallery.title}`}
-        />
+      {router.pathname !== '/' && (
+        <Head>
+          <title>{[
+            index ? picture.title : null,
+            gallery.title,
+            siteTitle,
+          ].filter(Boolean).join(' | ')}</title>
+        </Head>
       )}
       <Carousel slideInterval={3000} items={pictures} index={index}>
         {pictureId ? (
