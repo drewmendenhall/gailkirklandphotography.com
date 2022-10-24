@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Document, { DocumentContext } from 'next/document'
-import { ServerStyleSheet } from 'styled-components'
+import Document, {DocumentContext} from 'next/document'
+import {ServerStyleSheet} from 'styled-components'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {

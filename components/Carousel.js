@@ -2,7 +2,6 @@ import React from 'react'
 
 import PropTypes from 'prop-types'
 import Head from 'next/head'
-import Link from 'next/link'
 import classnames from 'classnames'
 import styled from 'styled-components'
 import {useCallback, useEffect, useRef, useState} from 'react'
@@ -105,15 +104,13 @@ const Carousel = (props) => {
   const nextUrl = items[nextIndex].route
   const prevUrl = items[prevIndex].route
 
-  const handleNext = (event) => {
+  const handleNext = () => {
     if (props.autoplay) resetAutoplay()
     goToNextSlide()
-    event.stopPropagation()
   }
-  const handlePrev = (event) => {
+  const handlePrev = () => {
     if (props.autoplay) resetAutoplay()
     goToPreviousSlide()
-    event.stopPropagation()
   }
   const handleKeyDown = (event) => {
     const {key} = event
@@ -191,12 +188,11 @@ const Carousel = (props) => {
         onClick={handlePrev}
         rel="prev"
       />
-      <Link href={nextUrl || ''} passHref>
-        <CarouselSlideNextLink
-          onClick={handleNext}
-          rel="next"
-        />
-      </Link>
+      <CarouselSlideNextLink
+        href={nextUrl || ''}
+        onClick={handleNext}
+        rel="next"
+      />
     </StyledCarousel>
   )
 }

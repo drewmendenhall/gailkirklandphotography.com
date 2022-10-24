@@ -1,9 +1,8 @@
-import { createElement } from 'react'
-import { useRouter } from 'next/router'
+import {createElement} from 'react'
+import {useRouter} from 'next/router'
 
-import type { GetStaticPaths, GetStaticProps } from 'next'
+import type {GetStaticPaths, GetStaticProps} from 'next'
 
-import SessionInfo from '../../components/pages/SessionInfo'
 import CatSessionsInfo from '../../components/pages/sessions/CatSessionsInfo'
 import DogSessionsInfo from '../../components/pages/sessions/DogSessionsInfo'
 import HorseSessionsInfo from '../../components/pages/sessions/HorseSessionsInfo'
@@ -18,14 +17,14 @@ const componentMap = {
 
 const SessionPage = () => {
   const router = useRouter()
-  const { sessionId } = router.query
+  const {sessionId} = router.query
 
-  return createElement(componentMap[sessionId as keyof typeof componentMap] || SessionInfo)
+  return createElement(componentMap[sessionId as keyof typeof componentMap])
 }
 
 export const getStaticPaths: GetStaticPaths = () => ({
   fallback: false,
-  paths: Object.keys(componentMap).map(name => `/sessions/${name}`),
+  paths: Object.keys(componentMap).map((name) => `/sessions/${name}`),
 })
 export const getStaticProps: GetStaticProps = () => ({props: {}})
 

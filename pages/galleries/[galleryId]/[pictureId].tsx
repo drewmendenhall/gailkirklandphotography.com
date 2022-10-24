@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { useRouter } from 'next/router'
+import {useRouter} from 'next/router'
 
-import type { GetStaticPaths, GetStaticProps } from 'next'
+import type {GetStaticPaths, GetStaticProps} from 'next'
 
 import Gallery from '../../../components/Gallery'
 import galleries from '../../../public/galleries.json'
