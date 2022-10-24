@@ -26,7 +26,7 @@ variables:
     - NODE_ENV= npm install
     - npm run build
   stage: build
-  image: node:14.1.0-alpine3.11@sha256:7fadbe3adb5526b4c2a93a794d59ed729c075c81ac577fc60b9c18503dbc68d4
+  image: node:14.18.1-alpine3.11@sha256:c5b4544cee41df44e2bcaaaba642235fb01408c11411ca16fa454598c1168063
   tags:
     - docker-node
 
