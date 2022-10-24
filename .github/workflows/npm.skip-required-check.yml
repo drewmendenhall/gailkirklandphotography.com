@@ -1,0 +1,14 @@
+on:
+  push:
+    paths-ignore:
+      - .github/workflows/setup-node/
+      - .github/workflows/npm.yml
+      - package-lock.json.lock
+
+concurrency: npm
+
+jobs:
+  npm:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: echo 'Skipped'
