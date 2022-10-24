@@ -1,10 +1,27 @@
 {
-  "extends": ["config:base"],
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":prHourlyLimitNone"
+  ],
 
-  "commitMessageAction": "",
-  "commitMessageTopic": "{{{depName}}}@{{{toVersion}}}",
-  "commitMessageExtra": "",
-
+  "pinDigests": true,
   "rangeStrategy": "bump",
-  "rebaseStalePrs": true
+
+  "packageRules": [
+    {
+      "matchManagers": ["npm"],
+
+      "internalChecksFilter": "strict",
+      "postUpdateOptions": ["npmDedupe"],
+      "stabilityDays": 3
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+
+      "automerge": true,
+      "ignoreTests": true,
+      "platformAutomerge": true
+    }
+  ]
 }
