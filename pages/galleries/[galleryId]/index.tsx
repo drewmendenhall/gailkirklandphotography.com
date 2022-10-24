@@ -1,8 +1,8 @@
 import React from 'react'
 
-import type { GetStaticPaths, GetStaticProps } from 'next'
+import type {GetStaticPaths, GetStaticProps} from 'next'
 
-import { useRouter } from 'next/router'
+import {useRouter} from 'next/router'
 
 import Gallery from '../../../components/Gallery'
 import galleries from '../../../public/galleries.json'
@@ -19,7 +19,7 @@ const GalleryPage = () => {
 
 export const getStaticPaths: GetStaticPaths = () => ({
   fallback: false,
-  paths: Object.keys(galleries).map(name => `/galleries/${name}`),
+  paths: Object.keys(galleries).map((name) => `/galleries/${name}`),
 })
 export const getStaticProps: GetStaticProps = () => ({props: {}})
 
