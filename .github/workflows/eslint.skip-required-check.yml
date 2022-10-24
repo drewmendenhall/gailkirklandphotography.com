@@ -1,0 +1,19 @@
+name: skip-required-check
+
+on:
+  pull_request:
+    paths-ignore:
+      - '**/*.ts'
+      - '**/*.tsx'
+      - '**/.eslintrc.yml'
+      - .github/workflows/eslint.yml
+      - .github/workflows/setup-node/
+      - package.json
+      - package-lock.json
+      - tsconfig.json
+
+jobs:
+  eslint:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: echo 'Skipped'
