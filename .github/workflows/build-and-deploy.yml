@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3.1.0
       - uses: ./.github/workflows/setup-node
-      - uses: actions/configure-pages@2ce6d5eaa1f7b36a30c9b424cd73fab661857cfe # tag=v2.1.1
+      - uses: actions/configure-pages@d875fa8dc18209f310fe6999f4cfbc96ee372c2b # tag=v2.1.2
         with:
           static_site_generator: next
       - uses: actions/cache@9b0c1fce7a93df8e3bb8926b0d6e9d89e92f20a7 # tag=v3.0.11
