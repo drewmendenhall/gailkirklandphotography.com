@@ -13,7 +13,7 @@ const NavLink = ({children, className, ...props}: NavLinkProps) => {
   const router = useRouter()
 
   return (
-    <Link {...props}>
+    <Link {...props} legacyBehavior>
       {router.pathname === props.href ? React.cloneElement(children, {
         className: classNames(className, {
           active: true,

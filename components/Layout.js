@@ -127,8 +127,8 @@ const Layout = ({children}) => (
     <footer>
       <div>
         <Link href="/copyright" rel="license">
-          <a>© Gail Kirkland Photography {new Date().getFullYear()}. All rights
-          reserved.</a>
+          © Gail Kirkland Photography {new Date().getFullYear()}.
+          All rights reserved.
         </Link>
       </div>
     </footer>

@@ -24,7 +24,7 @@ const TwilightSessionsInfo = () => (
       an opportunity to capture those details of your blessed pet and cherish
       them forever. Because I understand these decisions have to be made in a
       short period of time, I try to be available to come to you when needed.
-      Please <Link href="/contact"><a>contact me</a></Link> to look into scheduling a
+      Please <Link href="/contact">contact me</Link> to look into scheduling a
       session.
     </p>
   </div>

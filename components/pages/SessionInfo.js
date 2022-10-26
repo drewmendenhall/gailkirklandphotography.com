@@ -36,7 +36,7 @@ const SessionInfo = () => (
       information you need.
     </p>
     <p>
-      <Link href="/contact"><a>Contact us</a></Link>
+      <Link href="/contact">Contact us</Link>
     </p>
   </div>
 )
