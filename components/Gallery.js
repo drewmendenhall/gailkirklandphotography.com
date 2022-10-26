@@ -140,6 +140,7 @@ const Gallery = ({galleryId, pictureId = ''}) => {
       )}
       <Slider
         arrows={false}
+        autoplay
         centerMode
         centerPadding={0}
         dots
