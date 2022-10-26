@@ -13,8 +13,7 @@ import {siteTitle} from './Layout'
 
 import galleries from '../public/galleries.json'
 
-const navPadding = '10px'
-const horizontalSpacing = '40px'
+const horizontalSpacing = '50px'
 
 const Slider = styled(SliderBase)`
   &, .slick-list, .slick-track {
@@ -87,7 +86,6 @@ const SlidePreviousLink = styled(SlideNavLink)`
 
   &::before {
     content: '‹';
-    left: ${navPadding};
   }
 `
 const SlideNextLink = styled(SlideNavLink)`
@@ -96,7 +94,6 @@ const SlideNextLink = styled(SlideNavLink)`
 
   &::before {
     content: '›';
-    right: ${navPadding};
   }
 `
 
