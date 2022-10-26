@@ -26,7 +26,7 @@ const CommonSessionInfo = ({includes = []}) => (
       capture some of your final memories with them. Since these types of events
       can happen at the blink of an eye, I will do my absolute best to
       accomodate you and be available for your needs. Please visit{' '}
-      <Link href="/sessions/twilight"><a>Twilight Sessions</a></Link> for more
+      <Link href="/sessions/twilight">Twilight Sessions</Link> for more
       information.
     </p>
   </React.Fragment>
