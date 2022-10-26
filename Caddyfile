@@ -1,0 +1,5 @@
+gailkirklandphotography.localhost {
+  reverse_proxy localhost:6417
+
+  import Caddyfile.local*
+}
