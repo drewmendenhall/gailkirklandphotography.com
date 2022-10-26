@@ -5,7 +5,7 @@ on:
     paths-ignore:
       - .github/workflows/setup-node/
       - .github/workflows/npm.yml
-      - package-lock.json.lock
+      - package-lock.json
 
 concurrency: npm
 
