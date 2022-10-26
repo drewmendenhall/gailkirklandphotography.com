@@ -8,7 +8,6 @@ const nextConfig = {
   // distDir: process.env.NEXT_DIST_DIR,
   // poweredByHeader: false,
   reactStrictMode: true,
-  swcMinify: true,
 }
 
 export default nextConfig
