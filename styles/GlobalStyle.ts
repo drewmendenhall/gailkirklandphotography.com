@@ -16,8 +16,10 @@ export default createGlobalStyle(
     body {
       box-sizing: border-box;
       margin: 0;
+
       background: ${bodyBackground};
       color: ${textColor};
+      font-family: Helvetica, sans-serif;
     }
     #__next {
       min-height: 100vh;
