@@ -13,6 +13,7 @@ import {siteTitle} from './Layout'
 
 import galleries from '../public/galleries.json'
 
+const verticalSpacing = '40px'
 const horizontalSpacing = '50px'
 
 const Slider = styled(SliderBase)`
@@ -25,7 +26,7 @@ const Slider = styled(SliderBase)`
   }
 
   .slick-slide {
-    padding: ${horizontalSpacing};
+    padding: ${verticalSpacing} ${horizontalSpacing};
 
     > div {
       display: flex;
@@ -59,9 +60,8 @@ const SlideNavLink = styled.a`
   bottom: 0;
 
   display: flex;
-  flex-flow: column;
   justify-content: center;
-  height: 100%;
+  align-items: center;
   width: ${horizontalSpacing};
 
   color: white;
