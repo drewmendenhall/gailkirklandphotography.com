@@ -28,7 +28,7 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
       - run: npm run build
-      - uses: actions/upload-pages-artifact@4506126207ed04f7c31e67d0b20154fc373f2505 # v1.0.5
+      - uses: actions/upload-pages-artifact@c8641e80048cf33d329c39df3bcc53196178335a # v1.0.6
         with:
           path: ./out
 
