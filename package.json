@@ -40,7 +40,7 @@
     "@typescript-eslint/parser": "^5.48.2",
     "env-cmd": "^10.1.0",
     "eslint": "^8.32.0",
-    "eslint-plugin-react": "^7.32.0",
+    "eslint-plugin-react": "^7.32.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "npm-run-all": "^4.1.5",
     "prettier-eslint-cli": "^7.1.0",
