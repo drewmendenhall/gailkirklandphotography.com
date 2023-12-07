@@ -43,5 +43,5 @@ jobs:
       pages: write
       id-token: write
     steps:
-      - uses: actions/deploy-pages@f27bcc15848fdcdcc02f01754eb838e44bcf389b # v1.2.9
+      - uses: actions/deploy-pages@13b55b33dd8996121833dbc1db458c793a334630 # v3.0.1
         id: deployment
