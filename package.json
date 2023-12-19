@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.19.3",
-    "@types/react": "18.2.40",
+    "@types/react": "18.2.45",
     "@types/react-slick": "^0.23.12",
     "@types/styled-components": "^5.1.32",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
